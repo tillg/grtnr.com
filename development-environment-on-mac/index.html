@@ -55,7 +55,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 08.05.2025 07:35:55.
+      Last built 12.05.2025 07:44:03.
   </div>
 </div>
   <div class="wrap">
@@ -100,6 +100,13 @@ styles, `#sidebar-checkbox` for behavior. -->
 <h2 id="terminal">Terminal</h2>
 <p>My Terminal of choice is <a href="https://iterm2.com" rel="noopener noreferrer" target="_blank">iTerm2</a>, and I simply install it from it’s website. See <a href="setting-up-my-terminal">here</a> for how I configure it.</p>
 <h2 id="zsh-shell">zsh shell</h2>
+<p>On a new Mac, here is what I do:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check what Shell I have</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span>
+
+<span class="c1"># In case it's not zsh, set it as default</span>
+chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">"</span>
+</code></pre></div>
 <h2 id="vscode">VSCode</h2>
 <p>… or VSCode-insiders</p>
 <h2 id="docker">Docker</h2>
