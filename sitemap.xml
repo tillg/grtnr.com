@@ -242,5 +242,15 @@
   </url>
 
 
+  <url>
+    <loc>./pages/impressum.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>./pages/todo.html</loc>
+    <priority>1.0</priority>
+  </url>
+
 
 </urlset>
