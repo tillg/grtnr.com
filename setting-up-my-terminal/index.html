@@ -56,7 +56,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 12.05.2025 08:41:57.
+      Last built 13.05.2025 08:07:58.
   </div>
 </div>
   <div class="wrap">
@@ -109,7 +109,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 ├── .zshrc
 </code></pre></div>
 <h2 id="zsh">zsh</h2>
-<p>I used bash in the past and I was happy with it. I simply started my Mac Terminal, and there it was. And later I used iTerm2, and it alkso fired up with bash. So why move over to zsh?</p>
+<p>I used bash in the past and I was happy with it. I simply started my Mac Terminal, and there it was. And later I used iTerm2, and it also fired up with bash. So why move over to zsh?</p>
 <p>This article explains it nicely and extensively. In short:</p>
 <ul>
 <li>Apple used bash in the past as it was the de-facto standard</li>
@@ -141,7 +141,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 </code></pre></div>
 <p>I currently use the git plugin, which offers shortcuts for often used git commands.</p>
 <h3 id="configuring-oh-my-zsh">Configuring Oh My Zsh</h3>
-<p>As mentioned, I have all the configurations integrated in my <code>$HOME/.zshrc</code> file. The relecvant snippets from my <code>.zshrc</code>file:</p>
+<p>As mentioned, I have all the configurations integrated in my <code>$HOME/.zshrc</code> file. The relevant snippets from my <code>.zshrc</code>file:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Path to your oh-my-zsh installation.</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ZSH</span><span class="o">=</span><span class="s2">"/Users/tgartner/.oh-my-zsh"</span>
 
@@ -158,16 +158,9 @@ styles, `#sidebar-checkbox` for behavior. -->
 <span class="c1"># Add wisely, as too many plugins slow down shell startup.</span>
 <span class="nv">plugins</span><span class="o">=(</span>git<span class="w"> </span>python<span class="o">)</span>
 </code></pre></div>
-<h2 id="powerlevel9k">powerlevel9k</h2>
-<blockquote>
-<p>Powerlevel9k is a theme for <span class="caps">ZSH</span> which uses Powerline Fonts. It can be used with vanilla <span class="caps">ZSH</span> or <span class="caps">ZSH</span> frameworks such as Oh-My-Zsh, Prezto, Antigen, and many others.
-— <cite><a href="https://github.com/Powerlevel9k/powerlevel9k" rel="noopener noreferrer" target="_blank">powerlevel9k website</a></cite></p>
-</blockquote>
-<p><a href="https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#macos-with-homebrew" rel="noopener noreferrer" target="_blank">Installing powerlevel9k</a> is straightforward on a Mac with git:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bhilburn/powerlevel9k.git<span class="w"> </span>~/.oh-my-zsh/custom/themes/powerlevel9k
-</code></pre></div>
-<p>This clones the entire powerlevel9k repo into the right subdirectory under <code>.oh-my-zsh</code>.</p>
-<p><strong>Note</strong> You can also install powerlevel9k with homebrew, but I don’t know where it ends up. To be investigated… 😀</p>
+<h2 id="powerlevel10k">powerlevel10k</h2>
+<p>Note: I used to use <a href="https://github.com/Powerlevel9k/powerlevel9k" rel="noopener noreferrer" target="_blank">powerlevel9k</a>, but when installing my Mac in May 2025, 9k was outdated and pointed to <a href="https://github.com/romkatv/powerlevel10k" rel="noopener noreferrer" target="_blank">powerlevel10k</a>.</p>
+<p>Install powerlevel10k following their <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh" rel="noopener noreferrer" target="_blank">installation guide for zsh</a>.</p>
       <div id="giscus">
         <script src="https://giscus.app/client.js" data-repo="tillg/grtnr.com_2024" data-repo-id="R_kgDONYRp_Q"
           data-category="Q&A" data-category-id="DIC_kwDONYRp_c4Cm0cH" data-mapping="pathname" data-strict="0"
