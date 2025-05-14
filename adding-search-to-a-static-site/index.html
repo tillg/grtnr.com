@@ -54,7 +54,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 13.05.2025 08:07:58.
+      Last built 14.05.2025 08:12:16.
   </div>
 </div>
   <div class="wrap">
@@ -79,7 +79,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 <p>These are the steps I took to get there:</p>
 <h2 id="create-the-custom-search-engine">Create the Custom Search Engine</h2>
 <p>Nothing easiere: Just go to the <a href="http://www.google.com/cse" rel="noopener noreferrer" target="_blank">Google <span class="caps">CSE</span> page</a> and create it. The process is self explanatory: You need a name for your search engine, you tell it what content should be made available. In my case this would be all from <a href="https://tillgartner.com" rel="noopener noreferrer" target="_blank">tillgartner.com</a> and that’s basically it. We will return at the end to this site in order to fine tune the look <span class="amp">&amp;</span> feel of the results.</p>
-<p><img alt="Google CSE administration" src="Custom_Search_-_Basic.jpg"/></p>
+<p><img alt="Google CSE administration" src="/adding-search-to-a-static-site/Custom_Search_-_Basic.jpg"/></p>
 <p>The one thing we need from here is the code in order to embed the search. You get this code by clicking the bitton “<strong>Get Code</strong>“.</p>
 <h2 id="add-the-search-field">Add the search field</h2>
 <p>Next we need a search box on our pages. I want a search box on the top right of every page on the entire website. So I add it to the freemarker template that creates the menu. </p>
@@ -122,7 +122,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 <p>I found thatthe part of the menu and how it collapses wasn’t trivial. The best explanation I found was <a href="https://bootstrapbay.com/blog/bootstrap-tutorial-navbar/" rel="noopener noreferrer" target="_blank">this video</a>.</p>
 <p>It’s standard Bootstrap menu jiggling. What’s special in our case is the <code>action</code> attribute in the form that links to the search result page (called <code>search.html</code> in my case).</p>
 <p>The result is a neat little serach box on the top right corner:</p>
-<p><img alt="Search box" src="search_box.jpg"/></p>
+<p><img alt="Search box" src="/adding-search-to-a-static-site/search_box.jpg"/></p>
 <h2 id="search-result-page">Search result page</h2>
 <p>Last but not least we need the search result page. This page will be called (i.e. linked to) from the search form we just made. It’s <span class="caps">URL</span> will be something like </p>
 <div class="highlight"><pre><span></span><code>http://tillgartner.com/search.html?q=huhu
