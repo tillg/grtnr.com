@@ -1,15 +1,10 @@
----
-layout: recipe
-title: Hummus from Mr Jim
-slug: hummus-from-mr-jim
-date_published: 2017-09-06T00:00:00.000Z
-date_updated: 2021-12-06T11:00:28.000Z
-date: 2017-09-06
-tags: 
-image: hummus.jpg
----
+______________________________________________________________________
 
-Yesterday we had a little get together at our Villa (actually we wre 21 people if my counting is right...). It's always fun to spend time with friends, and food & drink is an integral part of this fun. One highlight yesterday was Mr Jim's Hummus. And he was friendly enough to share his recipe ;)
+## layout: recipe title: Hummus from Mr Jim slug: hummus-from-mr-jim date_published: 2017-09-06T00:00:00.000Z date_updated: 2021-12-06T11:00:28.000Z date: 2017-09-06 tags: image: hummus.jpg
+
+Yesterday we had a little get together at our Villa (actually we wre 21 people if my counting is
+right...). It's always fun to spend time with friends, and food & drink is an integral part of this
+fun. One highlight yesterday was Mr Jim's Hummus. And he was friendly enough to share his recipe ;)
 
 It's rather simple:
 
@@ -23,7 +18,4 @@ It's rather simple:
 
 *BLEND*! And yes, you can eat it right away, no need to wait...
 
-The original writing from the chef:
-![Hummus recipy](hummus-recipe.png)
-
-
+The original writing from the chef: ![Hummus recipy](hummus-recipe.png)

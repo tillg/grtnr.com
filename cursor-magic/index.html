@@ -54,7 +54,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 26.05.2025 10:15:27.
+      Last built 26.05.2025 12:12:26.
   </div>
 </div>
   <div class="wrap">
@@ -78,8 +78,11 @@ styles, `#sidebar-checkbox` for behavior. -->
       
     </div>
 
-    <div class="toc">
+    <hr/>
+<h2 id="date-2025-02-05-image-david_cursor_magicpng-excerpt-i-found-this-video-of-a-dev-with-lots-of-helpful-tips-on-how-to-use-cursor-here-are-my-take-aways">date: 2025-02-05 image: david_cursor_magic.png excerpt: I found this video of a dev with <span class="caps">LOTS</span> of helpful tips on how to use Cursor - here are my take aways.</h2>
+<div class="toc">
 <ul>
+<li><a href="#date-2025-02-05-image-david_cursor_magicpng-excerpt-i-found-this-video-of-a-dev-with-lots-of-helpful-tips-on-how-to-use-cursor-here-are-my-take-aways">date: 2025-02-05 image: david_cursor_magic.png excerpt: I found this video of a dev with <span class="caps">LOTS</span> of helpful tips on how to use Cursor - here are my take aways.</a></li>
 <li><a href="#prompt-structure">Prompt Structure</a></li>
 <li><a href="#cursorrules">Cursorrules</a></li>
 <li><a href="#ai-rules-in-cursor-settings"><span class="caps">AI</span> Rules in Cursor Settings</a></li>
@@ -94,7 +97,10 @@ styles, `#sidebar-checkbox` for behavior. -->
 <li><a href="#other-tools">Other tools</a></li>
 </ul>
 </div>
-<p>Last week end I discovered this video from David Ondrej: <a href="https://youtu.be/gYLNxUxVomY?si=1Q2x2UWgqy1RHvLt" rel="noopener noreferrer" target="_blank">I spent 400+ hours in Cursor, here’s what I learned</a>. The title is not super attractive, but the content was very helpful for me. So here are my notes so I can use all his tips and have the different prompts and snippets at hand to use them when coding.</p>
+<p>Last week end I discovered this video from David Ondrej:
+<a href="https://youtu.be/gYLNxUxVomY?si=1Q2x2UWgqy1RHvLt" rel="noopener noreferrer" target="_blank">I spent 400+ hours in Cursor, here’s what I learned</a>.
+The title is not super attractive, but the content was very helpful for me. So here are my notes so
+I can use all his tips and have the different prompts and snippets at hand to use them when coding.</p>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/gYLNxUxVomY?si=xQAMyMvQCsSwWztk" title="YouTube video player" width="560"></iframe>
 <h2 id="prompt-structure">Prompt Structure</h2>
 <p>The overall prompt structure that Deavid suggests:</p>
@@ -107,7 +113,8 @@ styles, `#sidebar-checkbox` for behavior. -->
 <li>output format</li>
 </ol>
 <h2 id="cursorrules">Cursorrules</h2>
-<p><code>.cursorrules.md</code> is a file you put in your project top level directory that gives the <span class="caps">AI</span> more context about your project. Here is the structure of the file that David suggests:</p>
+<p><code>.cursorrules.md</code> is a file you put in your project top level directory that gives the <span class="caps">AI</span> more
+context about your project. Here is the structure of the file that David suggests:</p>
 <div class="highlight"><pre><span></span><code><span class="gh"># PROJECT OVERVIEW</span>
 <span class="gh"># PERSONALITY</span>
 <span class="gh"># TECH STACK</span>
@@ -127,9 +134,12 @@ tree -L 4 -a -I 'node_modules | -git|_pycache_|.DS_$
 <span class="gh"># IMPORTANT</span>
 <span class="k">-</span><span class="w"> </span>Repeat the most important instructions.
 </code></pre></div>
-<p>He also strongly suggests to have a <code>.cursorignore</code> in which you list your <code>.env</code> files. This hinders chat and Composer to write in those files accidentally. </p>
+<p>He also strongly suggests to have a <code>.cursorignore</code> in which you list your <code>.env</code> files. This
+hinders chat and Composer to write in those files accidentally.</p>
 <h2 id="ai-rules-in-cursor-settings"><span class="caps">AI</span> Rules in Cursor Settings</h2>
-<p><span class="caps">AI</span> Rules are to be set in the cursor settings. They should not contain anything project specific, just coding principles that you would always want to apply. That’s the difference to the <code>.cursorrules</code> that also contain project specific details.</p>
+<p><span class="caps">AI</span> Rules are to be set in the cursor settings. They should not contain anything project specific,
+just coding principles that you would always want to apply. That’s the difference to the
+<code>.cursorrules</code> that also contain project specific details.</p>
 <p>An example:</p>
 <div class="highlight"><pre><span></span><code><span class="gh"># Fundamental Principles</span>
 <span class="k">-</span><span class="w"> </span>Write clean, simple, readable code
@@ -161,7 +171,8 @@ tree -L 4 -a -I 'node_modules | -git|_pycache_|.DS_$
 <span class="k">-</span><span class="w"> </span>when writing comments, use clear and easy-to-understand language. write short sentences.
 </code></pre></div>
 <h2 id="helpful-small-prompts">Helpful small prompts</h2>
-<p>David provides a list of helpful small prompts or prompt snippets. I copied some of them here for copy&amp;paste usage:</p>
+<p>David provides a list of helpful small prompts or prompt snippets. I copied some of them here for
+copy&amp;paste usage:</p>
 <div class="highlight"><pre><span></span><code><span class="k">Proc</span><span class="nv">eed</span><span class="w"> </span><span class="nv">like</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">Senior</span><span class="w"> </span><span class="nv">Developer</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">focus</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">clear</span><span class="w"> </span><span class="nv">architecture.</span>
 
 <span class="nf">The</span><span class="w"> </span><span class="nv">fewer</span><span class="w"> </span><span class="nv">lines</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">code</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">better.</span>
@@ -196,21 +207,25 @@ tree -L 4 -a -I 'node_modules | -git|_pycache_|.DS_$
 <div class="highlight"><pre><span></span><code><span class="nv">let</span><span class="s1">'s perform a web search. your task is to write a one-paragraph search query, as if you were telling a human researcher that to find, including all the relevant context. format the paragraph as clear instructions, commanding a researcher to find what we'</span><span class="nv">re</span><span class="w"> </span><span class="nv">looking</span><span class="w"> </span><span class="k">for</span>.<span class="w"> </span><span class="nv">ask</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">code</span><span class="w"> </span><span class="nv">snippets</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">technical</span><span class="w"> </span><span class="nv">details</span><span class="w"> </span><span class="nv">when</span><span class="w"> </span><span class="nv">relevant</span><span class="w"> </span>
 </code></pre></div>
 <h2 id="instructions">Instructions</h2>
-<p>David suggests to have a directory <code>instructions</code> that contains md files with tips for the <span class="caps">AI</span>. This way you can reference these files from the Composer prompt. He also preferers this kind of instrauction files over refreencing @Docs in cursor, which seems not to work too good yet.</p>
+<p>David suggests to have a directory <code>instructions</code> that contains md files with tips for the <span class="caps">AI</span>. This
+way you can reference these files from the Composer prompt. He also preferers this kind of
+instrauction files over refreencing @Docs in cursor, which seems not to work too good yet.</p>
 <p>Instruction files that he mentioned:</p>
 <ul>
-<li><code>supabase.md</code>: A file that describes the structure of his database, so cursor knows about tables, fields, mandatoryness etc.</li>
+<li><code>supabase.md</code>: A file that describes the structure of his database, so cursor knows about tables,
+  fields, mandatoryness etc.</li>
 <li><code>roadmap.md</code>: An explanation of the roadmap of your project.</li>
 </ul>
 <h2 id="other-tools">Other tools</h2>
 <p>Besides Cursor David uses many other tools. Some of what he mentioned:</p>
 <ul>
-<li><a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a> </li>
+<li><a href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">ChatGPT</a></li>
 <li><a href="https://claude.ai" rel="noopener noreferrer" target="_blank">Claude</a> for side discussions with an advanced <span class="caps">AI</span>.</li>
 <li><a href="https://www.perplexity.ai" rel="noopener noreferrer" target="_blank">Perplexity</a> for smart web searches.</li>
 <li><a href="https://wisprflow.ai" rel="noopener noreferrer" target="_blank">WisprFlow</a> to speak rather than typing</li>
 <li><a href="https://v0.dev" rel="noopener noreferrer" target="_blank">v0</a> a tool to create Web Apps in the browser by chatting withj an <span class="caps">AI</span>.</li>
-<li><a href="https://lovable.dev" rel="noopener noreferrer" target="_blank">Lovable</a> for building backends, especially with <a href="https://supabase.com" rel="noopener noreferrer" target="_blank">Supabase</a></li>
+<li><a href="https://lovable.dev" rel="noopener noreferrer" target="_blank">Lovable</a> for building backends, especially with
+  <a href="https://supabase.com" rel="noopener noreferrer" target="_blank">Supabase</a></li>
 <li><a href="https://bolt.new" rel="noopener noreferrer" target="_blank">Bolt</a> to build web sites.</li>
 </ul>
     <div id="giscus">
