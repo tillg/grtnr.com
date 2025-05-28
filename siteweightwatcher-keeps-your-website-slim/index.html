@@ -55,7 +55,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 28.05.2025 17:05:13.
+      Last built 28.05.2025 19:31:52.
   </div>
 </div>
   <div class="wrap">
@@ -103,7 +103,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 <li>Track key figures and how they evolve over time:</li>
 <li>How much data is transferred for each page?</li>
 <li>How many requests are going back <span class="amp">&amp;</span> forth?</li>
-<li>How much time does it take searching for products? Over time…  </li>
+<li>How much time does it take searching for products? Over time…</li>
 <li>How well connected is the site for users in Germany, <span class="caps">UK</span>, <span class="caps">US</span> or Asia? Over time, because those things change without us having done anything.</li>
 </ul>
 <p>I could imagine a dashboard for an online shop like <a href="https://www.kickz.com/de" rel="noopener noreferrer" target="_blank"><span class="caps">KICKZ</span>.com</a> to look may this way:
@@ -112,16 +112,16 @@ styles, `#sidebar-checkbox` for behavior. -->
 <p>How could we start to build such a tool? Some thoughts:</p>
 <ul>
 <li>We have agents and a central server. The agents are located all around the globe or in different networks (think of little Docker images that run on different clouds). They report all their captured data to the central server. This is where the reports are generated and where interactive explication of the data is provided.</li>
-<li>The agents start collecting simple metrics:    </li>
-<li>No of <span class="caps">HTTP</span> requests per page    </li>
-<li>Data transferred per page    </li>
-<li>No of lines of JavaScript per page    </li>
-<li>Time to load the data    </li>
+<li>The agents start collecting simple metrics:</li>
+<li>No of <span class="caps">HTTP</span> requests per page</li>
+<li>Data transferred per page</li>
+<li>No of lines of JavaScript per page</li>
+<li>Time to load the data</li>
 <li>Time to execute JavaScript</li>
-<li>Based on this we start with simple reports:    </li>
-<li>What’s the average page size?    </li>
-<li>What’s the average no of requests per page?    </li>
-<li>What are my <em>heaviest</em> pages?    </li>
+<li>Based on this we start with simple reports:</li>
+<li>What’s the average page size?</li>
+<li>What’s the average no of requests per page?</li>
+<li>What are my <em>heaviest</em> pages?</li>
 <li>A graph that shows availability of my site as well as load time over a 24h scale, a week scale, a month. May be my users only experience slow loading in the evenings.</li>
 </ul>
 <p>From there we we extend the data we collect as well as the reports.</p>
