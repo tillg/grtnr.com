@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <title>grtnr.com</title>
+
+  <meta charset="utf-8" />
+
+  <!-- Multilingual SEO tags -->
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/theme/css/styles.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H8M7YDCSD4');
+  </script>
+
+
+
+
+    <meta name="tags" contents="tech" />
+
+</head>
+
+<body>
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  
+    <div class="sidebar-item">Stuff that keeps me busy, like family, coding, math, mountains and more.</div>
+
+  <nav class="sidebar-nav">
+
+  <a class="sidebar-nav-item" href="/">Home</a>
+
+  <a class="sidebar-nav-item" href="/tags">Topics</a>
+  <a class="sidebar-nav-item" href="/recipes">Recipes</a>
+  <a class="sidebar-nav-item" href="/about">About</a>
+  <a class="sidebar-nav-item" href="/impressum">Impressum</a>
+
+  </nav>
+
+  <!-- Language Switcher -->
+
+  <div class="sidebar-item">
+      Last built 04.07.2025 15:09:44.
+  </div>
+</div>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">
+            grtnr.com
+          </a>         </h3>
+      </div>
+    </div>
+
+    <div class="container content">
+<div class="posts">
+<div class="post">
+    <h1 class="post-title">
+      Visualisation et Analyse du Ping
+    </h1>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
+      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">ven 8 jan 2016</span>
+      
+      <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+    </div>
+
+    <p>Voici la situation à laquelle je fais face : j'utilise un accès Internet qui ne semble pas fiable. Parfois, il est vraiment rapide, parfois il semble tout simplement très peu fiable. Et je ne sais jamais exactement quelle partie échoue : est-ce l'application qui est lente, est-ce le WIFI, est-ce l'accès Internet.</p>
+<p>Ce que je cherchais, c'est une mesure fiable et à long terme de la vitesse d'accès Internet. Par vitesse, j'entends principalement le temps de trajet aller-retour / latence. J'ai examiné de nombreux outils, des grands (ceux qui proviennent d'écosystèmes complets comme Nagios ou ecinga) aux petits (c'est-à-dire le suivi de l'utilisation du réseau directement sur votre PC ou Mac). Les grands sont trop de travail et trop de choses à apprendre, comprendre, installer. Les petits ne répondent pas à ma question car ils ne font pas de suivi et d'enregistrement à long terme. Et je n'aime pas les choses complexes.</p>
+<p>Puis j'ai trouvé quelque chose qui est en essence exactement ce que je cherchais. Reformulation : si j'avais commencé à assembler quelque chose moi-même, c'est ce que j'aurais construit : cela s'appelle <a href="http://www.medienvilla.com/entwicklung.html#pinganalyse" rel="noopener noreferrer" target="_blank">Visualisation et Analyse du Ping</a> et cela repose sur 2 composants :</p>
+<ul>
+<li>Un script simple qui enregistre les temps de ping (et par simple, je veux dire <em>vraiment simple !</em>)</li>
+<li>Une page HTML avec du JavaScript qui visualise les temps de ping au fil du temps.</li>
+</ul>
+<p>Vous pouvez laisser le journal de ping fonctionner sur un matériel très simple. Il peut fonctionner jour et nuit, collectant des données. Le format est <em>simple</em>. Un exemple :</p>
+<div class="highlight"><pre><span></span><code>Fri Jan  8 15:14:49 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=89 ttl=53 time=310.716 ms
+Fri Jan  8 15:14:54 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=90 ttl=53 time=310.349 ms
+Fri Jan  8 15:14:59 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=91 ttl=53 time=312.787 ms
+Fri Jan  8 15:15:04 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=92 ttl=53 time=312.805 ms
+Fri Jan  8 15:15:09 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=93 ttl=53 time=311.273 ms
+Fri Jan  8 15:15:14 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=94 ttl=53 time=311.371 ms
+Fri Jan  8 15:15:19 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=95 ttl=53 time=312.096 ms
+Fri Jan  8 15:15:24 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=96 ttl=53 time=313.387 ms
+Fri Jan  8 15:15:29 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=97 ttl=53 time=310.404 ms
+Fri Jan  8 15:15:34 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=98 ttl=53 time=311.076 ms
+Fri Jan  8 15:15:39 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=99 ttl=53 time=312.640 ms
+</code></pre></div>
+<p>Plutôt simple, non ?! Un simple <code>ping</code> avec un horodatage devant. Et le code JS le lit et en fait un graphique simple :</p>
+<p><img alt="graphique" src="ping.png"/></p>
+<p>J'ai juste dû corriger quelques petites choses pour le faire fonctionner sur mon Mac (la syntaxe <code>ping</code> provenait d'un autre dialecte Unix).</p>
+<h2 id="et-ensuite">Et ensuite ?</h2>
+<p>Voici donc ce que je prévois d'améliorer (voyons si cela se réalise vraiment) :</p>
+<ul>
+<li>Avoir les sources sur GIT</li>
+<li>Améliorer le graphique :</li>
+<li>Les couleurs me semblent un peu étranges...</li>
+<li>Il semble à l'envers</li>
+<li>Ajouter des étiquettes sur l'axe y</li>
+<li>Peut-être les avoir plus <a href="http://pinglogger.co.uk/index.php/screenshots/" rel="noopener noreferrer" target="_blank">comme ceci</a></li>
+<li>Peut-être examiner <a href="https://www.elastic.co/products/logstash" rel="noopener noreferrer" target="_blank">log stash</a> pour la visualisation...</li>
+</ul>
+<h2 id="addendum">Addendum</h2>
+<p>Également dans ce contexte, et parce que <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" rel="noopener noreferrer" target="_blank">Java est le langage de développement de l'année 2015</a> : <a href="http://pastebin.com/1qnCXDw7" rel="noopener noreferrer" target="_blank">Un programme Java pour suivre les temps de ping vers plusieurs points de terminaison</a></p>
+    <div id="giscus">
+      <script src="https://giscus.app/client.js"
+        data-repo="tillg/grtnr.com"
+        data-repo-id="R_kgDOOjwMSg"
+        data-category="General"
+        data-category-id="DIC_kwDOOjwMSs4CqfLX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+</div>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function (document) {
+        var i = 0;
+        // snip empty header rows since markdown can't
+        var rows = document.querySelectorAll('tr');
+        for (i = 0; i < rows.length; i++) {
+          var ths = rows[i].querySelectorAll('th');
+          var rowlen = rows[i].children.length;
+          if (ths.length > 0 && ths.length === rowlen) {
+            rows[i].remove();
+          }
+        }
+      })(document);
+    </script>
+
+    <script>
+      /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
+      (function (document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+        document.addEventListener('click', function (e) {
+          var target = e.target;
+          if (!checkbox.checked ||
+            sidebar.contains(target) ||
+            (target === checkbox || target === toggle)) return;
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <script src="/theme/js/giscus-comments.js"></script>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <title>grtnr.com</title>
+
+  <meta charset="utf-8" />
+
+  <!-- Multilingual SEO tags -->
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/theme/css/styles.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H8M7YDCSD4');
+  </script>
+
+
+
+
+
+</head>
+
+<body>
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  
+    <div class="sidebar-item">Stuff that keeps me busy, like family, coding, math, mountains and more.</div>
+
+  <nav class="sidebar-nav">
+
+  <a class="sidebar-nav-item" href="/">Home</a>
+
+  <a class="sidebar-nav-item" href="/tags">Topics</a>
+  <a class="sidebar-nav-item" href="/recipes">Recipes</a>
+  <a class="sidebar-nav-item" href="/about">About</a>
+  <a class="sidebar-nav-item" href="/impressum">Impressum</a>
+
+  </nav>
+
+  <!-- Language Switcher -->
+
+  <div class="sidebar-item">
+      Last built 04.07.2025 15:09:44.
+  </div>
+</div>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">
+            grtnr.com
+          </a>         </h3>
+      </div>
+    </div>
+
+    <div class="container content">
+<div class="posts">
+<div class="post">
+    <h1 class="post-title">
+      Solid Comments In Static&nbsp;Website
+    </h1>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
+      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mar 11 fév 2025</span>
+      
+    </div>
+
+    <p><strong>Résumé rapide :</strong> J'ai ajouté des commentaires à mon site web statique. Voici comment j'ai procédé, y compris quelques détails techniques. J'ai recherché parmi différentes solutions possibles pour trouver la plus solide, je l'ai intégrée pour tous les articles et j'ai ajouté un compteur du nombre de commentaires dans la page de vue d'ensemble des articles.</p>
+<p><strong>Mise à jour du 2025-05-23</strong> Depuis que je suis passé de Jekyll à <a href="https://getpelican.com" rel="noopener noreferrer" target="_blank">Pelican</a>, j'ai mis à jour certains détails.</p>
+<h2 id="choisir-une-solution">Choisir une solution</h2>
+<p>Comme je prévoyais d'expérimenter avec le nouveau <a href="https://openai.com/index/introducing-deep-research/" rel="noopener noreferrer" target="_blank">modèle de recherche approfondie d'OpenAI</a>, je l'ai testé sur ce sujet : <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">n'hésitez pas à lire ici</a>. Dans l'ensemble, la recherche a été utile et j'ai fini par utiliser <a href="https://giscus.app/" rel="noopener noreferrer" target="_blank">Giscus</a> pour les commentaires. En partie parce que cela semblait le plus robuste et fiable, en partie parce que j'avais eu une très mauvaise expérience avec Disqus il y a quelques années.</p>
+<p>Le choix était basé sur l'ensemble de critères que j'ai fournis au modèle. Voici les plus importants :</p>
+<ul>
+<li>Pas de serveur auto-hébergé – Je ne veux pas gérer (et payer 😉) un serveur.</li>
+<li>Portabilité des données – les commentaires peuvent être exportés.</li>
+<li>Respect de la vie privée – pas de traqueurs ou de publicités supplémentaires au-delà de ce que j'utilise déjà (par exemple, Google Analytics).</li>
+<li>Support Markdown – permettre un formatage riche (blocs de code, etc.) adapté aux discussions techniques.</li>
+<li>Protection contre le spam – dispose de mesures pour réduire le spam, surtout si l'on autorise les commentaires anonymes ou non authentifiés.</li>
+</ul>
+<p>Les outils que Deep Research a <em>analysés</em> étaient</p>
+<ul>
+<li>Giscus</li>
+<li>Utterances</li>
+<li>Staticman</li>
+<li>Commento</li>
+<li>Hyvor Talk</li>
+<li>Disqus</li>
+<li>Certaines solutions <em>faites maison</em></li>
+</ul>
+<h2 id="integration-de-giscus">Intégration de Giscus</h2>
+<p>Suite à sa recherche, j'ai demandé au modèle de me fournir un guide étape par étape sur la façon d'intégrer la solution. Cela s'est avéré moins fiable que la première recherche, mais néanmoins utile.</p>
+<p>Voici le résumé exécutif (les détails sont dans le <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">chat que j'ai eu avec l'IA</a>) :</p>
+<ul>
+<li>Étape 1 : Activer GitHub Discussions pour votre dépôt. Cela signifie le dépôt dans lequel le site statique est généré (qui parfois n'est pas le même que la source).</li>
+<li>Allez dans votre dépôt GitHub</li>
+<li>Naviguez vers Paramètres &gt; Général.</li>
+<li>Faites défiler jusqu'à la section Discussions et activez-la.</li>
+<li>Étape intermédiaire, que l'IA a omis de mentionner : Installer giscus pour tous ou certains de vos dépôts. <a href="https://github.com/apps/giscus/installations/select_target" rel="noopener noreferrer" target="_blank">Ici</a>
+<img alt="texte alternatif" src="image.png"/></li>
+<li>Étape 2 : Installer Giscus et le configurer</li>
+<li>Visitez la page de configuration de Giscus : https://giscus.app/.</li>
+<li>Sous "Repository", entrez le nom de votre dépôt. Vous devriez maintenant voir la coche verte indiquant que votre dépôt répond à tous les critères pour utiliser giscus.</li>
+<li>L'option "Page discussion mapping" dicte une relation entre vos pages, par exemple un article, et une discussion GitHub. J'ai sélectionné, le chemin d'accès</li>
+<li>Pour la catégorie des discussions, j'ai sélectionné "général".
+    Définissez le Thème sur "Match OS" ou définissez manuellement le mode clair et sombre.
+    Cliquez sur "Copier le code" une fois que vous avez généré la balise <script></script></li></ul>
+    <div id="giscus">
+      <script src="https://giscus.app/client.js"
+        data-repo="tillg/grtnr.com"
+        data-repo-id="R_kgDOOjwMSg"
+        data-category="General"
+        data-category-id="DIC_kwDOOjwMSs4CqfLX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+</div>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function (document) {
+        var i = 0;
+        // snip empty header rows since markdown can't
+        var rows = document.querySelectorAll('tr');
+        for (i = 0; i < rows.length; i++) {
+          var ths = rows[i].querySelectorAll('th');
+          var rowlen = rows[i].children.length;
+          if (ths.length > 0 && ths.length === rowlen) {
+            rows[i].remove();
+          }
+        }
+      })(document);
+    </script>
+
+    <script>
+      /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
+      (function (document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+        document.addEventListener('click', function (e) {
+          var target = e.target;
+          if (!checkbox.checked ||
+            sidebar.contains(target) ||
+            (target === checkbox || target === toggle)) return;
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <script src="/theme/js/giscus-comments.js"></script>
+
+  </div>
+</body>
+
+</html>

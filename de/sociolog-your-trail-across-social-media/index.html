@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <title>grtnr.com</title>
+
+  <meta charset="utf-8" />
+
+  <!-- Multilingual SEO tags -->
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/theme/css/styles.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H8M7YDCSD4');
+  </script>
+
+
+
+
+    <meta name="tags" contents="softwareWeNeed" />
+
+</head>
+
+<body>
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  
+    <div class="sidebar-item">Stuff that keeps me busy, like family, coding, math, mountains and more.</div>
+
+  <nav class="sidebar-nav">
+
+  <a class="sidebar-nav-item" href="/">Home</a>
+
+  <a class="sidebar-nav-item" href="/tags">Topics</a>
+  <a class="sidebar-nav-item" href="/recipes">Recipes</a>
+  <a class="sidebar-nav-item" href="/about">About</a>
+  <a class="sidebar-nav-item" href="/impressum">Impressum</a>
+
+  </nav>
+
+  <!-- Language Switcher -->
+
+  <div class="sidebar-item">
+      Last built 04.07.2025 15:09:44.
+  </div>
+</div>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">
+            grtnr.com
+          </a>         </h3>
+      </div>
+    </div>
+
+    <div class="container content">
+<div class="posts">
+<div class="post">
+    <h1 class="post-title">
+      sociolog - Ihr Pfad durch soziale Medien
+    </h1>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
+      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">Mo 4. Jan 2016</span>
+      
+      <div class="tag-pills">
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareWeNeed</a>
+
+</div>
+
+    </div>
+
+    <p>Ich schreibe oder blogge in verschiedenen Medien:</p>
+<ul>
+<li>Twitter</li>
+<li>Facebook</li>
+<li>Ein privater Blog mit eingeschränktem Zugriff (weil er Familienbilder enthält)</li>
+<li>Dieser <a href="http://tillgartner.com" rel="noopener noreferrer" target="_blank">Blog</a></li>
+</ul>
+<p>Von Zeit zu Zeit finde ich es schön, durch meine Vergangenheit zu scrollen. Am häufigsten mache ich das in unserem Familienblog, weil er den interessantesten Inhalt enthält und weil es einfach ist, durchzuscrollen. Ich möchte in der Lage sein, durch meine gesamte Vergangenheit in allen Medien zu scrollen.</p>
+<p>Also sollte meine Software Folgendes tun:</p>
+<ul>
+<li>Alle Einträge sammeln, die ich in den sozialen Medien geschrieben habe:</li>
+<li>Twitter</li>
+<li>Facebook</li>
+<li>Wordpress</li>
+<li>Ein Dokument pro Eintrag in einem Github-Repo erstellen</li>
+<li>Doppelte Inhalte ordnungsgemäß behandeln: Seit einigen Jahren ist mein Twitter-Konto mit meinem Facebook-Konto <em>verknüpft</em>, sodass Twitter-Einträge auf Facebook repliziert werden. Das liegt daran, dass ich Personen habe, die ich in beiden Medien als <em>Publikum</em> betrachte.</li>
+<li>Auch das Feedback zu meinen Posts sammeln</li>
+<li>Sie auf statische Weise schön darstellen, einschließlich Übersichtsseiten</li>
+</ul>
+<p>Einige technische Überlegungen:</p>
+<ul>
+<li>Ich würde es in Java schreiben, weil ich das am besten kenne</li>
+<li>Wäre ein Headless-Programm, d.h. keine Benutzeroberfläche</li>
+<li>Eingabe sollte das Datum des letzten aufgezeichneten Social-Media-Eintrags sein</li>
+<li>Es sammelt alle Einträge (einschließlich der Kommentare dazu) auf den verschiedenen Social-Media-Kanälen seit diesem Datum</li>
+<li>Es entfernt Duplikate (d.h. es werden die gleichen oder auf verschiedenen Kanälen replizierten zusammengeführt)</li>
+<li>Es erstellt ein Dokument / eine Datei pro Social-Media-Eintrag und schreibt sie in ein Ausgabeverzeichnis</li>
+<li>Dieses Verzeichnis wird dann in ein Github-Konto repliziert / hinzugefügt</li>
+<li>Social-Media-Eintragsdokumente würden wie folgt benannt: <code>2015-12-03-Der_Titel_von_was_ich_geschrieben_habe-TWITTER.json</code></li>
+<li>Es gäbe eine <em>Header-Datei</em> mit einem festen Namen, z.B. <code>sociologs.json</code>. Diese Datei würde die ersten 20 Logs enthalten und auf eine Datei mit den nächsten Logs verweisen.</li>
+<li>Die Domain <code>sociolog.io</code> wäre <a href="https://www.godaddy.com/domains/searchresults.aspx?&amp;checkAvail=1&amp;domainToCheck=sociolog.io" rel="noopener noreferrer" target="_blank">verfügbar</a> - Stand heute, 4. Januar 2016.</li>
+<li>Das generierte <code>index.html</code> würde die Daten über JS/AJAX-Anfragen laden und beim Herunterscrollen des Benutzers weiter laden</li>
+</ul>
+<p>Wenn jemand interessiert ist oder Kommentare hat, bitte kontaktieren Sie mich unter till<code>dot</code>gartner<code>at</code>gmail<code>dot</code>com.</p>
+    <div id="giscus">
+      <script src="https://giscus.app/client.js"
+        data-repo="tillg/grtnr.com"
+        data-repo-id="R_kgDOOjwMSg"
+        data-category="General"
+        data-category-id="DIC_kwDOOjwMSs4CqfLX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+</div>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function (document) {
+        var i = 0;
+        // snip empty header rows since markdown can't
+        var rows = document.querySelectorAll('tr');
+        for (i = 0; i < rows.length; i++) {
+          var ths = rows[i].querySelectorAll('th');
+          var rowlen = rows[i].children.length;
+          if (ths.length > 0 && ths.length === rowlen) {
+            rows[i].remove();
+          }
+        }
+      })(document);
+    </script>
+
+    <script>
+      /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
+      (function (document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+        document.addEventListener('click', function (e) {
+          var target = e.target;
+          if (!checkbox.checked ||
+            sidebar.contains(target) ||
+            (target === checkbox || target === toggle)) return;
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <script src="/theme/js/giscus-comments.js"></script>
+
+  </div>
+</body>
+
+</html>

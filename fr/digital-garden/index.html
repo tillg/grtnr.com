@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <title>grtnr.com</title>
+
+  <meta charset="utf-8" />
+
+  <!-- Multilingual SEO tags -->
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/theme/css/styles.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H8M7YDCSD4');
+  </script>
+
+
+
+
+
+</head>
+
+<body>
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  
+    <div class="sidebar-item">Stuff that keeps me busy, like family, coding, math, mountains and more.</div>
+
+  <nav class="sidebar-nav">
+
+  <a class="sidebar-nav-item" href="/">Home</a>
+
+  <a class="sidebar-nav-item" href="/tags">Topics</a>
+  <a class="sidebar-nav-item" href="/recipes">Recipes</a>
+  <a class="sidebar-nav-item" href="/about">About</a>
+  <a class="sidebar-nav-item" href="/impressum">Impressum</a>
+
+  </nav>
+
+  <!-- Language Switcher -->
+
+  <div class="sidebar-item">
+      Last built 04.07.2025 15:09:44.
+  </div>
+</div>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">
+            grtnr.com
+          </a>         </h3>
+      </div>
+    </div>
+
+    <div class="container content">
+<div class="posts">
+<div class="post">
+    <h1 class="post-title">
+      Digital&nbsp;Garden
+    </h1>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
+      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">ven 18 avr 2025</span>
+      
+    </div>
+
+    <p><img alt="Jardin numérique" src="digital-garden.jpg"/></p>
+<div class="toc">
+<ul>
+<li><a href="#exigences">Exigences</a></li>
+<li><a href="#technologie-et-architecture">Technologie et Architecture</a></li>
+<li><a href="#chatgpt-construire-un-jardin-numerique-alimente-par-python-pile-architecture">ChatGPT : Construire un Jardin Numérique Alimenté par Python : Pile &amp; Architecture</a><ul>
+<li><a href="#generateur-de-site-statique-organisation-du-contenu">Générateur de Site Statique &amp; Organisation du Contenu</a></li>
+<li><a href="#edition-markdown-apercu-local">Édition Markdown &amp; Aperçu Local</a></li>
+<li><a href="#liens-internes-de-type-wiki-retroliens">Liens Internes de Type Wiki &amp; Rétroliens</a></li>
+<li><a href="#types-de-contenu-personnalises-modeles">Types de Contenu Personnalisés &amp; Modèles</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>J'ai lu sur les Jardins Numériques sur <a href="https://www.heise.de/hintergrund/Nerd-Trend-Digitaler-Garten-Die-eigene-Website-als-persoenliches-Wissensarchiv-10344169.html" rel="noopener noreferrer" target="_blank">heise (en allemand)</a> et j'ai vraiment aimé l'idée. Les principales différences avec mon blog actuel auxquelles j'ai pensé sont</p>
+<ul>
+<li>L'idée de noter des idées et de commencer des articles immédiatement - et de les avoir dans le jardin immédiatement. C'est une grande différence par rapport à l'attitude de "Je dois terminer l'article avant de le publier".</li>
+<li>L'idée de créer des liens vers d'autres articles et de créer un réseau d'articles. C'est quelque chose que je peux déjà faire dans mon blog, mais le processus est délicat : si je renomme ou déplace un article, les liens vers celui-ci sont rompus. L'idée des rétroliens est également frappante.</li>
+<li>Mettre les sujets plus en avant plutôt que la date : Mon blog est principalement structuré et présenté par date. Avoir le(s) sujet(s) plus comme structure de navigation semble attrayant. Bien sûr, je laisserais toujours la date de création, ainsi que la date de la dernière modification.</li>
+</ul>
+<h1 id="exigences">Exigences</h1>
+<p>Comme d'habitude, j'ai tendance à commencer par regarder le côté technique 😀. J'ai donc noté mes exigences et demandé de l'aide à ChatGPT.</p>
+<p>Mes exigences pour un système de jardin numérique :</p>
+<ul>
+<li>Les articles sont basés sur des fichiers markdown.</li>
+<li>Construit comme un site web généré statiquement.</li>
+<li>Un article dans un répertoire avec ses ressources : images, PDF, autres fichiers. De cette façon, le rendu local par article a du sens, très utile lors de l'édition. J'éditerais les articles avec VScode ou un autre éditeur qui prend en charge markdown.</li>
+<li>Les articles (c'est-à-dire leurs répertoires) peuvent être dans une structure d'arborescence de répertoires. Leur structure de répertoire décrit la catégorie. Par exemple /tech/dev/data_science</li>
+<li>Écrit en Python, pour que je puisse bricoler.</li>
+<li>Le pipeline de construction peut être complété : une étape pour vérifier les liens internes.</li>
+<li>Liens internes comme <em>[ [liens] ]</em>. Et montrer les rétroliens dans les articles liés.</li>
+<li>Je veux créer facilement des types d'articles spécifiques avec une structure, des champs, un rendu spéciaux. Des exemples sont RECETTE, LIEU ou EMPLACEMENT, AVENTURE DE VOYAGE, …</li>
+<li>Beau site ! Pas comme un jardin de nerds en désordre ! S'inspirer de beaux blogs comme ghost.</li>
+<li>Multilingue, avec des langues remplies par l'IA si non fournies par l'auteur.</li>
+<li>Différents droits d'accès : certains contenus sont publics, d'autres pour la famille et les amis ou d'autres groupes d'utilisateurs.</li>
+<li>Rôles d'accès, par exemple : les articles non publiés ne peuvent être vus que par les utilisateurs avec le rôle ÉDITEUR.</li>
+<li>Permettre plusieurs pages d'index : tags, index historique (peut-être aussi par tag), les plus lus, les plus étoilés… Les pages d'index peuvent être générées mais aussi faites à la main. Spécifiquement la page d'accueil.</li>
+</ul>
+<h1 id="technologie-et-architecture">Technologie et Architecture</h1>
+<p><a href="https://chatgpt.com/share/68026bb5-d040-8009-9f79-ec0fd35880f4" rel="noopener noreferrer" target="_blank">C'est ce que ChatGPT a produit</a> (je pense que c'est vraiment bien, donc je colle tout ici) :</p>
+<p>Génial. Je vais explorer les meilleurs générateurs de sites statiques basés sur Python et l'architecture pour construire un jardin numérique magnifiquement stylé, piloté par markdown avec prise en charge du contrôle d'accès, de la vérification des liens internes, du support multilingue et de la personnalisation des types d'articles. Je m'assurerai également que le système prend en charge votre flux d'édition local préféré, génère du HTML simple et fonctionne bien avec GitHub Pages.</p>
+<p>Je reviendrai vers vous avec une pile recommandée, un diagramme d'architecture et des suggestions sur la façon de mettre en œuvre vos exigences en douceur.</p>
+<p><em>Recherché pendant 11m 16s * 23 sources</em></p>
+<h1 id="chatgpt-construire-un-jardin-numerique-alimente-par-python-pile-architecture">ChatGPT : Construire un Jardin Numérique Alimenté par Python : Pile &amp; Architecture</h1>
+<h2 id="generateur-de-site-statique-organisation-du-contenu">Générateur de Site Statique &amp; Organisation du Contenu</h2>
+<p>Pour un <strong>générateur de site statique basé sur Python</strong>, <strong>Pelican</strong> est un excellent choix. Pelican est activement maintenu et bien documenté, prenant en charge le contenu Markdown et la publication multilingue dès la sortie de la boîte (<a href="https://github.com/getpelican/pelican#:~:text=,rich%20plugin%20ecosystem%3A%20Pelican%20Plugins" rel="noopener noreferrer" target="_blank">GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax. Powered by Python.</a>). Il génère un site HTML simple (pas besoin de React/Vue) et dispose d'un riche écosystème de plugins pour étendre les fonctionnalités (<a href="https://github.com/getpelican/pelican#:~:text=,rich%20plugin%20ecosystem%3A%20Pelican%20Plugins" rel="noopener noreferrer" target="_blank">GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax. Powered by Python.</a>).</p>
+<p><strong>Structure du Contenu :</strong> Organisez le contenu du jardin numérique dans une hiérarchie de répertoires logique sous le dossier <code>content/</code> de Pelican. Chaque article vit dans son propre sous-répertoire avec ses actifs. Par exemple :</p>
+<div class="highlight"><pre><span></span><code>content/
+├── tech/
+│   └── dev/
+│        └── data_science/
+│             └── my-article/
+│                  ├── index.md        # Article en Markdown
+│                  ├── figure1.png     # Images/PDFs liés à l'article
+│                  └── data.pdf
+└── travel/
+    └── trip-to-paris/
+         ├── index.md
+         └── eiffel.jpg
+</code></pre></div>
+<p>Dans cette disposition, chaque article (<code>index.md</code>) est groupé avec ses médias. Pelican peut gérer des "page bundles" comme celui-ci en traitant ces sous-dossiers à la fois comme des chemins de contenu et de statique. Nous configurons les paramètres de Pelican pour inclure chaque dossier dans <code>ARTICLE_PATHS</code> et <code>STATIC_PATHS</code> afin que les fichiers markdown soient traités et que les actifs soient copiés dans la sortie (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=Starting%20with%20Pelican%203,directory%20reserved%20for%20static%20files" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>) (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=generated%20site,in%20earlier%20versions%20of%20Pelican" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>). La <strong>syntaxe attach</strong> de Pelican permet de lier facilement des fichiers locaux : en Markdown, utilisez <code>{attach}</code> pour référencer des fichiers dans le même dossier. Par exemple : <code>![Figure]({attach}figure1.png)</code> dans <code>my-article/index.md</code> copiera <em>figure1.png</em> dans le répertoire de sortie de l'article et y fera un lien (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=Starting%20with%20Pelican%203,sibling%20of%20the%20linking%20document" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>) (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=Title%3A%20Test%20Post%20Category%3A%20test,31" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>). Cela permet de garder les images/PDFs co-localisés avec leur article et garantit que les liens ne sont pas rompus après la construction statique (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=output%20%E2%94%94%E2%94%80%E2%94%80%202014%20%E2%94%9C%E2%94%80%E2%94%80%20archive,post.html" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>).</p>
+<p>Pelican prend également en charge l'utilisation des noms de dossiers comme catégories automatiquement. Par défaut, le dossier parent immédiat devient la catégorie (par exemple, "data_science" dans le chemin ci-dessus) (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=Note%20that%2C%20aside%20from%20the,W3C%E2%80%99s%20suggested%20subset%20ISO%208601" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>). Nous pouvons préserver un emboîtement plus profond dans les URL en personnalisant le chemin de sauvegarde. Par exemple, en définissant <code>ARTICLE_SAVE_AS = '{category}/{slug}/index.html'</code> et une <code>ARTICLE_URL</code> similaire, chaque article sera enregistré comme un <code>index.html</code> dans un dossier correspondant à sa catégorie/slug. Cela donne des URL propres comme <code>/tech/dev/data_science/my-article/</code> reflétant la structure du répertoire. (Le <code>USE_FOLDER_AS_CATEGORY=True</code> par défaut de Pelican utilise le dossier le plus bas comme catégorie ; pour une taxonomie à plusieurs niveaux, on peut soit combiner le chemin en une seule catégorie, soit traiter les dossiers supérieurs comme des sections et utiliser des tags pour la sous-classification.)</p>
+<h2 id="edition-markdown-apercu-local">Édition Markdown &amp; Aperçu Local</h2>
+<p>Tous les articles sont écrits en <strong>Markdown</strong> simple (avec un front matter YAML/TOML pour les métadonnées) afin que vous puissiez confortablement rédiger du contenu dans VS Code ou tout autre éditeur. Chaque fichier Markdown commence par des métadonnées comme le titre, la date, les tags, etc. Pelican ne nécessite qu'un titre (il peut en dériver d'autres si nécessaire) (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=Note%20that%2C%20aside%20from%20the,W3C%E2%80%99s%20suggested%20subset%20ISO%208601" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>), mais nous utiliserons les métadonnées de manière intensive pour un comportement personnalisé (plus à ce sujet plus tard). Un exemple de front matter pour un article pourrait être :</p>
+<div class="highlight"><pre><span></span><code>Title: Mon Voyage en Science des Données  
+Date: 2025-04-10  
+Category: data_science  
+Tags: python, analytics  
+Slug: mon-voyage-en-science-des-données  
+Status: published
+</code></pre></div>
+<p><strong>Aperçu Local :</strong> Pour permettre un aperçu par article lors de l'édition, utilisez le serveur de développement intégré de Pelican. Le CLI/Makefile de Pelican prend en charge un serveur de rechargement automatique (par exemple <code>make devserver</code> ou <code>pelican --autoreload --listen</code>) qui surveille les changements de fichiers et reconstruit au fur et à mesure que vous écrivez. De cette façon, vous pouvez naviguer vers <code>http://localhost:8000/tech/dev/data_science/my-article/</code> et voir le HTML rendu se mettre à jour à chaque sauvegarde. Parce que Pelican effectue une écriture de sortie sélective et une mise en cache, les reconstructions sont rapides même pour les grands sites (<a href="https://github.com/getpelican/pelican#:~:text=,rich%20plugin%20ecosystem%3A%20Pelican%20Plugins" rel="noopener noreferrer" target="_blank">GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax. Powered by Python.</a>). Cela donne un aperçu quasi en temps réel de l'article dans le contexte du thème/modèle réel. VS Code peut également prévisualiser Markdown, mais utiliser le serveur de Pelican garantit que le contenu est vu avec le style et la mise en page du site final.</p>
+<h2 id="liens-internes-de-type-wiki-retroliens">Liens Internes de Type Wiki &amp; Rétroliens</h2>
+<p>Pour interconnecter les notes à la manière d'un wiki, nous activons le <strong>lien de style <a href="/wiki/">Wiki</a></strong> en Markdown. Pelican dispose d'un plugin communautaire appelé <strong>Wikilinks</strong> qui convertit automatiquement la syntaxe <code>[Nom de la Page](/nom-de-la-page/)</code> en hyperliens corrects entre les pages (<a href="https://github.com/MinchinWeb/minchin.pelican.plugins.wikilinks/#:~:text=Usage%20Notes" rel="noopener noreferrer" target="_blank">GitHub - minchinweb/minchin.pelican.plugins.wikilinks: Support Wikilinks when generating Pelican sites</a>). Par exemple, écrire <code>Nous nous appuyons sur des idées de [Mon Voyage en Science des Données](/mon-voyage-en-science-des-donnees/)</code> dans un autre article fera un lien vers la page "Mon Voyage en Science des Données" (résolvant à son slug ou nom de fichier). Le plugin Wikilinks prend en charge le texte d'affichage optionnel (par exemple <code>[texte personnalisé](/nom-de-la-page/)</code>) (<a href="https://github.com/MinchinWeb/minchin.pelican.plugins.wikilinks/#:~:text=Usage%20Notes" rel="noopener noreferrer" target="_blank">GitHub - minchinweb/minchin.pelican.plugins.wikilinks: Support Wikilinks when generating Pelican sites</a>). En coulisse, il scanne les motifs <code>[...](//)</code> après le traitement du markdown et les remplace par des liens <code>&lt;a&gt;</code> vers l'URL de la page cible (<a href="https://github.com/MinchinWeb/minchin.pelican.plugins.wikilinks/#:~:text=In%20basic%20usage%2C%20this%20allow,is%20finished" rel="noopener noreferrer" target="_blank">GitHub - minchinweb/minchin.pelican.plugins.wikilinks: Support Wikilinks when generating Pelican sites</a>). Cela rend le référencement croisé du contenu aussi facile que dans des outils comme Obsidian ou Roam. (Nous imposerons des noms de fichiers uniques pour les notes afin d'éviter les liens ambigus (<a href="https://github.com/MinchinWeb/minchin.pelican.plugins.wikilinks/#:~:text=Known%20Issues" rel="noopener noreferrer" target="_blank">GitHub - minchinweb/minchin.pelican.plugins.wikilinks: Support Wikilinks when generating Pelican sites</a>).)</p>
+<p><strong>Rétroliens :</strong> Pour obtenir un lien bidirectionnel (voir ce qui renvoie à une page), nous pouvons créer un plugin Pelican personnalisé ou utiliser les métadonnées du site. Pendant la construction, nous pouvons collecter toutes les références de liens wiki : par exemple, maintenir un dictionnaire mappant chaque page cible à une liste de pages qui l'ont mentionnée. Ensuite, étendre le contexte de l'article de Pelican pour inclure une liste de "rétroliens" pour chaque article. Enfin, dans le modèle d'article, si des rétroliens existent, rendre une section "<strong>Lié depuis :</strong> …" listant ces pages référentes. Cela nécessite un plugin personnalisé qui s'accroche à la phase de génération de Pelican (en utilisant des signaux comme <code>article_generator_finalized</code>) pour rassembler les liens et injecter les données. L'effort est gérable compte tenu de l'API de plugin de Pelican (hooks Python), et garantit que chaque page se termine par une liste d'autres notes qui y font référence, renforçant la navigation de type wiki. Si vous écrivez un plugin à partir de zéro, nous analyserions chaque HTML d'article (ou utiliserions la carte de liens internes du plugin Wikilinks) pour identifier les <code>href</code> sortants pointant à l'intérieur du site, puis inverser cette cartographie.</p>
+<p>La syntaxe de lien standard de Pelican (<code>{filename}target.md</code>) pourrait également être utilisée pour les liens internes (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=the%20other%20content%20will%20be,placed%20after%20site%20generation" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>) (<a href="https://docs.getpelican.com/en/latest/content.html#:~:text=,filename%7D%2Farticle2.md" rel="noopener noreferrer" target="_blank">Writing content - PELICAN 4.11.0</a>), mais le style wiki est plus intuitif pour un flux de travail de jardin numérique. Avec le plugin Wikilinks et un plugin de rétroliens, le site aura des <strong>pages entièrement connectées</strong> avec des références automatiques.</p>
+<h2 id="types-de-contenu-personnalises-modeles">Types de Contenu Personnalisés &amp; Modèles</h2>
+<p>L'une des forces de Pelican est sa flexibilité en matière de métadonnées et de modélisation, que nous utilisons pour définir des <strong>types d'articles personnalisés</strong> comme <code>RECETTE</code> ou <code>VOYAGE</code>. Tous les fichiers Markdown peuvent inclure des champs de front-matter arbitraires (tant qu'ils ne sont pas en conflit avec des mots-clés réservés) (<a href="https://docs.getpelican.com/en/4.7.2/content.html#file-metadata#:~:text=This%20is%20the%20content%20of,my%20super%20blog%20post" rel="noopener noreferrer" target="_blank">Writing content — Pelican 4.7.2 documentation</a>) (<a href="https://docs.getpelican.com/en/4.7.2/content.html#file-metadata#:~:text=,false" rel="noopener noreferrer" target="_blank">Writing content — Pelican 4.7.2 documentation</a>). Nous définissons un champ de métadonnées <code>Type</code> (ou utilisons un tag/catégorie) pour indiquer le type de contenu, et ajoutons tous les champs personnalisés nécessaires. Par exemple, une recette pourrait avoir :</p>
+<p>```markdown
+Title: Cookies aux Pépites de Chocolat<br/>
+Date: 2025-03-01<br/>
+Type: recette<br/>
+Portions: 4<br/>
+Temps_Préparation: 15 min<br/>
+Temps_Cuisson: 10 min<br/>
+Ingrédients:</p>
+<ul>
+<li>Farine</li>
+<li>Sucre</li>
+<li>
+<p>Pépites de chocolat
+  Étapes:</p>
+</li>
+<li>
+<p>Préchauffer le four…</p>
+</li>
+<li>Mélanger les ingrédients…<br/>
+   Template: recette <!-- utiliser un modèle Jinja personnalisé --></li>
+</ul>
+    <div id="giscus">
+      <script src="https://giscus.app/client.js"
+        data-repo="tillg/grtnr.com"
+        data-repo-id="R_kgDOOjwMSg"
+        data-category="General"
+        data-category-id="DIC_kwDOOjwMSs4CqfLX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+</div>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function (document) {
+        var i = 0;
+        // snip empty header rows since markdown can't
+        var rows = document.querySelectorAll('tr');
+        for (i = 0; i < rows.length; i++) {
+          var ths = rows[i].querySelectorAll('th');
+          var rowlen = rows[i].children.length;
+          if (ths.length > 0 && ths.length === rowlen) {
+            rows[i].remove();
+          }
+        }
+      })(document);
+    </script>
+
+    <script>
+      /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
+      (function (document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+        document.addEventListener('click', function (e) {
+          var target = e.target;
+          if (!checkbox.checked ||
+            sidebar.contains(target) ||
+            (target === checkbox || target === toggle)) return;
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <script src="/theme/js/giscus-comments.js"></script>
+
+  </div>
+</body>
+
+</html>
