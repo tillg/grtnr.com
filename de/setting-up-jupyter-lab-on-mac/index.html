@@ -60,7 +60,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -111,11 +111,11 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/setting-up-jupyter-lab-on-mac/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist groß, und sie können seltsam interagieren. Außerdem müssen Sie sich daran erinnern, welche Installationsmethode Sie verwendet haben, wenn Sie die Version ändern oder ein Upgrade durchführen möchten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe 😉</p>
+    <p>Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist groß, und sie können seltsam interagieren. Außerdem müssen Sie sich merken, welche Installationsmethode Sie verwendet haben, wenn Sie die Version ändern oder ein Upgrade durchführen möchten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe 😉</p>
 <h2 id="installation-von-python">Installation von Python</h2>
 <p>Es gibt viele Möglichkeiten, Python auf einem Mac zu installieren und seine Versionen zu verwalten:</p>
 <ul>
@@ -128,11 +128,11 @@ Français
 <p>Was für mich am besten funktioniert hat, ist <strong>pyenv</strong>:</p>
 <ul>
 <li>Installieren Sie es: <code>brew install pyenv</code>. Ich gehe davon aus, dass Sie <a href="https://brew.sh" rel="noopener noreferrer" target="_blank">Homebrew</a> installiert haben...</li>
-<li>Sehen Sie sich die verfügbaren Optionen und Befehle an: <code>pyenv</code></li>
-<li>Listen Sie alle Python-Versionen auf, die pyenv zur Verfügung stehen: <code>pyenv versions</code></li>
+<li>Sehen Sie sich die angebotenen Optionen und Befehle an: <code>pyenv</code></li>
+<li>Listen Sie alle Python-Versionen auf, die für pyenv verfügbar sind: <code>pyenv versions</code></li>
 <li>Installieren Sie eine Version: <code>pyenv install 3.12</code> (Das ist die Python-Version, die ich derzeit verwende)</li>
 <li>Setzen Sie die Version, die global verwendet wird: <code>pyenv global 3.12</code></li>
-<li>Überprüfen Sie, welche Version global eingestellt ist: <code>pyenv global</code> oder <code>python --version</code></li>
+<li>Überprüfen Sie, welche Version global gesetzt ist: <code>pyenv global</code> oder <code>python --version</code></li>
 </ul>
 <h2 id="arbeitsverzeichnis-erstellen">Arbeitsverzeichnis erstellen</h2>
 <p>Erstellen Sie das Verzeichnis, in dem Sie im Kontext Ihres Projekts arbeiten möchten. Ich halte alle meine Coding-Projekte unter <code>~/git</code>. Auf diese Weise weiß ich, dass alle Projekte unter <code>~/git</code> nicht gesichert werden müssen, da sie in einem Git-Repo sind.</p>
@@ -142,7 +142,7 @@ mkdir<span class="w"> </span>my_python_project
 <span class="nb">cd</span><span class="w"> </span>my_python_project
 </code></pre></div>
 <h2 id="lokale-umgebung-erstellen">Lokale Umgebung erstellen</h2>
-<p>Um meinem Projekt seine eigene Python-Umgebung bereitzustellen, verwende ich <a href="https://docs.python.org/3/library/venv.html" rel="noopener noreferrer" target="_blank">Pythons virtuelle Umgebungen</a>:</p>
+<p>Um meinem Projekt seine eigene Python-Umgebung bereitzustellen, verwende ich <a href="https://docs.python.org/3/library/venv.html" rel="noopener noreferrer" target="_blank">Pythons Virtual Environments</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git/my_python_project
 python3.12<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </code></pre></div>
@@ -150,17 +150,17 @@ python3.12<span class="w"> </span>-m<span class="w"> </span>venv<span class="w">
 <p><strong>Hinweis</strong>: Da mein <code>.env</code>-Unterverzeichnis nicht im Git-Repo sein sollte, muss es in der <code>.gitignore</code>-Datei aufgeführt werden.</p>
 <h2 id="jupyter-lab-installieren">Jupyter Lab installieren</h2>
 <p>Jetzt, da ich die Python-Umgebung habe, kann ich Jupyter installieren. Stellen Sie sicher, dass ich im richtigen Verzeichnis bin und die Python-Umgebung aktiviert ist:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Gehe in mein Projektverzeichnis und aktiviere seine Python-Umgebung</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Gehen Sie in mein Projektverzeichnis und aktivieren Sie dessen Python-Umgebung</span>
 <span class="nb">cd</span><span class="w"> </span>~/git/my_python_project
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 
-<span class="c1"># Installiere Jupyter Lab in dieser Umgebung</span>
+<span class="c1"># Installieren Sie Jupyter Lab in dieser Umgebung</span>
 pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
 
-<span class="c1"># Sehr oft wird mir empfohlen, pip selbst zu aktualisieren</span>
+<span class="c1"># Sehr oft wird mir geraten, pip selbst zu aktualisieren</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 
-<span class="c1"># Starte Jupyter Lab</span>
+<span class="c1"># Starten Sie Jupyter Lab</span>
 jupyter<span class="w"> </span>lab
 <span class="c1"># Warten Sie nun ein wenig und Ihr Browser sollte sich auf http://localhost:8888/lab öffnen</span>
 </code></pre></div>
@@ -169,7 +169,7 @@ jupyter<span class="w"> </span>lab
 <img alt="Eine leere Lab-Umgebung" src="jupyter_overview.png"/></p>
 <p>Klicken Sie auf <em>Notebook &gt; Python 3</em> und Ihr erstes Notebook sollte bereit sein:</p>
 <p><img alt="Ein frisches Notebook" src="jupyter_detail.png"/></p>
-<p>Um in Jupyter Lab loszulegen, folgen Sie deren <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html" rel="noopener noreferrer" target="_blank">Benutzerhandbuch</a>.</p>
+<p>Um mit Jupyter Lab loszulegen, folgen Sie deren <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html" rel="noopener noreferrer" target="_blank">Benutzerhandbuch</a>.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

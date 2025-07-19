@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -107,16 +107,16 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/ping-visualization-and-analysis/" style="color: #0066cc;">Original version</a>
     </div>
 
     <p>Dies ist die Situation, mit der ich konfrontiert bin: Ich nutze einen Internetzugang, der sich nicht zuverlässig anfühlt. Manchmal ist er wirklich schnell, manchmal fühlt er sich einfach sehr unzuverlässig an. Und ich weiß nie genau, welcher Teil gerade versagt: Ist es die Anwendung, die langsam ist, ist es das WLAN, ist es der Internetzugang?</p>
-<p>Was ich also gesucht habe, ist eine zuverlässige, langfristige Messung der Internetzugangsgeschwindigkeit. Mit Geschwindigkeit meine ich hauptsächlich die Round-Trip-Zeit / Latenz. Ich habe mir viele Tools angesehen, große (die aus kompletten Ökosystemen wie Nagios oder Icinga stammen) und kleine (z.B. Netzwerküberwachung direkt auf Ihrem PC oder Mac). Die großen sind zu viel Arbeit und zu viel, das gelernt, verstanden und installiert werden muss. Die kleinen beantworten meine Frage nicht, da sie keine langfristige Überwachung und Aufzeichnung durchführen. Und ich mag keine komplexen Sachen.</p>
-<p>Dann habe ich etwas gefunden, das im Wesentlichen genau das ist, wonach ich gesucht habe. Anders ausgedrückt: Wenn ich selbst etwas hätte zusammenstellen müssen, wäre es das gewesen, was ich gebaut hätte: Es heißt <a href="http://www.medienvilla.com/entwicklung.html#pinganalyse" rel="noopener noreferrer" target="_blank">Ping-Visualisierung und -Analyse</a> und basiert auf 2 Komponenten:</p>
+<p>Was ich also gesucht habe, ist eine zuverlässige, langfristige Messung der Internetzugangsgeschwindigkeit. Mit Geschwindigkeit meine ich hauptsächlich die Round-Trip-Time/Latenz. Ich habe mir viele Tools angesehen, große (die aus kompletten Ökosystemen wie Nagios oder Icinga stammen) und kleine (z.B. Netzwerküberwachung direkt auf Ihrem PC oder Mac). Die großen sind zu viel Arbeit und zu viel, was gelernt, verstanden und installiert werden muss. Die kleinen beantworten meine Frage nicht, da sie keine langfristige Überwachung und Aufzeichnung durchführen. Und ich mag keine komplexen Dinge.</p>
+<p>Dann habe ich etwas gefunden, das im Wesentlichen genau das ist, wonach ich gesucht habe. Anders formuliert: Wenn ich selbst etwas zusammengestellt hätte, wäre es genau das gewesen, was ich gebaut hätte: Es heißt <a href="http://www.medienvilla.com/entwicklung.html#pinganalyse" rel="noopener noreferrer" target="_blank">Ping-Visualisierung und -Analyse</a> und basiert auf 2 Komponenten:</p>
 <ul>
-<li>Ein einfaches Skript, das Ping-Zeiten protokolliert (und mit einfach meine ich <em>wirklich einfach!</em>)</li>
-<li>Eine HTML-Seite mit etwas JavaScript, das die Ping-Zeiten im Zeitverlauf visualisiert.</li>
+<li>Ein einfaches Skript, das die Ping-Zeiten protokolliert (und mit einfach meine ich <em>wirklich einfach!</em>)</li>
+<li>Eine HTML-Seite mit etwas JavaScript, das die Ping-Zeiten im Laufe der Zeit visualisiert.</li>
 </ul>
 <p>Sie können den Ping-Logger auf extrem einfacher Hardware laufen lassen. Er kann Tag und Nacht laufen und Daten sammeln. Das Format ist <em>einfach</em>. Ein Beispiel:</p>
 <div class="highlight"><pre><span></span><code>Fri Jan  8 15:14:49 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=89 ttl=53 time=310.716 ms
@@ -135,18 +135,18 @@ Fri Jan  8 15:15:39 ICT 2016: 64 bytes from 185.40.248.50: icmp_seq=99 ttl=53 ti
 <p><img alt="Diagramm" src="ping.png"/></p>
 <p>Ich musste nur ein paar kleine Dinge anpassen, damit es auf meinem Mac läuft (die <code>ping</code>-Syntax stammte aus einem anderen Unix-Dialekt).</p>
 <h2 id="was-kommt-als-nachstes">Was kommt als Nächstes?</h2>
-<p>Hier ist, was ich zu verbessern plane (mal sehen, ob das wirklich passiert):</p>
+<p>Hier ist, was ich plane zu verbessern (mal sehen, ob das wirklich passiert):</p>
 <ul>
-<li>Die Quellen in GIT verwalten</li>
+<li>Die Quellen in GIT einpflegen</li>
 <li>Das Diagramm verbessern:</li>
 <li>Die Farben sind mir etwas seltsam...</li>
-<li>Es fühlt sich umgekehrt an</li>
+<li>Es fühlt sich verkehrt herum an</li>
 <li>Beschriftungen auf der y-Achse hinzufügen</li>
-<li>Vielleicht mehr <a href="http://pinglogger.co.uk/index.php/screenshots/" rel="noopener noreferrer" target="_blank">so wie hier</a></li>
-<li>Vielleicht einen Blick auf <a href="https://www.elastic.co/products/logstash" rel="noopener noreferrer" target="_blank">Logstash</a> als Visualisierung werfen...</li>
+<li>Vielleicht mehr <a href="http://pinglogger.co.uk/index.php/screenshots/" rel="noopener noreferrer" target="_blank">so in der Art</a></li>
+<li>Vielleicht <a href="https://www.elastic.co/products/logstash" rel="noopener noreferrer" target="_blank">log stash</a> als Visualisierung in Betracht ziehen...</li>
 </ul>
 <h2 id="nachtrag">Nachtrag</h2>
-<p>Auch im Kontext und weil <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" rel="noopener noreferrer" target="_blank">Java die Programmiersprache des Jahres 2015 ist</a>: <a href="http://pastebin.com/1qnCXDw7" rel="noopener noreferrer" target="_blank">Ein Java-Programm zur Verfolgung der Ping-Zeiten zu mehreren Endpunkten</a></p>
+<p>Auch im Kontext, und weil <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html" rel="noopener noreferrer" target="_blank">Java die Programmiersprache des Jahres 2015 ist</a>: <a href="http://pastebin.com/1qnCXDw7" rel="noopener noreferrer" target="_blank">Ein Java-Programm zur Verfolgung der Ping-Zeiten zu mehreren Endpunkten</a></p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

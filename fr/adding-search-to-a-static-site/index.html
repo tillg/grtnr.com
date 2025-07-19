@@ -58,7 +58,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -100,18 +100,18 @@ Deutsch
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/adding-search-to-a-static-site/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>J'ai maintenant un site statique généré par jBake. Jusqu'ici tout va bien. Mais qu'est-ce qu'un site sans recherche ? La recherche est indispensable. Alors, comment ajouter une fonctionnalité de recherche à un site statique ? Facile : nous utilisons la fonctionnalité de recherche personnalisée des géants de la recherche ;)</p>
+    <p>J'ai maintenant un site statique généré par jBake. Jusqu'ici tout va bien. Mais qu'est-ce qu'un site sans recherche ? La recherche est indispensable. Alors comment ajouter une fonctionnalité de recherche à un site statique ? Facile : Nous utilisons la fonctionnalité de recherche personnalisée des géants de la recherche ;)</p>
 <p>Voici les étapes que j'ai suivies pour y parvenir :</p>
 <h2 id="creer-le-moteur-de-recherche-personnalise">Créer le moteur de recherche personnalisé</h2>
-<p>Rien de plus simple : il suffit d'aller sur la <a href="http://www.google.com/cse" rel="noopener noreferrer" target="_blank">page Google CSE</a> et de le créer. Le processus est explicite : vous avez besoin d'un nom pour votre moteur de recherche, vous indiquez quel contenu doit être rendu disponible. Dans mon cas, il s'agit de tout le contenu de <a href="https://tillgartner.com" rel="noopener noreferrer" target="_blank">tillgartner.com</a> et c'est à peu près tout. Nous reviendrons à la fin sur ce site pour affiner l'apparence et le ressenti des résultats.</p>
+<p>Rien de plus simple : Il suffit d'aller sur la <a href="http://www.google.com/cse" rel="noopener noreferrer" target="_blank">page Google CSE</a> et de le créer. Le processus est explicite : Vous avez besoin d'un nom pour votre moteur de recherche, vous lui indiquez quel contenu doit être rendu disponible. Dans mon cas, cela inclurait tout le contenu de <a href="https://tillgartner.com" rel="noopener noreferrer" target="_blank">tillgartner.com</a> et c'est à peu près tout. Nous reviendrons à la fin sur ce site pour affiner l'apparence et le ressenti des résultats.</p>
 <p><img alt="Administration de Google CSE" src="Custom_Search_-_Basic.jpg"/></p>
 <p>La seule chose dont nous avons besoin ici est le code pour intégrer la recherche. Vous obtenez ce code en cliquant sur le bouton "<strong>Obtenir le code</strong>".</p>
 <h2 id="ajouter-le-champ-de-recherche">Ajouter le champ de recherche</h2>
-<p>Ensuite, nous avons besoin d'une boîte de recherche sur nos pages. Je veux une boîte de recherche en haut à droite de chaque page de l'ensemble du site. Je l'ajoute donc au modèle Freemarker qui crée le menu.</p>
+<p>Ensuite, nous avons besoin d'une boîte de recherche sur nos pages. Je veux une boîte de recherche en haut à droite de chaque page de l'ensemble du site. Je l'ajoute donc au modèle freemarker qui crée le menu.</p>
 <p>Dans mon cas, le <code>menu.ftl</code> ressemble à ceci :</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">Barre</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">navigation</span><span class="w"> </span><span class="nx">fixe</span><span class="w"> </span><span class="o">--&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">nav</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"navbar navbar-default navbar-fixed-top"</span><span class="w"> </span><span class="nx">role</span><span class="o">=</span><span class="s2">"navigation"</span><span class="o">&gt;</span>
@@ -133,7 +133,7 @@ Deutsch
 <span class="w">          </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"col-sm-3 col-md-3 pull-right"</span><span class="o">&gt;</span>
 <span class="w">              </span><span class="o">&lt;</span><span class="nx">form</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"navbar-form"</span><span class="w"> </span><span class="nx">role</span><span class="o">=</span><span class="s2">"search"</span><span class="w"> </span><span class="nx">action</span><span class="o">=</span><span class="s2">"/search.html"</span><span class="o">&gt;</span>
 <span class="w">            </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"input-group"</span><span class="o">&gt;</span>
-<span class="w">                </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"form-control"</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Recherche"</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"q"</span><span class="o">&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"form-control"</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Rechercher"</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s2">"q"</span><span class="o">&gt;</span>
 <span class="w">                </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"input-group-btn"</span><span class="o">&gt;</span>
 <span class="w">                    </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"btn btn-default"</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">"submit"</span><span class="o">&gt;</span>
 <span class="w">                        </span><span class="o">&lt;</span><span class="nx">i</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"glyphicon glyphicon-search"</span><span class="o">&gt;&lt;</span><span class="err">/i&gt;</span>
@@ -147,17 +147,17 @@ Deutsch
 <span class="w">    </span><span class="o">&lt;</span><span class="err">/nav&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"container"</span><span class="o">&gt;</span>
 </code></pre></div>
-<p><em>Note :</em> J'ai corrigé le code sur mon site et dans le code ci-dessus le 29.12.2015. Le code pour le bouton qui apparaît lorsque la largeur de l'écran fait s'effondrer le menu, manquait. Au cas où vous auriez lu ceci plus tôt et vous vous demandez pourquoi c'est différent maintenant...</p>
+<p><em>Note :</em> J'ai corrigé le code sur mon site et dans le code ci-dessus le 29.12.2015. Le code pour le bouton qui apparaît lorsque la largeur de l'écran fait s'effondrer le menu, manquait. Au cas où vous auriez lu ceci plus tôt et vous vous demanderiez pourquoi c'est différent maintenant...</p>
 <p>J'ai trouvé que la partie du menu et comment il s'effondre n'était pas triviale. La meilleure explication que j'ai trouvée était <a href="https://bootstrapbay.com/blog/bootstrap-tutorial-navbar/" rel="noopener noreferrer" target="_blank">cette vidéo</a>.</p>
 <p>C'est le menu standard de Bootstrap. Ce qui est spécial dans notre cas, c'est l'attribut <code>action</code> dans le formulaire qui renvoie à la page de résultats de recherche (appelée <code>search.html</code> dans mon cas).</p>
 <p>Le résultat est une petite boîte de recherche en haut à droite :</p>
 <p><img alt="Boîte de recherche" src="search_box.jpg"/></p>
-<h2 id="page-des-resultats-de-recherche">Page des résultats de recherche</h2>
-<p>Enfin, nous avons besoin de la page des résultats de recherche. Cette page sera appelée (c'est-à-dire liée) depuis le formulaire de recherche que nous venons de créer. Son URL sera quelque chose comme</p>
+<h2 id="page-de-resultats-de-recherche">Page de résultats de recherche</h2>
+<p>Enfin, nous avons besoin de la page de résultats de recherche. Cette page sera appelée (c'est-à-dire liée) depuis le formulaire de recherche que nous venons de créer. Son URL sera quelque chose comme</p>
 <div class="highlight"><pre><span></span><code>http://tillgartner.com/search.html?q=huhu
 </code></pre></div>
-<p>Dans mon cas, la page des résultats de recherche ne contiendra <strong>que</strong> le résultat de la recherche. Si l'utilisateur souhaite modifier sa recherche, il dispose toujours de la boîte de recherche omniprésente en haut à droite.
-La page des résultats de recherche contiendra le code que nous avons copié lors de la configuration du moteur de recherche personnalisé. Dans mon cas, l'ensemble du fichier Markdown ressemble à ceci :</p>
+<p>Dans mon cas, la page de résultats de recherche ne contiendra <strong>que</strong> le résultat de la recherche. Si l'utilisateur souhaite modifier sa recherche, il a toujours la boîte de recherche omniprésente en haut à droite.
+La page de résultats de recherche contiendra le code que nous avons copié lors de la configuration du moteur de recherche personnalisé. Dans mon cas, l'intégralité du fichier Markdown ressemble à ceci :</p>
 <div class="highlight"><pre><span></span><code><span class="nx">title</span><span class="o">=</span><span class="nx">Recherche</span>
 <span class="nx">type</span><span class="o">=</span><span class="nx">page</span>
 <span class="nx">date</span><span class="o">=</span><span class="mf">2015</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">17</span>
@@ -166,7 +166,7 @@ La page des résultats de recherche contiendra le code que nous avons copié lor
 
 <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
 <span class="w">  </span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">cx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'XXX_Your_code:goes_here_XXX'</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">cx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'XXX_Votre_code:ici_XXX'</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">gcse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">gcse</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'text/javascript'</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">gcse</span><span class="p">.</span><span class="k">async</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
@@ -178,7 +178,7 @@ La page des résultats de recherche contiendra le code que nous avons copié lor
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
 <span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">markdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0"</span><span class="o">&gt;&lt;</span><span class="nx">gcse</span><span class="o">:</span><span class="nx">searchresults</span><span class="o">-</span><span class="nx">only</span><span class="o">&gt;</span><span class="nx">Résultats</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">recherche</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/gcse:searchresults-only&gt;&lt;/div&gt;</span>
 </code></pre></div>
-<p>Il m'a fallu un certain temps pour comprendre comment dire à Markdown que c'est du pur HTML et qu'il doit le prendre tel quel sans le transformer ou le citer. La solution était la balise <code>&lt;div markdown="0"&gt;</code>.</p>
+<p>Il m'a fallu un certain temps pour comprendre comment indiquer à markdown qu'il s'agit de pur HTML et qu'il doit le prendre tel quel sans le transformer ou le citer. La solution était la balise <code>&lt;div markdown="0"&gt;</code>.</p>
 <h2 id="ressources">Ressources</h2>
 <p>Quelques lectures qui m'ont aidé à trouver mon chemin :</p>
 <ul>

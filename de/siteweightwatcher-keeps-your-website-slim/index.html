@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -107,40 +107,40 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/siteweightwatcher-keeps-your-website-slim/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Gute Softwareentwickler testen ihre Sachen. Und die <a href="https://www.wikiwand.com/en/Test-driven_development" rel="noopener noreferrer" target="_blank">TDD (Test Driven Development)</a>-Süchtigen sind wahre Fanatiker, wenn es ums Testen geht. Diese Leute denken normalerweise in Code, sei es Java, Python, nodeJS, Sie nennen es. TDD bedeutet, dass Sie zuerst Tests schreiben und dann nur so viel Code, wie nötig ist, um die Tests grün werden zu lassen. Dann überarbeiten Sie Ihren Code und erst dann beginnen Sie, Tests für neue Anforderungen zu schreiben.
-<img alt="TDD-Prozess" src="tdd.png"/></p>
-<p>Das ist <strong>sehr</strong> testlastig. Meiner Meinung nach, wenn Sie es so machen, wie es in den Büchern geschrieben und beschrieben ist, werden Sie schrecklich langsam und es wird unsinnig. Aber das ist eine andere Diskussion, die ich hier nicht klären möchte...</p>
+    <p>Gute Softwareentwickler testen ihre Sachen. Und die <a href="https://www.wikiwand.com/en/Test-driven_development" rel="noopener noreferrer" target="_blank">TDD (Test Driven Development)</a>-Süchtigen sind wahre Fanatiker, wenn es ums Testen geht. Diese Leute denken normalerweise in Code, sei es Java, Python, nodeJS, was auch immer. TDD bedeutet, dass Sie zuerst Tests schreiben, dann genau so viel Code schreiben, wie nötig ist, damit die Tests grün werden. Dann überarbeiten Sie Ihren Code und erst dann beginnen Sie, Tests für neue Anforderungen zu schreiben.
+<img alt="TDD Prozess" src="tdd.png"/></p>
+<p>Das ist <strong>sehr</strong> testorientiert. Meiner Meinung nach wird man, wenn man es so macht, wie es in den Büchern steht, unglaublich langsam und es wird unsinnig. Aber das ist eine andere Diskussion, die ich hier nicht klären möchte...</p>
 <p>Was bei den meisten Testansätzen, die ich in der Vergangenheit gesehen habe, fehlt, sind die folgenden zwei Dinge:</p>
 <ol>
-<li>Die Testleute und Testwerkzeuge hören auf, die Software oder Website zu überwachen, sobald sie in Produktion gegangen ist. Irgendwie haben sie das Gefühl, dass ihre Verantwortung mit dem Livegang endet...</li>
-<li>Sie testen die Software. Nicht den Rest, d.h. das Design, das HTML, das CSS usw. Und die Benutzererfahrung, das Gefühl, ob das, was ich sehe, berühre, durchsuche, navigiere, von guter Qualität ist, wird stark von dieser Verpackung der Softwarelogik beeinflusst.</li>
+<li>Die Testleute und Testwerkzeuge hören auf, die Software oder Website zu überwachen, sobald sie in Produktion gegangen ist. Irgendwie haben sie das Gefühl, dass ihre Verantwortung mit dem Live-Gang endet...</li>
+<li>Sie testen die Software. Nicht den Rest, d.h. das Design, das HTML, das CSS usw. Und die Benutzererfahrung, das Gefühl, ob das, was ich sehe, berühre, durchstöbere, navigiere, von guter Qualität ist, wird stark von dieser Verpackung der Softwarelogik beeinflusst.</li>
 </ol>
-<p>Ich suche also nach einem Werkzeug, um (webbasierte) Software zu testen, sobald sie in der freien Wildbahn ist und während der gesamten Benutzererfahrung. Stellen Sie sich eine Website vor, einen einfachen Blog. Sie könnte perfekt gewesen sein, als sie gestartet wurde, aber im Laufe der Zeit verschlechtert sie sich: Die Designer haben so viele Schnickschnack hinzugefügt, das Volumen des Inhalts ist gewachsen, es wurde optimiert, um auf Mobilgeräten besser nutzbar zu sein... Und schließlich ist die Seite aufgebläht, schwer und langsam. Warum muss ich warten, bis meine Benutzer es mir sagen (das wäre Beschweren)?</p>
+<p>Ich suche also nach einem Werkzeug, um (webbasierte) Software zu testen, sobald sie in der freien Wildbahn ist und während der gesamten Benutzererfahrung. Stellen Sie sich eine Website vor, einen einfachen Blog. Sie könnte perfekt sein, als sie gestartet wurde, aber mit der Zeit verschlechtert sie sich: Die Designer haben so viele Schnickschnack hinzugefügt, das Volumen des Inhalts ist gewachsen, sie wurde optimiert, um auf Mobilgeräten besser nutzbar zu sein... Und schließlich ist die Seite aufgebläht, schwer und langsam. Warum muss ich warten, bis meine Benutzer es mir sagen (das wäre Beschwerde)?</p>
 <p>Bei <a href="https://mgm-tp.com" rel="noopener noreferrer" target="_blank">mgm technology partners</a> haben wir automatisierte Test-Suiten, die jede Nacht laufen. So haben Entwickler, die Code eingebaut haben, der die Software verlangsamt, jeden Morgen einen Bericht in ihrem Posteingang.</p>
-<p>Also, was sollte mein SiteWeightWatcher tun:</p>
+<p>Also, hier ist, was mein SiteWeightWatcher tun sollte:</p>
 <ul>
-<li>Tests alle 5-30 Minuten gegen die Produktionsseite ausführen</li>
+<li>Alle 5-30 Minuten Tests gegen die Produktionsseite durchführen</li>
 <li>Alle Seiten überprüfen, nicht nur index.html</li>
-<li>Sofort melden, wenn Seiten langsamer werden (das wäre langsamer als sie es früher waren)</li>
-<li>Schlüsselzahlen verfolgen und wie sie sich im Laufe der Zeit entwickeln:</li>
-<li>Wie viele Daten werden für jede Seite übertragen?</li>
+<li>Sofort berichten, wenn Seiten langsamer werden (das wäre langsamer als sie es früher waren)</li>
+<li>Schlüsselkennzahlen verfolgen und wie sie sich im Laufe der Zeit entwickeln:</li>
+<li>Wie viel Daten werden für jede Seite übertragen?</li>
 <li>Wie viele Anfragen gehen hin und her?</li>
-<li>Wie lange dauert die Produktsuche? Im Laufe der Zeit...</li>
-<li>Wie gut ist die Seite für Benutzer in Deutschland, Großbritannien, den USA oder Asien verbunden? Im Laufe der Zeit, da sich diese Dinge ändern, ohne dass wir etwas getan haben.</li>
+<li>Wie viel Zeit benötigt die Produktsuche? Im Laufe der Zeit...</li>
+<li>Wie gut ist die Seite für Benutzer in Deutschland, UK, USA oder Asien verbunden? Im Laufe der Zeit, denn diese Dinge ändern sich, ohne dass wir etwas getan haben.</li>
 </ul>
-<p>Ich könnte mir ein Dashboard für einen Online-Shop wie <a href="https://www.kickz.com/de" rel="noopener noreferrer" target="_blank">KICKZ.com</a> so vorstellen:
-<img alt="Dashboard-Skizze" src="kickz_dashboard.png"/>Ein Dashboard, das zeigt, wie sich die Seitengrößen entwickeln</p>
-<p>Und genau wie die normalen Testteams sollten sich auch diese Tests weiterentwickeln und immer mehr an die Seite, ihre Funktionalität und ihre Benutzer anpassen. Wann immer wir ein echtes Problem oder einen Fehler da draußen haben, müssen wir sicherstellen, dass unser WeightWatcher ihn findet, falls er erneut auftreten sollte.</p>
+<p>Ich könnte mir ein Dashboard für einen Online-Shop wie <a href="https://www.kickz.com/de" rel="noopener noreferrer" target="_blank">KICKZ.com</a> vorstellen, das so aussehen könnte:
+<img alt="Dashboard Skizze" src="kickz_dashboard.png"/>Ein Dashboard, das zeigt, wie sich die Seitengrößen entwickeln</p>
+<p>Und genau wie die normalen Testteams sollten sich auch diese Tests weiterentwickeln und immer mehr an die Seite, ihre Funktionalität und ihre Benutzer anpassen. Wann immer wir ein echtes Problem oder einen Fehler da draußen haben, müssen wir sicherstellen, dass unser WeightWatcher es findet, falls es wieder auftreten sollte.</p>
 <p>Wie könnten wir beginnen, ein solches Werkzeug zu bauen? Einige Gedanken:</p>
 <ul>
-<li>Wir haben Agenten und einen zentralen Server. Die Agenten sind weltweit oder in verschiedenen Netzwerken verteilt (denken Sie an kleine Docker-Images, die auf verschiedenen Clouds laufen). Sie berichten alle ihre erfassten Daten an den zentralen Server. Hier werden die Berichte erstellt und eine interaktive Erklärung der Daten bereitgestellt.</li>
+<li>Wir haben Agenten und einen zentralen Server. Die Agenten sind weltweit oder in verschiedenen Netzwerken verteilt (denken Sie an kleine Docker-Images, die in verschiedenen Clouds laufen). Sie melden alle erfassten Daten an den zentralen Server. Dort werden die Berichte erstellt und interaktive Erklärungen der Daten bereitgestellt.</li>
 <li>Die Agenten beginnen mit der Erfassung einfacher Metriken:</li>
 <li>Anzahl der HTTP-Anfragen pro Seite</li>
-<li>Übertragene Daten pro Seite</li>
+<li>Übertragene Datenmenge pro Seite</li>
 <li>Anzahl der JavaScript-Zeilen pro Seite</li>
 <li>Zeit zum Laden der Daten</li>
 <li>Zeit zur Ausführung von JavaScript</li>
@@ -148,10 +148,10 @@ Français
 <li>Wie groß ist die durchschnittliche Seitengröße?</li>
 <li>Wie viele Anfragen gibt es durchschnittlich pro Seite?</li>
 <li>Was sind meine <em>schwersten</em> Seiten?</li>
-<li>Ein Diagramm, das die Verfügbarkeit meiner Seite sowie die Ladezeit über eine 24-Stunden-Skala, eine Woche, einen Monat zeigt. Vielleicht erleben meine Benutzer langsames Laden nur abends.</li>
+<li>Ein Diagramm, das die Verfügbarkeit meiner Seite sowie die Ladezeit über eine 24-Stunden-Skala, eine Wochen-Skala, einen Monat zeigt. Vielleicht erleben meine Benutzer langsame Ladezeiten nur abends.</li>
 </ul>
 <p>Von dort aus erweitern wir die gesammelten Daten sowie die Berichte.</p>
-<p>Ein solches Werkzeug wäre großartig, um Seiten zu überwachen, für die ich verantwortlich bin (d.h. Websites, die wir bei mgm entwickelt haben), könnte aber auch wertvolle Informationen über andere Marktteilnehmer liefern. Es könnte sowohl von technischen Leuten als auch von den Marketing-Leuten genutzt werden - da sie <em>manchmal</em> auch die Leistung beeinträchtigen. Ich wäre neugierig, diese Art von Statistiken für Zalando zu sehen 😜</p>
+<p>Ein solches Werkzeug wäre großartig, um Seiten zu überwachen, für die ich verantwortlich bin (d.h. Websites, die wir bei mgm entwickelt haben), könnte aber auch wertvolle Informationen über andere Marktteilnehmer liefern. Es könnte sowohl von technischen Personen als auch von den Marketing-Leuten genutzt werden - da sie <em>manchmal</em> auch die Leistung beeinträchtigen. Ich wäre neugierig, solche Statistiken für Zalando zu sehen 😜</p>
 <p>Kennt jemand ein solches Überwachungssystem? Bitte lassen Sie es mich wissen.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

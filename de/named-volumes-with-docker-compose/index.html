@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -107,14 +107,14 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/named-volumes-with-docker-compose/" style="color: #0066cc;">Original version</a>
     </div>
 
     <p>Während ich an einem Nebenprojekt arbeitete, das <strong>docker-compose</strong> verwendet, stieß ich auf ein Problem. Eines, dem ich schon früher begegnet war, das ich aber nie richtig untersucht oder gelöst hatte.</p>
 <p>Hier ist, was ich tun möchte:</p>
 <ul>
-<li>Eine Reihe von Diensten innerhalb eines docker-compose-Setups ausführen</li>
+<li>Eine Reihe von Diensten innerhalb eines docker-compose Setups laufen lassen</li>
 <li>Diese Dienste sollen gemountete Freigaben verwenden - eine Freigabe, die von mehr als einem Container genutzt wird.</li>
 <li>Das Problematische: Ich möchte, dass <strong>mehrere Container</strong> dasselbe <strong>Volume</strong> verwenden!</li>
 </ul>
@@ -144,17 +144,17 @@ Français
 <span class="w">           </span><span class="nx">device</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="nx">data</span><span class="o">/</span><span class="nx">content</span>
 <span class="w">           </span><span class="nx">o</span><span class="p">:</span><span class="w"> </span><span class="nx">bind</span>
 </code></pre></div>
-<p>Das ist, was passiert:</p>
+<p>Das passiert hier:</p>
 <ul>
 <li>Wir haben 2 Dienste desselben Typs: einfache nginx-Container zu Demonstrationszwecken.</li>
-<li>Beide exponieren ihren (internen) Port 80 nach außen auf Port 81 bzw. 82.</li>
+<li>Beide geben ihren (internen) Port 80 an Port 81 bzw. 82 zur Außenwelt frei.</li>
 <li>Beide verwenden ein Volume namens <strong>content</strong>, das im Volumes-Abschnitt definiert ist.</li>
 </ul>
-<p>Das Detail, das ich so lange übersehen hatte, war der <strong>volumes</strong>-Abschnitt mit den <strong>driver_opts</strong>. Und während ich ein paar Tests durchführte und alles genau so funktionierte, wie ich es mir erhofft hatte, konnte ich keine ordentliche Dokumentation finden. Hier ist, was die <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#driver_opts" rel="noopener noreferrer" target="_blank">Docker-Dokumentation</a> über <strong>driver_opts</strong> sagt:</p>
+<p>Das Detail, das ich so lange übersehen hatte, war der <strong>volumes</strong> Abschnitt mit den <strong>driver_opts</strong>. Und während ich ein paar Tests durchführte und alles genau so funktionierte, wie ich es mir erhofft hatte, konnte ich keine ordentliche Dokumentation finden. Hier ist, was die <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#driver_opts" rel="noopener noreferrer" target="_blank">docker Dokumentation</a> über <strong>driver_opts</strong> sagt:</p>
 <blockquote>
 <p>Geben Sie eine Liste von Optionen als Schlüssel-Wert-Paare an, die an den Treiber für dieses Volume übergeben werden. Diese Optionen sind treiberabhängig - konsultieren Sie die Dokumentation des Treibers für weitere Informationen.</p>
 </blockquote>
-<p>Beim Untersuchen, wie die Dinge funktionieren, geben die Inspektionswerkzeuge von Docker einige Einblicke: Dies ist der <strong>Mounts</strong>-Teil von <strong>docker inspect service1</strong></p>
+<p>Beim Untersuchen, wie die Dinge funktionieren, geben die Inspektionswerkzeuge von Docker einige Einblicke: Dies ist der <strong>Mounts</strong> Teil von <strong>docker inspect service1</strong></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="s2">"Mounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="s2">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">,</span>
@@ -168,14 +168,14 @@ Français
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 </code></pre></div>
-<p>Zuerst war ich skeptisch wegen dieser Zeile:</p>
+<p>Zunächst war ich skeptisch wegen dieser Zeile:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">"Source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/var/lib/docker/volumes/docker-playground_content/_data"</span>
 </code></pre></div>
-<p>Aber es stellt sich heraus, dass meine Daten <strong>nicht</strong> in diesem von Docker verwalteten Verzeichnis sind, sondern dort, wo ich sie haben wollte. In meinem Fall ist das in <strong>./data/content</strong>. Auch der relative Pfad funktioniert einwandfrei.</p>
+<p>Aber es stellt sich heraus, dass sich meine Daten <strong>nicht</strong> in diesem von Docker verwalteten Verzeichnis befinden, sondern dort, wo ich sie haben wollte. In meinem Fall ist das in <strong>./data/content</strong>. Auch der relative Pfad funktioniert einwandfrei.</p>
 <h3 id="quellen">Quellen</h3>
 <p>Hier sind die ursprünglichen Quellen, die mir am meisten geholfen haben</p>
 <ul>
-<li>Docker-Dokumentation - seltsamerweise hat sie überhaupt nicht geholfen...</li>
+<li>Docker Dokumentation - seltsamerweise hat sie überhaupt nicht geholfen...</li>
 <li>Dies war der hilfreichste <a href="https://stackoverflow.com/questions/35841241/docker-compose-named-mounted-volume" rel="noopener noreferrer" target="_blank">Stackoverflow-Artikel</a>.</li>
 </ul>
 <h3 id="versionen">Versionen</h3>

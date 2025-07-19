@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -107,34 +107,34 @@ Deutsch
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/siteweightwatcher-keeps-your-website-slim/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Les bons développeurs de logiciels testent leurs créations. Et les accros du <a href="https://www.wikiwand.com/en/Test-driven_development" rel="noopener noreferrer" target="_blank">TDD (Test Driven Development)</a> sont des maniaques en matière de tests. Ces personnes pensent généralement en code, que ce soit en Java, Python, nodeJS, vous l'appelez. Le TDD signifie que vous écrivez d'abord les tests, puis vous codez juste assez pour que les tests deviennent verts. Ensuite, vous retravaillez votre code et seulement alors vous commencez à écrire des tests pour de nouvelles exigences.
+    <p>Les bons développeurs logiciels testent leurs créations. Et les accros du <a href="https://www.wikiwand.com/en/Test-driven_development" rel="noopener noreferrer" target="_blank">TDD (Test Driven Development)</a> sont des maniaques en matière de tests. Ces personnes pensent généralement en code, que ce soit Java, Python, nodeJS, peu importe. Le TDD signifie que vous écrivez d'abord les tests, puis vous codez juste assez pour que les tests deviennent verts. Ensuite, vous retravaillez votre code et seulement alors vous commencez à écrire des tests pour de nouvelles exigences.
 <img alt="Processus TDD" src="tdd.png"/></p>
-<p>C'est <strong>très</strong> orienté tests. Mon avis est que si vous le faites comme c'est écrit et décrit dans les livres, vous devenez terriblement lent et cela devient absurde. Mais c'est une autre discussion, et pas une que je souhaite aborder ici...</p>
-<p>Ce qui manque dans la plupart des approches de test que j'ai vues dans le passé, ce sont les deux choses suivantes :</p>
+<p>C'est <strong>très</strong> axé sur les tests. Mon opinion est que si vous le faites comme c'est écrit et décrit dans les livres, vous devenez terriblement lent et cela tourne au non-sens. Mais c'est une autre discussion, et ce n'est pas celle que je veux aborder ici...</p>
+<p>Ce qui manque dans la plupart des approches de test que j'ai vues dans le passé, ce sont les deux éléments suivants :</p>
 <ol>
 <li>Les testeurs et les outils de test cessent de surveiller le logiciel ou le site web une fois qu'il est en production. D'une manière ou d'une autre, ils estiment que leur responsabilité s'arrête avec la mise en ligne...</li>
-<li>Ils testent le logiciel. Pas le reste, c'est-à-dire le design, le HTML, le CSS, etc. Et l'expérience utilisateur, le ressenti de ce que je vois, touche, navigue est de bonne qualité, est très influencée par cet emballage de la logique du logiciel.</li>
+<li>Ils testent le logiciel. Pas le reste, c'est-à-dire le design, le HTML, le CSS, etc. Et l'expérience utilisateur, le ressenti de savoir si ce que je vois, touche, navigue est de bonne qualité, est très influencé par cet emballage de la logique logicielle.</li>
 </ol>
-<p>Je recherche donc un outil pour tester le logiciel (basé sur le web) une fois qu'il est en ligne et tout au long de l'expérience utilisateur. Imaginez un site web, un simple blog. Il pourrait être parfait lors de son lancement, mais avec le temps, il se dégrade : les designers ont ajouté tant de gadgets, le volume du contenu a augmenté, il a été ajusté pour être plus utilisable sur mobiles... Et finalement, le site est gonflé, lourd et lent. Pourquoi dois-je attendre que mes utilisateurs me le disent (ce qui signifie qu'ils se plaignent) ?</p>
+<p>Je cherche donc un outil pour tester le logiciel (basé sur le web) une fois qu'il est en ligne et tout au long de l'expérience utilisateur. Imaginez un site web, un simple blog. Il pourrait être parfait lors de son lancement, mais avec le temps, il se dégrade : les designers ont ajouté tant de cloches et de sifflets, le volume du contenu a augmenté, il a été ajusté pour être plus utilisable sur mobiles... Et finalement, le site est gonflé, lourd et lent. Pourquoi dois-je attendre que mes utilisateurs me le disent (ce qui signifie se plaindre) ?</p>
 <p>Chez <a href="https://mgm-tp.com" rel="noopener noreferrer" target="_blank">mgm technology partners</a>, nous avons des suites de tests automatisés qui s'exécutent chaque nuit. Ainsi, les développeurs qui ont intégré du code ralentissant le logiciel reçoivent un rapport qui leur est envoyé chaque matin dans leur boîte de réception.</p>
 <p>Voici donc ce que mon SiteWeightWatcher devrait faire :</p>
 <ul>
 <li>Exécuter des tests toutes les 5 à 30 minutes sur le site de production</li>
 <li>Vérifier toutes les pages, pas seulement index.html</li>
 <li>Signaler immédiatement lorsque les pages deviennent lentes (c'est-à-dire plus lentes qu'elles ne l'étaient auparavant)</li>
-<li>Suivre les indicateurs clés et comment ils évoluent au fil du temps :</li>
+<li>Suivre les indicateurs clés et leur évolution dans le temps :</li>
 <li>Quelle quantité de données est transférée pour chaque page ?</li>
 <li>Combien de requêtes sont échangées ?</li>
 <li>Combien de temps faut-il pour rechercher des produits ? Au fil du temps...</li>
 <li>Quelle est la connectivité du site pour les utilisateurs en Allemagne, au Royaume-Uni, aux États-Unis ou en Asie ? Au fil du temps, car ces choses changent sans que nous ayons fait quoi que ce soit.</li>
 </ul>
-<p>Je pourrais imaginer un tableau de bord pour une boutique en ligne comme <a href="https://www.kickz.com/de" rel="noopener noreferrer" target="_blank">KICKZ.com</a> qui pourrait ressembler à ceci :
-<img alt="Croquis de tableau de bord" src="kickz_dashboard.png"/>Un tableau de bord qui montre comment les tailles de page évoluent</p>
-<p>Et tout comme les équipes de test normales, ces tests devraient également évoluer et devenir de plus en plus adaptés au site, à sa fonctionnalité et à ses utilisateurs. Chaque fois que nous avons un véritable problème ou un bug, nous devons nous assurer que notre WeightWatcher le détectera au cas où il réapparaîtrait.</p>
+<p>Je pourrais imaginer un tableau de bord pour une boutique en ligne comme <a href="https://www.kickz.com/de" rel="noopener noreferrer" target="_blank">KICKZ.com</a> ressemblant à ceci :
+<img alt="Esquisse du tableau de bord" src="kickz_dashboard.png"/>Un tableau de bord qui montre comment les tailles de page évoluent</p>
+<p>Et tout comme les équipes de test normales le font, ces tests devraient également évoluer et devenir de plus en plus adaptés au site, à sa fonctionnalité et à ses utilisateurs. Chaque fois que nous avons un vrai problème ou un bug, nous devons nous assurer que notre WeightWatcher le détectera s'il devait réapparaître ou se reproduire.</p>
 <p>Comment pourrions-nous commencer à construire un tel outil ? Quelques réflexions :</p>
 <ul>
 <li>Nous avons des agents et un serveur central. Les agents sont situés partout dans le monde ou dans différents réseaux (pensez à de petites images Docker qui s'exécutent sur différents clouds). Ils rapportent toutes leurs données capturées au serveur central. C'est là que les rapports sont générés et où une explication interactive des données est fournie.</li>
@@ -144,14 +144,14 @@ Deutsch
 <li>Nombre de lignes de JavaScript par page</li>
 <li>Temps de chargement des données</li>
 <li>Temps d'exécution du JavaScript</li>
-<li>Sur cette base, nous commençons avec des rapports simples :</li>
+<li>Sur cette base, nous commençons par des rapports simples :</li>
 <li>Quelle est la taille moyenne des pages ?</li>
 <li>Quel est le nombre moyen de requêtes par page ?</li>
-<li>Quelles sont mes pages les plus <em>lourdes</em> ?</li>
+<li>Quelles sont mes pages les <em>plus lourdes</em> ?</li>
 <li>Un graphique qui montre la disponibilité de mon site ainsi que le temps de chargement sur une échelle de 24h, une semaine, un mois. Peut-être que mes utilisateurs ne rencontrent des temps de chargement lents que le soir.</li>
 </ul>
 <p>À partir de là, nous étendons les données que nous collectons ainsi que les rapports.</p>
-<p>Un tel outil serait formidable pour surveiller les sites dont je suis responsable (c'est-à-dire les sites web que nous avons développés chez mgm) mais pourrait également fournir des informations précieuses sur d'autres acteurs du marché. Il pourrait être utilisé à la fois par des personnes techniques ainsi que par les équipes marketing - car elles aussi <em>parfois</em> nuisent à la performance. Je serais curieux de voir ce genre de statistiques pour Zalando 😜</p>
+<p>Un tel outil serait idéal pour surveiller les sites dont je suis responsable (c'est-à-dire les sites web que nous avons développés chez mgm) mais pourrait également fournir des informations précieuses sur d'autres acteurs du marché. Il pourrait être utilisé à la fois par des personnes techniques ainsi que par les équipes marketing - car elles aussi <em>parfois</em> compromettent la performance. Je serais curieux de voir ce genre de statistiques pour Zalando 😜</p>
 <p>Quelqu'un connaît-il un tel système de surveillance ? Merci de me le faire savoir.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

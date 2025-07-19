@@ -58,7 +58,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -100,23 +100,23 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/solid-comments-in-static-website/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p><strong>TL;DR:</strong> Ich habe Kommentare zu meiner statischen Website hinzugefügt. So habe ich es gemacht - einschließlich einiger technischer Details. Ich habe verschiedene mögliche Lösungen recherchiert, um die solideste zu finden, sie für alle Beiträge integriert und einen Zähler für die Anzahl der Kommentare auf der Beitragsübersichtsseite hinzugefügt.</p>
-<p><strong>2025-05-23 Update</strong> Da ich von Jekyll zu <a href="https://getpelican.com" rel="noopener noreferrer" target="_blank">Pelican</a> gewechselt bin, habe ich einige Details aktualisiert.</p>
+    <p><strong>Kurzfassung:</strong> Ich habe Kommentare zu meiner statischen Website hinzugefügt. So habe ich es gemacht - einschließlich einiger technischer Details. Ich habe verschiedene mögliche Lösungen recherchiert, um die solideste zu finden, sie für alle Beiträge integriert und einen Zähler für die Anzahl der Kommentare in der Beitragsübersichtsseite hinzugefügt.</p>
+<p><strong>Aktualisierung vom 2025-05-23</strong> Da ich von Jekyll zu <a href="https://getpelican.com" rel="noopener noreferrer" target="_blank">Pelican</a> gewechselt bin, habe ich einige Details aktualisiert.</p>
 <h2 id="auswahl-einer-losung">Auswahl einer Lösung</h2>
 <p>Da ich vorhatte, mit dem neuen <a href="https://openai.com/index/introducing-deep-research/" rel="noopener noreferrer" target="_blank">Deep Research Model von OpenAI</a> zu experimentieren, habe ich es zu diesem Thema ausprobiert: <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">lesen Sie hier gerne weiter</a>. Insgesamt war die Recherche hilfreich und ich habe mich letztendlich für <a href="https://giscus.app/" rel="noopener noreferrer" target="_blank">Giscus</a> für die Kommentare entschieden. Teilweise, weil es sich am robustesten und zuverlässigsten anfühlte, teilweise, weil ich vor einigen Jahren wirklich schlechte Erfahrungen mit Disqus gemacht habe.</p>
 <p>Die Wahl basierte auf den Kriterien, die ich dem Modell gegeben habe. Hier sind die wichtigsten:</p>
 <ul>
 <li>Kein selbst gehosteter Server – Ich möchte keinen Server verwalten (und bezahlen 😉).</li>
 <li>Datenportabilität – die Kommentare können exportiert werden.</li>
-<li>Datenschutzfreundlich – keine zusätzlichen Tracker oder Anzeigen über das hinaus, was ich bereits verwende (z.B. Google Analytics).</li>
-<li>Markdown-Unterstützung – ermöglicht reichhaltige Formatierung (Codeblöcke usw.), geeignet für technische Diskussionen.</li>
-<li>Spam-Schutz – verfügt über Maßnahmen zur Reduzierung von Spam, insbesondere wenn anonyme oder nicht authentifizierte Kommentare erlaubt sind.</li>
+<li>Datenschutzfreundlich – keine zusätzlichen Tracker oder Werbung über das hinaus, was ich bereits verwende (z. B. Google Analytics).</li>
+<li>Markdown-Unterstützung – ermöglicht reichhaltige Formatierung (Codeblöcke usw.), die für technische Diskussionen geeignet ist.</li>
+<li>Spamschutz – verfügt über Maßnahmen zur Reduzierung von Spam, insbesondere wenn anonyme oder nicht authentifizierte Kommentare zugelassen werden.</li>
 </ul>
-<p>Die Werkzeuge, die Deep Research <em>analysiert</em> hat, waren:</p>
+<p>Die Werkzeuge, die Deep Research <em>analysiert</em> hat, waren</p>
 <ul>
 <li>Giscus</li>
 <li>Utterances</li>
@@ -127,21 +127,21 @@ Français
 <li>Einige <em>selbstgemachte</em> Lösungen</li>
 </ul>
 <h2 id="integration-von-giscus">Integration von Giscus</h2>
-<p>Im Anschluss an die Recherche bat ich das Modell, mir eine Schritt-für-Schritt-Anleitung zur Integration der Lösung zu geben. Dies war weit weniger zuverlässig als die erste Recherche, aber dennoch hilfreich.</p>
+<p>Im Anschluss an die Recherche habe ich das Modell gebeten, mir eine Schritt-für-Schritt-Anleitung zur Integration der Lösung zu geben. Diese war weit weniger zuverlässig als die erste Recherche, aber dennoch hilfreich.</p>
 <p>Hier ist die Zusammenfassung (die Details finden Sie im <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">Chat, den ich mit der KI hatte</a>):</p>
 <ul>
-<li>Schritt 1: GitHub Discussions für Ihr Repository aktivieren. Das bedeutet das Repo, in das die statische Seite generiert wird (was manchmal nicht dasselbe ist wie die Quelle).</li>
+<li>Schritt 1: Aktivieren Sie GitHub Discussions für Ihr Repository. Das bedeutet das Repo, in das die statische Seite generiert wird (was manchmal nicht dasselbe ist wie die Quelle).</li>
 <li>Gehen Sie zu Ihrem GitHub-Repository</li>
 <li>Navigieren Sie zu Einstellungen &gt; Allgemein.</li>
-<li>Scrollen Sie nach unten zum Abschnitt Discussions und aktivieren Sie ihn.</li>
+<li>Scrollen Sie nach unten zum Abschnitt Diskussionen und aktivieren Sie ihn.</li>
 <li>Zwischenschritt, den die KI nicht erwähnt hat: Installieren Sie Giscus für alle oder einige Ihrer Repos. <a href="https://github.com/apps/giscus/installations/select_target" rel="noopener noreferrer" target="_blank">Hier</a>
 <img alt="alt text" src="image.png"/></li>
-<li>Schritt 2: Installieren und konfigurieren Sie Giscus</li>
+<li>Schritt 2: Installieren Sie Giscus und konfigurieren Sie es</li>
 <li>Besuchen Sie die Giscus-Setup-Seite: https://giscus.app/.</li>
 <li>Unter "Repository" geben Sie Ihren Repo-Namen ein. Sie sollten jetzt das grüne Häkchen sehen, dass Ihr Repo alle Kriterien für die Verwendung von Giscus erfüllt.</li>
-<li>Die Option „Page discussion mapping“ bestimmt eine Beziehung zwischen Ihren Seiten, z.B. einem Artikel, und einer GitHub-Diskussion. Ich habe den Pfadnamen ausgewählt.</li>
-<li>Für die Diskussionskategorie habe ich „general“ ausgewählt.
-    Setzen Sie das Thema auf "Match OS" oder definieren Sie manuell den hellen und dunklen Modus.
+<li>Die Option „Page discussion mapping“ bestimmt eine Beziehung zwischen Ihren Seiten, z. B. einem Artikel, und einer GitHub-Diskussion. Ich habe den Pfadnamen ausgewählt.</li>
+<li>Für die Diskussionskategorie habe ich „allgemein“ ausgewählt.
+    Stellen Sie das Thema auf "Match OS" oder definieren Sie manuell den hellen und dunklen Modus.
     Klicken Sie auf "Code kopieren", sobald Sie das <script></script></li></ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

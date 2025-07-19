@@ -58,7 +58,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -100,23 +100,23 @@ Deutsch
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/solid-comments-in-static-website/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p><strong>Résumé rapide :</strong> J'ai ajouté des commentaires à mon site web statique. Voici comment j'ai procédé, y compris quelques détails techniques. J'ai recherché parmi différentes solutions possibles pour trouver la plus solide, je l'ai intégrée pour tous les articles et j'ai ajouté un compteur du nombre de commentaires dans la page de vue d'ensemble des articles.</p>
+    <p><strong>Résumé :</strong> J'ai ajouté des commentaires à mon site web statique. Voici comment je l'ai fait - y compris quelques détails techniques. J'ai recherché parmi différentes solutions possibles pour trouver la plus solide, je l'ai intégrée pour tous les articles et j'ai ajouté un compteur du nombre de commentaires dans la page de vue d'ensemble des articles.</p>
 <p><strong>Mise à jour du 2025-05-23</strong> Depuis que je suis passé de Jekyll à <a href="https://getpelican.com" rel="noopener noreferrer" target="_blank">Pelican</a>, j'ai mis à jour certains détails.</p>
 <h2 id="choisir-une-solution">Choisir une solution</h2>
-<p>Comme je prévoyais d'expérimenter avec le nouveau <a href="https://openai.com/index/introducing-deep-research/" rel="noopener noreferrer" target="_blank">modèle de recherche approfondie d'OpenAI</a>, je l'ai testé sur ce sujet : <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">n'hésitez pas à lire ici</a>. Dans l'ensemble, la recherche a été utile et j'ai fini par utiliser <a href="https://giscus.app/" rel="noopener noreferrer" target="_blank">Giscus</a> pour les commentaires. En partie parce que cela semblait le plus robuste et fiable, en partie parce que j'avais eu une très mauvaise expérience avec Disqus il y a quelques années.</p>
-<p>Le choix était basé sur l'ensemble de critères que j'ai fournis au modèle. Voici les plus importants :</p>
+<p>Comme je prévoyais de m'amuser avec le nouveau <a href="https://openai.com/index/introducing-deep-research/" rel="noopener noreferrer" target="_blank">Deep Research Model d'OpenAI</a>, je l'ai testé sur ce sujet : <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">n'hésitez pas à lire ici</a>. Globalement, la recherche a été utile et j'ai fini par utiliser <a href="https://giscus.app/" rel="noopener noreferrer" target="_blank">Giscus</a> pour les commentaires. En partie parce qu'il semblait le plus robuste et fiable, en partie parce que j'avais eu une très mauvaise expérience avec Disqus il y a quelques années.</p>
+<p>Le choix était basé sur l'ensemble de critères que j'avais donné au modèle. Voici les plus importants :</p>
 <ul>
 <li>Pas de serveur auto-hébergé – Je ne veux pas gérer (et payer 😉) un serveur.</li>
 <li>Portabilité des données – les commentaires peuvent être exportés.</li>
 <li>Respect de la vie privée – pas de traqueurs ou de publicités supplémentaires au-delà de ce que j'utilise déjà (par exemple, Google Analytics).</li>
-<li>Support Markdown – permettre un formatage riche (blocs de code, etc.) adapté aux discussions techniques.</li>
+<li>Support Markdown – permet un formatage riche (blocs de code, etc.) adapté aux discussions techniques.</li>
 <li>Protection contre le spam – dispose de mesures pour réduire le spam, surtout si l'on autorise les commentaires anonymes ou non authentifiés.</li>
 </ul>
-<p>Les outils que Deep Research a <em>analysés</em> étaient</p>
+<p>Les outils que Deep Research a <em>analysés</em> étaient :</p>
 <ul>
 <li>Giscus</li>
 <li>Utterances</li>
@@ -127,20 +127,20 @@ Deutsch
 <li>Certaines solutions <em>faites maison</em></li>
 </ul>
 <h2 id="integration-de-giscus">Intégration de Giscus</h2>
-<p>Suite à sa recherche, j'ai demandé au modèle de me fournir un guide étape par étape sur la façon d'intégrer la solution. Cela s'est avéré moins fiable que la première recherche, mais néanmoins utile.</p>
+<p>Suite à sa recherche, j'ai demandé au modèle de me donner un guide pas à pas sur la façon d'intégrer la solution. Cela s'est avéré beaucoup moins fiable que la première recherche, mais tout de même utile.</p>
 <p>Voici le résumé exécutif (les détails sont dans le <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">chat que j'ai eu avec l'IA</a>) :</p>
 <ul>
 <li>Étape 1 : Activer GitHub Discussions pour votre dépôt. Cela signifie le dépôt dans lequel le site statique est généré (qui parfois n'est pas le même que la source).</li>
-<li>Allez dans votre dépôt GitHub</li>
+<li>Allez sur votre dépôt GitHub</li>
 <li>Naviguez vers Paramètres &gt; Général.</li>
 <li>Faites défiler jusqu'à la section Discussions et activez-la.</li>
-<li>Étape intermédiaire, que l'IA a omis de mentionner : Installer giscus pour tous ou certains de vos dépôts. <a href="https://github.com/apps/giscus/installations/select_target" rel="noopener noreferrer" target="_blank">Ici</a>
+<li>Étape intermédiaire, que l'IA a oublié de mentionner : Installez giscus pour tous ou certains de vos dépôts. <a href="https://github.com/apps/giscus/installations/select_target" rel="noopener noreferrer" target="_blank">Ici</a>
 <img alt="texte alternatif" src="image.png"/></li>
 <li>Étape 2 : Installer Giscus et le configurer</li>
 <li>Visitez la page de configuration de Giscus : https://giscus.app/.</li>
 <li>Sous "Repository", entrez le nom de votre dépôt. Vous devriez maintenant voir la coche verte indiquant que votre dépôt répond à tous les critères pour utiliser giscus.</li>
-<li>L'option "Page discussion mapping" dicte une relation entre vos pages, par exemple un article, et une discussion GitHub. J'ai sélectionné, le chemin d'accès</li>
-<li>Pour la catégorie des discussions, j'ai sélectionné "général".
+<li>L'option “Page discussion mapping” dicte une relation entre vos pages, par exemple un article, et une discussion GitHub. J'ai sélectionné le chemin.</li>
+<li>Pour la catégorie de discussions, j'ai sélectionné “général”.
     Définissez le Thème sur "Match OS" ou définissez manuellement le mode clair et sombre.
     Cliquez sur "Copier le code" une fois que vous avez généré la balise <script></script></li></ul>
     <div id="giscus">

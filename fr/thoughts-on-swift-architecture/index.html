@@ -58,7 +58,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -100,27 +100,27 @@ Deutsch
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/thoughts-on-swift-architecture/" style="color: #0066cc;">Original version</a>
     </div>
 
     <div class="toc">
 <ul>
 <li><a href="#question">Question</a><ul>
-<li><a href="#modeles-de-domaine-modeles-de-donnees-et-mappeurs">Modèles de Domaine, Modèles de Données et Mappeurs</a></li>
+<li><a href="#modeles-de-domaine-modeles-de-donnees-et-mappers">Modèles de Domaine, Modèles de Données et Mappers</a></li>
 <li><a href="#referentiel">Référentiel</a></li>
 </ul>
 </li>
 <li><a href="#reponse">Réponse</a></li>
 </ul>
 </div>
-<p>J'ai écouté ce très bon podcast hier sur la structuration des différents types de modèles en Swift : les modèles de domaine qui sont ma représentation interne, les modèles de données (ou DTO) qui sont la représentation externe, et les modèles de vue qui sont la représentation pour mon interface utilisateur :</p>
-<p><a href="https://podcasts.apple.com/de/podcast/developer-podcast/id1467065787?i=1000698509743" rel="noopener noreferrer" target="_blank"><img alt="Podcast pour développeurs" src="developer_podcast.jpg"/></a></p>
+<p>J'ai écouté ce très bon podcast hier sur la structuration de différents types de modèles en Swift : les modèles de domaine qui sont ma représentation interne, les modèles de données (ou DTOs) qui sont la représentation externe, et les modèles de vue qui sont la représentation pour mon interface utilisateur :</p>
+<p><a href="https://podcasts.apple.com/de/podcast/developer-podcast/id1467065787?i=1000698509743" rel="noopener noreferrer" target="_blank"><img alt="Podcast Développeur" src="developer_podcast.jpg"/></a></p>
 <p>Ce post est essentiellement une question que j'ai ajoutée au <a href="https://discord.com/invite/j57uchzUa9" rel="noopener noreferrer" target="_blank">Discord associé au Podcast</a>.</p>
 <h1 id="question">Question</h1>
-<p>Je suis un débutant en Swift, et de nombreux aspects restent encore flous pour moi. En me basant sur l'exemple que vous avez utilisé dans le podcast, je vais essayer de combler les lacunes dans ma compréhension.</p>
-<h2 id="modeles-de-domaine-modeles-de-donnees-et-mappeurs">Modèles de Domaine, Modèles de Données et Mappeurs</h2>
-<p>L'exemple est une application ToDo et donc l'entité principale est la <strong>Tâche</strong>. J'aurais donc un modèle de domaine <code>Task</code> qui ressemble à ceci :</p>
+<p>Je suis débutant en Swift, et de nombreux aspects restent encore flous pour moi. Basé sur l'exemple que vous avez utilisé dans le podcast, je vais essayer de combler les lacunes dans ma compréhension.</p>
+<h2 id="modeles-de-domaine-modeles-de-donnees-et-mappers">Modèles de Domaine, Modèles de Données et Mappers</h2>
+<p>L'exemple est une application de tâches et donc l'entité principale est la <strong>Tâche</strong>. J'aurais donc un modèle de domaine <code>Task</code> qui ressemble à ceci :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">Task</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">id</span><span class="p">:</span> <span class="n">UUID</span>
     <span class="kd">let</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
@@ -140,7 +140,7 @@ Deutsch
     <span class="k">return</span> <span class="n">record</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Et j'aurais la fonction correspondante pour mapper un <code>CKRecord</code> à un <code>Task</code> :</p>
+<p>Et j'aurais la fonction correspondante pour mapper un <code>CKRecord</code> de retour à une <code>Task</code> :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">mapCKRecordToTask</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="bp">CKRecord</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Task</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">id</span> <span class="p">=</span> <span class="n">record</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span> <span class="k">as</span><span class="p">!</span> <span class="n">UUID</span>
     <span class="kd">let</span> <span class="nv">title</span> <span class="p">=</span> <span class="n">record</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span> <span class="k">as</span><span class="p">!</span> <span class="nb">String</span>
@@ -153,7 +153,7 @@ Deutsch
 <p>Questions :</p>
 <ul>
 <li><strong>Où</strong> dois-je placer les fonctions de mappage ? Font-elles partie du modèle de domaine ou du modèle de données ? Je suppose qu'elles appartiennent plutôt au modèle de données.</li>
-<li><strong>Erreurs</strong> : Comment gérer les erreurs ? Par exemple, si le <code>CKRecord</code> ne contient pas de valeur pour <code>id</code>, cela provoquerait un crash. Devrais-je utiliser des optionnels ou lancer une erreur ?</li>
+<li><strong>Erreurs</strong> : Comment gérer les erreurs ? Par exemple, si le <code>CKRecord</code> ne contient pas de valeur pour <code>id</code>, je rencontrerais un crash. Dois-je utiliser des optionnels ou lancer une erreur ?</li>
 </ul>
 <h2 id="referentiel">Référentiel</h2>
 <p>Ensuite, vous mentionnez le référentiel. Basé sur la discussion précédente sur Discord, je supposerais que le référentiel ne traite que des modèles de domaine. Il pourrait donc ressembler à ceci :</p>
@@ -166,18 +166,18 @@ Deutsch
     <span class="kd">func</span> <span class="nf">deleteTask</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="n">UUID</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Et basé sur ce protocole, je pourrais implémenter un <code>TaskRepositoryCloudKit</code> qui utilise les fonctions de mappage pour convertir entre les modèles de domaine et de données et reflète toutes les opérations CRUD effectuées sur le TaskRepository (en mémoire) à la base de données CloudKit.</p>
+<p>Et basé sur ce protocole, je pourrais implémenter un <code>TaskRepositoryCloudKit</code> qui utilise les fonctions de mappage pour convertir entre les modèles de domaine et de données et reflète toutes les opérations CRUD effectuées sur le référentiel de tâches (en mémoire) dans la base de données CloudKit.</p>
 <p>Prochaine question :</p>
 <ul>
-<li><strong>Fonctions du référentiel</strong> : Typiquement, je construirais des fonctions à partir d'un référentiel qui vont au-delà du CRUD. Par exemple, un <code>getTasksDateRange</code> qui renvoie la date d'échéance la plus ancienne et la plus récente. Où devrais-je construire cela ? Je ne veux pas le mettre dans <code>TaskRepositoryCloudKit</code> car ce serait la même logique lors de l'utilisation d'un autre stockage (c'est-à-dire charger toutes les tâches en mémoire, les trier et renvoyer la première et la dernière). Comme je ne peux pas avoir de fonctions dans un protocole, où dois-je le mettre ?</li>
-<li><strong>Nommage</strong> : Le nommage que j'ai suggéré est-il raisonnable ? Est-ce ainsi que vous le feriez en Swift ? J'ai choisi <code>TaskRepositoryCloudKit</code> pour qu'il soit listé à côté du <code>TaskRepository</code> dans le navigateur de fichiers Xcode. Si j'avais besoin d'autres modèles de données pour interfacer un système Xyz, je les appellerais <code>TaskRawXyz</code> - est-ce raisonnable ?</li>
+<li><strong>Fonctions du référentiel</strong> : Typiquement, je construirais des fonctions à partir d'un référentiel qui vont au-delà du CRUD. Par exemple, une fonction <code>getTasksDateRange</code> qui retourne la date d'échéance la plus ancienne et la plus récente. Où devrais-je construire cela ? Je ne veux pas le mettre dans <code>TaskRepositoryCloudKit</code> car ce serait la même logique lors de l'utilisation d'un stockage différent (c'est-à-dire charger toutes les tâches en mémoire, les trier et retourner la première et la dernière). Comme je ne peux pas avoir de fonctions dans un protocole, où dois-je le mettre ?</li>
+<li><strong>Nommage</strong> : Le nommage que j'ai suggéré est-il raisonnable ? Est-ce ainsi que vous le feriez en Swift ? J'ai choisi <code>TaskRepositoryCloudKit</code> pour qu'il soit listé à côté de <code>TaskRepository</code> dans le navigateur de fichiers Xcode. Si j'avais besoin d'autres modèles de données pour interfacer un système Xyz, je les appellerais <code>TaskRawXyz</code> - est-ce raisonnable ?</li>
 </ul>
 <h1 id="reponse">Réponse</h1>
-<p>J'ai reçu une excellente <a href="https://discord.com/channels/1028834407374655518/1028846930182291526/1353860001411760228" rel="noopener noreferrer" target="_blank">réponse</a> de <a href="https://pado.name" rel="noopener noreferrer" target="_blank">Cocoatype</a> sur Discord. Et je suis très reconnaissant qu'il ait pris le temps de lire et de taper la réponse.</p>
+<p>J'ai reçu une excellente <a href="https://discord.com/channels/1028834407374655518/1028846930182291526/1353860001411760228" rel="noopener noreferrer" target="_blank">réponse</a> de <a href="https://pado.name" rel="noopener noreferrer" target="_blank">Cocoatype</a> sur Discord. Et je suis très reconnaissant qu'il ait pris le temps de lire et de rédiger la réponse.</p>
 <p>Voici la réponse de Cocoatype pour référence :</p>
 <blockquote>
 <p><strong>Où</strong> dois-je placer les fonctions de mappage ? Font-elles partie du modèle de domaine ou du modèle de données ? Je suppose qu'elles appartiennent plutôt au modèle de données.
-Je les mettrais dans le référentiel ou dans un type d'assistant pour le référentiel. Par exemple, dans mon application Barc, j'ai un protocole <code>BarcodeRepository</code>, et un <code>FileBarcodeRepository</code> qui utilise SwiftData. Voici un petit aperçu de ce à quoi cela ressemble :</p>
+Je mettrais ces fonctions dans le référentiel ou dans un type d'assistance pour le référentiel. Par exemple, dans mon application Barc, j'ai un protocole <code>BarcodeRepository</code>, et un <code>FileBarcodeRepository</code> qui utilise SwiftData. Voici un petit aperçu de ce à quoi cela ressemble :</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="nc">BarcodeRepository</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">codes</span><span class="p">:</span> <span class="p">[</span><span class="n">Code</span><span class="p">]</span> <span class="p">{</span> <span class="kr">get</span> <span class="kr">throws</span> <span class="p">}</span>
@@ -226,11 +226,11 @@ Je les mettrais dans le référentiel ou dans un type d'assistant pour le réfé
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
-<p><strong>Erreurs</strong> : Comment gérer les erreurs ? Par exemple, si le CKRecord ne contient pas de valeur pour id, cela provoquerait un crash. Devrais-je utiliser des optionnels ou lancer une erreur ?</p>
+<p><strong>Erreurs</strong> : Comment gérer les erreurs ? Par exemple, si le CKRecord ne contient pas de valeur pour id, je rencontrerais un crash. Dois-je utiliser des optionnels ou lancer une erreur ?</p>
 </blockquote>
-<p>Personnellement, je lance des erreurs et je les gère au niveau où il est raisonnable de les gérer. Les optionnels sont bien si quelque chose est réellement optionnel, mais rappelez-vous que ce que vous essayez de faire ici est d'éviter d'avoir à gérer les contraintes de l'API dans votre code de vue. Donc, je ne rendrais pas quelque chose optionnel juste pour éviter les erreurs.</p>
+<p>Personnellement, je lance des erreurs et je les gère au niveau où il est raisonnable de les gérer. Les optionnels sont bien si quelque chose est réellement optionnel, mais souvenez-vous que ce que vous essayez de faire ici est d'éviter d'avoir à gérer les contraintes de l'API dans votre code de vue. Donc, je ne rendrais pas quelque chose optionnel juste pour éviter des erreurs.</p>
 <blockquote>
-<p><strong>Fonctions du référentiel</strong> : Typiquement, je construirais des fonctions à partir d'un référentiel qui vont au-delà du CRUD. Par exemple, un getTasksDateRange qui renvoie la date d'échéance la plus ancienne et la plus récente. Où devrais-je construire cela ? Je ne veux pas le mettre dans TaskRepositoryCloudKit car ce serait la même logique lors de l'utilisation d'un autre stockage (c'est-à-dire charger toutes les tâches en mémoire, les trier et renvoyer la première et la dernière). Comme je ne peux pas avoir de fonctions dans un protocole, où dois-je le mettre ?</p>
+<p><strong>Fonctions du référentiel</strong> : Typiquement, je construirais des fonctions à partir d'un référentiel qui vont au-delà du CRUD. Par exemple, une fonction getTasksDateRange qui retourne la date d'échéance la plus ancienne et la plus récente. Où devrais-je construire cela ? Je ne veux pas le mettre dans TaskRepositoryCloudKit car ce serait la même logique lors de l'utilisation d'un stockage différent (c'est-à-dire charger toutes les tâches en mémoire, les trier et retourner la première et la dernière). Comme je ne peux pas avoir de fonctions dans un protocole, où dois-je le mettre ?</p>
 </blockquote>
 <p>Si vous voulez avoir quelque chose à travers plusieurs implémentations, utilisez une extension de protocole. Par exemple :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">extension</span> <span class="nc">TaskRepository</span> <span class="p">{</span>
@@ -243,9 +243,9 @@ Je les mettrais dans le référentiel ou dans un type d'assistant pour le réfé
 </code></pre></div>
 <p>Parce que vous savez que toutes les implémentations de TaskRepository ont un <code>getAllTasks()</code>, vous pouvez l'utiliser dans l'extension comme cela.</p>
 <blockquote>
-<p><strong>Nommage</strong> : Le nommage que j'ai suggéré est-il raisonnable ? Est-ce ainsi que vous le feriez en Swift ? J'ai choisi TaskRepositoryCloudKit pour qu'il soit listé à côté du TaskRepository dans le navigateur de fichiers Xcode. Si j'avais besoin d'autres modèles de données pour interfacer un système Xyz, je les appellerais TaskRawXyz - est-ce raisonnable</p>
+<p><strong>Nommage</strong> : Le nommage que j'ai suggéré est-il raisonnable ? Est-ce ainsi que vous le feriez en Swift ? J'ai choisi TaskRepositoryCloudKit pour qu'il soit listé à côté de TaskRepository dans le navigateur de fichiers Xcode. Si j'avais besoin d'autres modèles de données pour interfacer un système Xyz, je les appellerais TaskRawXyz - est-ce raisonnable</p>
 </blockquote>
-<p>Personnellement, je mets la partie la plus spécifique en premier (BarcodeRepository devient FileBarcodeRepository et PreviewBarcodeRepository et StubBarcodeRepository), mais à la fin, c'est bien aussi. Rien d'étrange à cela dans les deux cas.</p>
+<p>Personnellement, je mets la partie la plus spécifique en premier (BarcodeRepository devient FileBarcodeRepository et PreviewBarcodeRepository et StubBarcodeRepository), mais à la fin, c'est bien aussi. Rien d'étrange dans un sens ou dans l'autre.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

@@ -60,7 +60,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -111,21 +111,21 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/beyond-vibe-coding-redesigning-filmz/" style="color: #0066cc;">Original version</a>
     </div>
 
     <p><img alt="Filmz" src="filmz.png" width="300"/></p>
-<p>Vor einiger Zeit habe ich eine kleine iOS-App namens Filmz entwickelt: Behalten Sie den Überblick über Filme und Serien, die Sie sehen möchten oder bereits gesehen haben. Halten Sie persönliche Zusatzinformationen fest, wie "Wie hat es mir gefallen?" (d.h. meine persönliche Bewertung), "Für welches Publikum würde ich es empfehlen?" (Erwachsene, Kinder, Familie) "Wann und wo habe ich es gesehen" usw. Und dann kommt das Teilen: Filmempfehlungen an Freunde weitergeben, entweder einen Film nach dem anderen oder Listen.</p>
-<p>Da ich damals kein Swift konnte, habe ich es im Stil des <em>Vibe-Codings</em> entwickelt, vollständig unterstützt von KI (damals hauptsächlich Cursor.ai). Das verschaffte mir einen schnellen Start, aber ich war verloren, als ich komplexere Funktionen hinzufügen wollte, die eine gut strukturierte Codebasis erforderten. Und da ich nicht viel über Swift wusste, konnte ich es auch nicht umsetzen. Vibe-Debugging funktioniert noch nicht...</p>
-<p>Also starte ich hier erneut, und zwar mit einem anderen Ansatz: Ich werde versuchen, ähnlich zu arbeiten, wie ich es mit einem klugen, aber unerfahrenen Entwicklerkollegen tun würde. Der Fokus wird auf einem schrittweisen Ansatz liegen, begleitet von einer ordentlichen Dokumentation: Beschreibungen der anstehenden Aufgaben, Beschreibung der Architekturänderungen, der Optionen, die geprüft / in Betracht gezogen wurden, und was warum gewählt wurde...</p>
-<p><a href="https://chatgpt.com/share/68371708-8a44-8009-b424-059b920feec9" rel="noopener noreferrer" target="_blank">Ich habe mit meinem KI-Freund ChatGPT gearbeitet</a>, und plane, mit einer Struktur zu beginnen, wie unten beschrieben.</p>
+<p>Vor einiger Zeit habe ich eine kleine iOS-App namens Filmz entwickelt: Behalten Sie den Überblick über Filme und Serien, die Sie sehen möchten oder gesehen haben. Speichern Sie persönliche Zusatzinformationen wie „Wie hat es mir gefallen?“ (d.h. meine persönliche Bewertung), „Für welches Publikum würde ich es empfehlen?“ (Erwachsene, Kinder, Familie) „Wann und wo habe ich es gesehen?“ usw. Und dann kommt das Teilen: Filmempfehlungen an Freunde weitergeben, entweder einen Film nach dem anderen oder als Listen.</p>
+<p>Da ich damals kein Swift konnte, habe ich es im <em>vibe coding</em>-Stil entwickelt, vollständig unterstützt von KI (damals hauptsächlich Cursor.ai). Das gab mir einen schnellen Start, aber ich war verloren, sobald ich komplexere Funktionen hinzufügen wollte, die eine gut strukturierte Codebasis erforderten. Und da ich nicht viel über Swift wusste, konnte ich es auch nicht umsetzen. Vibe Debugging funktioniert noch nicht...</p>
+<p>Also starte ich hier erneut und mit einem anderen Ansatz: Ich werde versuchen, auf ähnliche Weise zu arbeiten, wie ich es mit einem klugen, aber unerfahrenen Junior-Entwickler tun würde. Der Fokus wird auf einem schrittweisen Ansatz liegen, begleitet von einer ordentlichen Dokumentation: Beschreibungen der aktuellen Aufgabe, Beschreibung der Architekturänderungen, der inspizierten / in Betracht gezogenen Optionen und was warum gewählt wurde...</p>
+<p><a href="https://chatgpt.com/share/68371708-8a44-8009-b424-059b920feec9" rel="noopener noreferrer" target="_blank">Ich habe mit meinem KI-Freund ChatGPT gearbeitet</a> und plane, mit einer Struktur zu beginnen, wie unten beschrieben.</p>
 <div class="highlight"><pre><span></span><code>README.md                        # Projektübersicht und Einrichtungshinweise
 docs/                     # Alles, was *nicht* Quellcode ist, lebt hier
-├── index.md              # Funktionale Übersicht auf hoher Ebene (nutzerzentriert)
+├── index.md              # Funktionale Übersicht auf hoher Ebene (benutzerzentriert)
 ├── architecture.md       # Technische Übersicht auf hoher Ebene
 ├── glossary.md           # Fachvokabular
-├── features/             # Ein Unterverzeichnis *pro* Feature ⬇
+├── features/             # Ein Unterverzeichnis *pro* Funktion ⬇
 │   ├── dark-mode/
 │   │   ├── 01-intent.md          # „User Story“ oder Problemstellung
 │   │   ├── 02-ui-flow.md         # Wireflow, Screenshots, Diagramme → PNG/Drawio *im selben Ordner* behalten
@@ -134,16 +134,16 @@ docs/                     # Alles, was *nicht* Quellcode ist, lebt hier
 │   │   └── dark-mode.drawio.png  # Diagramm sitzt neben dem Text, der darauf verweist
 │   ├── profile-refactor/
 │   │   └── …
-│   └── _TEMPLATE/               # Leeres Skelett, das Sie beim Hinzufügen eines Features kopieren
-├── data-structure/            # Übergreifende Feature-, Entitätsstrukturen oder ERDs, Migrationshinweise
+│   └── _TEMPLATE/               # Leeres Gerüst, das Sie beim Hinzufügen einer Funktion kopieren
+├── data-structure/            # Übergreifende Funktionen, Entitätsstrukturen oder ERDs, Migrationshinweise
 │   ├── schema-overview.mmd
 │   └── schema.md
 ├── adr/                  # Architektur-Entscheidungsprotokolle
 │   ├── ADR-001-use-themex.md
 │   └── ADR-002-db-index.md
-└── changelog.md          # „Keep a Changelog“-Stil Verlauf
+└── changelog.md          # „Keep a Changelog“-Stil Geschichte
 </code></pre></div>
-<p>2025-05-28: Ich nehme dies als Ausgangspunkt, arbeite und sehe, was fehlt. Und füge die fehlenden Teile auf dem Weg hinzu.</p>
+<p>2025-05-28: Ich nehme dies als Ausgangspunkt, arbeite und sehe, was fehlt. Und füge die fehlenden Teile unterwegs hinzu.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

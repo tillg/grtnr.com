@@ -60,7 +60,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -111,25 +111,25 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/how-i-moved-to-github-jbake/" style="color: #0066cc;">Original version</a>
     </div>
 
     <p><strong>*</strong> Diese Seite ist ~~im Aufbau~~ unvollständig... <strong>*</strong></p>
-<p>Zuerst: Es ist nicht meine Erfindung! Viele haben es schon vorher gemacht, es gibt viele Beschreibungen dazu. Trotzdem hat es mich einige Zeit gekostet ;)</p>
-<p><a href="http://alexcican.com/post/guide-hosting-website-dropbox-github/" rel="noopener noreferrer" target="_blank">Diese</a> und <a href="http://alexcican.com/post/blog-dropbox-scriptogram" rel="noopener noreferrer" target="_blank">diese</a> Quellen waren die inspirierendsten und einfachsten Erklärungen (die Vertrauen geben ;) ).</p>
+<p>Zuerst: Es ist nicht meine Erfindung! Viele haben es schon vorher gemacht, es gibt viele Beschreibungen da draußen. Es hat trotzdem einige Zeit gedauert ;)</p>
+<p><a href="http://alexcican.com/post/guide-hosting-website-dropbox-github/" rel="noopener noreferrer" target="_blank">Dieser</a> und <a href="http://alexcican.com/post/blog-dropbox-scriptogram" rel="noopener noreferrer" target="_blank">dieser</a> Beitrag waren die inspirierendsten Quellen und die einfachste Erklärung (die Vertrauen gibt ;) ).</p>
 <h1 id="einrichtung">Einrichtung</h1>
-<p>So sieht mein Gesamteinrichtung aus:</p>
+<p>So sieht das Gesamtkonzept aus, das ich habe:</p>
 <ul>
-<li>Ein Verzeichnis auf meinem Mac, das den Inhalt enthält. Ich verwende die Grundstruktur, die <a href="http://jbake.org" rel="noopener noreferrer" target="_blank">JBake</a> verwendet.</li>
+<li>Ein Verzeichnis auf meinem Mac, das den Inhalt enthält. Ich verwende die grundlegende Struktur, die <a href="http://jbake.org" rel="noopener noreferrer" target="_blank">JBake</a> verwendet.</li>
 <li>Ein git-geklontes Verzeichnis auf meinem Mac mit dem Output des JBake-Prozesses</li>
-<li>Ein kleines Skript, das ich jedes Mal ausführe, wenn ich etwas geändert habe. Das Skript übernimmt das "Baking" und das Git-Publishing</li>
+<li>Ein kleines Skript, das ich jedes Mal ausführe, wenn ich etwas geändert habe. Das Skript übernimmt das Backen und das Veröffentlichen auf Git</li>
 <li>Und natürlich die Einstellungen im DNS, um meinen Domainnamen auf die GitHub-IPs zu verweisen</li>
 </ul>
 <h2 id="jbake">JBake</h2>
-<p>Warum verwende ich JBake? Mir gefällt das Prinzip und ich fühle mich in Java wohler als in anderen Programmiersprachen. Ich habe den internen Code von JBake nicht angefasst, aber ich bin zuversichtlich, dass ich es könnte.
-Die Arbeitsweise von JBake ist ähnlich wie die des berühmten <a href="https://jekyllrb.com/" rel="noopener noreferrer" target="_blank">Jekyll</a>: Es analysiert Inhaltsdateien und erstellt daraus (statische) HTML-Dateien. Die Inhaltsdateien können Markdown oder einige andere Formate enthalten; ich verwende nur Markdown.</p>
-<p>Meine Verzeichnisstruktur sieht so aus:</p>
+<p>Warum benutze ich JBake? Ich mag das Prinzip und fühle mich in Java wohler als in anderen Programmiersprachen. Ich habe den internen Code von JBake nicht angefasst, aber ich bin zuversichtlich, dass ich es könnte.
+Die Arbeitsweise von JBake ähnelt dem berühmten <a href="https://jekyllrb.com/" rel="noopener noreferrer" target="_blank">Jekyll</a>: Es analysiert Inhaltsdateien und erstellt daraus (statische) HTML-Dateien. Die Inhaltsdateien können Markdown oder andere Formate enthalten; ich verwende nur Markdown.</p>
+<p>Meine Verzeichnisstruktur sieht folgendermaßen aus:</p>
 <div class="highlight"><pre><span></span><code>.
 |-- assets
 |   |-- favicon.gif
@@ -158,7 +158,7 @@ Die Arbeitsweise von JBake ist ähnlich wie die des berühmten <a href="https://
 |
 |-- jbake.properties
 </code></pre></div>
-<p>Standardmäßig erzeugt JBake das Output-Verzeichnis in diesem Baum. In meinem Fall backe ich meine Sachen in ein Verzeichnis, das git-synchronisiert ist.</p>
+<p>Standardmäßig erzeugt JBake das Ausgabeverzeichnis in diesem Baum. In meinem Fall backe ich meine Sachen in ein Verzeichnis, das mit Git synchronisiert wird.</p>
 <h2 id="die-github-einrichtung">Die GitHub-Einrichtung</h2>
 <h2 id="die-dns-einstellungen">Die DNS-Einstellungen</h2>
 <h1 id="als-nachstes">Als Nächstes</h1>

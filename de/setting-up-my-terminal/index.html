@@ -60,7 +60,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -111,14 +111,14 @@ Français
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/setting-up-my-terminal/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Ich weiß, es gibt viele Artikel und Erklärungen darüber, wie man sein Terminal konfiguriert und einrichtet. Trotzdem hat es bei mir mehr als 2 Stunden gedauert, bis alles so funktioniert hat, wie ich es wollte. Der Grund dafür war, dass viele der Artikel und Erklärungen eine Schritt-für-Schritt-Anleitung zum Installieren bieten, aber zu wenig Hintergrundinformationen darüber, wie die Dinge im Hintergrund zusammenhängen und funktionieren. Und genau das hat mir gefehlt...</p>
-<p>Also hier ist ein weiterer Artikel. Oder eher eine Sammlung von Informationsschnipseln, die ich als wertvoll empfunden habe.</p>
+    <p>Ich weiß, es gibt viele Artikel und Erklärungen darüber, wie man sein Terminal konfiguriert und einrichtet. Trotzdem hat es mich mehr als 2 Stunden gekostet, alles so zum Laufen zu bringen, wie ich es wollte. Der Grund war, dass viele der Artikel und Erklärungen eine Schritt-für-Schritt-Anleitung zur Installation bieten, aber zu wenig Hintergrundinformationen darüber, wie die Dinge im Hintergrund zusammenhängen und funktionieren. Und genau das hat mir gefehlt...</p>
+<p>Hier ist also ein weiterer Artikel. Oder eher eine Sammlung von Informationsschnipseln, die ich als wertvoll empfand.</p>
 <h2 id="die-ausgangssituation">Die Ausgangssituation</h2>
-<p>Mein Ziel-Setup &amp; Anforderungen sind einfach:</p>
+<p>Meine Zielkonfiguration und Anforderungen sind einfach:</p>
 <ul>
 <li>macOS (Catalina 10.15.2 zum Zeitpunkt des Schreibens)</li>
 <li>iTerm2 (Build 3.3.8)</li>
@@ -127,16 +127,16 @@ Français
 <li>Ich möchte sehen, in welchem Git-Branch ich mich befinde - wenn das aktuelle Verzeichnis innerhalb eines Git-Repos liegt</li>
 </ul>
 <h2 id="die-beweglichen-teile">Die beweglichen Teile</h2>
-<p>Was mich verwirrt hat, war die fehlende Übersicht. Daher sind hier die verschiedenen Teile, die in meinem Setup involviert sind:</p>
+<p>Was mich verwirrt hat, war der fehlende Überblick. Daher sind hier die verschiedenen Bestandteile, die an meiner Konfiguration beteiligt sind:</p>
 <ul>
 <li><strong>zsh</strong>: Die Shell</li>
 <li><strong>Oh My Zsh</strong>: Ein Framework, das die zsh-Shell mit Funktionen und Design erweitert.</li>
 <li><strong>powerlevel9k</strong>: Ein Theme für Oh My Zsh</li>
-<li><strong>Fonts</strong>, die von powerlevel9k benötigt werden, um Text und Symbole anzuzeigen</li>
+<li><strong>Schriftarten</strong>, die von powerlevel9k benötigt werden, um Text und Symbole anzuzeigen</li>
 </ul>
-<p>Die Abhängigkeiten in dieser Liste sind von oben nach unten, d.h. die Fonts werden von powerlevel9k benötigt, das auf Oh My Zsh läuft, das zsh verwendet.</p>
+<p>Die Abhängigkeiten in dieser Liste sind von oben nach unten, d.h. die Schriftarten werden von powerlevel9k benötigt, das auf Oh My Zsh läuft, welches zsh verwendet.</p>
 <h2 id="verzeichnisstruktur">Verzeichnisstruktur</h2>
-<p>Bevor wir die verschiedenen Komponenten einzeln durchgehen, hier ist die Verzeichnisstruktur, die wir nach der Installation aller Teile haben werden:</p>
+<p>Bevor wir die verschiedenen Komponenten einzeln durchgehen, hier die Verzeichnisstruktur, die wir nach der Installation aller Bestandteile haben werden:</p>
 <div class="highlight"><pre><span></span><code>├── $HOME
 │   └── .oh-my-zsh/
 │   │   └── custom/
@@ -147,15 +147,15 @@ Français
 ├── .zshrc
 </code></pre></div>
 <h2 id="zsh">zsh</h2>
-<p>Ich habe in der Vergangenheit bash verwendet und war damit zufrieden. Ich startete einfach mein Mac Terminal, und da war es. Später habe ich iTerm2 verwendet, und es startete auch mit bash. Warum also zu zsh wechseln?</p>
+<p>Früher habe ich bash verwendet und war damit zufrieden. Ich startete einfach mein Mac-Terminal, und da war es. Später nutzte ich iTerm2, und es startete ebenfalls mit bash. Warum also zu zsh wechseln?</p>
 <p>Dieser Artikel erklärt es schön und ausführlich. Kurz gesagt:</p>
 <ul>
-<li>Apple hat in der Vergangenheit bash verwendet, da es der De-facto-Standard war</li>
-<li>2007 wechselte bash zur <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" rel="noopener noreferrer" target="_blank">GNU Public License 3.0</a>, was Apple aus bestimmten Gründen nicht gefiel. Also blieben sie bei der Vor-2007-Version von bash. Und das ist alt - einschließlich einer <a href="https://www.wikiwand.com/en/Shellshock_(software_bug)" rel="noopener noreferrer" target="_blank">Sicherheitslücke</a>, die Apple zwang, bash für Macs zu aktualisieren.</li>
-<li>zsh wurde im Laufe der Zeit zum aufstrebenden De-facto-Standard, also wechselte Apple.</li>
+<li>Apple verwendete früher bash, da es der De-facto-Standard war</li>
+<li>2007 wechselte bash zur <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" rel="noopener noreferrer" target="_blank">GNU Public License 3.0</a>, was Apple aus bestimmten Gründen nicht gefiel. Daher blieben sie bei der Vor-2007-Version von bash. Und das ist alt - einschließlich <a href="https://www.wikiwand.com/en/Shellshock_(software_bug)" rel="noopener noreferrer" target="_blank">einer Sicherheitslücke</a>, die Apple zwang, bash für Macs zu aktualisieren.</li>
+<li>zsh wurde im Laufe der Zeit zum aufkommenden De-facto-Standard, also wechselte Apple.</li>
 </ul>
 <p>Und natürlich bietet <a href="https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/" rel="noopener noreferrer" target="_blank">zsh modernere, coole Funktionen</a>.</p>
-<p>Also, es ist der neue Standard, es sieht gut aus - lassen Sie es uns verwenden. Da es die neue mac-Standardshell ist, müssen Sie es nicht installieren. Falls Sie einen neuen Mac haben, der mit Catalina vorinstalliert kam, verwenden Sie bereits zsh. Falls Sie Ihren Mac von Mojave aktualisiert haben, müssen Sie zsh als Ihre Terminal-Shell wie folgt einstellen:</p>
+<p>Also, es ist der neue Standard, es sieht gut aus - nutzen wir es. Da es die neue Mac-Standardshell ist, müssen Sie es nicht installieren. Falls Sie einen neuen Mac haben, der mit Catalina vorinstalliert kam, verwenden Sie bereits zsh. Falls Sie Ihren Mac von Mojave aktualisiert haben, müssen Sie zsh als Ihre Terminal-Shell wie folgt festlegen:</p>
 <div class="highlight"><pre><span></span><code>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/zsh
 </code></pre></div>
 <p>Dies setzt zsh als die Standard-Shell.</p>
@@ -163,8 +163,8 @@ Français
 <p>Die Konfiguration der zsh-Shell erfolgt über Einträge in <code>.zshrc</code>, die sich in Ihrem <code>$HOME</code>-Verzeichnis befindet. Wie oben beschrieben, gibt es einige Komponenten, die interagieren. Einige von ihnen bieten Konfigurationsoptionen und können an verschiedenen Orten konfiguriert werden. Um den Überblick zu behalten, habe ich mich entschieden, die Komponenten an ihrem jeweiligen Standardort zu installieren und alle Konfigurationsoptionen in der <code>.zshrc</code>-Datei zu haben.</p>
 <h2 id="oh-my-zsh">Oh My Zsh</h2>
 <blockquote>
-<p>Oh My Zsh ist ein Open-Source, Community-getriebenes Framework zur Verwaltung Ihrer zsh-Konfiguration.
--- <cite><a href="https://ohmyz.sh/" rel="noopener noreferrer" target="_blank">Oh My Zsh Website</a></cite></p>
+<p>Oh My Zsh ist ein Open-Source-, Community-getriebenes Framework zur Verwaltung Ihrer zsh-Konfiguration.
+-- <cite><a href="https://ohmyz.sh/" rel="noopener noreferrer" target="_blank">Oh My Zsh Webseite</a></cite></p>
 </blockquote>
 <p>Grundsätzlich macht Oh My Zsh Ihr Terminal sehr ansprechend (über <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" rel="noopener noreferrer" target="_blank">Themes</a>) und bietet viele hilfreiche Plugins. Eine Beispiel-Liste von ihrer <a href="https://github.com/ohmyzsh/ohmyzsh" rel="noopener noreferrer" target="_blank">GitHub-Seite</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">plugins</span><span class="o">=(</span>
@@ -193,12 +193,12 @@ Français
 <span class="c1"># Standard-Plugins finden Sie in ~/.oh-my-zsh/plugins/*</span>
 <span class="c1"># Benutzerdefinierte Plugins können zu ~/.oh-my-zsh/custom/plugins/ hinzugefügt werden</span>
 <span class="c1"># Beispiel-Format: plugins=(rails git textmate ruby lighthouse)</span>
-<span class="c1"># Fügen Sie mit Bedacht hinzu, da zu viele Plugins den Shell-Start verlangsamen.</span>
+<span class="c1"># Wählen Sie mit Bedacht, da zu viele Plugins den Shell-Start verlangsamen.</span>
 <span class="nv">plugins</span><span class="o">=(</span>git<span class="w"> </span>python<span class="o">)</span>
 </code></pre></div>
 <h2 id="powerlevel10k">powerlevel10k</h2>
 <p>Hinweis: Ich habe früher <a href="https://github.com/Powerlevel9k/powerlevel9k" rel="noopener noreferrer" target="_blank">powerlevel9k</a> verwendet, aber als ich meinen Mac im Mai 2025 installierte, war 9k veraltet und verwies auf <a href="https://github.com/romkatv/powerlevel10k" rel="noopener noreferrer" target="_blank">powerlevel10k</a>.</p>
-<p>Installieren Sie powerlevel10k gemäß deren <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh" rel="noopener noreferrer" target="_blank">Installationsanleitung für zsh</a>.</p>
+<p>Installieren Sie powerlevel10k gemäß ihrer <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh" rel="noopener noreferrer" target="_blank">Installationsanleitung für zsh</a>.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

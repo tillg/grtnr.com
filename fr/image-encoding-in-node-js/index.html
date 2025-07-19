@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 09.07.2025 14:56:36.
+      Last built 19.07.2025 06:03:59.
   </div>
 </div>
   <div class="wrap">
@@ -107,37 +107,35 @@ Deutsch
     </div>
 
     <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o
+      Translated by: gpt-4o-2024-08-06
       | <a href="/image-encoding-in-node-js/" style="color: #0066cc;">Original version</a>
     </div>
 
     <p><strong>Cet article est en cours de rédaction !</strong></p>
-<p>En programmant sur un projet parallèle, j'ai dû gérer des images dans une application node. Mon application utilise <a href="https://expressjs.com/" rel="noopener noreferrer" target="_blank">Express</a>, <a href="https://aws.amazon.com/rekognition/" rel="noopener noreferrer" target="_blank">Amazon Rekognition</a> ainsi que <a href="https://pouchdb.com/" rel="noopener noreferrer" target="_blank">Pouchdb</a>.</p>
-<p>Je traitais différentes sources et cibles :</p>
+<p>En programmant un projet annexe, j'ai dû gérer des images dans une application node. Mon application utilise <a href="https://expressjs.com/" rel="noopener noreferrer" target="_blank">Express</a>, <a href="https://aws.amazon.com/rekognition/" rel="noopener noreferrer" target="_blank">Amazon Rekognition</a> ainsi que <a href="https://pouchdb.com/" rel="noopener noreferrer" target="_blank">Pouchdb</a>.</p>
+<p>Je gérais différentes sources et cibles :</p>
 <ul>
 <li>Un utilisateur télécharge une image</li>
-<li>Je lis une image depuis un fichier, qu'il soit au format JPEG ou PNG</li>
+<li>Je lis une image à partir d'un fichier, qu'il soit au format JPEG ou PNG</li>
 <li>J'envoie une image à AWS</li>
 <li>Je stocke une image dans mon pouchDB</li>
 </ul>
-<p>En explorant les différentes sources, j'ai rencontré divers formats sur la manière dont les images peuvent être traitées dans node :</p>
+<p>En parcourant les différentes sources, j'ai rencontré divers formats sur la manière dont les images peuvent être traitées dans node :</p>
 <ul>
 <li>Comme un buffer contenant des données binaires</li>
 <li>Comme une chaîne contenant des données encodées en Base64, commençant par quelque chose comme <code>data:image/jpeg;base64,</code> (ou avec <code>png</code>)</li>
 <li>Comme une chaîne contenant des données encodées en base64 sans le début spécial</li>
 </ul>
-<p>Voici les différentes opérations que je réalise et ce qu'elles fournissent en sortie :</p>
-<ul>
-<li>Lecture d'un fichier depuis le disque avec <code>fs</code> : retourne un <code>Buffer</code> avec des données binaires</li>
-</ul>
-<p>Voici les sources et cibles à partir desquelles les données d'image sont transférées dans mon exemple :
+<p>Voici les différentes opérations que je fais et ce qu'elles fournissent en sortie :</p>
+<h2 id="-lecture-dun-fichier-depuis-le-disque-avec-fs-retourne-un-buffer-avec-des-donnees-binaires">- Lecture d'un fichier depuis le disque avec <code>fs</code> : retourne un <code>Buffer</code> avec des données binaires</h2>
+<p>Voici les sources et cibles à partir desquelles et vers lesquelles les données d'image sont transférées dans mon exemple :
 <img alt="Sources et cibles d'image" src="https://docs.google.com/drawings/d/e/2PACX-1vTaOoDUdKWZ9q05WH1LX1Yz_JbismNFdrYMoFYYsbU410xf23mi4GxRv_ZvhIQipnLDXunKU5eCh-Ju/pub?w=960&amp;h=720"/></p>
 <h2 id="lecture">Lecture</h2>
 <p>Informations utiles que j'ai trouvées sur les sujets :</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/24523532/how-do-i-convert-an-image-to-a-base64-encoded-data-url-in-sails-js-or-generally" rel="noopener noreferrer" target="_blank">Comment convertir une image en URL de données encodées en base64 dans sails.js ou généralement dans le JavaScript côté serveur ? StackOverflow</a></li>
+<li><a href="https://stackoverflow.com/questions/24523532/how-do-i-convert-an-image-to-a-base64-encoded-data-url-in-sails-js-or-generally" rel="noopener noreferrer" target="_blank">Comment convertir une image en URL de données encodées en base64 dans sails.js ou généralement en JavaScript côté serveur ? StackOverflow</a></li>
 <li><a href="https://stackoverflow.com/questions/8110294/nodejs-base64-image-encoding-decoding-not-quite-working" rel="noopener noreferrer" target="_blank">Encodage/décodage d'image base64 dans NodeJS ne fonctionne pas tout à fait, StackOverflow</a></li>
-<li><a href="https://github.com/gchudnov/inkjet/blob/master/README.md" rel="noopener noreferrer" target="_blank">Inkjet, bibliothèque de décodage, encodage d'image JPEG et lecture EXIF pour un navigateur et node.js, Github</a></li>
+<li><a href="https://github.com/gchudnov/inkjet/blob/master/README.md" rel="noopener noreferrer" target="_blank">Inkjet, bibliothèque de décodage, encodage d'images JPEG et lecture EXIF pour un navigateur et node.js, Github</a></li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
