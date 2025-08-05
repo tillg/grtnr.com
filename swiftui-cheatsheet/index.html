@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 03.08.2025 11:50:33.
+      Last built 05.08.2025 08:30:45.
   </div>
 </div>
   <div class="wrap">
@@ -117,6 +117,14 @@ Français
     <p>In June 2025 I started working thru <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. It’s a great course, and I am truly impressed how much quality content <span class="amp">&amp;</span> courses Paul Hudson is providing - and maintaining!! Paul, thank you sooo much for this! 🙏🏼</p>
 <p>But it’s a lot of content, so here are my notes - hopefully in a easy-to-navigate cheatsheet format. I have a rough structure in mind, but I will only fill in the content when I need it. So don’t expect a complete overview!</p>
 <h2 id="swift">Swift</h2>
+<h3 id="strings">Strings</h3>
+<ul>
+<li>They are special, and there is a lot to know…</li>
+<li>This doesn’t work:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">"Paul"</span>
+<span class="kd">let</span> <span class="nv">firstLetter</span> <span class="p">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 <h3 id="optionals">Optionals</h3>
 <ul>
 <li>Optionals let us represent the absence of data, which means we’re able to say “this integer has no value” – that’s different from a fixed number such as 0.</li>
@@ -131,18 +139,69 @@ Français
 <h3 id="dates">Dates</h3>
 <p><code>Date</code>, <code>DateComponents</code>, and <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
+<ul>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
+</ul>
 <h3 id="views">Views</h3>
 <ul>
 <li>Everything is a view in SwiftUI 😜</li>
 <li>Running code when a view is shown, using <code>onAppear()</code>.</li>
 </ul>
+<p>Even <code>ForEach</code> is a view, that’s why we can write</p>
+<div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Text</span><span class="p">(</span><span class="s">"Row </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note: We can’t write <code>ForEach(0..&lt;5)</code>, because <code>ForEach</code>expects a <code>Range&lt;Int&gt;</code>, not a <code>ClosedRange&lt;Int&gt;</code>!</p>
 <h3 id="data-entry">Data Entry</h3>
+<h4 id="stepper"><code>Stepper</code></h4>
+<p><img alt="Stepper" src="/swiftui-cheatsheet/stepper.png"/>
+A stepper is a two-segment control that people use to increase or decrease an incremental value.</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
+
+<span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="n">Stepper</span><span class="p">(</span><span class="s">"</span><span class="si">\(</span><span class="bp">count</span><span class="si">)</span><span class="s">"</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="err">$</span><span class="bp">count</span><span class="p">,</span>
+        <span class="k">in</span><span class="p">:</span> <span class="mf">0.</span><span class="p">..</span><span class="mi">100</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
-<li><code>Stepper</code> for numbers</li>
 <li><code>DatePicker</code> for Dates. Using the <code>displayedComponents</code> parameter to control dates or times.</li>
+<li><code>Form</code></li>
+<li><code>Picker</code></li>
+<li>
+<h2 id="navigation-bar">Navigation Bar</h2>
+</li>
 </ul>
 <h3 id="lists">Lists</h3>
 <p>Building scrolling tables of data using <code>List</code>, in particular how it can create rows directly from arrays of data.</p>
+<h3 id="images">Images</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span>
+<span class="p">{</span>
+<span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+<span class="n">Image</span> <span class="p">(</span><span class="n">example</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">resizable</span> <span class="p">()</span>
+    <span class="p">.</span><span class="n">scaledToFit</span> <span class="p">()</span>
+    <span class="p">.</span><span class="n">frame</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">)}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="alt text" src="/swiftui-cheatsheet/image.png"/></p>
+<p>Replace <code>ScaledToFit</code> by <code>ScaledToFill</code> and get</p>
+<p><img alt="alt text" src="/swiftui-cheatsheet/image-1.png"/></p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">Image</span> <span class="p">(</span><span class="err">•</span><span class="n">example</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">resizable</span> <span class="p">()</span>
+            <span class="p">.</span><span class="n">scaledToFit</span><span class="p">()</span>
+            <span class="p">.</span><span class="n">containerRelativeFrame</span><span class="p">(</span><span class="n">horizontal</span><span class="p">)</span> <span class="p">{</span> <span class="n">size</span><span class="p">,</span> <span class="n">axis</span> <span class="k">in</span>
+            <span class="n">size</span> <span class="o">*</span> <span class="mf">0.8</span>
+            <span class="err">｝</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="alt text" src="/swiftui-cheatsheet/image-2.png"/></p>
 <h3 id="bundle">Bundle</h3>
 <p>Reading files from our app bundle by looking up their path using the <code>Bundle</code> class, including loading strings from there.</p>
 <h3 id="animations">Animations</h3>
@@ -160,6 +219,11 @@ Français
 <li>Crashing your code with <code>fatalError()</code>, and why that might actually be a good thing.</li>
 <li>How to check whether a string is spelled correctly, using <code>UITextChecker</code> (it’s a messy beast).</li>
 <li>Using <code>DragGesture()</code> to let the user move views around, then snapping them back to their original location.</li>
+<li>Bundles: How to put a file <code>whatever.txt</code> in your bundle, how to access (i.e. read it). File names need to be unique throughout a bundle.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<ul>
+<li>What are the differences between a <code>Form</code> and a <code>VStack</code> ?</li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
