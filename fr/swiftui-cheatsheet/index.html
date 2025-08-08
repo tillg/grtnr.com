@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 05.08.2025 08:30:45.
+      Last built 08.08.2025 10:36:30.
   </div>
 </div>
   <div class="wrap">
@@ -112,7 +112,7 @@ Deutsch
     </div>
 
     <p>En juin 2025, j'ai commencé à suivre <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la qualité et la quantité de contenu et de cours que Paul Hudson propose - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
-<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure approximative en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à une vue d'ensemble complète !</p>
+<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure approximative en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à un aperçu complet !</p>
 <h2 id="swift">Swift</h2>
 <h3 id="chaines-de-caracteres">Chaînes de caractères</h3>
 <ul>
@@ -124,10 +124,10 @@ Deutsch
 </code></pre></div>
 <h3 id="optionnels">Optionnels</h3>
 <ul>
-<li>Les optionnels nous permettent de représenter l'absence de données, ce qui signifie que nous pouvons dire "cet entier n'a pas de valeur" – c'est différent d'un nombre fixe tel que 0.</li>
-<li>Exemple : <code>var str:String?</code> peut contenir une chaîne ou nil</li>
+<li>Les optionnels nous permettent de représenter l'absence de données, ce qui signifie que nous pouvons dire « cet entier n'a pas de valeur » – c'est différent d'un nombre fixe tel que 0.</li>
+<li>Exemple : <code>var str:String?</code> peut contenir une chaîne de caractères ou nil</li>
 <li>En conséquence, tout ce qui n'est pas optionnel a définitivement une valeur à l'intérieur, même si ce n'est qu'une chaîne vide.</li>
-<li>Déballer un optionnel est le processus de regarder à l'intérieur d'une boîte pour voir ce qu'elle contient : s'il y a une valeur à l'intérieur, elle est renvoyée pour être utilisée, sinon il y aura nil à l'intérieur.</li>
+<li>Déballer un optionnel est le processus consistant à regarder à l'intérieur d'une boîte pour voir ce qu'elle contient : s'il y a une valeur à l'intérieur, elle est renvoyée pour être utilisée, sinon il y aura nil à l'intérieur.</li>
 <li>Nous pouvons utiliser if let pour exécuter du code si l'optionnel a une valeur, ou guard let pour exécuter du code si l'optionnel n'a pas de valeur – mais avec guard, nous devons toujours quitter la fonction par la suite.</li>
 <li>L'opérateur de coalescence nil, ??, déballe et renvoie la valeur d'un optionnel, ou utilise une valeur par défaut à la place.</li>
 <li>Le chaînage optionnel nous permet de lire un optionnel à l'intérieur d'un autre optionnel avec une syntaxe pratique.</li>
@@ -138,12 +138,12 @@ Deutsch
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
 <li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a></li>
-<li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Guide d'interface humaine</a></li>
 </ul>
 <h3 id="vues">Vues</h3>
 <ul>
 <li>Tout est une vue dans SwiftUI 😜</li>
-<li>Exécution de code lorsqu'une vue est affichée, en utilisant <code>onAppear()</code>.</li>
+<li>Exécuter du code lorsqu'une vue est affichée, en utilisant <code>onAppear()</code>.</li>
 </ul>
 <p>Même <code>ForEach</code> est une vue, c'est pourquoi nous pouvons écrire</p>
 <div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
@@ -154,7 +154,7 @@ Deutsch
 <h3 id="saisie-de-donnees">Saisie de données</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
-Un stepper est un contrôle à deux segments que les gens utilisent pour augmenter ou diminuer une valeur incrémentale.</p>
+Un stepper est un contrôle à deux segments que les utilisateurs utilisent pour augmenter ou diminuer une valeur incrémentale.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -173,7 +173,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 </li>
 </ul>
 <h3 id="listes">Listes</h3>
-<p>Construction de tableaux de données défilants en utilisant <code>List</code>, en particulier comment elle peut créer des lignes directement à partir de tableaux de données.</p>
+<p>Construire des tableaux de données défilants en utilisant <code>List</code>, en particulier comment il peut créer des lignes directement à partir de tableaux de données.</p>
 <h3 id="images">Images</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span>
 <span class="p">{</span>
@@ -200,23 +200,23 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 </code></pre></div>
 <p><img alt="texte alternatif" src="image-2.png"/></p>
 <h3 id="bundle">Bundle</h3>
-<p>Lecture de fichiers depuis notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes de caractères depuis celui-ci.</p>
+<p>Lire des fichiers depuis notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes de caractères à partir de là.</p>
 <h3 id="animations">Animations</h3>
 <p>Couvert dans <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Jour 32-34</a>. TODO Je dois revoir les clips pour extraire mes notes/aide-mémoire.</p>
 <ul>
-<li>Création d'animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
-<li>Personnalisation des animations avec des délais et des répétitions, et choix entre des animations ease-in-ease-out et des animations à ressort.</li>
-<li>Attachement du modificateur animation() aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
-<li>Utilisation de <code>withAnimation()</code> pour créer des animations explicites.</li>
-<li>Attachement de plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
+<li>Créer des animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
+<li>Personnaliser les animations avec des délais et des répétitions, et choisir entre des animations ease-in-ease-out et des animations à ressort.</li>
+<li>Attacher le modificateur animation() aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
+<li>Utiliser <code>withAnimation()</code> pour créer des animations explicites.</li>
+<li>Attacher plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
 </ul>
 <h3 id="autres-sujets">Autres sujets</h3>
 <ul>
 <li>Apprentissage automatique</li>
 <li>Faire planter votre code avec <code>fatalError()</code>, et pourquoi cela pourrait en fait être une bonne chose.</li>
-<li>Comment vérifier si une chaîne est orthographiée correctement, en utilisant <code>UITextChecker</code> (c'est une bête compliquée).</li>
-<li>Utilisation de <code>DragGesture()</code> pour permettre à l'utilisateur de déplacer les vues, puis les ramener à leur emplacement d'origine.</li>
-<li>Bundles : Comment mettre un fichier <code>whatever.txt</code> dans votre bundle, comment y accéder (c'est-à-dire le lire). Les noms de fichiers doivent être uniques dans tout un bundle.</li>
+<li>Comment vérifier si une chaîne de caractères est orthographiée correctement, en utilisant <code>UITextChecker</code> (c'est une bête compliquée).</li>
+<li>Utiliser <code>DragGesture()</code> pour permettre à l'utilisateur de déplacer des vues, puis les ramener à leur position d'origine.</li>
+<li>Bundles : Comment mettre un fichier <code>whatever.txt</code> dans votre bundle, comment y accéder (c'est-à-dire le lire). Les noms de fichiers doivent être uniques dans un bundle.</li>
 </ul>
 <h2 id="questions">Questions</h2>
 <ul>

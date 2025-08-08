@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 05.08.2025 08:30:45.
+      Last built 08.08.2025 10:36:30.
   </div>
 </div>
   <div class="wrap">
@@ -111,8 +111,8 @@ Français
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
-<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettelformat. Ich habe eine grobe Struktur im Kopf, aber ich werde den Inhalt nur dann ausfüllen, wenn ich ihn brauche. Erwarten Sie also keine vollständige Übersicht!</p>
+    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und wie viele Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
+<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, werde den Inhalt jedoch nur bei Bedarf ausfüllen. Erwarten Sie also keine vollständige Übersicht!</p>
 <h2 id="swift">Swift</h2>
 <h3 id="strings">Strings</h3>
 <ul>
@@ -124,10 +124,10 @@ Français
 </code></pre></div>
 <h3 id="optionals">Optionals</h3>
 <ul>
-<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „dieser Integer hat keinen Wert“ – das unterscheidet sich von einer festen Zahl wie 0.</li>
+<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „diese Ganzzahl hat keinen Wert“ – das ist anders als eine feste Zahl wie 0.</li>
 <li>Beispiel: <code>var str:String?</code> kann einen String oder nil enthalten</li>
 <li>Folglich hat alles, was nicht optional ist, definitiv einen Wert, selbst wenn es nur ein leerer String ist.</li>
-<li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls wird nil enthalten sein.</li>
+<li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls ist nil darin.</li>
 <li>Wir können if let verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder guard let, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit guard müssen wir danach immer die Funktion verlassen.</li>
 <li>Der nil-Koaleszenz-Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
 <li>Optional Chaining ermöglicht es uns, ein Optional innerhalb eines anderen Optionals mit einer praktischen Syntax zu lesen.</li>
@@ -154,7 +154,7 @@ Français
 <h3 id="dateneingabe">Dateneingabe</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
-Ein Stepper ist ein zweigeteiltes Steuerelement, das Personen verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
+Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -165,7 +165,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Personen verwenden, um eine
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>DatePicker</code> für Daten. Verwenden des Parameters <code>displayedComponents</code>, um Daten oder Zeiten zu steuern.</li>
+<li><code>DatePicker</code> für Daten. Verwenden des <code>displayedComponents</code> Parameters, um Daten oder Zeiten zu steuern.</li>
 <li><code>Form</code></li>
 <li><code>Picker</code></li>
 <li>
@@ -200,15 +200,15 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Personen verwenden, um eine
 </code></pre></div>
 <p><img alt="alternativer Text" src="image-2.png"/></p>
 <h3 id="bundle">Bundle</h3>
-<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code>-Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
+<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code> Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
 <h3 id="animationen">Animationen</h3>
 <p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips noch einmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
 <ul>
-<li>Erstellen von Animationen implizit mit dem <code>animation()</code>-Modifikator.</li>
-<li>Anpassen von Animationen mit Verzögerungen und Wiederholungen und die Wahl zwischen Ease-In-Ease-Out- und Spring-Animationen.</li>
-<li>Anhängen des <code>animation()</code>-Modifikators an Bindungen, damit wir Änderungen direkt von UI-Steuerelementen animieren können.</li>
+<li>Erstellen von Animationen implizit mit dem <code>animation()</code> Modifier.</li>
+<li>Anpassen von Animationen mit Verzögerungen und Wiederholungen und die Wahl zwischen Ease-in-Ease-out und Spring-Animationen.</li>
+<li>Anheften des animation() Modifiers an Bindungen, um Änderungen direkt von UI-Steuerelementen zu animieren.</li>
 <li>Verwenden von <code>withAnimation()</code>, um explizite Animationen zu erstellen.</li>
-<li>Anhängen mehrerer <code>animation()</code>-Modifikatoren an eine einzelne View, damit wir den Animationsstapel steuern können.</li>
+<li>Anheften mehrerer <code>animation()</code> Modifier an eine einzelne View, um den Animationsstapel zu steuern.</li>
 </ul>
 <h3 id="weitere-themen">Weitere Themen</h3>
 <ul>
