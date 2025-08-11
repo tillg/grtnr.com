@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 08.08.2025 10:36:30.
+      Last built 11.08.2025 11:35:16.
   </div>
 </div>
   <div class="wrap">
@@ -116,15 +116,33 @@ Français
 
     <p>In June 2025 I started working thru <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. It’s a great course, and I am truly impressed how much quality content <span class="amp">&amp;</span> courses Paul Hudson is providing - and maintaining!! Paul, thank you sooo much for this! 🙏🏼</p>
 <p>But it’s a lot of content, so here are my notes - hopefully in a easy-to-navigate cheatsheet format. I have a rough structure in mind, but I will only fill in the content when I need it. So don’t expect a complete overview!</p>
-<h2 id="swift">Swift</h2>
-<h3 id="strings">Strings</h3>
+<div class="toc">
 <ul>
-<li>They are special, and there is a lot to know…</li>
-<li>This doesn’t work:</li>
+<li><a href="#swift">Swift</a><ul>
+<li><a href="#optionals">Optionals</a></li>
+<li><a href="#protocols-and-extensions">Protocols and Extensions</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#dates">Dates</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">"Paul"</span>
-<span class="kd">let</span> <span class="nv">firstLetter</span> <span class="p">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre></div>
+</li>
+<li><a href="#swiftui">SwiftUI</a><ul>
+<li><a href="#views">Views</a></li>
+<li><a href="#data-entry">Data Entry</a></li>
+</ul>
+</li>
+<li><a href="#navigation-bar">Navigation Bar</a><ul>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#bundle">Bundle</a></li>
+<li><a href="#animations">Animations</a></li>
+<li><a href="#other-topics">Other topics</a></li>
+</ul>
+</li>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</div>
+<h2 id="swift">Swift</h2>
 <h3 id="optionals">Optionals</h3>
 <ul>
 <li>Optionals let us represent the absence of data, which means we’re able to say “this integer has no value” – that’s different from a fixed number such as 0.</li>
@@ -136,6 +154,26 @@ Français
 <li>Optional chaining lets us read an optional inside another optional with a convenient syntax.</li>
 <li>If a function might throw errors, you can convert it into an optional using try? – you’ll either get back the function’s return value, or nil if an error is thrown.</li>
 </ul>
+<h3 id="protocols-and-extensions">Protocols and Extensions</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">Vehicle</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">estimateTime</span><span class="p">(</span><span class="k">for</span> <span class="bp">distance</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span>
+    <span class="kd">func</span> <span class="nf">travel</span><span class="p">(</span><span class="bp">distance</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">extension</span> <span class="nc">String</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">trimmed</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">trimmingCharacters</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="p">.</span><span class="n">whitespacesAndNewlines</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="strings">Strings</h3>
+<ul>
+<li>They are special, and there is a lot to know…</li>
+<li>This doesn’t work:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">"Paul"</span>
+<span class="kd">let</span> <span class="nv">firstLetter</span> <span class="p">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 <h3 id="dates">Dates</h3>
 <p><code>Date</code>, <code>DateComponents</code>, and <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
@@ -154,6 +192,24 @@ Français
 <span class="p">}</span>
 </code></pre></div>
 <p>Note: We can’t write <code>ForEach(0..&lt;5)</code>, because <code>ForEach</code>expects a <code>Range&lt;Int&gt;</code>, not a <code>ClosedRange&lt;Int&gt;</code>!</p>
+<h4 id="foreach-view"><code>ForEach</code> View</h4>
+<p><code>FotEach</code> is a view, that is made up the sub-views created in every loop instance.</p>
+<p>We typically use it to create sub-views based on a counter or an array.</p>
+<p><code>ForEach</code> with an array:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+<span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Apple"</span><span class="p">,</span> <span class="s">"Banana"</span><span class="p">,</span> <span class="s">"Cherry"</span><span class="p">]</span>
+
+  <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="n">List</span> <span class="p">{</span>
+      <span class="n">ForEach</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+        <span class="n">Text</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="data-entry">Data Entry</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="/swiftui-cheatsheet/stepper.png"/>
@@ -202,6 +258,7 @@ A stepper is a two-segment control that people use to increase or decrease an in
 <span class="p">}</span>
 </code></pre></div>
 <p><img alt="alt text" src="/swiftui-cheatsheet/image-2.png"/></p>
+<h3 id="toolbar">Toolbar</h3>
 <h3 id="bundle">Bundle</h3>
 <p>Reading files from our app bundle by looking up their path using the <code>Bundle</code> class, including loading strings from there.</p>
 <h3 id="animations">Animations</h3>
