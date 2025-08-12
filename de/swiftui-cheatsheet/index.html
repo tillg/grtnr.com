@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 11.08.2025 11:35:16.
+      Last built 12.08.2025 09:06:47.
   </div>
 </div>
   <div class="wrap">
@@ -111,13 +111,14 @@ Français
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
-<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, werde den Inhalt aber nur bei Bedarf ausfüllen. Erwarten Sie also keine vollständige Übersicht!</p>
+    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
+<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettelformat. Ich habe eine grobe Struktur im Kopf, werde den Inhalt jedoch nur dann ausfüllen, wenn ich ihn benötige. Erwarten Sie also keine vollständige Übersicht!</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
 <li><a href="#optionals">Optionals</a></li>
 <li><a href="#protokolle-und-erweiterungen">Protokolle und Erweiterungen</a></li>
+<li><a href="#arrays-sortierung">Arrays &amp; Sortierung</a></li>
 <li><a href="#strings">Strings</a></li>
 <li><a href="#daten">Daten</a></li>
 </ul>
@@ -140,16 +141,18 @@ Français
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
+<p>Für einen umfassenden Überblick siehe <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Lernen Sie essentielles Swift in einer Stunde</a>.</p>
+<p>Im folgenden Kapitel habe ich nur die Teile hinzugefügt, die ich mindestens einmal nachschlagen musste.</p>
 <h3 id="optionals">Optionals</h3>
 <ul>
-<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „dieser Integer hat keinen Wert“ – das unterscheidet sich von einer festen Zahl wie 0.</li>
+<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „dieser Integer hat keinen Wert“ – das ist anders als eine feste Zahl wie 0.</li>
 <li>Beispiel: <code>var str:String?</code> kann einen String oder nil enthalten</li>
 <li>Folglich hat alles, was nicht optional ist, definitiv einen Wert, selbst wenn es nur ein leerer String ist.</li>
 <li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls wird nil darin sein.</li>
-<li>Wir können if let verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder guard let, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit guard müssen wir danach immer die Funktion verlassen.</li>
+<li>Wir können if let verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder guard let, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit guard müssen wir die Funktion danach immer verlassen.</li>
 <li>Der nil-Koaleszenz-Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
 <li>Optional Chaining ermöglicht es uns, ein Optional innerhalb eines anderen Optionals mit einer praktischen Syntax zu lesen.</li>
-<li>Wenn eine Funktion Fehler werfen könnte, können Sie sie mit try? in ein Optional umwandeln – Sie erhalten entweder den Rückgabewert der Funktion oder nil, wenn ein Fehler auftritt.</li>
+<li>Wenn eine Funktion Fehler auslösen könnte, können Sie sie mit try? in ein Optional umwandeln – Sie erhalten entweder den Rückgabewert der Funktion oder nil, wenn ein Fehler ausgelöst wird.</li>
 </ul>
 <h3 id="protokolle-und-erweiterungen">Protokolle und Erweiterungen</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">Vehicle</span> <span class="p">{</span>
@@ -160,6 +163,49 @@ Français
 <div class="highlight"><pre><span></span><code><span class="kd">extension</span> <span class="nc">String</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">trimmed</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">trimmingCharacters</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="p">.</span><span class="n">whitespacesAndNewlines</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="arrays-sortierung">Arrays &amp; Sortierung</h3>
+<p>Alle Arrays haben eingebaute <code>sort()</code> und <code>sorted()</code> Methoden, die verwendet werden können, um das Array zu sortieren.</p>
+<ul>
+<li><code>sort()</code> sortiert das Array an Ort und Stelle</li>
+<li><code>sorted()</code> gibt ein neues, sortiertes Array zurück.</li>
+</ul>
+<p>Wenn das Array einfach ist, können Sie <code>sort()</code> direkt aufrufen, um ein Array an Ort und Stelle zu sortieren:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
+<span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
+</code></pre></div>
+<p>Wenn Sie komplexere Strukturen haben, müssen Sie den Vergleich übergeben:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">users</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Jemima"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Peter"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"David"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Kelly"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Isabella"</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">users</span><span class="p">.</span><span class="bp">sort</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="p">.</span><span class="n">firstName</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="p">.</span><span class="n">firstName</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Wir können unsere eigenen Typen <code>Comparable</code> konform machen, und wenn wir das tun, erhalten wir auch eine <code>sorted()</code> Methode ohne Parameter. Dies erfordert zwei Schritte:</p>
+<ol>
+<li>Fügen Sie die <code>Comparable</code> Konformität zur Definition von User hinzu.</li>
+<li>Fügen Sie eine Methode namens <code>&lt;</code> hinzu, die zwei Benutzer nimmt und true zurückgibt, wenn der erste vor dem zweiten sortiert werden soll.</li>
+</ol>
+<p>So sieht das im Code aus:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span><span class="p">:</span> <span class="n">Identifiable</span><span class="p">,</span> <span class="nb">Comparable</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">id</span> <span class="p">=</span> <span class="n">UUID</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="nb">String</span>
+
+    <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">lhs</span><span class="p">:</span> <span class="n">User</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">User</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="n">lhs</span><span class="p">.</span><span class="n">lastName</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="p">.</span><span class="n">lastName</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -175,7 +221,7 @@ Français
 <p><code>Date</code>, <code>DateComponents</code> und <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a></li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein schönes Werkzeug, um die verschiedenen Ansichten und Komponenten zu navigieren und auszuprobieren.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
 <h3 id="ansichten">Ansichten</h3>
@@ -185,10 +231,10 @@ Français
 </ul>
 <p>Sogar <code>ForEach</code> ist eine Ansicht, deshalb können wir schreiben</p>
 <div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Text</span><span class="p">(</span><span class="s">"Zeile </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">Text</span><span class="p">(</span><span class="s">"Row </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, nicht einen <code>ClosedRange&lt;Int&gt;</code>!</p>
+<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, keinen <code>ClosedRange&lt;Int&gt;</code>!</p>
 <h4 id="foreach-ansicht"><code>ForEach</code> Ansicht</h4>
 <p><code>ForEach</code> ist eine Ansicht, die aus den Unteransichten besteht, die in jeder Schleifeninstanz erstellt werden.</p>
 <p>Wir verwenden sie typischerweise, um Unteransichten basierend auf einem Zähler oder einem Array zu erstellen.</p>
@@ -209,8 +255,8 @@ Français
 </code></pre></div>
 <h3 id="dateneingabe">Dateneingabe</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
-<p><img alt="Schrittregler" src="stepper.png"/>
-Ein Schrittregler ist ein zweigeteiltes Steuerelement, das Personen verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
+<p><img alt="Stepper" src="stepper.png"/>
+Ein Stepper ist ein zweigeteiltes Steuerelement, das Menschen verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -221,7 +267,7 @@ Ein Schrittregler ist ein zweigeteiltes Steuerelement, das Personen verwenden, u
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>DatePicker</code> für Daten. Verwendung des Parameters <code>displayedComponents</code>, um Daten oder Zeiten zu steuern.</li>
+<li><code>DatePicker</code> für Daten. Verwenden des <code>displayedComponents</code> Parameters, um Daten oder Zeiten zu steuern.</li>
 <li><code>Form</code></li>
 <li><code>Picker</code></li>
 <li>
@@ -240,9 +286,9 @@ Ein Schrittregler ist ein zweigeteiltes Steuerelement, das Personen verwenden, u
     <span class="p">.</span><span class="n">frame</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">)}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="Alternativer Text" src="image.png"/></p>
+<p><img alt="alt text" src="image.png"/></p>
 <p>Ersetzen Sie <code>ScaledToFit</code> durch <code>ScaledToFill</code> und erhalten Sie</p>
-<p><img alt="Alternativer Text" src="image-1.png"/></p>
+<p><img alt="alt text" src="image-1.png"/></p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
         <span class="n">Image</span> <span class="p">(</span><span class="err">•</span><span class="n">example</span><span class="p">)</span>
@@ -254,25 +300,25 @@ Ein Schrittregler ist ein zweigeteiltes Steuerelement, das Personen verwenden, u
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="Alternativer Text" src="image-2.png"/></p>
+<p><img alt="alt text" src="image-2.png"/></p>
 <h3 id="werkzeugleiste">Werkzeugleiste</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code>-Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
+<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code> Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
 <h3 id="animationen">Animationen</h3>
 <p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips noch einmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
 <ul>
-<li>Erstellen von Animationen implizit mit dem <code>animation()</code>-Modifikator.</li>
-<li>Anpassen von Animationen mit Verzögerungen und Wiederholungen und die Wahl zwischen Ease-in-Ease-out- und Federanimationen.</li>
-<li>Anhängen des <code>animation()</code>-Modifikators an Bindungen, sodass wir Änderungen direkt von UI-Steuerelementen aus animieren können.</li>
+<li>Erstellen von Animationen implizit mit dem <code>animation()</code> Modifikator.</li>
+<li>Anpassen von Animationen mit Verzögerungen und Wiederholungen und die Wahl zwischen Ease-in-Ease-out und Federanimationen.</li>
+<li>Anhängen des <code>animation()</code> Modifikators an Bindungen, damit wir Änderungen direkt von UI-Steuerelementen animieren können.</li>
 <li>Verwenden von <code>withAnimation()</code>, um explizite Animationen zu erstellen.</li>
-<li>Anhängen mehrerer <code>animation()</code>-Modifikatoren an eine einzelne Ansicht, sodass wir den Animationsstapel steuern können.</li>
+<li>Anhängen mehrerer <code>animation()</code> Modifikatoren an eine einzelne Ansicht, damit wir den Animationsstapel steuern können.</li>
 </ul>
 <h3 id="andere-themen">Andere Themen</h3>
 <ul>
 <li>Maschinelles Lernen</li>
 <li>Ihren Code mit <code>fatalError()</code> abstürzen lassen und warum das tatsächlich eine gute Sache sein könnte.</li>
-<li>Wie man überprüft, ob ein String korrekt geschrieben ist, mit <code>UITextChecker</code> (es ist ein unübersichtliches Biest).</li>
-<li>Verwenden von <code>DragGesture()</code>, um dem Benutzer zu ermöglichen, Ansichten zu verschieben, und sie dann an ihren ursprünglichen Ort zurückschnappen zu lassen.</li>
+<li>Wie man überprüft, ob ein String korrekt geschrieben ist, mit <code>UITextChecker</code> (es ist ein unordentliches Biest).</li>
+<li>Verwenden von <code>DragGesture()</code>, um dem Benutzer zu erlauben, Ansichten zu verschieben, und sie dann an ihren ursprünglichen Ort zurückschnappen zu lassen.</li>
 <li>Bundles: Wie man eine Datei <code>whatever.txt</code> in Ihr Bundle legt, wie man darauf zugreift (d.h. sie liest). Dateinamen müssen im gesamten Bundle eindeutig sein.</li>
 </ul>
 <h2 id="fragen">Fragen</h2>

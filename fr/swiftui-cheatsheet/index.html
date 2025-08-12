@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 11.08.2025 11:35:16.
+      Last built 12.08.2025 09:06:47.
   </div>
 </div>
   <div class="wrap">
@@ -111,13 +111,14 @@ Deutsch
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>En juin 2025, j'ai commencé à suivre <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson propose - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
-<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure approximative en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à un aperçu complet !</p>
+    <p>En juin 2025, j'ai commencé à travailler sur <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson propose - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
+<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure générale en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à un aperçu complet !</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
 <li><a href="#optionnels">Optionnels</a></li>
 <li><a href="#protocoles-et-extensions">Protocoles et Extensions</a></li>
+<li><a href="#tableaux-et-tri">Tableaux et tri</a></li>
 <li><a href="#chaines">Chaînes</a></li>
 <li><a href="#dates">Dates</a></li>
 </ul>
@@ -140,14 +141,16 @@ Deutsch
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
+<p>Pour un aperçu complet, voir <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Apprenez l'essentiel de Swift en une heure</a>.</p>
+<p>Dans le chapitre suivant, j'ai juste ajouté les parties que j'avais besoin de vérifier au moins une fois.</p>
 <h3 id="optionnels">Optionnels</h3>
 <ul>
 <li>Les optionnels nous permettent de représenter l'absence de données, ce qui signifie que nous pouvons dire "cet entier n'a pas de valeur" – c'est différent d'un nombre fixe tel que 0.</li>
 <li>Exemple : <code>var str:String?</code> peut contenir une chaîne ou nil</li>
-<li>En conséquence, tout ce qui n'est pas optionnel a définitivement une valeur à l'intérieur, même si ce n'est qu'une chaîne vide.</li>
+<li>En conséquence, tout ce qui n'est pas optionnel a définitivement une valeur à l'intérieur, même si c'est juste une chaîne vide.</li>
 <li>Déballer un optionnel est le processus de regarder à l'intérieur d'une boîte pour voir ce qu'elle contient : s'il y a une valeur à l'intérieur, elle est renvoyée pour être utilisée, sinon il y aura nil à l'intérieur.</li>
 <li>Nous pouvons utiliser if let pour exécuter du code si l'optionnel a une valeur, ou guard let pour exécuter du code si l'optionnel n'a pas de valeur – mais avec guard, nous devons toujours quitter la fonction ensuite.</li>
-<li>L'opérateur de coalescence de nil, ??, déballe et renvoie la valeur d'un optionnel, ou utilise une valeur par défaut à la place.</li>
+<li>L'opérateur de coalescence nil, ??, déballe et renvoie la valeur d'un optionnel, ou utilise une valeur par défaut à la place.</li>
 <li>Le chaînage optionnel nous permet de lire un optionnel à l'intérieur d'un autre optionnel avec une syntaxe pratique.</li>
 <li>Si une fonction peut générer des erreurs, vous pouvez la convertir en optionnel en utilisant try? – vous obtiendrez soit la valeur de retour de la fonction, soit nil si une erreur est générée.</li>
 </ul>
@@ -163,6 +166,49 @@ Deutsch
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h3 id="tableaux-et-tri">Tableaux et tri</h3>
+<p>Tous les tableaux ont des méthodes intégrées <code>sort()</code> et <code>sorted()</code> qui peuvent être utilisées pour trier le tableau.</p>
+<ul>
+<li><code>sort()</code> trie le tableau sur place</li>
+<li><code>sorted()</code> renvoie un nouveau tableau trié.</li>
+</ul>
+<p>Si le tableau est simple, vous pouvez simplement appeler <code>sort()</code> directement, comme ceci, pour trier un tableau sur place :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
+<span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
+</code></pre></div>
+<p>Si vous avez des structures plus complexes, vous devez passer la comparaison :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">users</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Jemima"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Peter"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"David"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Kelly"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Isabella"</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">users</span><span class="p">.</span><span class="bp">sort</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="p">.</span><span class="n">firstName</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="p">.</span><span class="n">firstName</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nous pouvons faire en sorte que nos propres types soient conformes à <code>Comparable</code>, et lorsque nous le faisons, nous obtenons également une méthode <code>sorted()</code> sans paramètres. Cela prend deux étapes :</p>
+<ol>
+<li>Ajouter la conformité <code>Comparable</code> à la définition de User.</li>
+<li>Ajouter une méthode appelée <code>&lt;</code> qui prend deux utilisateurs et renvoie vrai si le premier doit être trié avant le second.</li>
+</ol>
+<p>Voici à quoi cela ressemble en code :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span><span class="p">:</span> <span class="n">Identifiable</span><span class="p">,</span> <span class="nb">Comparable</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">id</span> <span class="p">=</span> <span class="n">UUID</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="nb">String</span>
+
+    <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">lhs</span><span class="p">:</span> <span class="n">User</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">User</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="n">lhs</span><span class="p">.</span><span class="n">lastName</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="p">.</span><span class="n">lastName</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="chaines">Chaînes</h3>
 <ul>
 <li>Elles sont spéciales, et il y a beaucoup à savoir...</li>
@@ -175,7 +221,7 @@ Deutsch
 <p><code>Date</code>, <code>DateComponents</code>, et <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a></li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un outil sympa pour naviguer et jouer avec les différentes vues et composants.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
 <h3 id="vues">Vues</h3>
@@ -210,7 +256,7 @@ Deutsch
 <h3 id="saisie-de-donnees">Saisie de données</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
-Un stepper est un contrôle à deux segments que les gens utilisent pour augmenter ou diminuer une valeur incrémentale.</p>
+Un stepper est un contrôle à deux segments que les gens utilisent pour augmenter ou diminuer une valeur incrémentielle.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -257,13 +303,13 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <p><img alt="texte alternatif" src="image-2.png"/></p>
 <h3 id="barre-doutils">Barre d'outils</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lire des fichiers depuis notre bundle d'application en recherchant leur chemin en utilisant la classe <code>Bundle</code>, y compris le chargement de chaînes depuis celui-ci.</p>
+<p>Lire des fichiers à partir de notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes à partir de là.</p>
 <h3 id="animations">Animations</h3>
 <p>Couvert dans <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Jour 32-34</a>. TODO Je dois revoir les clips pour extraire mes notes/aide-mémoire.</p>
 <ul>
 <li>Créer des animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
 <li>Personnaliser les animations avec des délais et des répétitions, et choisir entre des animations ease-in-ease-out et des animations à ressort.</li>
-<li>Attacher le modificateur animation() à des liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
+<li>Attacher le modificateur animation() aux liaisons, afin que nous puissions animer les changements directement à partir des contrôles de l'interface utilisateur.</li>
 <li>Utiliser <code>withAnimation()</code> pour créer des animations explicites.</li>
 <li>Attacher plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
 </ul>

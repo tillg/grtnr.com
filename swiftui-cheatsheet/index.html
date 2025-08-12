@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 11.08.2025 11:35:16.
+      Last built 12.08.2025 09:06:47.
   </div>
 </div>
   <div class="wrap">
@@ -121,6 +121,7 @@ Français
 <li><a href="#swift">Swift</a><ul>
 <li><a href="#optionals">Optionals</a></li>
 <li><a href="#protocols-and-extensions">Protocols and Extensions</a></li>
+<li><a href="#arrays-sorting">Arrays <span class="amp">&amp;</span> sorting</a></li>
 <li><a href="#strings">Strings</a></li>
 <li><a href="#dates">Dates</a></li>
 </ul>
@@ -143,6 +144,8 @@ Français
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
+<p>For an all in overview, see <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Learn essential Swift in one hour</a>.</p>
+<p>In the following chapter I have just added the parts I needed to check on at least once.</p>
 <h3 id="optionals">Optionals</h3>
 <ul>
 <li>Optionals let us represent the absence of data, which means we’re able to say “this integer has no value” – that’s different from a fixed number such as 0.</li>
@@ -166,6 +169,49 @@ Français
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h3 id="arrays-sorting">Arrays <span class="amp">&amp;</span> sorting</h3>
+<p>All arrays have built-in <code>sort()</code> and <code>sorted()</code> methods that can be used to sort the array.</p>
+<ul>
+<li><code>sort()</code> sorts the array in-place</li>
+<li><code>sorted()</code> returns a new, sorted array.</li>
+</ul>
+<p>If the array is simple you can just call <code>sort()</code> directly, like this, to sort an array in place:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
+<span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
+</code></pre></div>
+<p>If you have more complex structs, you need to pass along the comparison:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">users</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Jemima"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Peter"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"David"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Kelly"</span><span class="p">),</span>
+    <span class="n">User</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="s">"Isabella"</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">users</span><span class="p">.</span><span class="bp">sort</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="p">.</span><span class="n">firstName</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="p">.</span><span class="n">firstName</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can make our own types conform to <code>Comparable</code>, and when we do so we also get a <code>sorted()</code> method with no parameters. This takes two steps:</p>
+<ol>
+<li>Add the <code>Comparable</code> conformance to the definition of User.</li>
+<li>Add a method called <code>&lt;</code> that takes two users and returns true if the first should be sorted before the second.</li>
+</ol>
+<p>Here’s how that looks in code:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span><span class="p">:</span> <span class="n">Identifiable</span><span class="p">,</span> <span class="nb">Comparable</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">id</span> <span class="p">=</span> <span class="n">UUID</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="nb">String</span>
+
+    <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">lhs</span><span class="p">:</span> <span class="n">User</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">User</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="n">lhs</span><span class="p">.</span><span class="n">lastName</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="p">.</span><span class="n">lastName</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="strings">Strings</h3>
 <ul>
 <li>They are special, and there is a lot to know…</li>
@@ -178,7 +224,7 @@ Français
 <p><code>Date</code>, <code>DateComponents</code>, and <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a></li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> is a nice tool to navigate and play around the different Views <span class="amp">&amp;</span> components.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
 <h3 id="views">Views</h3>
