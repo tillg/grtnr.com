@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 12.08.2025 09:06:47.
+      Last built 13.08.2025 09:06:15.
   </div>
 </div>
   <div class="wrap">
@@ -119,6 +119,7 @@ Français
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
+<li><a href="#struct-computed-properties">struct <span class="amp">&amp;</span> computed properties</a></li>
 <li><a href="#optionals">Optionals</a></li>
 <li><a href="#protocols-and-extensions">Protocols and Extensions</a></li>
 <li><a href="#arrays-sorting">Arrays <span class="amp">&amp;</span> sorting</a></li>
@@ -146,14 +147,40 @@ Français
 <h2 id="swift">Swift</h2>
 <p>For an all in overview, see <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Learn essential Swift in one hour</a>.</p>
 <p>In the following chapter I have just added the parts I needed to check on at least once.</p>
+<h3 id="struct-computed-properties"><code>struct</code> <span class="amp">&amp;</span> computed properties</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">Employee</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">vacationAllocated</span> <span class="p">=</span> <span class="mi">14</span>
+    <span class="kd">var</span> <span class="nv">vacationTaken</span> <span class="p">=</span> <span class="mi">0</span>
+
+    <span class="kd">var</span> <span class="nv">vacationRemaining</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">{</span>
+        <span class="n">vacationAllocated</span> <span class="o">-</span> <span class="n">vacationTaken</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="optionals">Optionals</h3>
 <ul>
 <li>Optionals let us represent the absence of data, which means we’re able to say “this integer has no value” – that’s different from a fixed number such as 0.</li>
 <li>Example: <code>var str:String?</code> can hold a String or nil</li>
 <li>As a result, everything that isn’t optional definitely has a value inside, even if that’s just an empty string.</li>
 <li>Unwrapping an optional is the process of looking inside a box to see what it contains: if there’s a value inside it’s sent back for use, otherwise there will be nil inside.</li>
-<li>We can use if let to run some code if the optional has a value, or guard let to run some code if the optional doesn’t have a value – but with guard we must always exit the function afterwards.</li>
+<li>We can use <code>if let</code> to run some code if the optional has a value, or guard let to run some code if the optional doesn’t have a value – but with guard we must always exit the function afterwards.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">printSquare</span><span class="p">(</span><span class="n">of</span> <span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kd">let</span> <span class="nv">number</span> <span class="p">=</span> <span class="n">number</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">"Missing input"</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+
+    <span class="bp">print</span><span class="p">(</span><span class="s">"</span><span class="si">\(</span><span class="n">number</span><span class="si">)</span><span class="s"> x </span><span class="si">\(</span><span class="n">number</span><span class="si">)</span><span class="s"> is </span><span class="si">\(</span><span class="n">number</span> <span class="o">*</span> <span class="n">number</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
 <li>The nil coalescing operator, ??, unwraps and returns an optional’s value, or uses a default value instead.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">new</span> <span class="p">=</span> <span class="n">captains</span><span class="p">[</span><span class="s">"Serenity"</span><span class="p">]</span> <span class="p">??</span> <span class="s">"N/A"</span>
+</code></pre></div>
+<ul>
 <li>Optional chaining lets us read an optional inside another optional with a convenient syntax.</li>
 <li>If a function might throw errors, you can convert it into an optional using try? – you’ll either get back the function’s return value, or nil if an error is thrown.</li>
 </ul>
