@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 13.08.2025 09:06:15.
+      Last built 14.08.2025 11:31:27.
   </div>
 </div>
   <div class="wrap">
@@ -306,6 +306,33 @@ A stepper is a two-segment control that people use to increase or decrease an in
 </ul>
 <h3 id="lists">Lists</h3>
 <p>Building scrolling tables of data using <code>List</code>, in particular how it can create rows directly from arrays of data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
+    <span class="n">Section</span> <span class="p">{</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Sun"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"sun.max"</span><span class="p">)</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Cloud"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"cloud"</span><span class="p">)</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Rain"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"cloud.rain"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Buttons in Lists: When you place a button in a list, the <span class="caps">ENTIRE</span> list element become clickable! If there are more than one button in a list, wherever you click on the list element, it clicks <span class="caps">ALL</span> the buttons one after the other!</p>
+<p>To fix that and get the behaviour we want, use <code>.buttonStyle(.plain)</code></p>
+<p>Same is true for HStack:</p>
+<div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">label</span><span class="p">.</span><span class="bp">isEmpty</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="n">Text</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">ForEach</span><span class="p">(</span><span class="mf">1.</span><span class="p">.&lt;</span><span class="n">maximumRating</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">number</span> <span class="k">in</span>
+        <span class="n">Button</span> <span class="p">{</span>
+            <span class="n">rating</span> <span class="p">=</span> <span class="n">number</span>
+        <span class="p">}</span> <span class="n">label</span><span class="p">:</span> <span class="p">{</span>
+            <span class="n">image</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="n">rating</span> <span class="p">?</span> <span class="n">offColor</span> <span class="p">:</span> <span class="n">onColor</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="n">buttonStyle</span><span class="p">(.</span><span class="n">plain</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="images">Images</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span>
 <span class="p">{</span>

@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 13.08.2025 09:06:15.
+      Last built 14.08.2025 11:31:27.
   </div>
 </div>
   <div class="wrap">
@@ -111,8 +111,8 @@ Français
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
-<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, aber ich werde den Inhalt nur dann ausfüllen, wenn ich ihn benötige. Erwarten Sie also keine vollständige Übersicht!</p>
+    <p>Im Juni 2025 begann ich mit <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
+<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht zu navigierenden Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, werde den Inhalt jedoch nur dann ausfüllen, wenn ich ihn benötige. Erwarten Sie also keine vollständige Übersicht!</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
@@ -157,11 +157,11 @@ Français
 </code></pre></div>
 <h3 id="optionals">Optionals</h3>
 <ul>
-<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „dieser Integer hat keinen Wert“ – das unterscheidet sich von einer festen Zahl wie 0.</li>
+<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „dieser Integer hat keinen Wert“ – das ist anders als eine feste Zahl wie 0.</li>
 <li>Beispiel: <code>var str:String?</code> kann einen String oder nil enthalten</li>
 <li>Folglich hat alles, was nicht optional ist, definitiv einen Wert, selbst wenn es nur ein leerer String ist.</li>
-<li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls ist nil darin.</li>
-<li>Wir können <code>if let</code> verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder <code>guard let</code>, um Code auszuführen, wenn das Optional keinen Wert hat – aber bei <code>guard</code> müssen wir die Funktion danach immer verlassen.</li>
+<li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls wird nil darin sein.</li>
+<li>Wir können <code>if let</code> verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder guard let, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit guard müssen wir danach immer die Funktion verlassen.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">printSquare</span><span class="p">(</span><span class="n">of</span> <span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="kd">let</span> <span class="nv">number</span> <span class="p">=</span> <span class="n">number</span> <span class="k">else</span> <span class="p">{</span>
@@ -173,13 +173,13 @@ Français
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>Der nil-Koaleszenzoperator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
+<li>Der nil-Koaleszenz-Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">new</span> <span class="p">=</span> <span class="n">captains</span><span class="p">[</span><span class="s">"Serenity"</span><span class="p">]</span> <span class="p">??</span> <span class="s">"N/A"</span>
 </code></pre></div>
 <ul>
 <li>Optional Chaining ermöglicht es uns, ein Optional innerhalb eines anderen Optionals mit einer praktischen Syntax zu lesen.</li>
-<li>Wenn eine Funktion Fehler werfen könnte, können Sie sie mit <code>try?</code> in ein Optional umwandeln – Sie erhalten entweder den Rückgabewert der Funktion oder nil, wenn ein Fehler auftritt.</li>
+<li>Wenn eine Funktion Fehler werfen könnte, können Sie sie mit try? in ein Optional umwandeln – Sie erhalten entweder den Rückgabewert der Funktion oder nil, wenn ein Fehler auftritt.</li>
 </ul>
 <h3 id="protokolle-und-erweiterungen">Protokolle und Erweiterungen</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">Vehicle</span> <span class="p">{</span>
@@ -203,7 +203,7 @@ Français
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
 <span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
 </code></pre></div>
-<p>Wenn Sie komplexere Strukturen haben, müssen Sie den Vergleich übergeben:</p>
+<p>Wenn Sie komplexere Strukturen haben, müssen Sie den Vergleich mitgeben:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
 <span class="p">}</span>
@@ -222,7 +222,7 @@ Français
 </code></pre></div>
 <p>Wir können unsere eigenen Typen <code>Comparable</code> konform machen, und wenn wir das tun, erhalten wir auch eine <code>sorted()</code> Methode ohne Parameter. Dies erfordert zwei Schritte:</p>
 <ol>
-<li>Fügen Sie die <code>Comparable</code>-Konformität zur Definition von User hinzu.</li>
+<li>Fügen Sie die <code>Comparable</code> Konformität zur Definition von User hinzu.</li>
 <li>Fügen Sie eine Methode namens <code>&lt;</code> hinzu, die zwei Benutzer nimmt und true zurückgibt, wenn der erste vor dem zweiten sortiert werden soll.</li>
 </ol>
 <p>So sieht das im Code aus:</p>
@@ -248,7 +248,7 @@ Français
 <p><code>Date</code>, <code>DateComponents</code>, und <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein nützliches Tool, um die verschiedenen Views &amp; Komponenten zu navigieren und auszuprobieren.</li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein schönes Tool, um die verschiedenen Views &amp; Komponenten zu navigieren und auszuprobieren.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
 <h3 id="views">Views</h3>
@@ -258,10 +258,10 @@ Français
 </ul>
 <p>Sogar <code>ForEach</code> ist eine View, deshalb können wir schreiben</p>
 <div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Text</span><span class="p">(</span><span class="s">"Zeile </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">Text</span><span class="p">(</span><span class="s">"Reihe </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, keinen <code>ClosedRange&lt;Int&gt;</code>!</p>
+<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, nicht einen <code>ClosedRange&lt;Int&gt;</code>!</p>
 <h4 id="foreach-view"><code>ForEach</code> View</h4>
 <p><code>ForEach</code> ist eine View, die aus den Unteransichten besteht, die in jeder Schleifeninstanz erstellt werden.</p>
 <p>Wir verwenden es typischerweise, um Unteransichten basierend auf einem Zähler oder einem Array zu erstellen.</p>
@@ -283,7 +283,7 @@ Français
 <h3 id="dateneingabe">Dateneingabe</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
-Ein Stepper ist ein zweigeteiltes Steuerelement, das verwendet wird, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
+Ein Stepper ist ein zweigeteiltes Steuerelement, das Menschen verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -294,7 +294,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das verwendet wird, um einen in
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>DatePicker</code> für Daten. Verwenden des <code>displayedComponents</code>-Parameters, um Daten oder Zeiten zu steuern.</li>
+<li><code>DatePicker</code> für Daten. Verwenden des <code>displayedComponents</code> Parameters, um Daten oder Zeiten zu steuern.</li>
 <li><code>Form</code></li>
 <li><code>Picker</code></li>
 <li>
@@ -302,7 +302,34 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das verwendet wird, um einen in
 </li>
 </ul>
 <h3 id="listen">Listen</h3>
-<p>Erstellen von scrollbaren Datentabellen mit <code>List</code>, insbesondere wie es Zeilen direkt aus Datenarrays erstellen kann.</p>
+<p>Scrollende Tabellen von Daten mit <code>List</code> erstellen, insbesondere wie sie Zeilen direkt aus Datenarrays erstellen kann.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
+    <span class="n">Section</span> <span class="p">{</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Sonne"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"sun.max"</span><span class="p">)</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Wolke"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"cloud"</span><span class="p">)</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Regen"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"cloud.rain"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Buttons in Listen: Wenn Sie einen Button in eine Liste setzen, wird das GESAMTE Listenelement anklickbar! Wenn es mehr als einen Button in einer Liste gibt, wird, wo immer Sie auf das Listenelement klicken, ALLE Buttons nacheinander geklickt!</p>
+<p>Um das zu beheben und das gewünschte Verhalten zu erhalten, verwenden Sie <code>.buttonStyle(.plain)</code></p>
+<p>Dasselbe gilt für HStack:</p>
+<div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">label</span><span class="p">.</span><span class="bp">isEmpty</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="n">Text</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">ForEach</span><span class="p">(</span><span class="mf">1.</span><span class="p">.&lt;</span><span class="n">maximumRating</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">number</span> <span class="k">in</span>
+        <span class="n">Button</span> <span class="p">{</span>
+            <span class="n">rating</span> <span class="p">=</span> <span class="n">number</span>
+        <span class="p">}</span> <span class="n">label</span><span class="p">:</span> <span class="p">{</span>
+            <span class="n">image</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="n">rating</span> <span class="p">?</span> <span class="n">offColor</span> <span class="p">:</span> <span class="n">onColor</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="n">buttonStyle</span><span class="p">(.</span><span class="n">plain</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="bilder">Bilder</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span>
 <span class="p">{</span>
@@ -313,9 +340,9 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das verwendet wird, um einen in
     <span class="p">.</span><span class="n">frame</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">)}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="alt text" src="image.png"/></p>
+<p><img alt="alternativer Text" src="image.png"/></p>
 <p>Ersetzen Sie <code>ScaledToFit</code> durch <code>ScaledToFill</code> und erhalten Sie</p>
-<p><img alt="alt text" src="image-1.png"/></p>
+<p><img alt="alternativer Text" src="image-1.png"/></p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
         <span class="n">Image</span> <span class="p">(</span><span class="err">•</span><span class="n">example</span><span class="p">)</span>
@@ -327,25 +354,25 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das verwendet wird, um einen in
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="alt text" src="image-2.png"/></p>
+<p><img alt="alternativer Text" src="image-2.png"/></p>
 <h3 id="werkzeugleiste">Werkzeugleiste</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code>-Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
+<p>Dateien aus unserem App-Bundle lesen, indem wir ihren Pfad mit der <code>Bundle</code> Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
 <h3 id="animationen">Animationen</h3>
-<p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips noch einmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
+<p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips nochmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
 <ul>
-<li>Erstellen von Animationen implizit mit dem <code>animation()</code>-Modifikator.</li>
-<li>Anpassen von Animationen mit Verzögerungen und Wiederholungen und die Wahl zwischen Ease-in-Ease-out- und Federanimationen.</li>
-<li>Anhängen des <code>animation()</code>-Modifikators an Bindungen, sodass wir Änderungen direkt von UI-Steuerelementen aus animieren können.</li>
-<li>Verwenden von <code>withAnimation()</code>, um explizite Animationen zu erstellen.</li>
-<li>Anhängen mehrerer <code>animation()</code>-Modifikatoren an eine einzelne View, um den Animationsstapel zu steuern.</li>
+<li>Animationen implizit mit dem <code>animation()</code> Modifikator erstellen.</li>
+<li>Animationen mit Verzögerungen und Wiederholungen anpassen und zwischen Ease-in-Ease-out und Federanimationen wählen.</li>
+<li>Den <code>animation()</code> Modifikator an Bindungen anhängen, um Änderungen direkt von UI-Steuerelementen zu animieren.</li>
+<li><code>withAnimation()</code> verwenden, um explizite Animationen zu erstellen.</li>
+<li>Mehrere <code>animation()</code> Modifikatoren an eine einzelne View anhängen, um den Animationsstapel zu steuern.</li>
 </ul>
 <h3 id="weitere-themen">Weitere Themen</h3>
 <ul>
 <li>Maschinelles Lernen</li>
 <li>Ihren Code mit <code>fatalError()</code> abstürzen lassen und warum das tatsächlich eine gute Sache sein könnte.</li>
-<li>Wie man überprüft, ob ein String korrekt geschrieben ist, mit <code>UITextChecker</code> (es ist ein unübersichtliches Biest).</li>
-<li>Verwenden von <code>DragGesture()</code>, um dem Benutzer zu ermöglichen, Views zu verschieben, und sie dann an ihren ursprünglichen Ort zurückschnappen zu lassen.</li>
+<li>Wie man überprüft, ob ein String richtig geschrieben ist, mit <code>UITextChecker</code> (es ist ein unordentliches Biest).</li>
+<li><code>DragGesture()</code> verwenden, um dem Benutzer zu ermöglichen, Ansichten zu verschieben, und sie dann an ihren ursprünglichen Ort zurückschnappen lassen.</li>
 <li>Bundles: Wie man eine Datei <code>whatever.txt</code> in Ihr Bundle legt, wie man darauf zugreift (d.h. sie liest). Dateinamen müssen innerhalb eines Bundles eindeutig sein.</li>
 </ul>
 <h2 id="fragen">Fragen</h2>

@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 13.08.2025 09:06:15.
+      Last built 14.08.2025 11:31:27.
   </div>
 </div>
   <div class="wrap">
@@ -111,14 +111,14 @@ Deutsch
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>En juin 2025, j'ai commencé à suivre <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson fournit - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
-<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure générale en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à une vue d'ensemble complète !</p>
+    <p>En juin 2025, j'ai commencé à travailler sur <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson propose - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
+<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère sous forme d'aide-mémoire facile à naviguer. J'ai une structure générale en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à une vue d'ensemble complète !</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
 <li><a href="#struct-proprietes-calculees">struct &amp; propriétés calculées</a></li>
 <li><a href="#optionnels">Optionnels</a></li>
-<li><a href="#protocoles-et-extensions">Protocoles et Extensions</a></li>
+<li><a href="#protocoles-et-extensions">Protocoles et extensions</a></li>
 <li><a href="#tableaux-tri">Tableaux &amp; tri</a></li>
 <li><a href="#chaines">Chaînes</a></li>
 <li><a href="#dates">Dates</a></li>
@@ -157,11 +157,11 @@ Deutsch
 </code></pre></div>
 <h3 id="optionnels">Optionnels</h3>
 <ul>
-<li>Les optionnels nous permettent de représenter l'absence de données, ce qui signifie que nous pouvons dire "cet entier n'a pas de valeur" - c'est différent d'un nombre fixe tel que 0.</li>
+<li>Les optionnels nous permettent de représenter l'absence de données, ce qui signifie que nous pouvons dire "cet entier n'a pas de valeur" – c'est différent d'un nombre fixe tel que 0.</li>
 <li>Exemple : <code>var str:String?</code> peut contenir une chaîne ou nil</li>
 <li>En conséquence, tout ce qui n'est pas optionnel a définitivement une valeur à l'intérieur, même si ce n'est qu'une chaîne vide.</li>
-<li>Déballer un optionnel est le processus de regarder à l'intérieur d'une boîte pour voir ce qu'elle contient : s'il y a une valeur à l'intérieur, elle est renvoyée pour être utilisée, sinon il y aura nil à l'intérieur.</li>
-<li>Nous pouvons utiliser <code>if let</code> pour exécuter du code si l'optionnel a une valeur, ou <code>guard let</code> pour exécuter du code si l'optionnel n'a pas de valeur - mais avec guard, nous devons toujours quitter la fonction ensuite.</li>
+<li>Déballer un optionnel est le processus consistant à regarder à l'intérieur d'une boîte pour voir ce qu'elle contient : s'il y a une valeur à l'intérieur, elle est renvoyée pour être utilisée, sinon il y aura nil à l'intérieur.</li>
+<li>Nous pouvons utiliser <code>if let</code> pour exécuter du code si l'optionnel a une valeur, ou <code>guard let</code> pour exécuter du code si l'optionnel n'a pas de valeur – mais avec <code>guard</code>, nous devons toujours quitter la fonction par la suite.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">printSquare</span><span class="p">(</span><span class="n">of</span> <span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="kd">let</span> <span class="nv">number</span> <span class="p">=</span> <span class="n">number</span> <span class="k">else</span> <span class="p">{</span>
@@ -179,9 +179,9 @@ Deutsch
 </code></pre></div>
 <ul>
 <li>Le chaînage optionnel nous permet de lire un optionnel à l'intérieur d'un autre optionnel avec une syntaxe pratique.</li>
-<li>Si une fonction peut générer des erreurs, vous pouvez la convertir en optionnel en utilisant try? – vous obtiendrez soit la valeur de retour de la fonction, soit nil si une erreur est générée.</li>
+<li>Si une fonction peut générer des erreurs, vous pouvez la convertir en optionnel en utilisant <code>try?</code> – vous obtiendrez soit la valeur de retour de la fonction, soit nil si une erreur est générée.</li>
 </ul>
-<h3 id="protocoles-et-extensions">Protocoles et Extensions</h3>
+<h3 id="protocoles-et-extensions">Protocoles et extensions</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">Vehicle</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">estimateTime</span><span class="p">(</span><span class="k">for</span> <span class="bp">distance</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span>
     <span class="kd">func</span> <span class="nf">travel</span><span class="p">(</span><span class="bp">distance</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span>
@@ -194,7 +194,7 @@ Deutsch
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="tableaux-tri">Tableaux &amp; tri</h3>
-<p>Tous les tableaux ont des méthodes intégrées <code>sort()</code> et <code>sorted()</code> qui peuvent être utilisées pour trier le tableau.</p>
+<p>Tous les tableaux ont des méthodes <code>sort()</code> et <code>sorted()</code> intégrées qui peuvent être utilisées pour trier le tableau.</p>
 <ul>
 <li><code>sort()</code> trie le tableau sur place</li>
 <li><code>sorted()</code> renvoie un nouveau tableau trié.</li>
@@ -248,7 +248,7 @@ Deutsch
 <p><code>Date</code>, <code>DateComponents</code>, et <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un outil sympa pour naviguer et explorer les différentes vues et composants.</li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un bel outil pour naviguer et explorer les différentes vues et composants.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
 <h3 id="vues">Vues</h3>
@@ -269,7 +269,7 @@ Deutsch
 <div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Apple"</span><span class="p">,</span> <span class="s">"Banana"</span><span class="p">,</span> <span class="s">"Cherry"</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Pomme"</span><span class="p">,</span> <span class="s">"Banane"</span><span class="p">,</span> <span class="s">"Cerise"</span><span class="p">]</span>
 
   <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
     <span class="n">List</span> <span class="p">{</span>
@@ -283,7 +283,7 @@ Deutsch
 <h3 id="saisie-de-donnees">Saisie de données</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
-Un stepper est un contrôle à deux segments que les utilisateurs utilisent pour augmenter ou diminuer une valeur incrémentale.</p>
+Un stepper est un contrôle à deux segments que les gens utilisent pour augmenter ou diminuer une valeur incrémentale.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -303,6 +303,33 @@ Un stepper est un contrôle à deux segments que les utilisateurs utilisent pour
 </ul>
 <h3 id="listes">Listes</h3>
 <p>Construire des tableaux de données défilants en utilisant <code>List</code>, en particulier comment il peut créer des lignes directement à partir de tableaux de données.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
+    <span class="n">Section</span> <span class="p">{</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Soleil"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"sun.max"</span><span class="p">)</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Nuage"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"cloud"</span><span class="p">)</span>
+        <span class="n">Label</span><span class="p">(</span><span class="s">"Pluie"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"cloud.rain"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Boutons dans les listes : Lorsque vous placez un bouton dans une liste, l'ENTIER élément de la liste devient cliquable ! S'il y a plus d'un bouton dans une liste, où que vous cliquiez sur l'élément de la liste, cela clique sur TOUS les boutons l'un après l'autre !</p>
+<p>Pour corriger cela et obtenir le comportement souhaité, utilisez <code>.buttonStyle(.plain)</code></p>
+<p>Il en va de même pour HStack :</p>
+<div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">label</span><span class="p">.</span><span class="bp">isEmpty</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="n">Text</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">ForEach</span><span class="p">(</span><span class="mf">1.</span><span class="p">.&lt;</span><span class="n">maximumRating</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">number</span> <span class="k">in</span>
+        <span class="n">Button</span> <span class="p">{</span>
+            <span class="n">rating</span> <span class="p">=</span> <span class="n">number</span>
+        <span class="p">}</span> <span class="n">label</span><span class="p">:</span> <span class="p">{</span>
+            <span class="n">image</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="n">rating</span> <span class="p">?</span> <span class="n">offColor</span> <span class="p">:</span> <span class="n">onColor</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="n">buttonStyle</span><span class="p">(.</span><span class="n">plain</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="images">Images</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span>
 <span class="p">{</span>
@@ -330,13 +357,13 @@ Un stepper est un contrôle à deux segments que les utilisateurs utilisent pour
 <p><img alt="texte alternatif" src="image-2.png"/></p>
 <h3 id="barre-doutils">Barre d'outils</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lire des fichiers depuis notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes depuis là.</p>
+<p>Lire des fichiers à partir de notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes à partir de là.</p>
 <h3 id="animations">Animations</h3>
-<p>Couverts dans <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Jour 32-34</a>. TODO Je dois revoir les clips pour extraire mes notes/aide-mémoire.</p>
+<p>Couvert dans <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Jour 32-34</a>. TODO Je dois revoir les clips pour extraire mes notes/aide-mémoire.</p>
 <ul>
 <li>Créer des animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
-<li>Personnaliser les animations avec des délais et des répétitions, et choisir entre les animations ease-in-ease-out et spring.</li>
-<li>Attacher le modificateur animation() aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
+<li>Personnaliser les animations avec des délais et des répétitions, et choisir entre des animations ease-in-ease-out et des animations à ressort.</li>
+<li>Attacher le modificateur <code>animation()</code> aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
 <li>Utiliser <code>withAnimation()</code> pour créer des animations explicites.</li>
 <li>Attacher plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
 </ul>
@@ -345,7 +372,7 @@ Un stepper est un contrôle à deux segments que les utilisateurs utilisent pour
 <li>Apprentissage automatique</li>
 <li>Faire planter votre code avec <code>fatalError()</code>, et pourquoi cela pourrait en fait être une bonne chose.</li>
 <li>Comment vérifier si une chaîne est orthographiée correctement, en utilisant <code>UITextChecker</code> (c'est une bête compliquée).</li>
-<li>Utiliser <code>DragGesture()</code> pour permettre à l'utilisateur de déplacer des vues, puis les ramener à leur position d'origine.</li>
+<li>Utiliser <code>DragGesture()</code> pour permettre à l'utilisateur de déplacer des vues, puis les faire revenir à leur emplacement d'origine.</li>
 <li>Bundles : Comment mettre un fichier <code>whatever.txt</code> dans votre bundle, comment y accéder (c'est-à-dire le lire). Les noms de fichiers doivent être uniques dans un bundle.</li>
 </ul>
 <h2 id="questions">Questions</h2>
