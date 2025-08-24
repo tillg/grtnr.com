@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 14.08.2025 11:31:27.
+      Last built 24.08.2025 22:42:09.
   </div>
 </div>
   <div class="wrap">
@@ -111,8 +111,8 @@ Français
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Im Juni 2025 begann ich mit <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
-<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht zu navigierenden Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, werde den Inhalt jedoch nur dann ausfüllen, wenn ich ihn benötige. Erwarten Sie also keine vollständige Übersicht!</p>
+    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
+<p>Aber es ist eine Menge Inhalt, daher sind hier meine Notizen – hoffentlich in einem leicht navigierbaren Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, aber ich werde den Inhalt nur dann ausfüllen, wenn ich ihn benötige. Erwarten Sie also keine vollständige Übersicht!</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
@@ -125,7 +125,7 @@ Français
 </ul>
 </li>
 <li><a href="#swiftui">SwiftUI</a><ul>
-<li><a href="#views">Views</a></li>
+<li><a href="#ansichten">Ansichten</a></li>
 <li><a href="#dateneingabe">Dateneingabe</a></li>
 </ul>
 </li>
@@ -135,14 +135,17 @@ Français
 <li><a href="#werkzeugleiste">Werkzeugleiste</a></li>
 <li><a href="#bundle">Bundle</a></li>
 <li><a href="#animationen">Animationen</a></li>
-<li><a href="#weitere-themen">Weitere Themen</a></li>
+<li><a href="#daten-laden">Daten laden</a></li>
 </ul>
 </li>
-<li><a href="#fragen">Fragen</a></li>
+<li><a href="#netzwerke">Netzwerke</a></li>
+<li><a href="#swiftdata">SwiftData</a></li>
+<li><a href="#weitere-themen">Weitere Themen</a></li>
+<li><a href="#fragen-todos">Fragen &amp; Todos</a></li>
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
-<p>Für einen umfassenden Überblick siehe <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Lernen Sie essentielles Swift in einer Stunde</a>.</p>
+<p>Für einen umfassenden Überblick siehe <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Learn essential Swift in one hour</a>.</p>
 <p>Im folgenden Kapitel habe ich nur die Teile hinzugefügt, die ich mindestens einmal überprüfen musste.</p>
 <h3 id="struct-berechnete-eigenschaften"><code>struct</code> &amp; berechnete Eigenschaften</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">Employee</span> <span class="p">{</span>
@@ -157,11 +160,11 @@ Français
 </code></pre></div>
 <h3 id="optionals">Optionals</h3>
 <ul>
-<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können „dieser Integer hat keinen Wert“ – das ist anders als eine feste Zahl wie 0.</li>
+<li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können: „Dieser Integer hat keinen Wert“ – das unterscheidet sich von einer festen Zahl wie 0.</li>
 <li>Beispiel: <code>var str:String?</code> kann einen String oder nil enthalten</li>
 <li>Folglich hat alles, was nicht optional ist, definitiv einen Wert, selbst wenn es nur ein leerer String ist.</li>
-<li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls wird nil darin sein.</li>
-<li>Wir können <code>if let</code> verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder guard let, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit guard müssen wir danach immer die Funktion verlassen.</li>
+<li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls wird nil enthalten sein.</li>
+<li>Wir können <code>if let</code> verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder <code>guard let</code>, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit <code>guard</code> müssen wir danach immer die Funktion verlassen.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">printSquare</span><span class="p">(</span><span class="n">of</span> <span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="kd">let</span> <span class="nv">number</span> <span class="p">=</span> <span class="n">number</span> <span class="k">else</span> <span class="p">{</span>
@@ -173,13 +176,13 @@ Français
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>Der nil-Koaleszenz-Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
+<li>Der nil-koaleszierende Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">new</span> <span class="p">=</span> <span class="n">captains</span><span class="p">[</span><span class="s">"Serenity"</span><span class="p">]</span> <span class="p">??</span> <span class="s">"N/A"</span>
 </code></pre></div>
 <ul>
 <li>Optional Chaining ermöglicht es uns, ein Optional innerhalb eines anderen Optionals mit einer praktischen Syntax zu lesen.</li>
-<li>Wenn eine Funktion Fehler werfen könnte, können Sie sie mit try? in ein Optional umwandeln – Sie erhalten entweder den Rückgabewert der Funktion oder nil, wenn ein Fehler auftritt.</li>
+<li>Wenn eine Funktion Fehler werfen könnte, können Sie sie mit <code>try?</code> in ein Optional umwandeln – Sie erhalten entweder den Rückgabewert der Funktion oder nil, wenn ein Fehler auftritt.</li>
 </ul>
 <h3 id="protokolle-und-erweiterungen">Protokolle und Erweiterungen</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">Vehicle</span> <span class="p">{</span>
@@ -222,7 +225,7 @@ Français
 </code></pre></div>
 <p>Wir können unsere eigenen Typen <code>Comparable</code> konform machen, und wenn wir das tun, erhalten wir auch eine <code>sorted()</code> Methode ohne Parameter. Dies erfordert zwei Schritte:</p>
 <ol>
-<li>Fügen Sie die <code>Comparable</code> Konformität zur Definition von User hinzu.</li>
+<li>Fügen Sie die <code>Comparable</code>-Konformität zur Definition von User hinzu.</li>
 <li>Fügen Sie eine Methode namens <code>&lt;</code> hinzu, die zwei Benutzer nimmt und true zurückgibt, wenn der erste vor dem zweiten sortiert werden soll.</li>
 </ol>
 <p>So sieht das im Code aus:</p>
@@ -245,25 +248,25 @@ Français
 <span class="kd">let</span> <span class="nv">firstLetter</span> <span class="p">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 <h3 id="daten">Daten</h3>
-<p><code>Date</code>, <code>DateComponents</code>, und <code>DateFormatter</code></p>
+<p><code>Date</code>, <code>DateComponents</code> und <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein schönes Tool, um die verschiedenen Views &amp; Komponenten zu navigieren und auszuprobieren.</li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein nützliches Tool, um durch die verschiedenen Ansichten und Komponenten zu navigieren und damit zu spielen.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
-<h3 id="views">Views</h3>
+<h3 id="ansichten">Ansichten</h3>
 <ul>
-<li>Alles ist eine View in SwiftUI 😜</li>
-<li>Code ausführen, wenn eine View angezeigt wird, mit <code>onAppear()</code>.</li>
+<li>Alles ist eine Ansicht in SwiftUI 😜</li>
+<li>Code ausführen, wenn eine Ansicht angezeigt wird, mit <code>onAppear()</code>.</li>
 </ul>
-<p>Sogar <code>ForEach</code> ist eine View, deshalb können wir schreiben</p>
+<p>Sogar <code>ForEach</code> ist eine Ansicht, deshalb können wir schreiben</p>
 <div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Text</span><span class="p">(</span><span class="s">"Reihe </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">Text</span><span class="p">(</span><span class="s">"Zeile </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, nicht einen <code>ClosedRange&lt;Int&gt;</code>!</p>
-<h4 id="foreach-view"><code>ForEach</code> View</h4>
-<p><code>ForEach</code> ist eine View, die aus den Unteransichten besteht, die in jeder Schleifeninstanz erstellt werden.</p>
+<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, da <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, keinen <code>ClosedRange&lt;Int&gt;</code>!</p>
+<h4 id="foreach-ansicht"><code>ForEach</code> Ansicht</h4>
+<p><code>ForEach</code> ist eine Ansicht, die aus den Unteransichten besteht, die in jeder Schleifeninstanz erstellt werden.</p>
 <p>Wir verwenden es typischerweise, um Unteransichten basierend auf einem Zähler oder einem Array zu erstellen.</p>
 <p><code>ForEach</code> mit einem Array:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftUI</span>
@@ -283,7 +286,7 @@ Français
 <h3 id="dateneingabe">Dateneingabe</h3>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
-Ein Stepper ist ein zweigeteiltes Steuerelement, das Menschen verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
+Ein Stepper ist ein zweigeteiltes Steuerelement, das verwendet wird, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">count</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
 
 <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
@@ -302,7 +305,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Menschen verwenden, um eine
 </li>
 </ul>
 <h3 id="listen">Listen</h3>
-<p>Scrollende Tabellen von Daten mit <code>List</code> erstellen, insbesondere wie sie Zeilen direkt aus Datenarrays erstellen kann.</p>
+<p>Scrollende Datentabellen mit <code>List</code> erstellen, insbesondere wie sie Zeilen direkt aus Datenarrays erstellen kann.</p>
 <div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
     <span class="n">Section</span> <span class="p">{</span>
         <span class="n">Label</span><span class="p">(</span><span class="s">"Sonne"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"sun.max"</span><span class="p">)</span>
@@ -311,9 +314,9 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Menschen verwenden, um eine
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Buttons in Listen: Wenn Sie einen Button in eine Liste setzen, wird das GESAMTE Listenelement anklickbar! Wenn es mehr als einen Button in einer Liste gibt, wird, wo immer Sie auf das Listenelement klicken, ALLE Buttons nacheinander geklickt!</p>
+<p>Buttons in Listen: Wenn Sie einen Button in eine Liste setzen, wird das GESAMTE Listenelement klickbar! Wenn es mehr als einen Button in einer Liste gibt, wird, wo immer Sie auf das Listenelement klicken, ALLE Buttons nacheinander geklickt!</p>
 <p>Um das zu beheben und das gewünschte Verhalten zu erhalten, verwenden Sie <code>.buttonStyle(.plain)</code></p>
-<p>Dasselbe gilt für HStack:</p>
+<p>Das Gleiche gilt für HStack:</p>
 <div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">label</span><span class="p">.</span><span class="bp">isEmpty</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">{</span>
         <span class="n">Text</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
@@ -357,27 +360,143 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Menschen verwenden, um eine
 <p><img alt="alternativer Text" src="image-2.png"/></p>
 <h3 id="werkzeugleiste">Werkzeugleiste</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Dateien aus unserem App-Bundle lesen, indem wir ihren Pfad mit der <code>Bundle</code> Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
+<p>Dateien aus unserem App-Bundle lesen, indem wir ihren Pfad mit der <code>Bundle</code> Klasse nachschlagen, einschließlich dem Laden von Strings von dort.</p>
 <h3 id="animationen">Animationen</h3>
-<p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips nochmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
+<p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips noch einmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
 <ul>
 <li>Animationen implizit mit dem <code>animation()</code> Modifikator erstellen.</li>
-<li>Animationen mit Verzögerungen und Wiederholungen anpassen und zwischen Ease-in-Ease-out und Federanimationen wählen.</li>
-<li>Den <code>animation()</code> Modifikator an Bindungen anhängen, um Änderungen direkt von UI-Steuerelementen zu animieren.</li>
+<li>Animationen mit Verzögerungen und Wiederholungen anpassen und zwischen Ease-in-Ease-out und Spring-Animationen wählen.</li>
+<li>Den <code>animation()</code> Modifikator an Bindungen anhängen, damit wir Änderungen direkt von UI-Steuerelementen aus animieren können.</li>
 <li><code>withAnimation()</code> verwenden, um explizite Animationen zu erstellen.</li>
-<li>Mehrere <code>animation()</code> Modifikatoren an eine einzelne View anhängen, um den Animationsstapel zu steuern.</li>
+<li>Mehrere <code>animation()</code> Modifikatoren an eine einzelne Ansicht anhängen, damit wir den Animationsstapel steuern können.</li>
 </ul>
-<h3 id="weitere-themen">Weitere Themen</h3>
+<h3 id="daten-laden">Daten laden</h3>
+<p>Wenn es synchron ist:</p>
+<div class="highlight"><pre><span></span><code><span class="n">View</span><span class="p">...</span>
+    <span class="p">.</span><span class="n">onAppear</span><span class="p">(</span><span class="n">loadIt</span><span class="p">)</span>
+</code></pre></div>
+<p>?? Wie wird es gemacht, wenn <code>loadIt</code> asynchron ist??</p>
+<h2 id="netzwerke">Netzwerke</h2>
+<p>So senden Sie etwas an einen HTTPS-Endpunkt:</p>
+<div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">encoded</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">"Bestellung konnte nicht kodiert werden"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="kd">let</span> <span class="nv">url</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">"https://reqres.in/api/cupcakes"</span><span class="p">)</span><span class="o">!</span>
+        <span class="kd">var</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">"Content-Type"</span><span class="p">)</span>
+        <span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">"POST"</span>
+
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">upload</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">encoded</span><span class="p">)</span>
+
+            <span class="kd">let</span> <span class="nv">decodedOrder</span> <span class="p">=</span> <span class="k">try</span> <span class="n">JSONDecoder</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="n">Order</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">confirmationMessage</span> <span class="p">=</span> <span class="s">"Ihre Bestellung über </span><span class="si">\(</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">quantity</span><span class="si">)</span><span class="s">x </span><span class="si">\(</span><span class="n">Order</span><span class="p">.</span><span class="n">types</span><span class="p">[</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">type</span><span class="p">].</span><span class="n">lowercased</span><span class="si">())</span><span class="s"> Cupcakes ist unterwegs!"</span>
+            <span class="n">showingConfirmation</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">"Checkout fehlgeschlagen: </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="swiftdata">SwiftData</h2>
+<p>?? Was ist die Beziehung zwischen Model, ModelContext und ModelContainer??</p>
+<p>Erstellen Sie zuerst ein Modell:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">Model</span>
+<span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>  <span class="c1">// Modelle MÜSSEN Klassen sein!</span>
+    <span class="kd">var</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">author</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">genre</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">review</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">rating</span><span class="p">:</span> <span class="nb">Int</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Fügen Sie den <code>modelContainer</code> auf App-Ebene hinzu</p>
+<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftData</span>
+<span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+<span class="p">@</span><span class="n">main</span>
+<span class="kd">struct</span> <span class="nc">BookwormApp</span><span class="p">:</span> <span class="n">App</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">Scene</span> <span class="p">{</span>
+        <span class="n">WindowGroup</span> <span class="p">{</span>
+            <span class="n">ContentView</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="p">.</span><span class="n">modelContainer</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">Book</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Verwenden Sie die Daten in Ihrer Ansicht:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">modelContext</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">modelContext</span>
+    <span class="p">@</span><span class="n">Query</span><span class="p">(</span><span class="bp">sort</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">SortDescriptor</span><span class="p">(</span><span class="err">\</span><span class="n">Book</span><span class="p">.</span><span class="n">title</span><span class="p">),</span>
+        <span class="n">SortDescriptor</span><span class="p">(</span><span class="err">\</span><span class="n">Book</span><span class="p">.</span><span class="n">author</span><span class="p">)</span>
+    <span class="p">])</span> <span class="kd">var</span> <span class="nv">books</span><span class="p">:</span> <span class="p">[</span><span class="n">Book</span><span class="p">]</span>
+    <span class="p">...</span>
+</code></pre></div>
+<p>Geben Sie ein SwiftData-Objekt an eine nachgelagerte Ansicht weiter:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">DetailView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">modelContext</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">modelContext</span>
+
+    <span class="kd">let</span> <span class="nv">book</span><span class="p">:</span> <span class="n">Book</span>
+    <span class="p">...</span>
+</code></pre></div>
+<p>Fügen Sie ein SwiftData-Objekt hinzu:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">AddBookView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">modelContext</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">modelContext</span>
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">NavigationStack</span> <span class="p">{</span>
+            <span class="n">Form</span> <span class="p">{</span>
+                <span class="c1">// Dateneingabe hier</span>
+                <span class="n">Section</span> <span class="p">{</span>
+                    <span class="n">Button</span><span class="p">(</span><span class="s">"Speichern"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">let</span> <span class="nv">newBook</span> <span class="p">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span> <span class="n">genre</span><span class="p">:</span> <span class="n">genre</span><span class="p">,</span> <span class="n">review</span><span class="p">:</span> <span class="n">review</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="n">rating</span><span class="p">)</span>
+                        <span class="n">modelContext</span><span class="p">.</span><span class="bp">insert</span><span class="p">(</span><span class="n">newBook</span><span class="p">)</span>
+                        <span class="n">dismiss</span><span class="p">()</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"Buch hinzufügen"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Löschen Sie ein SwiftData-Objekt:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kd">func</span> <span class="nf">deleteBook</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">modelContext</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+        <span class="n">dismiss</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Hinzufügen eines Kontexts und von Beispieldaten für `#Preview:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="n">Preview</span> <span class="p">{</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">config</span> <span class="p">=</span> <span class="n">ModelConfiguration</span><span class="p">(</span><span class="n">isStoredInMemoryOnly</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">ModelContainer</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">Book</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">configurations</span><span class="p">:</span> <span class="n">config</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">example</span> <span class="p">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">"Testbuch"</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="s">"Testautor"</span><span class="p">,</span> <span class="n">genre</span><span class="p">:</span> <span class="s">"Fantasy"</span><span class="p">,</span> <span class="n">review</span><span class="p">:</span> <span class="s">"Dies war ein großartiges Buch; ich habe es wirklich genossen."</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">DetailView</span><span class="p">(</span><span class="n">book</span><span class="p">:</span> <span class="n">example</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">modelContainer</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s">"Vorschau konnte nicht erstellt werden: </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="weitere-themen">Weitere Themen</h2>
 <ul>
 <li>Maschinelles Lernen</li>
 <li>Ihren Code mit <code>fatalError()</code> abstürzen lassen und warum das tatsächlich eine gute Sache sein könnte.</li>
-<li>Wie man überprüft, ob ein String richtig geschrieben ist, mit <code>UITextChecker</code> (es ist ein unordentliches Biest).</li>
-<li><code>DragGesture()</code> verwenden, um dem Benutzer zu ermöglichen, Ansichten zu verschieben, und sie dann an ihren ursprünglichen Ort zurückschnappen lassen.</li>
-<li>Bundles: Wie man eine Datei <code>whatever.txt</code> in Ihr Bundle legt, wie man darauf zugreift (d.h. sie liest). Dateinamen müssen innerhalb eines Bundles eindeutig sein.</li>
+<li>Wie man überprüft, ob ein String korrekt geschrieben ist, mit <code>UITextChecker</code> (es ist ein unordentliches Biest).</li>
+<li>Verwenden von <code>DragGesture()</code>, um dem Benutzer zu ermöglichen, Ansichten zu verschieben, und sie dann wieder an ihren ursprünglichen Ort zu schnappen.</li>
+<li>Bundles: Wie man eine Datei <code>whatever.txt</code> in Ihr Bundle legt, wie man darauf zugreift (d.h. sie liest). Dateinamen müssen im gesamten Bundle eindeutig sein.</li>
 </ul>
-<h2 id="fragen">Fragen</h2>
+<h2 id="fragen-todos">Fragen &amp; Todos</h2>
 <ul>
 <li>Was sind die Unterschiede zwischen einem <code>Form</code> und einem <code>VStack</code>?</li>
+<li>Multi-Screen-Setups: <code>Sheet</code> und <code>NavigationStack</code>, und wie man sich bewegt</li>
+<li><code>NavigationStack(path)</code></li>
+<li>Binding: <code>@State</code>, <code>@Bindable</code>, <code>@Binding</code></li>
+<li>Wie man Daten in Multi-Screen-Setups weitergibt</li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

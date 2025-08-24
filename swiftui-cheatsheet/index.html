@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 14.08.2025 11:31:27.
+      Last built 24.08.2025 22:42:09.
   </div>
 </div>
   <div class="wrap">
@@ -138,10 +138,13 @@ Français
 <li><a href="#toolbar">Toolbar</a></li>
 <li><a href="#bundle">Bundle</a></li>
 <li><a href="#animations">Animations</a></li>
-<li><a href="#other-topics">Other topics</a></li>
+<li><a href="#loading-data">Loading Data</a></li>
 </ul>
 </li>
-<li><a href="#questions">Questions</a></li>
+<li><a href="#networking">Networking</a></li>
+<li><a href="#swiftdata">SwiftData</a></li>
+<li><a href="#other-topics">Other topics</a></li>
+<li><a href="#questions-todos">Questions <span class="amp">&amp;</span> Todos</a></li>
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
@@ -370,7 +373,119 @@ A stepper is a two-segment control that people use to increase or decrease an in
 <li>Using <code>withAnimation()</code> to create explicit animations.</li>
 <li>Attaching multiple <code>animation()</code> modifiers to a single view so that we can control the animation stack.</li>
 </ul>
-<h3 id="other-topics">Other topics</h3>
+<h3 id="loading-data">Loading Data</h3>
+<p>If it’s synchronous:</p>
+<div class="highlight"><pre><span></span><code><span class="n">View</span><span class="p">...</span>
+    <span class="p">.</span><span class="n">onAppear</span><span class="p">(</span><span class="n">loadIt</span><span class="p">)</span>
+</code></pre></div>
+<p>?? How is it done, when <code>loadIt</code> is async??</p>
+<h2 id="networking">Networking</h2>
+<p>This is how you send something to an <span class="caps">HTTPS</span> Endpoint:</p>
+<div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">encoded</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">"Failed to encode order"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="kd">let</span> <span class="nv">url</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">"https://reqres.in/api/cupcakes"</span><span class="p">)</span><span class="o">!</span>
+        <span class="kd">var</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">"Content-Type"</span><span class="p">)</span>
+        <span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">"POST"</span>
+
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">upload</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">encoded</span><span class="p">)</span>
+
+            <span class="kd">let</span> <span class="nv">decodedOrder</span> <span class="p">=</span> <span class="k">try</span> <span class="n">JSONDecoder</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="n">Order</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">confirmationMessage</span> <span class="p">=</span> <span class="s">"Your order for </span><span class="si">\(</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">quantity</span><span class="si">)</span><span class="s">x </span><span class="si">\(</span><span class="n">Order</span><span class="p">.</span><span class="n">types</span><span class="p">[</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">type</span><span class="p">].</span><span class="n">lowercased</span><span class="si">())</span><span class="s"> cupcakes is on its way!"</span>
+            <span class="n">showingConfirmation</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">"Check out failed: </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="swiftdata">SwiftData</h2>
+<p>?? What is the relationship betweeen Model, ModelContext and ModelContainer??</p>
+<p>Make a model first:</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">Model</span>
+<span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>  <span class="c1">// Models HAVE TO BE Classes!</span>
+    <span class="kd">var</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">author</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">genre</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">review</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">rating</span><span class="p">:</span> <span class="nb">Int</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Add the <code>modelContainer</code> at App level</p>
+<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftData</span>
+<span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+<span class="p">@</span><span class="n">main</span>
+<span class="kd">struct</span> <span class="nc">BookwormApp</span><span class="p">:</span> <span class="n">App</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">Scene</span> <span class="p">{</span>
+        <span class="n">WindowGroup</span> <span class="p">{</span>
+            <span class="n">ContentView</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="p">.</span><span class="n">modelContainer</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">Book</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Use the data in your view:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">modelContext</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">modelContext</span>
+    <span class="p">@</span><span class="n">Query</span><span class="p">(</span><span class="bp">sort</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">SortDescriptor</span><span class="p">(</span><span class="err">\</span><span class="n">Book</span><span class="p">.</span><span class="n">title</span><span class="p">),</span>
+        <span class="n">SortDescriptor</span><span class="p">(</span><span class="err">\</span><span class="n">Book</span><span class="p">.</span><span class="n">author</span><span class="p">)</span>
+    <span class="p">])</span> <span class="kd">var</span> <span class="nv">books</span><span class="p">:</span> <span class="p">[</span><span class="n">Book</span><span class="p">]</span>
+    <span class="p">...</span>
+</code></pre></div>
+<p>Pass a SwiftData object to a down stream View:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">DetailView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">modelContext</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">modelContext</span>
+
+    <span class="kd">let</span> <span class="nv">book</span><span class="p">:</span> <span class="n">Book</span>
+    <span class="p">...</span>
+</code></pre></div>
+<p>Add a SwiftData object:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">AddBookView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">modelContext</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">modelContext</span>
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">NavigationStack</span> <span class="p">{</span>
+            <span class="n">Form</span> <span class="p">{</span>
+                <span class="c1">// Data entry here</span>
+                <span class="n">Section</span> <span class="p">{</span>
+                    <span class="n">Button</span><span class="p">(</span><span class="s">"Save"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">let</span> <span class="nv">newBook</span> <span class="p">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span> <span class="n">genre</span><span class="p">:</span> <span class="n">genre</span><span class="p">,</span> <span class="n">review</span><span class="p">:</span> <span class="n">review</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="n">rating</span><span class="p">)</span>
+                        <span class="n">modelContext</span><span class="p">.</span><span class="bp">insert</span><span class="p">(</span><span class="n">newBook</span><span class="p">)</span>
+                        <span class="n">dismiss</span><span class="p">()</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"Add Book"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Delete a SwiftData object:</p>
+<div class="highlight"><pre><span></span><code>    <span class="kd">func</span> <span class="nf">deleteBook</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">modelContext</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+        <span class="n">dismiss</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Adding a context and sample data for `#Preview:</p>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="n">Preview</span> <span class="p">{</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">config</span> <span class="p">=</span> <span class="n">ModelConfiguration</span><span class="p">(</span><span class="n">isStoredInMemoryOnly</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">ModelContainer</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">Book</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">configurations</span><span class="p">:</span> <span class="n">config</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">example</span> <span class="p">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">"Test Book"</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="s">"Test Author"</span><span class="p">,</span> <span class="n">genre</span><span class="p">:</span> <span class="s">"Fantasy"</span><span class="p">,</span> <span class="n">review</span><span class="p">:</span> <span class="s">"This was a great book; I really enjoyed it."</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">DetailView</span><span class="p">(</span><span class="n">book</span><span class="p">:</span> <span class="n">example</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">modelContainer</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s">"Failed to create preview: </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="other-topics">Other topics</h2>
 <ul>
 <li>Machine Learning</li>
 <li>Crashing your code with <code>fatalError()</code>, and why that might actually be a good thing.</li>
@@ -378,9 +493,13 @@ A stepper is a two-segment control that people use to increase or decrease an in
 <li>Using <code>DragGesture()</code> to let the user move views around, then snapping them back to their original location.</li>
 <li>Bundles: How to put a file <code>whatever.txt</code> in your bundle, how to access (i.e. read it). File names need to be unique throughout a bundle.</li>
 </ul>
-<h2 id="questions">Questions</h2>
+<h2 id="questions-todos">Questions <span class="amp">&amp;</span> Todos</h2>
 <ul>
 <li>What are the differences between a <code>Form</code> and a <code>VStack</code> ?</li>
+<li>Multi screen setups: <code>Sheet</code> and <code>NavigationStack</code>, and how to move around</li>
+<li><code>NavigationStack(path)</code></li>
+<li>Binding: <code>@State</code>, <code>@Bindable</code>, <code>@Binding</code></li>
+<li>How to pass data around multi screen setups</li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
