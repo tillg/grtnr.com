@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 24.08.2025 22:42:09.
+      Last built 25.08.2025 09:01:37.
   </div>
 </div>
   <div class="wrap">
@@ -404,9 +404,17 @@ A stepper is a two-segment control that people use to increase or decrease an in
     <span class="p">}</span>
 </code></pre></div>
 <h2 id="swiftdata">SwiftData</h2>
-<p>?? What is the relationship betweeen Model, ModelContext and ModelContainer??</p>
-<p>Make a model first:</p>
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="n">Model</span>
+<p>The moving parts we have are</p>
+<ul>
+<li>The <code>Model</code>: This is the data structure. The object(s) and it’s fields</li>
+<li>The <code>ModelContainer</code>: This is the persistent storage. Think of it like the file in which the data is written on the server.</li>
+<li>The <code>ModelContext</code>: That’s the in-memory kept version of your data and where the data modifications are held before being saved to the <code>ModelContainer</code>.</li>
+</ul>
+<p>To enable your software to use SwiftData, make a model first:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">Foundation</span>
+<span class="kd">import</span> <span class="nc">SwiftData</span>
+
+<span class="p">@</span><span class="n">Model</span>
 <span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>  <span class="c1">// Models HAVE TO BE Classes!</span>
     <span class="kd">var</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">var</span> <span class="nv">author</span><span class="p">:</span> <span class="nb">String</span>
@@ -471,7 +479,7 @@ A stepper is a two-segment control that people use to increase or decrease an in
         <span class="n">dismiss</span><span class="p">()</span>
     <span class="p">}</span>
 </code></pre></div>
-<p>Adding a context and sample data for `#Preview:</p>
+<p>Adding a context and sample data for <code>#Preview</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="n">Preview</span> <span class="p">{</span>
     <span class="k">do</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nv">config</span> <span class="p">=</span> <span class="n">ModelConfiguration</span><span class="p">(</span><span class="n">isStoredInMemoryOnly</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
