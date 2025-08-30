@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 26.08.2025 08:32:05.
+      Last built 30.08.2025 15:26:37.
   </div>
 </div>
   <div class="wrap">
@@ -111,8 +111,8 @@ Deutsch
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>En juin 2025, j'ai commencé à travailler sur <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson fournit - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
-<p>Mais c'est beaucoup de contenu, donc voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure générale en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à une vue d'ensemble complète !</p>
+    <p>En juin 2025, j'ai commencé à travailler sur <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson propose - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
+<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure approximative en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à une vue d'ensemble complète !</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
@@ -130,18 +130,24 @@ Deutsch
 </ul>
 </li>
 <li><a href="#barre-de-navigation">Barre de navigation</a><ul>
+<li><a href="#texte">Texte</a></li>
 <li><a href="#listes">Listes</a></li>
 <li><a href="#images">Images</a></li>
 <li><a href="#barre-doutils">Barre d'outils</a></li>
 <li><a href="#bundle">Bundle</a></li>
 <li><a href="#animations">Animations</a></li>
-<li><a href="#chargement-de-donnees">Chargement de données</a></li>
+<li><a href="#chargement-des-donnees">Chargement des données</a></li>
+<li><a href="#passer-et-retourner-des-valeurs-versdepuis-des-vues">Passer et retourner des valeurs vers/depuis des vues</a></li>
 </ul>
 </li>
 <li><a href="#reseau">Réseau</a></li>
 <li><a href="#swiftdata">SwiftData</a></li>
+<li><a href="#core-image-filtres-dimage">Core Image (Filtres d'image)</a><ul>
+<li><a href="#todo">TODO</a></li>
+</ul>
+</li>
+<li><a href="#mapkit">MapKit</a></li>
 <li><a href="#autres-sujets">Autres sujets</a></li>
-<li><a href="#questions-taches">Questions &amp; Tâches</a></li>
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
@@ -206,7 +212,7 @@ Deutsch
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
 <span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
 </code></pre></div>
-<p>Si vous avez des structures plus complexes, vous devez transmettre la comparaison :</p>
+<p>Si vous avez des structures plus complexes, vous devez passer la comparaison :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
 <span class="p">}</span>
@@ -223,10 +229,10 @@ Deutsch
     <span class="nv">$0</span><span class="p">.</span><span class="n">firstName</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="p">.</span><span class="n">firstName</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Nous pouvons faire en sorte que nos propres types soient conformes à <code>Comparable</code>, et lorsque nous le faisons, nous obtenons également une méthode <code>sorted()</code> sans paramètres. Cela nécessite deux étapes :</p>
+<p>Nous pouvons faire en sorte que nos propres types soient conformes à <code>Comparable</code>, et lorsque nous le faisons, nous obtenons également une méthode <code>sorted()</code> sans paramètres. Cela prend deux étapes :</p>
 <ol>
 <li>Ajouter la conformité <code>Comparable</code> à la définition de User.</li>
-<li>Ajouter une méthode appelée <code>&lt;</code> qui prend deux utilisateurs et renvoie vrai si le premier doit être trié avant le second.</li>
+<li>Ajouter une méthode appelée <code>&lt;</code> qui prend deux utilisateurs et renvoie true si le premier doit être trié avant le second.</li>
 </ol>
 <p>Voici à quoi cela ressemble en code :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span><span class="p">:</span> <span class="n">Identifiable</span><span class="p">,</span> <span class="nb">Comparable</span> <span class="p">{</span>
@@ -251,8 +257,8 @@ Deutsch
 <p><code>Date</code>, <code>DateComponents</code>, et <code>DateFormatter</code></p>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un outil sympa pour naviguer et jouer avec les différentes vues et composants.</li>
-<li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un bel outil pour naviguer et jouer avec les différentes vues et composants.</li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Guide des interfaces humaines</a></li>
 </ul>
 <h3 id="vues">Vues</h3>
 <ul>
@@ -272,7 +278,7 @@ Deutsch
 <div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftUI</span>
 
 <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Apple"</span><span class="p">,</span> <span class="s">"Banana"</span><span class="p">,</span> <span class="s">"Cherry"</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Pomme"</span><span class="p">,</span> <span class="s">"Banane"</span><span class="p">,</span> <span class="s">"Cerise"</span><span class="p">]</span>
 
   <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
     <span class="n">List</span> <span class="p">{</span>
@@ -304,6 +310,17 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <h2 id="barre-de-navigation">Barre de navigation</h2>
 </li>
 </ul>
+<h3 id="texte">Texte</h3>
+<p><code>Text</code> est un champ de texte qui décrit du texte.</p>
+<p>Remarque : Les champs de texte avec un style différent peuvent être <em>additionnés</em> pour former un grand champ de texte avec des parties de style différent à l'intérieur :</p>
+<div class="highlight"><pre><span></span><code><span class="n">Text</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">font</span><span class="p">(.</span><span class="n">headline</span><span class="p">)</span>
+<span class="o">+</span> <span class="n">Text</span><span class="p">(</span><span class="s">": "</span><span class="p">)</span> <span class="o">+</span>
+<span class="n">Text</span><span class="p">(</span><span class="s">"Description de la page ici"</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">italic</span><span class="p">()</span>
+</code></pre></div>
+<p>Et vous obtenez un texte avec différents styles combinés :</p>
+<p><img alt="texte alternatif" src="image-4.png"/></p>
 <h3 id="listes">Listes</h3>
 <p>Construire des tableaux de données défilants en utilisant <code>List</code>, en particulier comment il peut créer des lignes directement à partir de tableaux de données.</p>
 <div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
@@ -314,7 +331,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Boutons dans les listes : Lorsque vous placez un bouton dans une liste, l'ENTIER élément de la liste devient cliquable ! S'il y a plus d'un bouton dans une liste, où que vous cliquiez sur l'élément de la liste, cela clique sur TOUS les boutons les uns après les autres !</p>
+<p>Boutons dans les listes : Lorsque vous placez un bouton dans une liste, l'ENTIER élément de la liste devient cliquable ! S'il y a plus d'un bouton dans une liste, où que vous cliquiez sur l'élément de la liste, cela clique sur TOUS les boutons l'un après l'autre !</p>
 <p>Pour corriger cela et obtenir le comportement souhaité, utilisez <code>.buttonStyle(.plain)</code></p>
 <p>Il en va de même pour HStack :</p>
 <div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
@@ -360,24 +377,73 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <p><img alt="texte alternatif" src="image-2.png"/></p>
 <h3 id="barre-doutils">Barre d'outils</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lire des fichiers depuis notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes depuis celui-ci.</p>
+<p>Lire des fichiers depuis notre bundle d'application en recherchant leur chemin à l'aide de la classe <code>Bundle</code>, y compris le chargement de chaînes à partir de là.</p>
 <h3 id="animations">Animations</h3>
 <p>Couvert dans <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Jour 32-34</a>. TODO Je dois revoir les clips pour extraire mes notes/aide-mémoire.</p>
 <ul>
 <li>Créer des animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
 <li>Personnaliser les animations avec des délais et des répétitions, et choisir entre des animations ease-in-ease-out et des animations à ressort.</li>
-<li>Attacher le modificateur <code>animation()</code> à des liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
+<li>Attacher le modificateur animation() aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles de l'interface utilisateur.</li>
 <li>Utiliser <code>withAnimation()</code> pour créer des animations explicites.</li>
 <li>Attacher plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
 </ul>
-<h3 id="chargement-de-donnees">Chargement de données</h3>
+<h3 id="chargement-des-donnees">Chargement des données</h3>
 <p>Si c'est synchrone :</p>
 <div class="highlight"><pre><span></span><code><span class="n">View</span><span class="p">...</span>
     <span class="p">.</span><span class="n">onAppear</span><span class="p">(</span><span class="n">loadIt</span><span class="p">)</span>
 </code></pre></div>
-<p>?? Comment cela se fait-il, lorsque <code>loadIt</code> est asynchrone ??</p>
+<p>?? Comment cela se fait-il lorsque <code>loadIt</code> est asynchrone ??</p>
+<h3 id="passer-et-retourner-des-valeurs-versdepuis-des-vues">Passer et retourner des valeurs vers/depuis des vues</h3>
+<p>Comme vu dans <a href="https://www.hackingwithswift.com/books/ios-swiftui/selecting-and-editing-map-annotations" rel="noopener noreferrer" target="_blank">Sélection et édition d'annotations de carte</a></p>
+<p>Imaginez que j'ai une vue qui est ouverte comme une feuille et reçoit un <code>Location</code> (étant une <code>struct</code> définie par l'utilisateur) :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">EditView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">dismiss</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">dismiss</span>
+    <span class="kd">var</span> <span class="nv">location</span><span class="p">:</span> <span class="n">Location</span>
+
+    <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">description</span><span class="p">:</span> <span class="nb">String</span>
+
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">NavigationStack</span> <span class="p">{</span>
+            <span class="n">Form</span> <span class="p">{</span>
+                <span class="n">Section</span> <span class="p">{</span>
+                    <span class="n">TextField</span><span class="p">(</span><span class="s">"Nom du lieu"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">TextField</span><span class="p">(</span><span class="s">"Description"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">description</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"Détails du lieu"</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">toolbar</span> <span class="p">{</span>
+                <span class="n">Button</span><span class="p">(</span><span class="s">"Enregistrer"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">dismiss</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Pour passer le <code>Location</code>, je fais un initialiseur supplémentaire :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">location</span> <span class="p">=</span> <span class="n">location</span>
+
+    <span class="n">_name</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">_description</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Pour <em>retourner</em> des données au code appelant, je passe une méthode <code>onSave</code>. Tout d'abord, créez une variable supplémentaire dans ma structure de vue :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">onSave</span><span class="p">:</span> <span class="p">(</span><span class="n">Location</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span>
+</code></pre></div>
+<p>et puis étendez l'initialiseur comme suit :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">,</span> <span class="n">onSave</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">(</span><span class="n">Location</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">location</span> <span class="p">=</span> <span class="n">location</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">onSave</span> <span class="p">=</span> <span class="n">onSave</span>
+
+    <span class="n">_name</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">_description</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La partie <code>@escaping</code> est importante, et signifie que la fonction est mise de côté pour une utilisation ultérieure, plutôt que d'être appelée immédiatement, et c'est nécessaire ici car la fonction <code>onSave</code> sera appelée uniquement lorsque l'utilisateur appuiera sur Enregistrer.</p>
 <h2 id="reseau">Réseau</h2>
-<p>Voici comment vous envoyez quelque chose à un point de terminaison HTTPS :</p>
+<p>Voici comment envoyer quelque chose à un point de terminaison HTTPS :</p>
 <div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
         <span class="k">guard</span> <span class="kd">let</span> <span class="nv">encoded</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
             <span class="bp">print</span><span class="p">(</span><span class="s">"Échec de l'encodage de la commande"</span><span class="p">)</span>
@@ -412,7 +478,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <span class="kd">import</span> <span class="nc">SwiftData</span>
 
 <span class="p">@</span><span class="n">Model</span>
-<span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>  <span class="c1">// Les modèles DOIVENT être des classes !</span>
+<span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>  <span class="c1">// Les modèles DOIVENT ÊTRE des classes !</span>
     <span class="kd">var</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">var</span> <span class="nv">author</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">var</span> <span class="nv">genre</span><span class="p">:</span> <span class="nb">String</span>
@@ -490,22 +556,48 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="core-image-filtres-dimage">Core Image (Filtres d'image)</h2>
+<p>C'est compliqué... Regardez la classe expliquant cela <a href="https://www.hackingwithswift.com/books/ios-swiftui/basic-image-filtering-using-core-image" rel="noopener noreferrer" target="_blank">ici</a></p>
+<h3 id="todo">TODO</h3>
+<ul>
+<li>Expliquer les différentes classes / objets qui existent, quelle fonctionnalité est fournie par lequel, et comment passer de l'un à l'autre : SwiftUI.Image - CGImage - CIImage</li>
+<li>Expliquer le concept de contexte et de filtre.</li>
+<li>Donner un exemple</li>
+</ul>
+<h2 id="mapkit">MapKit</h2>
+<ul>
+<li><a href="https://www.hackingwithswift.com/books/ios-swiftui/integrating-mapkit-with-swiftui" rel="noopener noreferrer" target="_blank">Vidéo sur les cartes</a></li>
+<li><code>import MapKit</code></li>
+<li><code>Map()</code> affiche une carte ;)</li>
+<li><code>.mapStyle(.imagery)</code> ou <code>.hybrid</code> ou <code>.mapStyle(.hybrid(elevation: .realistic))</code></li>
+<li><em>Entrer</em> des emplacements en tant que <code>MapCameraPosition</code> :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">startPosition</span> <span class="p">=</span> <span class="n">MapCameraPosition</span><span class="p">.</span><span class="n">region</span><span class="p">(</span>
+    <span class="n">MKCoordinateRegion</span><span class="p">(</span>
+        <span class="n">center</span><span class="p">:</span> <span class="bp">CLLocationCoordinate2D</span><span class="p">(</span><span class="n">latitude</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span> <span class="n">longitude</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">span</span><span class="p">:</span> <span class="n">MKCoordinateSpan</span><span class="p">(</span><span class="n">latitudeDelta</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">longitudeDelta</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Obtenir des clics sur la carte en tant que coordonnées avec <code>MapReader</code>, c'est-à-dire le calcul des coordonnées de l'écran --&gt; Long/Lat</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">MapReader</span> <span class="p">{</span> <span class="n">proxy</span> <span class="k">in</span>
+    <span class="n">Map</span><span class="p">(</span><span class="n">initialPosition</span><span class="p">:</span> <span class="n">startPosition</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">onTapGesture</span> <span class="p">{</span> <span class="n">position</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="kd">let</span> <span class="nv">coordinate</span> <span class="p">=</span> <span class="n">proxy</span><span class="p">.</span><span class="n">convert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="p">.</span><span class="n">local</span><span class="p">)</span> <span class="p">{</span>
+                <span class="bp">print</span><span class="p">(</span><span class="s">"Clic à </span><span class="si">\(</span><span class="n">coordinate</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Avoir des <code>Marker</code> sur les cartes</li>
+</ul>
 <h2 id="autres-sujets">Autres sujets</h2>
 <ul>
 <li>Apprentissage automatique</li>
 <li>Faire planter votre code avec <code>fatalError()</code>, et pourquoi cela pourrait en fait être une bonne chose.</li>
-<li>Comment vérifier si une chaîne est orthographiée correctement, en utilisant <code>UITextChecker</code> (c'est une bête compliquée).</li>
-<li>Utiliser <code>DragGesture()</code> pour permettre à l'utilisateur de déplacer des vues, puis les faire revenir à leur emplacement d'origine.</li>
-<li>Bundles : Comment mettre un fichier <code>whatever.txt</code> dans votre bundle, comment y accéder (c'est-à-dire le lire). Les noms de fichiers doivent être uniques dans un bundle.</li>
-</ul>
-<h2 id="questions-taches">Questions &amp; Tâches</h2>
-<ul>
-<li>Quelles sont les différences entre un <code>Form</code> et un <code>VStack</code> ?</li>
-<li>Configurations multi-écrans : <code>Sheet</code> et <code>NavigationStack</code>, et comment se déplacer</li>
-<li><code>NavigationStack(path)</code></li>
-<li>Liaison : <code>@State</code>, <code>@Bindable</code>, <code>@Binding</code></li>
-<li>Comment faire passer des données dans des configurations multi-écrans</li>
-<li>TODO : Comprendre la différence de comportement et d'apparence entre Alert et Confirmation Dialogue.</li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

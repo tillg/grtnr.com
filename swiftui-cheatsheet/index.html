@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 26.08.2025 08:32:05.
+      Last built 30.08.2025 15:26:37.
   </div>
 </div>
   <div class="wrap">
@@ -133,16 +133,23 @@ Français
 </ul>
 </li>
 <li><a href="#navigation-bar">Navigation Bar</a><ul>
+<li><a href="#text">Text</a></li>
 <li><a href="#lists">Lists</a></li>
 <li><a href="#images">Images</a></li>
 <li><a href="#toolbar">Toolbar</a></li>
 <li><a href="#bundle">Bundle</a></li>
 <li><a href="#animations">Animations</a></li>
 <li><a href="#loading-data">Loading Data</a></li>
+<li><a href="#passing-returning-values-tofrom-views">Passing <span class="amp">&amp;</span> returning values to/from views</a></li>
 </ul>
 </li>
 <li><a href="#networking">Networking</a></li>
 <li><a href="#swiftdata">SwiftData</a></li>
+<li><a href="#core-image-image-filters">Core Image (Image Filters)</a><ul>
+<li><a href="#todo"><span class="caps">TODO</span></a></li>
+</ul>
+</li>
+<li><a href="#mapkit">MapKit</a></li>
 <li><a href="#other-topics">Other topics</a></li>
 <li><a href="#questions-todos">Questions <span class="amp">&amp;</span> Todos</a></li>
 </ul>
@@ -307,6 +314,17 @@ A stepper is a two-segment control that people use to increase or decrease an in
 <h2 id="navigation-bar">Navigation Bar</h2>
 </li>
 </ul>
+<h3 id="text">Text</h3>
+<p><code>Text</code> is a Text field that describes text.</p>
+<p>Note: Text fields with different styling can be <em>plused</em> together to form one large text field with parts with different styling inside:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Text</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">font</span><span class="p">(.</span><span class="n">headline</span><span class="p">)</span>
+<span class="o">+</span> <span class="n">Text</span><span class="p">(</span><span class="s">": "</span><span class="p">)</span> <span class="o">+</span>
+<span class="n">Text</span><span class="p">(</span><span class="s">"Page description here"</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">italic</span><span class="p">()</span>
+</code></pre></div>
+<p>And you get a text with different stylings combined:</p>
+<p><img alt="alt text" src="/swiftui-cheatsheet/image-4.png"/></p>
 <h3 id="lists">Lists</h3>
 <p>Building scrolling tables of data using <code>List</code>, in particular how it can create rows directly from arrays of data.</p>
 <div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
@@ -379,6 +397,55 @@ A stepper is a two-segment control that people use to increase or decrease an in
     <span class="p">.</span><span class="n">onAppear</span><span class="p">(</span><span class="n">loadIt</span><span class="p">)</span>
 </code></pre></div>
 <p>?? How is it done, when <code>loadIt</code> is async??</p>
+<h3 id="passing-returning-values-tofrom-views">Passing <span class="amp">&amp;</span> returning values to/from views</h3>
+<p>As seen in <a href="https://www.hackingwithswift.com/books/ios-swiftui/selecting-and-editing-map-annotations" rel="noopener noreferrer" target="_blank">Selecting and editing map annotations</a></p>
+<p>Imagine I have a View that is opened as Sheet and gets in a <code>Location</code> (being a self defined <code>struct</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">EditView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">dismiss</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">dismiss</span>
+    <span class="kd">var</span> <span class="nv">location</span><span class="p">:</span> <span class="n">Location</span>
+
+    <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">description</span><span class="p">:</span> <span class="nb">String</span>
+
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">NavigationStack</span> <span class="p">{</span>
+            <span class="n">Form</span> <span class="p">{</span>
+                <span class="n">Section</span> <span class="p">{</span>
+                    <span class="n">TextField</span><span class="p">(</span><span class="s">"Place name"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">TextField</span><span class="p">(</span><span class="s">"Description"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">description</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"Place details"</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">toolbar</span> <span class="p">{</span>
+                <span class="n">Button</span><span class="p">(</span><span class="s">"Save"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">dismiss</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To pass in the <code>Location</code> I make an extra initializer:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">location</span> <span class="p">=</span> <span class="n">location</span>
+
+    <span class="n">_name</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">_description</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Tu <em>return</em> data to the calling code, I pass in a method <code>onSave</code>. First create an additional var in my View struct:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">onSave</span><span class="p">:</span> <span class="p">(</span><span class="n">Location</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span>
+</code></pre></div>
+<p>and then extend the initializer like so:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">,</span> <span class="n">onSave</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">(</span><span class="n">Location</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">location</span> <span class="p">=</span> <span class="n">location</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">onSave</span> <span class="p">=</span> <span class="n">onSave</span>
+
+    <span class="n">_name</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">_description</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That <code>@escaping</code> part is important, and means the function is being stashed away for user later on, rather than being called immediately, and it’s needed here because the <code>onSave</code> function will get called only when the user presses Save.</p>
 <h2 id="networking">Networking</h2>
 <p>This is how you send something to an <span class="caps">HTTPS</span> Endpoint:</p>
 <div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
@@ -493,6 +560,44 @@ A stepper is a two-segment control that people use to increase or decrease an in
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="core-image-image-filters">Core Image (Image Filters)</h2>
+<p>It’s tricky… Look at the class explaining it <a href="https://www.hackingwithswift.com/books/ios-swiftui/basic-image-filtering-using-core-image" rel="noopener noreferrer" target="_blank">here</a></p>
+<h3 id="todo"><span class="caps">TODO</span></h3>
+<ul>
+<li>Explain the different classes / objects there are, what functionality is provided by which one, and how to transistion from one to the other: SwiftUI.Image - CGImage - CIImage</li>
+<li>Explain the context <span class="amp">&amp;</span> filter concept.</li>
+<li>Give example</li>
+</ul>
+<h2 id="mapkit">MapKit</h2>
+<ul>
+<li><a href="https://www.hackingwithswift.com/books/ios-swiftui/integrating-mapkit-with-swiftui" rel="noopener noreferrer" target="_blank">Maps Video</a></li>
+<li><code>import MapKit</code></li>
+<li><code>Map()</code> shows a map ;)</li>
+<li><code>.mapStyle(.imagery)</code> or <code>.hybrid</code> or <code>.mapStyle(.hybrid(elevation: .realistic))</code></li>
+<li><em>Entering</em> locations as <code>MapCameraPosition</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">startPosition</span> <span class="p">=</span> <span class="n">MapCameraPosition</span><span class="p">.</span><span class="n">region</span><span class="p">(</span>
+    <span class="n">MKCoordinateRegion</span><span class="p">(</span>
+        <span class="n">center</span><span class="p">:</span> <span class="bp">CLLocationCoordinate2D</span><span class="p">(</span><span class="n">latitude</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span> <span class="n">longitude</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">span</span><span class="p">:</span> <span class="n">MKCoordinateSpan</span><span class="p">(</span><span class="n">latitudeDelta</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">longitudeDelta</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Getting Map taps as coordinates with <code>MapReader</code>, i.e. calculation from Screen Coordinates —&gt; Long/Lat</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">MapReader</span> <span class="p">{</span> <span class="n">proxy</span> <span class="k">in</span>
+    <span class="n">Map</span><span class="p">(</span><span class="n">initialPosition</span><span class="p">:</span> <span class="n">startPosition</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">onTapGesture</span> <span class="p">{</span> <span class="n">position</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="kd">let</span> <span class="nv">coordinate</span> <span class="p">=</span> <span class="n">proxy</span><span class="p">.</span><span class="n">convert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="p">.</span><span class="n">local</span><span class="p">)</span> <span class="p">{</span>
+                <span class="bp">print</span><span class="p">(</span><span class="s">"Tapped at </span><span class="si">\(</span><span class="n">coordinate</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Have <code>Marker</code> on maps</li>
+</ul>
 <h2 id="other-topics">Other topics</h2>
 <ul>
 <li>Machine Learning</li>
