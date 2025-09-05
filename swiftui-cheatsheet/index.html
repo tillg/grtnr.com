@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 30.08.2025 15:26:37.
+      Last built 05.09.2025 09:19:28.
   </div>
 </div>
   <div class="wrap">
@@ -125,14 +125,13 @@ Français
 <li><a href="#arrays-sorting">Arrays <span class="amp">&amp;</span> sorting</a></li>
 <li><a href="#strings">Strings</a></li>
 <li><a href="#dates">Dates</a></li>
+<li><a href="#enum">enum</a></li>
 </ul>
 </li>
 <li><a href="#swiftui">SwiftUI</a><ul>
 <li><a href="#views">Views</a></li>
 <li><a href="#data-entry">Data Entry</a></li>
-</ul>
-</li>
-<li><a href="#navigation-bar">Navigation Bar</a><ul>
+<li><a href="#alerts-confirmation-dialogs">Alerts <span class="amp">&amp;</span> Confirmation Dialogs</a></li>
 <li><a href="#text">Text</a></li>
 <li><a href="#lists">Lists</a></li>
 <li><a href="#images">Images</a></li>
@@ -141,10 +140,15 @@ Français
 <li><a href="#animations">Animations</a></li>
 <li><a href="#loading-data">Loading Data</a></li>
 <li><a href="#passing-returning-values-tofrom-views">Passing <span class="amp">&amp;</span> returning values to/from views</a></li>
+<li><a href="#sheets-navigationstacks">Sheets <span class="amp">&amp;</span> NavigationStacks</a></li>
 </ul>
 </li>
 <li><a href="#networking">Networking</a></li>
+<li><a href="#saving-data">Saving Data</a><ul>
+<li><a href="#userdefaults">UserDefaults</a></li>
 <li><a href="#swiftdata">SwiftData</a></li>
+</ul>
+</li>
 <li><a href="#core-image-image-filters">Core Image (Image Filters)</a><ul>
 <li><a href="#todo"><span class="caps">TODO</span></a></li>
 </ul>
@@ -259,6 +263,22 @@ Français
 </code></pre></div>
 <h3 id="dates">Dates</h3>
 <p><code>Date</code>, <code>DateComponents</code>, and <code>DateFormatter</code></p>
+<h3 id="enum"><code>enum</code></h3>
+<p><code>enum</code> are created like so:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span> <span class="nc">Weekday</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">monday</span><span class="p">,</span> <span class="n">tuesday</span><span class="p">,</span> <span class="n">wednesday</span><span class="p">,</span> <span class="n">thursday</span><span class="p">,</span> <span class="n">friday</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A <code>switch</code> statement with <code>enum</code> looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span> <span class="n">loadingState</span> <span class="p">{</span>
+<span class="k">case</span> <span class="p">.</span><span class="n">loading</span><span class="p">:</span>
+    <span class="n">LoadingView</span><span class="p">()</span>
+<span class="k">case</span> <span class="p">.</span><span class="n">success</span><span class="p">:</span>
+    <span class="n">SuccessView</span><span class="p">()</span>
+<span class="k">case</span> <span class="p">.</span><span class="n">failed</span><span class="p">:</span>
+    <span class="n">FailedView</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
 <li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> is a nice tool to navigate and play around the different Views <span class="amp">&amp;</span> components.</li>
@@ -276,7 +296,7 @@ Français
 </code></pre></div>
 <p>Note: We can’t write <code>ForEach(0..&lt;5)</code>, because <code>ForEach</code>expects a <code>Range&lt;Int&gt;</code>, not a <code>ClosedRange&lt;Int&gt;</code>!</p>
 <h4 id="foreach-view"><code>ForEach</code> View</h4>
-<p><code>FotEach</code> is a view, that is made up the sub-views created in every loop instance.</p>
+<p><code>ForEach</code> is a view, that is made up the sub-views created in every loop instance.</p>
 <p>We typically use it to create sub-views based on a counter or an array.</p>
 <p><code>ForEach</code> with an array:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftUI</span>
@@ -294,6 +314,26 @@ Français
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="data-entry">Data Entry</h3>
+<h4 id="textfield"><code>TextField</code></h4>
+<h4 id="picker"><code>Picker</code></h4>
+<p><code>Picker</code> is used to pick one out of many possible selections.</p>
+<p>A regular picker looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Picker</span><span class="p">(</span><span class="s">"Number of people"</span><span class="p">,</span> <span class="n">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">numberOfPeople</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ForEach</span><span class="p">(</span><span class="mi">2</span> <span class="p">..</span><span class="o">&lt;</span> <span class="mi">100</span> <span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s">"</span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s"> people"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="alt text" src="/swiftui-cheatsheet/image-7.png"/></p>
+<p>A <code>Picker</code> can be modified with the <code>PickerStyle</code> modifier:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Picker</span><span class="p">(</span><span class="s">"Tip percentage"</span><span class="p">,</span> <span class="n">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">tipPercentage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ForEach</span><span class="p">(</span><span class="n">tipPercentages</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Text</span><span class="p">(</span><span class="nv">$0</span><span class="p">,</span> <span class="n">format</span><span class="p">:</span> <span class="p">.</span><span class="n">percent</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="n">pickerStyle</span><span class="p">(.</span><span class="n">segmented</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="alt text" src="/swiftui-cheatsheet/image-8.png"/></p>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="/swiftui-cheatsheet/stepper.png"/>
 A stepper is a two-segment control that people use to increase or decrease an incremental value.</p>
@@ -310,10 +350,31 @@ A stepper is a two-segment control that people use to increase or decrease an in
 <li><code>DatePicker</code> for Dates. Using the <code>displayedComponents</code> parameter to control dates or times.</li>
 <li><code>Form</code></li>
 <li><code>Picker</code></li>
-<li>
-<h2 id="navigation-bar">Navigation Bar</h2>
-</li>
+<li>Navigation Bar</li>
 </ul>
+<h3 id="alerts-confirmation-dialogs">Alerts <span class="amp">&amp;</span> Confirmation Dialogs</h3>
+<h4 id="alerts">Alerts</h4>
+<p>Alerts are an extension to a View with a Bool variable that decides on wether they are shown or not.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">showingAlert</span> <span class="p">=</span> <span class="kc">false</span>
+
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">Button</span><span class="p">(</span><span class="s">"Show Alert"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">showingAlert</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+        <span class="p">.</span><span class="n">alert</span><span class="p">(</span><span class="s">"Important message"</span><span class="p">,</span> <span class="n">isPresented</span><span class="p">:</span> <span class="err">$</span><span class="n">showingAlert</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Button</span><span class="p">(</span><span class="s">"OK"</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="confirmation-dialogues">Confirmation Dialogues</h4>
+<p>Use them when many buttons / options are available. For example code check ou <a href="https://github.com/tillg/100DaysOfSwiftUI/blob/main/16.5-AlertAndConfirmation/AlertAndConfirmation/AlertAndConfirmation/ContentView.swift" rel="noopener noreferrer" target="_blank">this repo</a>.</p>
+<p><strong>Note</strong>: Pre-iOS 26 they slid in from the bottom, in iOS 26 they show up inside the screen.</p>
+<p>Confirmation Dialog in iOS 18.5:
+<img alt="alt text" src="/swiftui-cheatsheet/image-6.png"/></p>
+<p>Confirmation Dialog in iOS 26:
+<img alt="alt text" src="/swiftui-cheatsheet/image-5.png"/></p>
 <h3 id="text">Text</h3>
 <p><code>Text</code> is a Text field that describes text.</p>
 <p>Note: Text fields with different styling can be <em>plused</em> together to form one large text field with parts with different styling inside:</p>
@@ -446,6 +507,29 @@ A stepper is a two-segment control that people use to increase or decrease an in
 <span class="p">}</span>
 </code></pre></div>
 <p>That <code>@escaping</code> part is important, and means the function is being stashed away for user later on, rather than being called immediately, and it’s needed here because the <code>onSave</code> function will get called only when the user presses Save.</p>
+<h3 id="sheets-navigationstacks"><code>Sheet</code>s <span class="amp">&amp;</span> <code>NavigationStack</code>s</h3>
+<p>To open a view as sheet:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+    <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">showingAddExpense</span> <span class="p">=</span> <span class="kc">false</span>
+
+    <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+        <span class="n">NavigationStack</span> <span class="p">{</span>
+            <span class="n">VStack</span> <span class="p">{</span>
+                <span class="c1">// Some code here</span>
+            <span class="p">}</span>
+            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"iExpense"</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">toolbar</span> <span class="p">{</span>
+                <span class="n">Button</span><span class="p">(</span><span class="s">"Add Expense"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"plus"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">showingAddExpense</span> <span class="p">=</span> <span class="kc">true</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="p">.</span><span class="n">sheet</span><span class="p">(</span><span class="n">isPresented</span><span class="p">:</span> <span class="err">$</span><span class="n">showingAddExpense</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">AddView</span><span class="p">(</span><span class="n">expenses</span><span class="p">:</span> <span class="n">expenses</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="networking">Networking</h2>
 <p>This is how you send something to an <span class="caps">HTTPS</span> Endpoint:</p>
 <div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
@@ -470,7 +554,44 @@ A stepper is a two-segment control that people use to increase or decrease an in
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-<h2 id="swiftdata">SwiftData</h2>
+<h2 id="saving-data">Saving Data</h2>
+<p>I know 3 ways to save data in Swift/<span class="caps">UI</span>:</p>
+<ul>
+<li>UserDefaults: Best used to save small data quantities. For example App Settings.</li>
+<li><span class="caps">TODO</span> Writing it to the documents directory</li>
+<li>SwiftData</li>
+</ul>
+<h3 id="userdefaults">UserDefaults</h3>
+<p>We need a couple of things:</p>
+<ol>
+<li>Our data has to be <code>Codable</code>, so that later we can create <code>JSONEncoder</code></li>
+<li>UserDefaults to save and load our data</li>
+<li>A custom initializer for the data class, so it automatically loads</li>
+<li>A <code>didSet</code> to the data, so whenever data is added or changed it gets automagically saved.</li>
+</ol>
+<p>Making the data <code>Codable</code> most often is not too hard: As long as the components are <code>Codable</code>, the entire class is also.</p>
+<p>This is what saving the data in a <code>didSet</code> can look like:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="n">ExpenseItem</span><span class="p">]()</span> <span class="p">{</span>
+    <span class="kr">didSet</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="kd">let</span> <span class="nv">encoded</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">UserDefaults</span><span class="p">.</span><span class="n">standard</span><span class="p">.</span><span class="kr">set</span><span class="p">(</span><span class="n">encoded</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="s">"Items"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>And this is how a initializer that loads the data could look like:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">savedItems</span> <span class="p">=</span> <span class="n">UserDefaults</span><span class="p">.</span><span class="n">standard</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">forKey</span><span class="p">:</span> <span class="s">"Items"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="kd">let</span> <span class="nv">decodedItems</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONDecoder</span><span class="p">().</span><span class="n">decode</span><span class="p">([</span><span class="n">ExpenseItem</span><span class="p">].</span><span class="kc">self</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">savedItems</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">items</span> <span class="p">=</span> <span class="n">decodedItems</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">items</span> <span class="p">=</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="swiftdata">SwiftData</h3>
 <p>The moving parts we have are</p>
 <ul>
 <li>The <code>Model</code>: This is the data structure. The object(s) and it’s fields</li>
