@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 17.10.2025 08:54:43.
+      Last built 20.10.2025 08:59:48.
   </div>
 </div>
   <div class="wrap">
@@ -564,10 +564,45 @@ Vector for token [.]
 <li>Since these vectors stay the same for our data set (unless we change the Embedding Model), we should definitely save them.</li>
 </ul>
 <p>So if we look into the <code>NLContextualEmbedding.vectorNaive</code> function, we see the following time consumptions:</p>
-<div class="highlight"><pre><span></span><code><span class="err">⏱️</span><span class="w"> </span><span class="o">[</span><span class="n">Embedding</span><span class="o">]</span><span class="w"> </span><span class="nf">count</span><span class="o">=</span><span class="mi">21730</span><span class="w">  </span><span class="n">total</span><span class="o">=</span><span class="mf">158.623341</span><span class="n">s</span><span class="w">  </span><span class="nf">avg</span><span class="o">=</span><span class="mf">7.300</span><span class="n">ms</span>
-<span class="err">⏱️</span><span class="w"> </span><span class="o">[</span><span class="n">MeanVector</span><span class="o">]</span><span class="w"> </span><span class="nf">count</span><span class="o">=</span><span class="mi">21730</span><span class="w">  </span><span class="n">total</span><span class="o">=</span><span class="mf">329.307913</span><span class="n">s</span><span class="w">  </span><span class="nf">avg</span><span class="o">=</span><span class="mf">15.155</span><span class="n">ms</span>
+<div class="highlight"><pre><span></span><code>⏱️<span class="w"> </span><span class="o">[</span>Embedding<span class="o">]</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">21730</span><span class="w">  </span><span class="nv">total</span><span class="o">=</span><span class="m">158</span>.623341s<span class="w">  </span><span class="nv">avg</span><span class="o">=</span><span class="m">7</span>.300ms
+⏱️<span class="w"> </span><span class="o">[</span>MeanVector<span class="o">]</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">21730</span><span class="w">  </span><span class="nv">total</span><span class="o">=</span><span class="m">329</span>.307913s<span class="w">  </span><span class="nv">avg</span><span class="o">=</span><span class="m">15</span>.155ms
 </code></pre></div>
 <p>As we can’t speed up the Embedding creation (if you have an idea, drop me an email!), let’s look at the mean vector calculation: As we described earlier it basically sums up a list of vectors and then divides it by the no of vectors so it get’s the average. Time to unpack the <a href="https://developer.apple.com/accelerate/" rel="noopener noreferrer" target="_blank">Accelerate Framework</a>!</p>
+<h2 id="using-accelerate-framework">Using Accelerate Framework</h2>
+<p>The part of the Accelerate Framework that we are going to use is <a href="https://developer.apple.com/documentation/accelerate/vdsp-library" rel="noopener noreferrer" target="_blank">vDSP</a>. It’s subtitled <em>Perform basic arithmetic operations and common digital signal processing (<span class="caps">DSP</span>) routines on large vectors.</em>, but it contains exactly what we need.</p>
+<p>The function we’ll use is <code>multiply(addition:_:)</code>: <em>Returns the double-precision element-wise product of the sum of two vectors and a scalar value.</em> I found it a bit surprising, that Apple doesn’t offer a function to just add 2 vectors, but only add <strong>and</strong> multiply by a scalar, but here we are, multiplying with 1.0 😜</p>
+<p>Using this fast vector addition, this is our timing we get:</p>
+<div class="highlight"><pre><span></span><code>⏱️<span class="w"> </span><span class="o">[</span>Embedding<span class="o">]</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">21730</span><span class="w">  </span><span class="nv">total</span><span class="o">=</span><span class="m">157</span>.469968s<span class="w">  </span><span class="nv">avg</span><span class="o">=</span><span class="m">7</span>.247ms
+⏱️<span class="w"> </span><span class="o">[</span>MeanVector<span class="o">]</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">21730</span><span class="w">  </span><span class="nv">total</span><span class="o">=</span><span class="m">162</span>.495383s<span class="w">  </span><span class="nv">avg</span><span class="o">=</span><span class="m">7</span>.478ms
+</code></pre></div>
+<p>In an overview:</p>
+<table>
+<thead>
+<tr>
+<th>Data set: 21‘730</th>
+<th>Calc Embeddings</th>
+<th>Calc Mean</th>
+<th>Sorting</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive w/ caching</td>
+<td>158 sec</td>
+<td>329 sec</td>
+<td>49 ms</td>
+<td>487 sec</td>
+</tr>
+<tr>
+<td>Using vDSP</td>
+<td>157 sec</td>
+<td>162 sec</td>
+<td>49 ms</td>
+<td>320 sec</td>
+</tr>
+</tbody>
+</table>
 <h2 id="todo">Todo</h2>
 <ul>
 <li>Reference Code base by deep links into Github</li>

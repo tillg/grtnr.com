@@ -58,7 +58,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 17.10.2025 08:54:43.
+      Last built 20.10.2025 08:59:48.
   </div>
 </div>
   <div class="wrap">
@@ -142,7 +142,39 @@ Deutsch
 <li>L'option “Page discussion mapping” dicte une relation entre vos pages, par exemple un article, et une discussion GitHub. J'ai sélectionné le chemin.</li>
 <li>Pour la catégorie de discussions, j'ai sélectionné “général”.
     Définissez le Thème sur "Match OS" ou définissez manuellement le mode clair et sombre.
-    Cliquez sur "Copier le code" une fois que vous avez généré la balise <script></script></li></ul>
+    Cliquez sur "Copier le code" une fois que vous avez généré la balise <script>.</li>
+</ul>
+<p><img alt="Fonctionnalités de Giscus" src="giscus-features.png"></p>
+<ul>
+<li>Étape 3 : Ajouter Giscus à votre modèle de publication Jekyll (ou Pelican 😀). - - Étape 4 : Styliser Giscus pour correspondre au thème Lanyon. J'ai sauté cette étape, car le style me semblait déjà assez bon <em>à nu</em>.</li>
+<li>Étape 5 : Afficher le nombre de commentaires dans les résumés des articles (voir ci-dessous)</li>
+<li>Étape 6 : Valider et pousser les modifications - Évidemment...</li>
+<li>Étape 7 : Tester votre configuration</li>
+</ul>
+<h2 id="ajouter-le-compteur-de-commentaires">Ajouter le compteur de commentaires</h2>
+<p>Après avoir un peu bricolé et lissé les bords, tout fonctionnait bien. Mais il y avait une fonctionnalité qui me manquait : je voulais voir le nombre de commentaires qu'un article de blog avait dans la page de vue d'ensemble des articles.</p>
+<p><img alt="Compteur de commentaires" src="screenshot_comment_counter.jpg" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></p>
+<p>J'ai donc relancé ChatGPT et obtenu un autre <a href="https://chatgpt.com/share/67ab5f69-4ddc-8009-8471-a35e00cb6a43">résultat de recherche</a>. Les étapes approximatives sont :</p>
+<ul>
+<li>Étape 1 : Ajouter un espace réservé pour le compteur de commentaires. Dans mon <a href="https://github.com/tillg/grtnr.com_2024/blob/main/_includes/post_preview.html"><code>post_preview.html</code></a>, j'ai ajouté un <code>&lt;span&gt;</code> qui devait en fait être un peu différent de ce que l'IA avait suggéré :</li>
+</ul>
+<p><code>html
+  &lt;span class="comment-count" data-giscus-comments="{{ post.url }}"&gt;
+    &lt;span class="comment-num"&gt;Comptage des commentaires...&lt;/span&gt;
+  &lt;/span&gt;</code></p>
+<ul>
+<li>Étape 2 : Ajouter du JavaScript pour récupérer le compteur de commentaires. J'ai ajouté un script qui récupère le compteur de commentaires depuis l'API GitHub Discussions et met à jour le compteur de commentaires. Le script suggéré nécessitait quelques corrections et a fini dans cet <a href="https://github.com/tillg/grtnr.com_2024/blob/main/assets/js/giscus-comments.js">Event Listener</a>. Ne soyez pas surpris par les deux lignes avec des tirets (---) en haut, je vais les expliquer ci-dessous... À noter ici :</li>
+<li>Gestion du <code>accessToken</code> (expliqué ci-dessous)</li>
+<li>Cet argument de la requête grahQL : <code>categoryId: "DIC_kwDONYRp_c4Cm0cH"</code>. C'est l'ID de la catégorie qui contient les discussions du dépôt.</li>
+<li>Remarque : Ce qui m'a aidé pour déboguer et corriger cette fonction est le <a href="https://docs.github.com/en/graphql/overview/explorer">Github GraphQL Explorer</a>.</li>
+<li>Étape 3 : Inclure le JavaScript dans votre site Jekyll. Dans mon cas, j'ai ajouté cette référence de script en bas du fichier de mise en page <a href="https://github.com/tillg/grtnr.com_2024/blob/main/_layouts/default.html"><code>default.html</code></a>.</li>
+<li>Étape 4 : Tester le compteur de commentaires. Après quelques tests et corrections, cela a finalement fonctionné localement.</li>
+</ul>
+<p>Les aspects suivants m'ont occupé pendant une heure ou deux :</p>
+<ul>
+<li>Le <code>accessToken</code>, où et comment l'obtenir</li>
+<li>Comment publier le jeton d'accès sur Github sans que le scanner de jetons et le protecteur ne s'activent</li>
+</ul></script></li></ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"
