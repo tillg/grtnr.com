@@ -66,7 +66,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 02.11.2025 14:12:22.
+      Last built 04.02.2026 11:35:18.
   </div>
 </div>
   <div class="wrap">
@@ -129,6 +129,7 @@ Français
 <li><a href="#gradle">Gradle</a></li>
 <li><a href="#node-and-npm">Node and npm</a></li>
 <li><a href="#python">Python</a></li>
+<li><a href="#markdown-linting">Markdown Linting</a></li>
 <li><a href="#ruby">Ruby</a></li>
 </ul>
 </div>
@@ -147,6 +148,27 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 </code></pre></div>
 <h2 id="vscode">VSCode</h2>
 <p>… or VSCode-insiders</p>
+<p><strong>Extensions:</strong></p>
+<ul>
+<li>
+<p><strong>markdownlint</strong> by David Anson (<code>davidanson.vscode-markdownlint</code>) - The de facto standard for markdown linting with 10M+ downloads. Underlines issues inline and can auto-fix on save.
+  <code>code --install-extension davidanson.vscode-markdownlint</code>
+  Configuration files are searched in order: <code>.markdownlint.jsonc</code>, <code>.markdownlint.json</code>, <code>.markdownlint.yaml</code>/<code>.yml</code>, or <code>.markdownlintrc</code>. (Added January 2026)</p>
+</li>
+<li>
+<p><strong>Prettier</strong> (<code>esbenp.prettier-vscode</code>) - Code formatter.
+  <code>code --install-extension esbenp.prettier-vscode</code>
+  Enable format on save in <span class="caps">VS</span> Code settings:</p>
+</li>
+</ul>
+<p><code>json
+  {
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    }
+  }</code></p>
+<p>(Added January 2026)</p>
 <h2 id="docker">Docker</h2>
 <p><strong>January 2025:</strong> I switched away from <a href="https://www.docker.com/products/docker-desktop/" rel="noopener noreferrer" target="_blank">Docker Desktop</a> to <a href="https://rancherdesktop.io" rel="noopener noreferrer" target="_blank">Rancher Desktop</a>.</p>
 <p>Installation note: Downloaded the Apple Silicon version, opened the <span class="caps">DMG</span> and copied it into my Applications directory. The only detail I needed to do, is tick the “Administrative Access” checkbox in the setting.
@@ -200,6 +222,8 @@ pyenv<span class="w"> </span>shell<span class="w"> </span>&lt;version&gt;<span c
 pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>automatically<span class="w"> </span><span class="k">select</span><span class="w"> </span>whenever<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>its<span class="w"> </span>subdirectories<span class="o">)</span>
 pyenv<span class="w"> </span>global<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span><span class="k">select</span><span class="w"> </span>globally<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>user<span class="w"> </span>account
 </code></pre></div>
+<h2 id="markdown-linting">Markdown Linting</h2>
+<p><code>brew install markdownlint-cli2</code></p>
 <h2 id="ruby">Ruby</h2>
 <p>Not thought yet. Avoid Ruby in general… 😉</p>
     <div id="giscus">
