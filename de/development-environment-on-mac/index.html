@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 04.02.2026 11:35:18.
+      Last built 05.02.2026 16:24:56.
   </div>
 </div>
   <div class="wrap">
@@ -112,7 +112,7 @@ Français
     </div>
 
     <p><img alt="Lustiges Bild von KI" src="dev_tools.png"/></p>
-<p>Ich bin kein professioneller Entwickler, ich mache es zum Spaß. Und ich mag es, herumzuspielen, neue Technologien zu entdecken und alle möglichen kleinen Dinge zu entwickeln. Manchmal brauche ich Python, manchmal React/Typescript, Java und mehr. Für jedes Entwicklungstool oder jede Sprache gibt es mehrere Möglichkeiten, wie man sie installieren und ihre Versionen verwalten kann. Da ich dazu neige, Dinge wie "Wie habe ich Python auf diesem Rechner installiert?" zu vergessen, ist dies eine Notiz an mein zukünftiges Ich, die mir sagt, wie ich jedes Entwicklungstool installiert habe.</p>
+<p>Ich bin kein professioneller Entwickler, ich mache es zum Spaß. Und ich spiele gerne herum, entdecke neue Technologien, entwickle alle möglichen kleinen Dinge. Manchmal brauche ich Python, manchmal React/Typescript, Java und mehr. Für jedes Entwicklungswerkzeug oder jede Sprache gibt es mehrere Möglichkeiten, wie man sie installieren und ihre Versionen verwalten kann. Da ich dazu neige, Dinge wie "Wie habe ich Python auf diesem Rechner installiert?" zu vergessen, ist dies eine Notiz an mein zukünftiges Ich, die mir sagt, wie ich jedes Entwicklungswerkzeug installiert habe.</p>
 <p>Da sich die Art und Weise, wie bestimmte Pakete installiert werden, im Laufe der Zeit ändern kann, werde ich Daten zu meinen Installationsentscheidungen hinzufügen.</p>
 <div class="toc">
 <ul>
@@ -131,7 +131,7 @@ Français
 </ul>
 </div>
 <h2 id="xcode">Xcode</h2>
-<p>Xcode ist das grundlegende Entwickler-Tooling auf dem Mac. Es enthält git und andere grundlegende Werkzeuge und Compiler.</p>
+<p>Xcode ist das grundlegende Entwicklerwerkzeug auf dem Mac. Es enthält git und andere grundlegende Werkzeuge und Compiler.</p>
 <p>Ich installiere es aus dem Apple App Store.</p>
 <h2 id="terminal">Terminal</h2>
 <p>Mein bevorzugtes Terminal ist <a href="https://iterm2.com" rel="noopener noreferrer" target="_blank">iTerm2</a>, und ich installiere es einfach von der Website. Siehe <a href="/setting-up-my-terminal/">hier</a>, wie ich es konfiguriere.</p>
@@ -140,7 +140,7 @@ Français
 <div class="highlight"><pre><span></span><code><span class="c1"># Überprüfen, welche Shell ich habe</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span>
 
-<span class="c1"># Falls es nicht zsh ist, als Standard setzen</span>
+<span class="c1"># Falls es nicht zsh ist, als Standard festlegen</span>
 chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 <h2 id="vscode">VSCode</h2>
@@ -148,14 +148,14 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <p><strong>Erweiterungen:</strong></p>
 <ul>
 <li>
-<p><strong>markdownlint</strong> von David Anson (<code>davidanson.vscode-markdownlint</code>) - Der De-facto-Standard für Markdown-Linting mit über 10 Millionen Downloads. Unterstreicht Probleme inline und kann beim Speichern automatisch beheben.
+<p><strong>markdownlint</strong> von David Anson (<code>davidanson.vscode-markdownlint</code>) - Der De-facto-Standard für Markdown-Linting mit über 10 Millionen Downloads. Unterstreicht Probleme inline und kann beim Speichern automatisch korrigieren.
   <code>code --install-extension davidanson.vscode-markdownlint</code>
   Konfigurationsdateien werden in folgender Reihenfolge gesucht: <code>.markdownlint.jsonc</code>, <code>.markdownlint.json</code>, <code>.markdownlint.yaml</code>/<code>.yml</code> oder <code>.markdownlintrc</code>. (Hinzugefügt im Januar 2026)</p>
 </li>
 <li>
 <p><strong>Prettier</strong> (<code>esbenp.prettier-vscode</code>) - Code-Formatter.
   <code>code --install-extension esbenp.prettier-vscode</code>
-  Aktivieren Sie das Formatieren beim Speichern in den VS Code-Einstellungen:</p>
+  Formatierung beim Speichern in den VS Code-Einstellungen aktivieren:</p>
 </li>
 </ul>
 <p><code>json
@@ -168,10 +168,10 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <p>(Hinzugefügt im Januar 2026)</p>
 <h2 id="docker">Docker</h2>
 <p><strong>Januar 2025:</strong> Ich bin von <a href="https://www.docker.com/products/docker-desktop/" rel="noopener noreferrer" target="_blank">Docker Desktop</a> zu <a href="https://rancherdesktop.io" rel="noopener noreferrer" target="_blank">Rancher Desktop</a> gewechselt.</p>
-<p>Installationshinweis: Die Apple Silicon-Version heruntergeladen, das DMG geöffnet und in mein Anwendungsverzeichnis kopiert. Das einzige Detail, das ich machen musste, war das Ankreuzen des "Administrative Access"-Kästchens in den Einstellungen.
+<p>Installationshinweis: Die Apple Silicon-Version heruntergeladen, das DMG geöffnet und in mein Anwendungsverzeichnis kopiert. Das einzige Detail, das ich tun musste, war, das Kontrollkästchen "Administrative Access" in den Einstellungen zu aktivieren.
 <img alt="alt text" src="rancher_prefs.png"/></p>
-<p><em>Registry</em>: Ich verwende unterschiedliche Registries, wenn ich an verschiedenen Projekten arbeite.</p>
-<p><em>Frage</em>: Wie konfiguriere ich Docker so, dass es Bilder aus einer bestimmten Registry zieht?</p>
+<p><em>Registry</em>: Ich verwende verschiedene Registries, wenn ich an verschiedenen Projekten arbeite.</p>
+<p><em>Frage</em>: Wie konfiguriere ich Docker so, dass es Images aus einem bestimmten Registry zieht?</p>
 <h2 id="java">Java</h2>
 <p>Dies sind die Optionen, die ich gesehen habe:</p>
 <ul>
@@ -188,12 +188,12 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <li><code>sdk list java</code></li>
 <li><code>sdk offline disable</code></li>
 <li><code>sdk default java 21.0.6-amzn</code> setzt diese Version als Standard
-  Um eine Java-Version als Standard innerhalb eines Verzeichnisses festzulegen, siehe den <a href="https://sdkman.io/usage/#env-command" rel="noopener noreferrer" target="_blank">Env-Befehl</a></li>
+  Um eine Java-Version als Standard in einem Verzeichnis festzulegen, siehe den <a href="https://sdkman.io/usage/#env-command" rel="noopener noreferrer" target="_blank">Env-Befehl</a></li>
 </ul>
 <h2 id="maven">Maven</h2>
 <p>Ich verwende einfach <code>brew install maven</code>. Für ältere Versionen installiert <code>brew install maven30</code> Maven 3.0.</p>
 <h2 id="gradle">Gradle</h2>
-<p><strong>Januar 2025</strong>: Ich entscheide mich auch für Gradle, SDK Man zu verwenden.</p>
+<p><strong>Januar 2025</strong>: Ich habe mich entschieden, SDK Man auch für Gradle zu verwenden.</p>
 <p>Grund: <code>brew install gradle</code> installierte Gradle Version 8.12.1, aber für das aktuelle Projekt benötigte ich 8.5.</p>
 <ul>
 <li><code>sdk install gradle 8.5</code>: Installiert die spezifische Gradle-Version</li>
@@ -213,7 +213,7 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <li>Um pyenv zu installieren: <code>brew install pyenv</code></li>
 </ul>
 <p><strong>Mini-Cheatsheet</strong></p>
-<p>Um eine von Pyenv installierte Python-Version auszuwählen, führen Sie einen der folgenden Befehle aus:</p>
+<p>Um eine mit Pyenv installierte Python-Version auszuwählen, führen Sie einen der folgenden Befehle aus:</p>
 <div class="highlight"><pre><span></span><code>pyenv<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.12
 pyenv<span class="w"> </span>shell<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>nur<span class="w"> </span>für<span class="w"> </span>die<span class="w"> </span>aktuelle<span class="w"> </span>Shell-Sitzung<span class="w"> </span>auswählen
 pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>automatisch<span class="w"> </span>auswählen,<span class="w"> </span>wenn<span class="w"> </span>Sie<span class="w"> </span>sich<span class="w"> </span>im<span class="w"> </span>aktuellen<span class="w"> </span>Verzeichnis<span class="w"> </span><span class="o">(</span>oder<span class="w"> </span>dessen<span class="w"> </span>Unterverzeichnissen<span class="o">)</span><span class="w"> </span>befinden

@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 04.02.2026 11:35:18.
+      Last built 05.02.2026 16:24:56.
   </div>
 </div>
   <div class="wrap">
@@ -111,8 +111,8 @@ Français
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
-<p>Aber es ist eine Menge Inhalt, daher hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettel-Format. Ich habe eine grobe Struktur im Kopf, werde den Inhalt aber nur dann ausfüllen, wenn ich ihn brauche. Erwarten Sie also keine vollständige Übersicht!</p>
+    <p>Im Juni 2025 begann ich mit dem Kurs <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. Es ist ein großartiger Kurs, und ich bin wirklich beeindruckt, wie viel qualitativ hochwertiger Inhalt und Kurse Paul Hudson bereitstellt - und pflegt!! Paul, vielen Dank dafür! 🙏🏼</p>
+<p>Aber es ist eine Menge Inhalt, daher sind hier meine Notizen - hoffentlich in einem leicht navigierbaren Spickzettelformat. Ich habe eine grobe Struktur im Kopf, werde den Inhalt jedoch nur dann ausfüllen, wenn ich ihn benötige. Erwarten Sie also keine vollständige Übersicht!</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
@@ -126,7 +126,7 @@ Français
 </ul>
 </li>
 <li><a href="#swiftui">SwiftUI</a><ul>
-<li><a href="#ansichten">Ansichten</a></li>
+<li><a href="#views">Views</a></li>
 <li><a href="#dateneingabe">Dateneingabe</a></li>
 <li><a href="#warnungen-bestatigungsdialoge">Warnungen &amp; Bestätigungsdialoge</a></li>
 <li><a href="#text">Text</a></li>
@@ -136,14 +136,14 @@ Français
 <li><a href="#bundle">Bundle</a></li>
 <li><a href="#animationen">Animationen</a></li>
 <li><a href="#daten-laden">Daten laden</a></li>
-<li><a href="#werte-an-ansichten-ubergeben-zuruckgeben">Werte an Ansichten übergeben &amp; zurückgeben</a></li>
+<li><a href="#werte-an-views-ubergeben-zuruckgeben">Werte an Views übergeben &amp; zurückgeben</a></li>
 <li><a href="#sheets-navigationstacks">Sheets &amp; NavigationStacks</a></li>
 </ul>
 </li>
-<li><a href="#netzwerk">Netzwerk</a></li>
+<li><a href="#netzwerken">Netzwerken</a></li>
 <li><a href="#daten-speichern">Daten speichern</a><ul>
 <li><a href="#schreiben-lesen-in-userdefaults">Schreiben &amp; Lesen in UserDefaults</a></li>
-<li><a href="#schreiben-lesen-im-dokumentenverzeichnis">Schreiben &amp; Lesen im Dokumentenverzeichnis</a></li>
+<li><a href="#schreiben-lesen-in-das-dokumentenverzeichnis">Schreiben &amp; Lesen in das Dokumentenverzeichnis</a></li>
 </ul>
 </li>
 </ul>
@@ -166,9 +166,9 @@ Français
 <ul>
 <li>Optionals ermöglichen es uns, das Fehlen von Daten darzustellen, was bedeutet, dass wir sagen können: „Dieser Integer hat keinen Wert“ – das unterscheidet sich von einer festen Zahl wie 0.</li>
 <li>Beispiel: <code>var str:String?</code> kann einen String oder nil enthalten</li>
-<li>Folglich hat alles, was nicht optional ist, definitiv einen Wert, selbst wenn es nur ein leerer String ist.</li>
+<li>Folglich hat alles, was nicht optional ist, definitiv einen Wert, auch wenn es nur ein leerer String ist.</li>
 <li>Das Entpacken eines Optionals ist der Prozess, in eine Box zu schauen, um zu sehen, was sie enthält: Wenn ein Wert darin ist, wird er zur Verwendung zurückgegeben, andernfalls wird nil darin sein.</li>
-<li>Wir können <code>if let</code> verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder <code>guard let</code>, um Code auszuführen, wenn das Optional keinen Wert hat – aber mit <code>guard</code> müssen wir danach immer die Funktion verlassen.</li>
+<li>Wir können <code>if let</code> verwenden, um Code auszuführen, wenn das Optional einen Wert hat, oder <code>guard let</code>, um Code auszuführen, wenn das Optional keinen Wert hat – aber bei <code>guard</code> müssen wir danach immer die Funktion verlassen.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">printSquare</span><span class="p">(</span><span class="n">of</span> <span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="kd">let</span> <span class="nv">number</span> <span class="p">=</span> <span class="n">number</span> <span class="k">else</span> <span class="p">{</span>
@@ -180,7 +180,7 @@ Français
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>Der nil-koaleszierende Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
+<li>Der nil-Koaleszenz-Operator, ??, entpackt und gibt den Wert eines Optionals zurück oder verwendet stattdessen einen Standardwert.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">new</span> <span class="p">=</span> <span class="n">captains</span><span class="p">[</span><span class="s">"Serenity"</span><span class="p">]</span> <span class="p">??</span> <span class="s">"N/A"</span>
 </code></pre></div>
@@ -206,7 +206,7 @@ Français
 <li><code>sort()</code> sortiert das Array direkt</li>
 <li><code>sorted()</code> gibt ein neues, sortiertes Array zurück.</li>
 </ul>
-<p>Wenn das Array einfach ist, können Sie <code>sort()</code> direkt aufrufen, um ein Array direkt zu sortieren:</p>
+<p>Wenn das Array einfach ist, können Sie einfach <code>sort()</code> direkt aufrufen, um ein Array direkt zu sortieren:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
 <span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
 </code></pre></div>
@@ -259,7 +259,7 @@ Français
     <span class="k">case</span> <span class="n">monday</span><span class="p">,</span> <span class="n">tuesday</span><span class="p">,</span> <span class="n">wednesday</span><span class="p">,</span> <span class="n">thursday</span><span class="p">,</span> <span class="n">friday</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Ein <code>switch</code>-Statement mit <code>enum</code> sieht so aus:</p>
+<p>Eine <code>switch</code>-Anweisung mit <code>enum</code> sieht so aus:</p>
 <div class="highlight"><pre><span></span><code><span class="k">switch</span> <span class="n">loadingState</span> <span class="p">{</span>
 <span class="k">case</span> <span class="p">.</span><span class="n">loading</span><span class="p">:</span>
     <span class="n">LoadingView</span><span class="p">()</span>
@@ -271,22 +271,22 @@ Français
 </code></pre></div>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein nützliches Tool, um die verschiedenen Ansichten und Komponenten zu navigieren und auszuprobieren.</li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> ist ein nettes Tool, um die verschiedenen Views &amp; Komponenten zu navigieren und auszuprobieren.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
-<h3 id="ansichten">Ansichten</h3>
+<h3 id="views">Views</h3>
 <ul>
-<li>Alles ist eine Ansicht in SwiftUI 😜</li>
-<li>Code ausführen, wenn eine Ansicht angezeigt wird, mit <code>onAppear()</code>.</li>
+<li>Alles ist eine View in SwiftUI 😜</li>
+<li>Code ausführen, wenn eine View angezeigt wird, mit <code>onAppear()</code>.</li>
 </ul>
-<p>Sogar <code>ForEach</code> ist eine Ansicht, deshalb können wir schreiben</p>
+<p>Sogar <code>ForEach</code> ist eine View, deshalb können wir schreiben</p>
 <div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">Text</span><span class="p">(</span><span class="s">"Zeile </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> ein <code>Range&lt;Int&gt;</code> erwartet, nicht ein <code>ClosedRange&lt;Int&gt;</code>!</p>
-<h4 id="foreach-ansicht"><code>ForEach</code> Ansicht</h4>
-<p><code>ForEach</code> ist eine Ansicht, die aus den Unteransichten besteht, die in jeder Schleifeninstanz erstellt werden.</p>
+<p>Hinweis: Wir können nicht <code>ForEach(0..&lt;5)</code> schreiben, weil <code>ForEach</code> einen <code>Range&lt;Int&gt;</code> erwartet, nicht einen <code>ClosedRange&lt;Int&gt;</code>!</p>
+<h4 id="foreach-view"><code>ForEach</code> View</h4>
+<p><code>ForEach</code> ist eine View, die aus den Unteransichten besteht, die in jeder Schleifeninstanz erstellt werden.</p>
 <p>Wir verwenden es typischerweise, um Unteransichten basierend auf einem Zähler oder einem Array zu erstellen.</p>
 <p><code>ForEach</code> mit einem Array:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">SwiftUI</span>
@@ -306,15 +306,15 @@ Français
 <h3 id="dateneingabe">Dateneingabe</h3>
 <h4 id="textfield"><code>TextField</code></h4>
 <h4 id="picker"><code>Picker</code></h4>
-<p><code>Picker</code> wird verwendet, um eine von vielen möglichen Auswahlen auszuwählen.</p>
-<p>Ein regulärer Picker sieht so aus:</p>
+<p><code>Picker</code> wird verwendet, um eine von vielen möglichen Auswahlmöglichkeiten zu treffen.</p>
+<p>Ein normaler Picker sieht so aus:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Picker</span><span class="p">(</span><span class="s">"Anzahl der Personen"</span><span class="p">,</span> <span class="n">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">numberOfPeople</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ForEach</span><span class="p">(</span><span class="mi">2</span> <span class="p">..</span><span class="o">&lt;</span> <span class="mi">100</span> <span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">Text</span><span class="p">(</span><span class="s">"</span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s"> Personen"</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="alternativer Text" src="image-7.png"/></p>
+<p><img alt="alt text" src="image-7.png"/></p>
 <p>Ein <code>Picker</code> kann mit dem <code>PickerStyle</code>-Modifier modifiziert werden:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Picker</span><span class="p">(</span><span class="s">"Trinkgeldprozentsatz"</span><span class="p">,</span> <span class="n">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">tipPercentage</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ForEach</span><span class="p">(</span><span class="n">tipPercentages</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span>
@@ -323,7 +323,7 @@ Français
 <span class="p">}</span>
 <span class="p">.</span><span class="n">pickerStyle</span><span class="p">(.</span><span class="n">segmented</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="alternativer Text" src="image-8.png"/></p>
+<p><img alt="alt text" src="image-8.png"/></p>
 <h4 id="stepper"><code>Stepper</code></h4>
 <p><img alt="Stepper" src="stepper.png"/>
 Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um einen inkrementellen Wert zu erhöhen oder zu verringern.</p>
@@ -337,14 +337,14 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>DatePicker</code> für Daten. Verwenden des <code>displayedComponents</code>-Parameters, um Daten oder Zeiten zu steuern.</li>
+<li><code>DatePicker</code> für Daten. Verwenden Sie den Parameter <code>displayedComponents</code>, um Daten oder Zeiten zu steuern.</li>
 <li><code>Form</code></li>
 <li><code>Picker</code></li>
 <li>Navigationsleiste</li>
 </ul>
 <h3 id="warnungen-bestatigungsdialoge">Warnungen &amp; Bestätigungsdialoge</h3>
 <h4 id="warnungen">Warnungen</h4>
-<p>Warnungen sind eine Erweiterung einer Ansicht mit einer Bool-Variablen, die entscheidet, ob sie angezeigt werden oder nicht.</p>
+<p>Warnungen sind eine Erweiterung einer View mit einer Bool-Variablen, die entscheidet, ob sie angezeigt werden oder nicht.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">showingAlert</span> <span class="p">=</span> <span class="kc">false</span>
 
@@ -359,12 +359,12 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="bestatigungsdialoge">Bestätigungsdialoge</h4>
-<p>Verwenden Sie sie, wenn viele Schaltflächen / Optionen verfügbar sind. Beispielcode siehe <a href="https://github.com/tillg/100DaysOfSwiftUI/blob/main/16.5-AlertAndConfirmation/AlertAndConfirmation/AlertAndConfirmation/ContentView.swift" rel="noopener noreferrer" target="_blank">dieses Repo</a>.</p>
+<p>Verwenden Sie sie, wenn viele Schaltflächen / Optionen verfügbar sind. Für Beispielcode schauen Sie sich <a href="https://github.com/tillg/100DaysOfSwiftUI/blob/main/16.5-AlertAndConfirmation/AlertAndConfirmation/AlertAndConfirmation/ContentView.swift" rel="noopener noreferrer" target="_blank">dieses Repo</a> an.</p>
 <p><strong>Hinweis</strong>: Vor iOS 26 schoben sie sich von unten herein, in iOS 26 erscheinen sie innerhalb des Bildschirms.</p>
 <p>Bestätigungsdialog in iOS 18.5:
-<img alt="alternativer Text" src="image-6.png"/></p>
+<img alt="alt text" src="image-6.png"/></p>
 <p>Bestätigungsdialog in iOS 26:
-<img alt="alternativer Text" src="image-5.png"/></p>
+<img alt="alt text" src="image-5.png"/></p>
 <h3 id="text">Text</h3>
 <p><code>Text</code> ist ein Textfeld, das Text beschreibt.</p>
 <p>Hinweis: Textfelder mit unterschiedlichem Styling können zusammengefügt werden, um ein großes Textfeld mit Teilen mit unterschiedlichem Styling zu bilden:</p>
@@ -374,8 +374,8 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
 <span class="n">Text</span><span class="p">(</span><span class="s">"Seitenbeschreibung hier"</span><span class="p">)</span>
     <span class="p">.</span><span class="n">italic</span><span class="p">()</span>
 </code></pre></div>
-<p>Und Sie erhalten einen Text mit unterschiedlichen Stilen kombiniert:</p>
-<p><img alt="alternativer Text" src="image-4.png"/></p>
+<p>Und Sie erhalten einen Text mit verschiedenen kombinierten Stilen:</p>
+<p><img alt="alt text" src="image-4.png"/></p>
 <h3 id="listen">Listen</h3>
 <p>Erstellen von scrollbaren Datentabellen mit <code>List</code>, insbesondere wie es Zeilen direkt aus Datenarrays erstellen kann.</p>
 <div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
@@ -386,9 +386,9 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Schaltflächen in Listen: Wenn Sie eine Schaltfläche in eine Liste einfügen, wird das GESAMTE Listenelement klickbar! Wenn es mehr als eine Schaltfläche in einer Liste gibt, wird, wo immer Sie auf das Listenelement klicken, ALLE Schaltflächen nacheinander geklickt!</p>
-<p>Um dies zu beheben und das gewünschte Verhalten zu erhalten, verwenden Sie <code>.buttonStyle(.plain)</code></p>
-<p>Dasselbe gilt für HStack:</p>
+<p>Schaltflächen in Listen: Wenn Sie eine Schaltfläche in eine Liste einfügen, wird das GESAMTE Listenelement klickbar! Wenn es mehr als eine Schaltfläche in einer Liste gibt, wo immer Sie auf das Listenelement klicken, werden ALLE Schaltflächen nacheinander geklickt!</p>
+<p>Um das zu beheben und das gewünschte Verhalten zu erhalten, verwenden Sie <code>.buttonStyle(.plain)</code></p>
+<p>Das Gleiche gilt für HStack:</p>
 <div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">label</span><span class="p">.</span><span class="bp">isEmpty</span> <span class="p">==</span> <span class="kc">false</span> <span class="p">{</span>
         <span class="n">Text</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
@@ -415,9 +415,9 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="p">.</span><span class="n">frame</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">)}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="alternativer Text" src="image.png"/></p>
+<p><img alt="alt text" src="image.png"/></p>
 <p>Ersetzen Sie <code>ScaledToFit</code> durch <code>ScaledToFill</code> und erhalten Sie</p>
-<p><img alt="alternativer Text" src="image-1.png"/></p>
+<p><img alt="alt text" src="image-1.png"/></p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
         <span class="n">Image</span> <span class="p">(</span><span class="err">•</span><span class="n">example</span><span class="p">)</span>
@@ -429,10 +429,10 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="alternativer Text" src="image-2.png"/></p>
+<p><img alt="alt text" src="image-2.png"/></p>
 <h3 id="werkzeugleiste">Werkzeugleiste</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code>-Klasse nachschlagen, einschließlich des Ladens von Strings von dort.</p>
+<p>Lesen von Dateien aus unserem App-Bundle, indem wir ihren Pfad mit der <code>Bundle</code>-Klasse nachschlagen, einschließlich dem Laden von Strings von dort.</p>
 <h3 id="animationen">Animationen</h3>
 <p>Behandelt in <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Tag 32-34</a>. TODO Ich muss die Clips noch einmal ansehen, um meine Notizen/Spickzettel zu extrahieren.</p>
 <ul>
@@ -440,7 +440,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
 <li>Anpassen von Animationen mit Verzögerungen und Wiederholungen und die Wahl zwischen Ease-in-Ease-out- und Federanimationen.</li>
 <li>Anhängen des <code>animation()</code>-Modifiers an Bindungen, sodass wir Änderungen direkt von UI-Steuerelementen aus animieren können.</li>
 <li>Verwenden von <code>withAnimation()</code>, um explizite Animationen zu erstellen.</li>
-<li>Anhängen mehrerer <code>animation()</code>-Modifier an eine einzelne Ansicht, sodass wir den Animationsstapel steuern können.</li>
+<li>Anhängen mehrerer <code>animation()</code>-Modifier an eine einzelne View, sodass wir den Animationsstapel steuern können.</li>
 </ul>
 <h3 id="daten-laden">Daten laden</h3>
 <p>Wenn es synchron ist:</p>
@@ -448,9 +448,9 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="p">.</span><span class="n">onAppear</span><span class="p">(</span><span class="n">loadIt</span><span class="p">)</span>
 </code></pre></div>
 <p>?? Wie wird es gemacht, wenn <code>loadIt</code> asynchron ist??</p>
-<h3 id="werte-an-ansichten-ubergeben-zuruckgeben">Werte an Ansichten übergeben &amp; zurückgeben</h3>
-<p>Wie in <a href="https://www.hackingwithswift.com/books/ios-swiftui/selecting-and-editing-map-annotations" rel="noopener noreferrer" target="_blank">Auswählen und Bearbeiten von Kartenanmerkungen</a> gesehen</p>
-<p>Stellen Sie sich vor, ich habe eine Ansicht, die als Sheet geöffnet wird und eine <code>Location</code> (ein selbst definiertes <code>struct</code>) erhält:</p>
+<h3 id="werte-an-views-ubergeben-zuruckgeben">Werte an Views übergeben &amp; zurückgeben</h3>
+<p>Wie gesehen in <a href="https://www.hackingwithswift.com/books/ios-swiftui/selecting-and-editing-map-annotations" rel="noopener noreferrer" target="_blank">Auswählen und Bearbeiten von Kartenanmerkungen</a></p>
+<p>Stellen Sie sich vor, ich habe eine View, die als Sheet geöffnet wird und eine <code>Location</code> (eine selbst definierte <code>struct</code>) erhält:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">EditView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">dismiss</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">dismiss</span>
     <span class="kd">var</span> <span class="nv">location</span><span class="p">:</span> <span class="n">Location</span>
@@ -496,16 +496,16 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="n">_description</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Der <code>@escaping</code>-Teil ist wichtig und bedeutet, dass die Funktion für eine spätere Verwendung gespeichert wird, anstatt sofort aufgerufen zu werden, und es ist hier notwendig, weil die <code>onSave</code>-Funktion nur aufgerufen wird, wenn der Benutzer auf Speichern drückt.</p>
+<p>Der Teil <code>@escaping</code> ist wichtig und bedeutet, dass die Funktion für die spätere Verwendung gespeichert wird, anstatt sofort aufgerufen zu werden, und er ist hier erforderlich, da die <code>onSave</code>-Funktion nur aufgerufen wird, wenn der Benutzer auf Speichern drückt.</p>
 <h3 id="sheets-navigationstacks"><code>Sheet</code>s &amp; <code>NavigationStack</code>s</h3>
-<p>Um eine Ansicht als Sheet zu öffnen:</p>
+<p>Um eine View als Sheet zu öffnen:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">showingAddExpense</span> <span class="p">=</span> <span class="kc">false</span>
 
     <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
         <span class="n">NavigationStack</span> <span class="p">{</span>
             <span class="n">VStack</span> <span class="p">{</span>
-                <span class="c1">// Irgendein Code hier</span>
+                <span class="c1">// Some code here</span>
             <span class="p">}</span>
             <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"iExpense"</span><span class="p">)</span>
             <span class="p">.</span><span class="n">toolbar</span> <span class="p">{</span>
@@ -520,7 +520,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="netzwerk">Netzwerk</h2>
+<h2 id="netzwerken">Netzwerken</h2>
 <p>So senden Sie etwas an einen HTTPS-Endpunkt:</p>
 <div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
         <span class="k">guard</span> <span class="kd">let</span> <span class="nv">encoded</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
@@ -537,7 +537,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
             <span class="kd">let</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">upload</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">encoded</span><span class="p">)</span>
 
             <span class="kd">let</span> <span class="nv">decodedOrder</span> <span class="p">=</span> <span class="k">try</span> <span class="n">JSONDecoder</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="n">Order</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
-            <span class="n">confirmationMessage</span> <span class="p">=</span> <span class="s">"Ihre Bestellung über </span><span class="si">\(</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">quantity</span><span class="si">)</span><span class="s">x </span><span class="si">\(</span><span class="n">Order</span><span class="p">.</span><span class="n">types</span><span class="p">[</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">type</span><span class="p">].</span><span class="n">lowercased</span><span class="si">())</span><span class="s"> Cupcakes ist auf dem Weg!"</span>
+            <span class="n">confirmationMessage</span> <span class="p">=</span> <span class="s">"Ihre Bestellung über </span><span class="si">\(</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">quantity</span><span class="si">)</span><span class="s">x </span><span class="si">\(</span><span class="n">Order</span><span class="p">.</span><span class="n">types</span><span class="p">[</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">type</span><span class="p">].</span><span class="n">lowercased</span><span class="si">())</span><span class="s"> Cupcakes ist unterwegs!"</span>
             <span class="n">showingConfirmation</span> <span class="p">=</span> <span class="kc">true</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
             <span class="bp">print</span><span class="p">(</span><span class="s">"Checkout fehlgeschlagen: </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
@@ -557,7 +557,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
 <li>Unsere Daten müssen <code>Codable</code> sein, damit wir später <code>JSONEncoder</code> erstellen können</li>
 <li>UserDefaults, um unsere Daten zu speichern und zu laden</li>
 <li>Ein benutzerdefinierter Initialisierer für die Datenklasse, damit sie automatisch geladen wird</li>
-<li>Ein <code>didSet</code> für die Daten, damit sie immer automatisch gespeichert werden, wenn Daten hinzugefügt oder geändert werden.</li>
+<li>Ein <code>didSet</code> für die Daten, sodass sie immer gespeichert werden, wenn Daten hinzugefügt oder geändert werden.</li>
 </ol>
 <p>Die Daten <code>Codable</code> zu machen, ist meistens nicht allzu schwer: Solange die Komponenten <code>Codable</code> sind, ist es auch die gesamte Klasse.</p>
 <p>So kann das Speichern der Daten in einem <code>didSet</code> aussehen:</p>
@@ -581,7 +581,7 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
     <span class="n">items</span> <span class="p">=</span> <span class="p">[]</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="schreiben-lesen-im-dokumentenverzeichnis">Schreiben &amp; Lesen im Dokumentenverzeichnis</h3>
+<h3 id="schreiben-lesen-in-das-dokumentenverzeichnis">Schreiben &amp; Lesen in das Dokumentenverzeichnis</h3>
 <p>So schreiben wir:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">data</span> <span class="p">=</span> <span class="n">Data</span><span class="p">(</span><span class="s">"Testnachricht"</span><span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
 <span class="kd">let</span> <span class="nv">url</span> <span class="p">=</span> <span class="n">URL</span><span class="p">.</span><span class="n">documentsDirectory</span><span class="p">.</span><span class="n">appending</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">"message.txt"</span><span class="p">)</span>
@@ -595,7 +595,8 @@ Ein Stepper ist ein zweigeteiltes Steuerelement, das Benutzer verwenden, um eine
 <p>..und so lesen wir:</p>
 <p>```swift
 let url = URL.documentsDirectory.appending(path: "message.txt")</p>
-<p>do</p>
+<p>do {
+    let input = try String(contentsOf</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"
