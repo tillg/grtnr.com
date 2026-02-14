@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +12,16 @@
   <meta charset="utf-8" />
 
   <!-- Multilingual SEO tags -->
-  <link rel="stylesheet" href="../theme/css/poole.css" />
-  <link rel="stylesheet" href="../theme/css/syntax.css" />
-  <link rel="stylesheet" href="../theme/css/lanyon.css" />
-  <link rel="stylesheet" href="../theme/css/tag_pills.css" />
+    <link rel="alternate" hreflang="en" href="/double-ai-chat/" />
+    <link rel="alternate" hreflang="de" href="/de/double-ai-chat/" />
+    <link rel="alternate" hreflang="fr" href="/fr/double-ai-chat/" />
+    <link rel="canonical" href="/double-ai-chat/" />
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-  <link rel="stylesheet" href="../theme/css/styles.css" />
+  <link rel="stylesheet" href="/theme/css/styles.css" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
@@ -46,7 +50,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 
   <nav class="sidebar-nav">
 
-  <a class="sidebar-nav-item" href="../">Home</a>
+  <a class="sidebar-nav-item" href="/en/">Home</a>
 
   <a class="sidebar-nav-item" href="/tags">Topics</a>
   <a class="sidebar-nav-item" href="/recipes">Recipes</a>
@@ -65,14 +69,14 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <div class="sidebar-item">
-      Last built 14.02.2026 13:21:38.
+      Last built 14.02.2026 23:34:40.
   </div>
 </div>
   <div class="wrap">
     <div class="masthead">
       <div class="container">
         <h3 class="masthead-title">
-          <a href="../" title="Home">
+          <a href="/en/" title="Home">
             grtnr.com
           </a>         </h3>
         
@@ -107,15 +111,15 @@ Français
     </div>
 
 
-    <p>Ich habe mir ein multi-Ai-Chat-<span class="caps">UI</span> gebastelt und es funktioniert!! 😀</p>
-<h2 id="meine-to-do-liste">Meine To-Do-Liste:</h2>
+    <p>I built myself a multi-<span class="caps">AI</span> chat <span class="caps">UI</span> and it works!!&nbsp;😀</p>
+<h2 id="my-to-do-list">My To-Do&nbsp;List:</h2>
 <ul>
 <li>See the result as it comes in from the <span class="caps">AI</span>.</li>
-<li>Use A12 Widgets</li>
-<li>Ability to enter specific configurations (i.e. being able to compare <span class="caps">GPT</span>-4 with temperature 0 vs temperature 1)</li>
-<li>Check tokens vs rate limits so messages don’t get too long</li>
+<li>Use A12&nbsp;Widgets</li>
+<li>Ability to enter specific configurations (i.e. being able to compare <span class="caps">GPT</span>-4 with temperature 0 vs temperature&nbsp;1)</li>
+<li>Check tokens vs rate limits so messages don&#8217;t get too&nbsp;long</li>
 </ul>
-<p>Wenn Du Ideen / Anregungen hast, dann schreib mir gerne eine Mail.</p>
+<p>If you have any ideas or suggestions, feel free to send me an&nbsp;email.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"
@@ -204,11 +208,8 @@ Français
           contentPath = pathParts.slice(1).join('/');
         }
         
-        // Build new path
-        var newPath = '/';
-        if (targetLang !== 'en') {
-          newPath += targetLang + '/';
-        }
+        // Build new path — all languages get a prefix
+        var newPath = '/' + targetLang + '/';
         if (contentPath) {
           newPath += contentPath;
           if (!newPath.endsWith('/')) {
@@ -224,9 +225,8 @@ Français
         var storedLang = getStoredLanguage();
         var currentPath = window.location.pathname;
         
-        // Check if we need to redirect to the stored language
-        // Only redirect if on root page and user prefers a different language
-        if (currentPath === '/' && storedLang !== 'en') {
+        // Redirect root page to stored language (all languages have a prefix)
+        if (currentPath === '/') {
           window.location.href = '/' + storedLang + '/';
         }
       });

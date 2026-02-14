@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>grtnr.com - Life</title>
+  <title>grtnr.com - life</title>
 
   <meta charset="utf-8" />
 
   <!-- Multilingual SEO tags -->
-  <link rel="stylesheet" href="../../theme/css/poole.css" />
-  <link rel="stylesheet" href="../../theme/css/syntax.css" />
-  <link rel="stylesheet" href="../../theme/css/lanyon.css" />
-  <link rel="stylesheet" href="../../theme/css/tag_pills.css" />
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-  <link rel="stylesheet" href="../../theme/css/styles.css" />
+  <link rel="stylesheet" href="/theme/css/styles.css" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
@@ -42,7 +42,7 @@ styles, `#sidebar-checkbox` for behavior. -->
 
   <nav class="sidebar-nav">
 
-  <a class="sidebar-nav-item" href="../../">Home</a>
+  <a class="sidebar-nav-item" href="/en/">Home</a>
 
   <a class="sidebar-nav-item" href="/tags">Topics</a>
   <a class="sidebar-nav-item" href="/recipes">Recipes</a>
@@ -54,14 +54,14 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 14.02.2026 13:21:38.
+      Last built 14.02.2026 23:34:40.
   </div>
 </div>
   <div class="wrap">
     <div class="masthead">
       <div class="container">
         <h3 class="masthead-title">
-          <a href="../../" title="Home">
+          <a href="/en/" title="Home">
             grtnr.com
           </a>         </h3>
         
@@ -88,13 +88,13 @@ Français
 <h1 class="tag-heading">
     Articles about <span class="tag-inline"><div class="tag-pills">
   <a href="/tag/life/"
-  class="tag-pill tag-pill-large">Life</a>
+  class="tag-pill tag-pill-large">life</a>
 
 </div>
 </span>
 </h1>
 <ul>
-    <li><a href="../../welche-ist-die-schonste-bibliothek-munchens/">Welche ist die schönste Bibliothek&nbsp;Münchens?!</a> - June 14, 2013</li>
+    <li><a href="/welche-ist-die-schonste-bibliothek-munchens/">Which is the Most Beautiful Library in Munich?!</a> - June 14, 2013</li>
 </ul>
     </div>
 
@@ -164,11 +164,8 @@ Français
           contentPath = pathParts.slice(1).join('/');
         }
         
-        // Build new path
-        var newPath = '/';
-        if (targetLang !== 'en') {
-          newPath += targetLang + '/';
-        }
+        // Build new path — all languages get a prefix
+        var newPath = '/' + targetLang + '/';
         if (contentPath) {
           newPath += contentPath;
           if (!newPath.endsWith('/')) {
@@ -184,9 +181,8 @@ Français
         var storedLang = getStoredLanguage();
         var currentPath = window.location.pathname;
         
-        // Check if we need to redirect to the stored language
-        // Only redirect if on root page and user prefers a different language
-        if (currentPath === '/' && storedLang !== 'en') {
+        // Redirect root page to stored language (all languages have a prefix)
+        if (currentPath === '/') {
           window.location.href = '/' + storedLang + '/';
         }
       });

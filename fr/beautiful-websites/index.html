@@ -12,6 +12,10 @@
   <meta charset="utf-8" />
 
   <!-- Multilingual SEO tags -->
+    <link rel="alternate" hreflang="en" href="/beautiful-websites/" />
+    <link rel="alternate" hreflang="de" href="/de/beautiful-websites/" />
+    <link rel="alternate" hreflang="fr" href="/fr/beautiful-websites/" />
+    <link rel="canonical" href="/fr/beautiful-websites/" />
   <link rel="stylesheet" href="/theme/css/poole.css" />
   <link rel="stylesheet" href="/theme/css/syntax.css" />
   <link rel="stylesheet" href="/theme/css/lanyon.css" />
@@ -48,17 +52,24 @@ styles, `#sidebar-checkbox` for behavior. -->
 
   <a class="sidebar-nav-item" href="/fr/">Home</a>
 
-  <a class="sidebar-nav-item" href="/fr/tags">Topics</a>
-  <a class="sidebar-nav-item" href="/fr/recipes">Recipes</a>
-  <a class="sidebar-nav-item" href="/fr/about">About</a>
-  <a class="sidebar-nav-item" href="/fr/impressum">Impressum</a>
+  <a class="sidebar-nav-item" href="/fr/tags">Sujets</a>
+  <a class="sidebar-nav-item" href="/recipes">Recettes</a>
+  <a class="sidebar-nav-item" href="/fr/about">À propos</a>
+  <a class="sidebar-nav-item" href="/fr/impressum">Mentions légales</a>
 
   </nav>
 
   <!-- Language Switcher -->
+  <div class="sidebar-item">
+    <h4>Language / Sprache / Langue</h4>
+    <div class="language-switcher">
+        <a href="/de/beautiful-websites/" class="language-link" hreflang="de">Deutsch</a>
+        <a href="/fr/beautiful-websites/" class="language-link" hreflang="fr">Français</a>
+    </div>
+  </div>
 
   <div class="sidebar-item">
-      Last built 14.02.2026 13:21:38.
+      Last built 14.02.2026 23:34:40.
   </div>
 </div>
   <div class="wrap">
@@ -104,15 +115,15 @@ Deutsch
       | <a href="/beautiful-websites/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Étant donné que j'ai toujours en tête que mon site a besoin d'un design approprié, j'ai besoin d'un endroit pour garder une trace des sites magnifiques ou du moins des sites dont j'aime le design. Voici donc le foyer de ces URL.</p>
+    <p>Étant donné que j&#8217;ai toujours en tête que mon site a besoin d&#8217;un design approprié, j&#8217;ai besoin d&#8217;un endroit pour garder une trace des sites magnifiques ou du moins des sites dont j&#8217;aime le design. Voici donc le foyer de ces <span class="caps">URL</span>.</p>
 <ul>
-<li><a href="http://jason.pureconcepts.net/" rel="noopener noreferrer" target="_blank">Blog de Jason McCreary</a></li>
-<li>Grandes polices</li>
-<li>Bon pour les entrées basées sur du texte ainsi que pour les images</li>
-<li>Navigation simple</li>
-<li><a href="http://alexcican.com/" rel="noopener noreferrer" target="_blank">Alex Cinan</a></li>
-<li>Grandes polices</li>
-<li>GRANDES images avec l'effet paralaxe impressionnant</li>
+<li><a href="http://jason.pureconcepts.net/" rel="noopener noreferrer" target="_blank">Blog de Jason&nbsp;McCreary</a></li>
+<li>Grandes&nbsp;polices</li>
+<li>Bon pour les entrées basées sur du texte ainsi que pour les&nbsp;images</li>
+<li>Navigation&nbsp;simple</li>
+<li><a href="http://alexcican.com/" rel="noopener noreferrer" target="_blank">Alex&nbsp;Cinan</a></li>
+<li>Grandes&nbsp;polices</li>
+<li><span class="caps">GRANDES</span> images avec l&#8217;effet paralaxe&nbsp;impressionnant</li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
@@ -202,11 +213,8 @@ Deutsch
           contentPath = pathParts.slice(1).join('/');
         }
         
-        // Build new path
-        var newPath = '/';
-        if (targetLang !== 'en') {
-          newPath += targetLang + '/';
-        }
+        // Build new path — all languages get a prefix
+        var newPath = '/' + targetLang + '/';
         if (contentPath) {
           newPath += contentPath;
           if (!newPath.endsWith('/')) {
@@ -222,9 +230,8 @@ Deutsch
         var storedLang = getStoredLanguage();
         var currentPath = window.location.pathname;
         
-        // Check if we need to redirect to the stored language
-        // Only redirect if on root page and user prefers a different language
-        if (currentPath === '/' && storedLang !== 'en') {
+        // Redirect root page to stored language (all languages have a prefix)
+        if (currentPath === '/') {
           window.location.href = '/' + storedLang + '/';
         }
       });
