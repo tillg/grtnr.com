@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 14.02.2026 11:13:38.
+      Last built 14.02.2026 11:47:35.
   </div>
 </div>
   <div class="wrap">
@@ -111,15 +111,15 @@ Deutsch
       | <a href="/swiftui-cheatsheet/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>En juin 2025, j'ai commencé à travailler sur <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la quantité de contenu de qualité et de cours que Paul Hudson propose - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
-<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure approximative en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à un aperçu complet !</p>
+    <p>En juin 2025, j'ai commencé à travailler à travers <a href="https://www.hackingwithswift.com/100/swiftui/" rel="noopener noreferrer" target="_blank">100 Days of SwiftUI</a>. C'est un excellent cours, et je suis vraiment impressionné par la qualité du contenu et des cours que Paul Hudson fournit - et maintient !! Paul, merci beaucoup pour cela ! 🙏🏼</p>
+<p>Mais c'est beaucoup de contenu, alors voici mes notes - j'espère dans un format d'aide-mémoire facile à naviguer. J'ai une structure générale en tête, mais je ne remplirai le contenu que lorsque j'en aurai besoin. Ne vous attendez donc pas à une vue d'ensemble complète !</p>
 <div class="toc">
 <ul>
 <li><a href="#swift">Swift</a><ul>
-<li><a href="#struct-et-proprietes-calculees">struct et propriétés calculées</a></li>
+<li><a href="#struct-proprietes-calculees">struct &amp; propriétés calculées</a></li>
 <li><a href="#optionnels">Optionnels</a></li>
 <li><a href="#protocoles-et-extensions">Protocoles et Extensions</a></li>
-<li><a href="#tableaux-et-tri">Tableaux et tri</a></li>
+<li><a href="#tableaux-tri">Tableaux &amp; tri</a></li>
 <li><a href="#chaines">Chaînes</a></li>
 <li><a href="#dates">Dates</a></li>
 <li><a href="#enum">enum</a></li>
@@ -135,13 +135,13 @@ Deutsch
 <li><a href="#barre-doutils">Barre d'outils</a></li>
 <li><a href="#bundle">Bundle</a></li>
 <li><a href="#animations">Animations</a></li>
-<li><a href="#chargement-des-donnees">Chargement des données</a></li>
+<li><a href="#chargement-des-donnees">Chargement des Données</a></li>
 <li><a href="#passer-et-retourner-des-valeurs-versdepuis-des-vues">Passer et retourner des valeurs vers/depuis des vues</a></li>
 <li><a href="#sheets-et-navigationstacks">Sheets et NavigationStacks</a></li>
 </ul>
 </li>
-<li><a href="#reseautage">Réseautage</a></li>
-<li><a href="#sauvegarde-des-donnees">Sauvegarde des données</a><ul>
+<li><a href="#reseau">Réseau</a></li>
+<li><a href="#sauvegarde-des-donnees">Sauvegarde des Données</a><ul>
 <li><a href="#ecriture-et-lecture-dans-userdefaults">Écriture et lecture dans UserDefaults</a></li>
 <li><a href="#ecriture-et-lecture-dans-le-repertoire-des-documents">Écriture et lecture dans le répertoire des documents</a></li>
 </ul>
@@ -149,9 +149,9 @@ Deutsch
 </ul>
 </div>
 <h2 id="swift">Swift</h2>
-<p>Pour un aperçu complet, voir <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Apprenez l'essentiel de Swift en une heure</a>.</p>
+<p>Pour une vue d'ensemble complète, voir <a href="https://www.hackingwithswift.com/articles/242/learn-essential-swift-in-one-hour" rel="noopener noreferrer" target="_blank">Learn essential Swift in one hour</a>.</p>
 <p>Dans le chapitre suivant, j'ai juste ajouté les parties que j'avais besoin de vérifier au moins une fois.</p>
-<h3 id="struct-et-proprietes-calculees"><code>struct</code> et propriétés calculées</h3>
+<h3 id="struct-proprietes-calculees"><code>struct</code> &amp; propriétés calculées</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">Employee</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">var</span> <span class="nv">vacationAllocated</span> <span class="p">=</span> <span class="mi">14</span>
@@ -166,9 +166,9 @@ Deutsch
 <ul>
 <li>Les optionnels nous permettent de représenter l'absence de données, ce qui signifie que nous pouvons dire "cet entier n'a pas de valeur" – c'est différent d'un nombre fixe tel que 0.</li>
 <li>Exemple : <code>var str:String?</code> peut contenir une chaîne ou nil</li>
-<li>En conséquence, tout ce qui n'est pas optionnel a définitivement une valeur à l'intérieur, même si c'est juste une chaîne vide.</li>
+<li>En conséquence, tout ce qui n'est pas optionnel a définitivement une valeur à l'intérieur, même si ce n'est qu'une chaîne vide.</li>
 <li>Déballer un optionnel est le processus de regarder à l'intérieur d'une boîte pour voir ce qu'elle contient : s'il y a une valeur à l'intérieur, elle est renvoyée pour être utilisée, sinon il y aura nil à l'intérieur.</li>
-<li>Nous pouvons utiliser <code>if let</code> pour exécuter du code si l'optionnel a une valeur, ou <code>guard let</code> pour exécuter du code si l'optionnel n'a pas de valeur – mais avec <code>guard</code> nous devons toujours quitter la fonction par la suite.</li>
+<li>Nous pouvons utiliser <code>if let</code> pour exécuter du code si l'optionnel a une valeur, ou <code>guard let</code> pour exécuter du code si l'optionnel n'a pas de valeur – mais avec guard, nous devons toujours quitter la fonction ensuite.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">printSquare</span><span class="p">(</span><span class="n">of</span> <span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="kd">let</span> <span class="nv">number</span> <span class="p">=</span> <span class="n">number</span> <span class="k">else</span> <span class="p">{</span>
@@ -185,8 +185,8 @@ Deutsch
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">new</span> <span class="p">=</span> <span class="n">captains</span><span class="p">[</span><span class="s">"Serenity"</span><span class="p">]</span> <span class="p">??</span> <span class="s">"N/A"</span>
 </code></pre></div>
 <ul>
-<li>La chaîne optionnelle nous permet de lire un optionnel à l'intérieur d'un autre optionnel avec une syntaxe pratique.</li>
-<li>Si une fonction peut générer des erreurs, vous pouvez la convertir en optionnel en utilisant <code>try?</code> – vous obtiendrez soit la valeur de retour de la fonction, soit nil si une erreur est générée.</li>
+<li>Le chaînage optionnel nous permet de lire un optionnel à l'intérieur d'un autre optionnel avec une syntaxe pratique.</li>
+<li>Si une fonction peut générer des erreurs, vous pouvez la convertir en optionnel en utilisant try? – vous obtiendrez soit la valeur de retour de la fonction, soit nil si une erreur est générée.</li>
 </ul>
 <h3 id="protocoles-et-extensions">Protocoles et Extensions</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">Vehicle</span> <span class="p">{</span>
@@ -200,7 +200,7 @@ Deutsch
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="tableaux-et-tri">Tableaux et tri</h3>
+<h3 id="tableaux-tri">Tableaux &amp; tri</h3>
 <p>Tous les tableaux ont des méthodes intégrées <code>sort()</code> et <code>sorted()</code> qui peuvent être utilisées pour trier le tableau.</p>
 <ul>
 <li><code>sort()</code> trie le tableau sur place</li>
@@ -210,7 +210,7 @@ Deutsch
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Jemima"</span><span class="p">,</span> <span class="s">"Peter"</span><span class="p">,</span> <span class="s">"David"</span><span class="p">,</span> <span class="s">"Kelly"</span><span class="p">,</span> <span class="s">"Isabella"</span><span class="p">]</span>
 <span class="n">names</span><span class="p">.</span><span class="bp">sort</span><span class="p">()</span>
 </code></pre></div>
-<p>Si vous avez des structures plus complexes, vous devez transmettre la comparaison :</p>
+<p>Si vous avez des structures plus complexes, vous devez passer la comparaison :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="nb">String</span>
 <span class="p">}</span>
@@ -229,8 +229,8 @@ Deutsch
 </code></pre></div>
 <p>Nous pouvons faire en sorte que nos propres types soient conformes à <code>Comparable</code>, et lorsque nous le faisons, nous obtenons également une méthode <code>sorted()</code> sans paramètres. Cela prend deux étapes :</p>
 <ol>
-<li>Ajouter la conformité <code>Comparable</code> à la définition de User.</li>
-<li>Ajouter une méthode appelée <code>&lt;</code> qui prend deux utilisateurs et renvoie vrai si le premier doit être trié avant le second.</li>
+<li>Ajoutez la conformité <code>Comparable</code> à la définition de User.</li>
+<li>Ajoutez une méthode appelée <code>&lt;</code> qui prend deux utilisateurs et renvoie true si le premier doit être trié avant le second.</li>
 </ol>
 <p>Voici à quoi cela ressemble en code :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">User</span><span class="p">:</span> <span class="n">Identifiable</span><span class="p">,</span> <span class="nb">Comparable</span> <span class="p">{</span>
@@ -245,7 +245,7 @@ Deutsch
 </code></pre></div>
 <h3 id="chaines">Chaînes</h3>
 <ul>
-<li>Elles sont spéciales, et il y a beaucoup à savoir...</li>
+<li>Elles sont spéciales et il y a beaucoup à savoir...</li>
 <li>Cela ne fonctionne pas :</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">"Paul"</span>
@@ -271,17 +271,17 @@ Deutsch
 </code></pre></div>
 <h2 id="swiftui">SwiftUI</h2>
 <ul>
-<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un outil agréable pour naviguer et explorer les différentes vues et composants.</li>
+<li><a href="https://apps.apple.com/de/app/interactful/id1528095640?l=en-GB" rel="noopener noreferrer" target="_blank">Interactful</a> est un outil sympa pour naviguer et explorer les différentes vues et composants.</li>
 <li><a href="https://developer.apple.com/design/human-interface-guidelines/components" rel="noopener noreferrer" target="_blank">Human Interfaces Guideline</a></li>
 </ul>
 <h3 id="vues">Vues</h3>
 <ul>
 <li>Tout est une vue dans SwiftUI 😜</li>
-<li>Exécution de code lorsqu'une vue est affichée, en utilisant <code>onAppear()</code>.</li>
+<li>Exécuter du code lorsqu'une vue est affichée, en utilisant <code>onAppear()</code>.</li>
 </ul>
 <p>Même <code>ForEach</code> est une vue, c'est pourquoi nous pouvons écrire</p>
 <div class="highlight"><pre><span></span><code><span class="n">ForEach</span><span class="p">(</span><span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Text</span><span class="p">(</span><span class="s">"Row </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">Text</span><span class="p">(</span><span class="s">"Ligne </span><span class="si">\(</span><span class="nv">$0</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Remarque : Nous ne pouvons pas écrire <code>ForEach(0..&lt;5)</code>, car <code>ForEach</code> attend un <code>Range&lt;Int&gt;</code>, pas un <code>ClosedRange&lt;Int&gt;</code> !</p>
@@ -359,7 +359,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="dialogues-de-confirmation">Dialogues de Confirmation</h4>
-<p>Utilisez-les lorsque de nombreux boutons / options sont disponibles. Pour un exemple de code, consultez <a href="https://github.com/tillg/100DaysOfSwiftUI/blob/main/16.5-AlertAndConfirmation/AlertAndConfirmation/AlertAndConfirmation/ContentView.swift" rel="noopener noreferrer" target="_blank">ce dépôt</a>.</p>
+<p>Utilisez-les lorsque de nombreux boutons/options sont disponibles. Pour un exemple de code, consultez <a href="https://github.com/tillg/100DaysOfSwiftUI/blob/main/16.5-AlertAndConfirmation/AlertAndConfirmation/AlertAndConfirmation/ContentView.swift" rel="noopener noreferrer" target="_blank">ce dépôt</a>.</p>
 <p><strong>Remarque</strong> : Avant iOS 26, ils glissaient depuis le bas, dans iOS 26, ils apparaissent à l'intérieur de l'écran.</p>
 <p>Dialogue de Confirmation dans iOS 18.5 :
 <img alt="texte alternatif" src="image-6.png"/></p>
@@ -367,17 +367,17 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <img alt="texte alternatif" src="image-5.png"/></p>
 <h3 id="texte">Texte</h3>
 <p><code>Text</code> est un champ de texte qui décrit du texte.</p>
-<p>Remarque : Les champs de texte avec des styles différents peuvent être <em>additionnés</em> pour former un grand champ de texte avec des parties ayant des styles différents à l'intérieur :</p>
+<p>Remarque : Les champs de texte avec un style différent peuvent être <em>additionnés</em> pour former un grand champ de texte avec des parties de style différent à l'intérieur :</p>
 <div class="highlight"><pre><span></span><code><span class="n">Text</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
     <span class="p">.</span><span class="n">font</span><span class="p">(.</span><span class="n">headline</span><span class="p">)</span>
 <span class="o">+</span> <span class="n">Text</span><span class="p">(</span><span class="s">": "</span><span class="p">)</span> <span class="o">+</span>
 <span class="n">Text</span><span class="p">(</span><span class="s">"Description de la page ici"</span><span class="p">)</span>
     <span class="p">.</span><span class="n">italic</span><span class="p">()</span>
 </code></pre></div>
-<p>Et vous obtenez un texte avec des styles différents combinés :</p>
+<p>Et vous obtenez un texte avec différents styles combinés :</p>
 <p><img alt="texte alternatif" src="image-4.png"/></p>
 <h3 id="listes">Listes</h3>
-<p>Construction de tableaux de données défilants en utilisant <code>List</code>, en particulier comment il peut créer des lignes directement à partir de tableaux de données.</p>
+<p>Construire des tables de données défilantes en utilisant <code>List</code>, en particulier comment elle peut créer des lignes directement à partir de tableaux de données.</p>
 <div class="highlight"><pre><span></span><code><span class="n">List</span> <span class="p">{</span>
     <span class="n">Section</span> <span class="p">{</span>
         <span class="n">Label</span><span class="p">(</span><span class="s">"Soleil"</span><span class="p">,</span> <span class="n">systemImage</span><span class="p">:</span> <span class="s">"sun.max"</span><span class="p">)</span>
@@ -386,7 +386,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Boutons dans les listes : Lorsque vous placez un bouton dans une liste, l'ENTIER élément de la liste devient cliquable ! S'il y a plus d'un bouton dans une liste, où que vous cliquiez sur l'élément de la liste, cela clique sur TOUS les boutons les uns après les autres !</p>
+<p>Boutons dans les listes : Lorsque vous placez un bouton dans une liste, TOUT l'élément de la liste devient cliquable ! S'il y a plus d'un bouton dans une liste, où que vous cliquiez sur l'élément de la liste, cela clique sur TOUS les boutons les uns après les autres !</p>
 <p>Pour corriger cela et obtenir le comportement souhaité, utilisez <code>.buttonStyle(.plain)</code></p>
 <p>Il en va de même pour HStack :</p>
 <div class="highlight"><pre><span></span><code><span class="n">HStack</span> <span class="p">{</span>
@@ -432,25 +432,25 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <p><img alt="texte alternatif" src="image-2.png"/></p>
 <h3 id="barre-doutils">Barre d'outils</h3>
 <h3 id="bundle">Bundle</h3>
-<p>Lecture de fichiers depuis notre bundle d'application en recherchant leur chemin en utilisant la classe <code>Bundle</code>, y compris le chargement de chaînes depuis celui-ci.</p>
+<p>Lire des fichiers depuis notre bundle d'application en recherchant leur chemin en utilisant la classe <code>Bundle</code>, y compris le chargement de chaînes à partir de là.</p>
 <h3 id="animations">Animations</h3>
 <p>Couvert dans <a href="https://www.hackingwithswift.com/100/swiftui/32" rel="noopener noreferrer" target="_blank">Jour 32-34</a>. TODO Je dois revoir les clips pour extraire mes notes/aide-mémoire.</p>
 <ul>
-<li>Création d'animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
-<li>Personnalisation des animations avec des délais et des répétitions, et choix entre des animations ease-in-ease-out et des animations à ressort.</li>
-<li>Attachement du modificateur <code>animation()</code> aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles UI.</li>
-<li>Utilisation de <code>withAnimation()</code> pour créer des animations explicites.</li>
-<li>Attachement de plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
+<li>Créer des animations implicitement en utilisant le modificateur <code>animation()</code>.</li>
+<li>Personnaliser les animations avec des délais et des répétitions, et choisir entre des animations ease-in-ease-out et spring.</li>
+<li>Attacher le modificateur animation() aux liaisons, afin que nous puissions animer les changements directement depuis les contrôles UI.</li>
+<li>Utiliser <code>withAnimation()</code> pour créer des animations explicites.</li>
+<li>Attacher plusieurs modificateurs <code>animation()</code> à une seule vue afin que nous puissions contrôler la pile d'animations.</li>
 </ul>
-<h3 id="chargement-des-donnees">Chargement des données</h3>
+<h3 id="chargement-des-donnees">Chargement des Données</h3>
 <p>Si c'est synchrone :</p>
 <div class="highlight"><pre><span></span><code><span class="n">View</span><span class="p">...</span>
     <span class="p">.</span><span class="n">onAppear</span><span class="p">(</span><span class="n">loadIt</span><span class="p">)</span>
 </code></pre></div>
-<p>?? Comment cela se fait-il lorsque <code>loadIt</code> est asynchrone ??</p>
+<p>?? Comment est-ce fait, lorsque <code>loadIt</code> est asynchrone ??</p>
 <h3 id="passer-et-retourner-des-valeurs-versdepuis-des-vues">Passer et retourner des valeurs vers/depuis des vues</h3>
-<p>Comme vu dans <a href="https://www.hackingwithswift.com/books/ios-swiftui/selecting-and-editing-map-annotations" rel="noopener noreferrer" target="_blank">Sélection et édition d'annotations de carte</a></p>
-<p>Imaginez que j'ai une vue qui est ouverte en tant que feuille et reçoit une <code>Location</code> (étant une <code>struct</code> définie par l'utilisateur) :</p>
+<p>Comme vu dans <a href="https://www.hackingwithswift.com/books/ios-swiftui/selecting-and-editing-map-annotations" rel="noopener noreferrer" target="_blank">Sélection et édition des annotations de carte</a></p>
+<p>Imaginez que j'ai une vue qui est ouverte en tant que feuille et reçoit un <code>Location</code> (étant une <code>struct</code> définie par l'utilisateur) :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">EditView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
     <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">dismiss</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">dismiss</span>
     <span class="kd">var</span> <span class="nv">location</span><span class="p">:</span> <span class="n">Location</span>
@@ -462,11 +462,11 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
         <span class="n">NavigationStack</span> <span class="p">{</span>
             <span class="n">Form</span> <span class="p">{</span>
                 <span class="n">Section</span> <span class="p">{</span>
-                    <span class="n">TextField</span><span class="p">(</span><span class="s">"Nom de l'endroit"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">TextField</span><span class="p">(</span><span class="s">"Nom du lieu"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">name</span><span class="p">)</span>
                     <span class="n">TextField</span><span class="p">(</span><span class="s">"Description"</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">description</span><span class="p">)</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"Détails de l'endroit"</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">navigationTitle</span><span class="p">(</span><span class="s">"Détails du lieu"</span><span class="p">)</span>
             <span class="p">.</span><span class="n">toolbar</span> <span class="p">{</span>
                 <span class="n">Button</span><span class="p">(</span><span class="s">"Enregistrer"</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">dismiss</span><span class="p">()</span>
@@ -476,7 +476,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Pour passer la <code>Location</code>, je fais un initialiseur supplémentaire :</p>
+<p>Pour passer le <code>Location</code>, je fais un initialiseur supplémentaire :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">)</span> <span class="p">{</span>
     <span class="kc">self</span><span class="p">.</span><span class="n">location</span> <span class="p">=</span> <span class="n">location</span>
 
@@ -487,7 +487,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <p>Pour <em>retourner</em> des données au code appelant, je passe une méthode <code>onSave</code>. Créez d'abord une variable supplémentaire dans ma structure de vue :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">onSave</span><span class="p">:</span> <span class="p">(</span><span class="n">Location</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span>
 </code></pre></div>
-<p>et puis étendez l'initialiseur comme suit :</p>
+<p>puis étendez l'initialiseur comme suit :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">init</span><span class="p">(</span><span class="n">location</span><span class="p">:</span> <span class="n">Location</span><span class="p">,</span> <span class="n">onSave</span><span class="p">:</span> <span class="p">@</span><span class="n">escaping</span> <span class="p">(</span><span class="n">Location</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Void</span><span class="p">)</span> <span class="p">{</span>
     <span class="kc">self</span><span class="p">.</span><span class="n">location</span> <span class="p">=</span> <span class="n">location</span>
     <span class="kc">self</span><span class="p">.</span><span class="n">onSave</span> <span class="p">=</span> <span class="n">onSave</span>
@@ -496,7 +496,7 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
     <span class="n">_description</span> <span class="p">=</span> <span class="n">State</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">location</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Cette partie <code>@escaping</code> est importante, et signifie que la fonction est mise de côté pour une utilisation ultérieure, plutôt que d'être appelée immédiatement, et elle est nécessaire ici car la fonction <code>onSave</code> sera appelée uniquement lorsque l'utilisateur appuiera sur Enregistrer.</p>
+<p>Cette partie <code>@escaping</code> est importante et signifie que la fonction est mise de côté pour une utilisation ultérieure, plutôt que d'être appelée immédiatement, et elle est nécessaire ici car la fonction <code>onSave</code> sera appelée uniquement lorsque l'utilisateur appuie sur Enregistrer.</p>
 <h3 id="sheets-et-navigationstacks"><code>Sheet</code>s et <code>NavigationStack</code>s</h3>
 <p>Pour ouvrir une vue en tant que feuille :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
@@ -520,8 +520,8 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="reseautage">Réseautage</h2>
-<p>Voici comment envoyer quelque chose à un point de terminaison HTTPS :</p>
+<h2 id="reseau">Réseau</h2>
+<p>Voici comment vous envoyez quelque chose à un point de terminaison HTTPS :</p>
 <div class="highlight"><pre><span></span><code> <span class="kd">func</span> <span class="nf">placeOrder</span><span class="p">()</span> <span class="k">async</span> <span class="p">{</span>
         <span class="k">guard</span> <span class="kd">let</span> <span class="nv">encoded</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">JSONEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
             <span class="bp">print</span><span class="p">(</span><span class="s">"Échec de l'encodage de la commande"</span><span class="p">)</span>
@@ -540,11 +540,11 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
             <span class="n">confirmationMessage</span> <span class="p">=</span> <span class="s">"Votre commande de </span><span class="si">\(</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">quantity</span><span class="si">)</span><span class="s">x cupcakes </span><span class="si">\(</span><span class="n">Order</span><span class="p">.</span><span class="n">types</span><span class="p">[</span><span class="n">decodedOrder</span><span class="p">.</span><span class="n">type</span><span class="p">].</span><span class="n">lowercased</span><span class="si">())</span><span class="s"> est en route !"</span>
             <span class="n">showingConfirmation</span> <span class="p">=</span> <span class="kc">true</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">"Échec du paiement : </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">"Échec de la commande : </span><span class="si">\(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="si">)</span><span class="s">"</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-<h2 id="sauvegarde-des-donnees">Sauvegarde des données</h2>
+<h2 id="sauvegarde-des-donnees">Sauvegarde des Données</h2>
 <p>Je connais 3 façons de sauvegarder des données dans Swift/UI :</p>
 <ul>
 <li>UserDefaults : Mieux utilisé pour sauvegarder de petites quantités de données. Par exemple, les paramètres de l'application.</li>
@@ -554,12 +554,12 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 <h3 id="ecriture-et-lecture-dans-userdefaults">Écriture et lecture dans UserDefaults</h3>
 <p>Nous avons besoin de quelques éléments :</p>
 <ol>
-<li>Nos données doivent être <code>Codable</code>, afin que nous puissions créer plus tard un <code>JSONEncoder</code></li>
+<li>Nos données doivent être <code>Codable</code>, afin que nous puissions créer <code>JSONEncoder</code> plus tard</li>
 <li>UserDefaults pour sauvegarder et charger nos données</li>
 <li>Un initialiseur personnalisé pour la classe de données, afin qu'elle charge automatiquement</li>
-<li>Un <code>didSet</code> pour les données, donc chaque fois que des données sont ajoutées ou modifiées, elles sont automatiquement sauvegardées.</li>
+<li>Un <code>didSet</code> pour les données, afin que chaque fois que des données sont ajoutées ou modifiées, elles soient automatiquement sauvegardées.</li>
 </ol>
-<p>Rendre les données <code>Codable</code> n'est souvent pas trop difficile : Tant que les composants sont <code>Codable</code>, la classe entière l'est aussi.</p>
+<p>Rendre les données <code>Codable</code> n'est souvent pas trop difficile : Tant que les composants sont <code>Codable</code>, toute la classe l'est aussi.</p>
 <p>Voici à quoi peut ressembler la sauvegarde des données dans un <code>didSet</code> :</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="n">ExpenseItem</span><span class="p">]()</span> <span class="p">{</span>
     <span class="kr">didSet</span> <span class="p">{</span>
@@ -587,7 +587,8 @@ Un stepper est un contrôle à deux segments que les gens utilisent pour augment
 let data = Data("Message de test".utf8)
 let url = URL.documentsDirectory.appending(path: "message.txt")</p>
 <p>do {
-    try data.write(to: url, options: [.atomic, .</p>
+    try data.write(to: url, options: [.atomic, .completeFileProtection])
+}</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

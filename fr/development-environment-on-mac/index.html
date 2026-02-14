@@ -59,7 +59,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 14.02.2026 11:13:38.
+      Last built 14.02.2026 11:47:35.
   </div>
 </div>
   <div class="wrap">
@@ -93,7 +93,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Development Environment On&nbsp;Mac
+      Environnement de Développement sur&nbsp;Mac
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mercredi 15 janvier 2025</span>
@@ -112,8 +112,8 @@ Deutsch
     </div>
 
     <p><img alt="Image amusante de l'IA" src="dev_tools.png"/></p>
-<p>Je ne suis pas un développeur professionnel, je le fais pour le plaisir. J'aime explorer, découvrir de nouvelles technologies, et développer toutes sortes de petites choses. Parfois, j'ai besoin de Python, parfois de React/Typescript, Java et plus encore. Pour chaque outil de développement ou langage, il existe plusieurs options pour les installer et gérer leurs versions. Comme j'ai tendance à oublier des choses comme "Comment ai-je installé Python sur cette machine ?", voici une note pour moi-même dans le futur, m'indiquant comment j'ai installé chaque outil de développement.</p>
-<p>Comme la manière dont certains paquets sont installés peut changer avec le temps, j'ajouterai des dates à mes choix d'installation.</p>
+<p>Je ne suis pas un développeur professionnel, je le fais pour le plaisir. Et j'aime expérimenter, découvrir de nouvelles technologies, développer toutes sortes de petites choses. Donc parfois j'ai besoin de Python, parfois de React/Typescript, Java et plus encore. Pour chaque outil ou langage de développement, il existe plusieurs options pour les installer et gérer leurs versions. Comme j'ai tendance à oublier des choses comme "Comment ai-je installé Python sur cette machine ?", ceci est une note pour le moi du futur, me disant comment j'ai installé chaque outil de développement.</p>
+<p>Comme la façon dont certains packages sont installés peut changer au fil du temps, j'ajouterai des dates à mes choix d'installation.</p>
 <div class="toc">
 <ul>
 <li><a href="#xcode">Xcode</a></li>
@@ -140,7 +140,7 @@ Deutsch
 <div class="highlight"><pre><span></span><code><span class="c1"># Vérifier quel Shell j'ai</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span>
 
-<span class="c1"># Si ce n'est pas zsh, le définir comme Shell par défaut</span>
+<span class="c1"># Au cas où ce n'est pas zsh, le définir comme par défaut</span>
 chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 <h2 id="vscode">VSCode</h2>
@@ -150,7 +150,7 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <li>
 <p><strong>markdownlint</strong> par David Anson (<code>davidanson.vscode-markdownlint</code>) - Le standard de facto pour le linting markdown avec plus de 10M de téléchargements. Souligne les problèmes en ligne et peut corriger automatiquement lors de l'enregistrement.
   <code>code --install-extension davidanson.vscode-markdownlint</code>
-  Les fichiers de configuration sont recherchés dans l'ordre : <code>.markdownlint.jsonc</code>, <code>.markdownlint.json</code>, <code>.markdownlint.yaml</code>/<code>.yml</code>, ou <code>.markdownlintrc</code>. (Ajouté en janvier 2026)</p>
+  Les fichiers de configuration sont recherchés dans cet ordre : <code>.markdownlint.jsonc</code>, <code>.markdownlint.json</code>, <code>.markdownlint.yaml</code>/<code>.yml</code>, ou <code>.markdownlintrc</code>. (Ajouté en janvier 2026)</p>
 </li>
 <li>
 <p><strong>Prettier</strong> (<code>esbenp.prettier-vscode</code>) - Formateur de code.
@@ -168,10 +168,10 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <p>(Ajouté en janvier 2026)</p>
 <h2 id="docker">Docker</h2>
 <p><strong>Janvier 2025 :</strong> Je suis passé de <a href="https://www.docker.com/products/docker-desktop/" rel="noopener noreferrer" target="_blank">Docker Desktop</a> à <a href="https://rancherdesktop.io" rel="noopener noreferrer" target="_blank">Rancher Desktop</a>.</p>
-<p>Note d'installation : J'ai téléchargé la version Apple Silicon, ouvert le DMG et l'ai copiée dans mon répertoire Applications. Le seul détail que j'ai dû faire est de cocher la case "Accès Administratif" dans les paramètres.
+<p>Note d'installation : Téléchargé la version Apple Silicon, ouvert le DMG et copié dans mon répertoire Applications. Le seul détail que j'ai dû faire est de cocher la case "Accès Administratif" dans les paramètres.
 <img alt="texte alternatif" src="rancher_prefs.png"/></p>
 <p><em>Registry</em>: J'utilise différents registres lorsque je travaille sur différents projets.</p>
-<p><em>Question</em>: Comment configurer Docker pour qu'il récupère les images d'un registre spécifique ?</p>
+<p><em>Question</em>: Comment configurer docker pour qu'il télécharge des images depuis un registre spécifique ?</p>
 <h2 id="java">Java</h2>
 <p>Voici les options que j'ai vues :</p>
 <ul>
@@ -179,32 +179,32 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <li><a href="https://sdkman.io" rel="noopener noreferrer" target="_blank">SDK man</a></li>
 </ul>
 <p><strong>Janvier 2025</strong> : J'ai décidé d'utiliser SDK Man car il couvre également Maven.</p>
-<p><strong>Mini-CheatSheet</strong></p>
+<p><strong>Mini-Cheatsheet</strong></p>
 <ul>
 <li><code>sdk install java 17.0.12-jbr</code> installe cette version spécifique de Java</li>
-<li><code>sdk list java</code> affiche toutes les versions de Java disponibles (disponibles à l'installation)</li>
+<li><code>sdk list java</code> montre toutes les versions de Java disponibles (disponibles pour installation)</li>
 <li>Pour lister les versions de Java installées :</li>
-<li><code>sdk offline enable</code>, pour lister uniquement les versions installées localement</li>
+<li><code>sdk offline enable</code>, ainsi il listera uniquement les versions installées localement</li>
 <li><code>sdk list java</code></li>
 <li><code>sdk offline disable</code></li>
 <li><code>sdk default java 21.0.6-amzn</code> définit cette version comme par défaut
   Pour définir une version de Java comme par défaut dans un répertoire, voir la <a href="https://sdkman.io/usage/#env-command" rel="noopener noreferrer" target="_blank">commande Env</a></li>
 </ul>
 <h2 id="maven">Maven</h2>
-<p>J'utilise simplement <code>brew install maven</code>. Pour une version plus ancienne <code>brew install maven30</code> installe Maven 3.0.</p>
+<p>J'utilise simplement <code>brew install maven</code>. Pour les versions plus anciennes <code>brew install maven30</code> installe Maven 3.0.</p>
 <h2 id="gradle">Gradle</h2>
 <p><strong>Janvier 2025</strong> : J'ai décidé d'utiliser SDK Man pour Gradle également.</p>
 <p>Raison : <code>brew install gradle</code> a installé la version 8.12.1 de Gradle, mais pour le projet actuel, j'avais besoin de la version 8.5.</p>
 <ul>
-<li><code>sdk install gradle 8.5</code> : Installe la version spécifique de Gradle</li>
+<li><code>sdk install gradle 8.5</code>: Installe la version spécifique de gradle</li>
 <li><code>sdk use gradle 8.5</code></li>
 </ul>
 <h2 id="node-et-npm">Node et npm</h2>
 <p><strong>Janvier 2025</strong> J'ai décidé d'utiliser <a href="https://github.com/nvm-sh/nvm" rel="noopener noreferrer" target="_blank">nvm</a>.</p>
-<p><strong>Mini-CheatSheet</strong></p>
+<p><strong>Mini-Cheatsheet</strong></p>
 <ul>
 <li><code>nvm use 16</code></li>
-<li><code>node -v</code> affiche la version actuellement utilisée</li>
+<li><code>node -v</code> montre la version actuellement utilisée</li>
 <li><code>nvm install 12</code> installe node 12 et l'utilise</li>
 </ul>
 <h2 id="python">Python</h2>
@@ -212,12 +212,12 @@ chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><
 <li><strong>Été 2024</strong> : J'utilise <a href="https://github.com/pyenv/pyenv" rel="noopener noreferrer" target="_blank">pyenv</a></li>
 <li>Pour installer pyenv : <code>brew install pyenv</code></li>
 </ul>
-<p><strong>Mini-CheatSheet</strong></p>
+<p><strong>Mini-Cheatsheet</strong></p>
 <p>Pour sélectionner une version de Python installée par Pyenv comme version à utiliser, exécutez l'une des commandes suivantes :</p>
 <div class="highlight"><pre><span></span><code>pyenv<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.12
-pyenv<span class="w"> </span>shell<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>sélectionner<span class="w"> </span>uniquement<span class="w"> </span>pour<span class="w"> </span>la<span class="w"> </span>session<span class="w"> </span>shell<span class="w"> </span>actuelle
-pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>sélectionner<span class="w"> </span>automatiquement<span class="w"> </span>lorsque<span class="w"> </span>vous<span class="w"> </span>êtes<span class="w"> </span>dans<span class="w"> </span>le<span class="w"> </span>répertoire<span class="w"> </span>courant<span class="w"> </span><span class="o">(</span>ou<span class="w"> </span>ses<span class="w"> </span>sous-répertoires<span class="o">)</span>
-pyenv<span class="w"> </span>global<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>sélectionner<span class="w"> </span>globalement<span class="w"> </span>pour<span class="w"> </span>votre<span class="w"> </span>compte<span class="w"> </span>utilisateur
+pyenv<span class="w"> </span>shell<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>sélectionne<span class="w"> </span>juste<span class="w"> </span>pour<span class="w"> </span>la<span class="w"> </span>session<span class="w"> </span>shell<span class="w"> </span>actuelle
+pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>sélectionne<span class="w"> </span>automatiquement<span class="w"> </span>chaque<span class="w"> </span>fois<span class="w"> </span>que<span class="w"> </span>vous<span class="w"> </span>êtes<span class="w"> </span>dans<span class="w"> </span>le<span class="w"> </span>répertoire<span class="w"> </span>courant<span class="w"> </span><span class="o">(</span>ou<span class="w"> </span>ses<span class="w"> </span>sous-répertoires<span class="o">)</span>
+pyenv<span class="w"> </span>global<span class="w"> </span>&lt;version&gt;<span class="w"> </span>--<span class="w"> </span>sélectionne<span class="w"> </span>globalement<span class="w"> </span>pour<span class="w"> </span>votre<span class="w"> </span>compte<span class="w"> </span>utilisateur
 </code></pre></div>
 <h2 id="linting-markdown">Linting Markdown</h2>
 <p><code>brew install markdownlint-cli2</code></p>

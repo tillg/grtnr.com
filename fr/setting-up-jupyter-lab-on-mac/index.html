@@ -60,7 +60,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 14.02.2026 11:13:38.
+      Last built 14.02.2026 11:47:35.
   </div>
 </div>
   <div class="wrap">
@@ -94,7 +94,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Setting Up Jupyter Lab On&nbsp;Mac
+      Configuration de Jupyter Lab sur&nbsp;Mac
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 8 avril 2024</span>
@@ -115,7 +115,7 @@ Deutsch
       | <a href="/setting-up-jupyter-lab-on-mac/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Configurer Python sur un Mac peut être délicat. Le nombre d'options est important, et elles peuvent interagir de manière étrange. De plus, vous devez vous rappeler quelle méthode d'installation vous avez utilisée une fois que vous souhaitez changer de version ou mettre à niveau. Ce post devrait me rappeler comment je l'ai fait 😉</p>
+    <p>Configurer Python sur un Mac peut être délicat. Le nombre d'options est important, et elles peuvent interagir de manière étrange. De plus, vous devez vous souvenir de la méthode d'installation utilisée une fois que vous souhaitez changer de version ou mettre à jour. Ce post devrait me rappeler comment je l'ai fait 😉</p>
 <h2 id="installer-python">Installer Python</h2>
 <p>Il existe de nombreuses façons d'installer Python sur Mac et de gérer ses versions :</p>
 <ul>
@@ -128,11 +128,11 @@ Deutsch
 <p>Ce qui a le mieux fonctionné pour moi est <strong>pyenv</strong> :</p>
 <ul>
 <li>Installez-le : <code>brew install pyenv</code>. Je suppose que vous avez <a href="https://brew.sh" rel="noopener noreferrer" target="_blank">Homebrew</a> installé...</li>
-<li>Voir les options et commandes offertes : <code>pyenv</code></li>
-<li>Lister toutes les versions de Python disponibles pour pyenv : <code>pyenv versions</code></li>
-<li>Installer une version : <code>pyenv install 3.12</code> (C'est la version de Python que j'utilise actuellement)</li>
-<li>Définir la version utilisée globalement : <code>pyenv global 3.12</code></li>
-<li>Vérifier quelle version est définie globalement : <code>pyenv global</code> ou <code>python --version</code></li>
+<li>Consultez les options et commandes offertes : <code>pyenv</code></li>
+<li>Listez toutes les versions de Python disponibles pour pyenv : <code>pyenv versions</code></li>
+<li>Installez une version : <code>pyenv install 3.12</code> (C'est la version de Python que j'utilise actuellement)</li>
+<li>Définissez la version utilisée globalement : <code>pyenv global 3.12</code></li>
+<li>Vérifiez quelle version est définie globalement : <code>pyenv global</code> ou <code>python --version</code></li>
 </ul>
 <h2 id="creer-un-repertoire-de-travail">Créer un répertoire de travail</h2>
 <p>Créez le répertoire dans lequel vous souhaitez travailler dans le cadre de votre projet. Je garde tous mes projets de codage sous <code>~/git</code>. De cette façon, je sais que tous les projets sous <code>~/git</code> n'ont pas besoin d'être sauvegardés car ils sont dans un dépôt git.</p>
@@ -146,29 +146,29 @@ mkdir<span class="w"> </span>my_python_project
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git/my_python_project
 python3.12<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </code></pre></div>
-<p>De cette façon, j'ai créé un environnement à l'intérieur du sous-répertoire <code>.env</code>. Pour l'activer, utilisez <code>source .venv/bin/activate</code>.</p>
+<p>De cette manière, j'ai créé un environnement à l'intérieur du sous-répertoire <code>.env</code>. Pour l'activer, utilisez <code>source .venv/bin/activate</code>.</p>
 <p><strong>Note</strong> : Comme mon sous-répertoire <code>.env</code> ne doit pas être dans le dépôt git, il doit être listé dans le fichier <code>.gitignore</code>.</p>
 <h2 id="installer-jupyter-lab">Installer Jupyter Lab</h2>
-<p>Maintenant que j'ai l'environnement Python, je peux installer Jupyter. Assurez-vous que je suis dans le bon répertoire et que l'environnement Python est activé :</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Aller dans mon répertoire de projet et activer son environnement Python</span>
+<p>Maintenant que j'ai l'environnement Python, je peux installer Jupyter. Assurez-vous d'être dans le bon répertoire et que l'environnement Python est activé :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Allez dans le répertoire de mon projet et activez son environnement Python</span>
 <span class="nb">cd</span><span class="w"> </span>~/git/my_python_project
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 
-<span class="c1"># Installer Jupyter Lab dans cet environnement</span>
+<span class="c1"># Installez Jupyter Lab dans cet environnement</span>
 pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
 
 <span class="c1"># Très souvent, il me demande de mettre à jour pip lui-même</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 
-<span class="c1"># Démarrer Jupyter Lab</span>
+<span class="c1"># Démarrez Jupyter Lab</span>
 jupyter<span class="w"> </span>lab
 <span class="c1"># Attendez un peu et votre navigateur devrait s'ouvrir sur http://localhost:8888/lab</span>
 </code></pre></div>
 <h2 id="creer-un-nouveau-notebook">Créer un nouveau notebook</h2>
-<p>Votre navigateur devrait s'ouvrir dans un nouvel environnement Jupyter Lab :
+<p>Votre navigateur devrait être ouvert dans un nouvel environnement Jupyter Lab :
 <img alt="Un environnement Lab vide" src="jupyter_overview.png"/></p>
-<p>Cliquez sur <em>Notebook &gt; Python 3</em> et votre premier Notebook devrait être prêt et fonctionnel :</p>
-<p><img alt="Un nouveau notebook" src="jupyter_detail.png"/></p>
+<p>Cliquez sur <em>Notebook &gt; Python 3</em> et votre premier Notebook devrait être prêt à fonctionner :</p>
+<p><img alt="Un notebook vierge" src="jupyter_detail.png"/></p>
 <p>Pour commencer avec Jupyter Lab, suivez leur <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html" rel="noopener noreferrer" target="_blank">Guide de l'utilisateur</a>.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

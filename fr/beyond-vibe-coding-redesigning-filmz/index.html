@@ -60,7 +60,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <!-- Language Switcher -->
 
   <div class="sidebar-item">
-      Last built 14.02.2026 11:13:38.
+      Last built 14.02.2026 11:47:35.
   </div>
 </div>
   <div class="wrap">
@@ -94,7 +94,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Beyond Vibe coding - Redesigning&nbsp;Filmz
+      Au-delà du Vibe coding - Redesign&nbsp;de Filmz
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mercredi 21 mai 2025</span>
@@ -116,9 +116,9 @@ Deutsch
     </div>
 
     <p><img alt="Filmz" src="filmz.png" width="300"/></p>
-<p>Il y a quelque temps, j'ai construit une petite application iOS appelée Filmz : suivre les films et séries que vous souhaitez voir ou que vous avez vus. Conserver des informations personnelles supplémentaires comme "comment l'ai-je aimé ?" (c'est-à-dire ma note personnelle), "À quel public le recommanderais-je ?" (Adultes, enfants, famille) "Quand et où l'ai-je vu" etc. Et ensuite vient le partage : transmettre des recommandations de films à des amis, soit un film à la fois, soit des listes.</p>
-<p>Comme je ne connaissais pas Swift à l'époque, je l'ai construit dans un style de <em>vibe coding</em>, entièrement soutenu par l'IA (à l'époque principalement Cursor.ai). Cela m'a permis de démarrer rapidement, mais j'étais perdu une fois que je voulais ajouter des fonctionnalités plus complexes nécessitant une base de code bien structurée. Et comme je ne connaissais pas bien Swift, je ne pouvais pas le faire non plus. Le <em>vibe debugging</em> ne fonctionne pas - encore...</p>
-<p>Je recommence donc ici, avec une approche différente : je vais essayer de travailler de la même manière que je le ferais avec un développeur junior mais intelligent. L'accent sera mis sur une approche progressive, accompagnée d'une documentation appropriée : descriptions de la tâche à accomplir, description des changements d'architecture, des options qui ont été examinées / envisagées et ce qui a été choisi et pourquoi...</p>
+<p>Il y a quelque temps, j'ai créé une petite application iOS appelée Filmz : suivre les films et séries que vous souhaitez voir ou que vous avez vus. Conservez des informations personnelles supplémentaires comme "comment l'ai-je aimé ?" (c'est-à-dire ma note personnelle), "À quel public le recommanderais-je ?" (Adultes, enfants, famille) "Quand et où l'ai-je vu ?" etc. Et ensuite vient le partage : transmettre des recommandations de films à des amis, soit un film à la fois, soit des listes.</p>
+<p>Comme je ne connaissais pas Swift à l'époque, je l'ai construite dans un style de <em>vibe coding</em>, entièrement soutenu par l'IA (à l'époque principalement Cursor.ai). Cela m'a permis de démarrer rapidement, mais j'étais perdu une fois que je voulais ajouter des fonctionnalités plus complexes nécessitant une base de code bien structurée. Et comme je ne connaissais pas grand-chose à Swift, je ne pouvais pas le faire non plus. Le vibe debugging ne fonctionne pas - encore…</p>
+<p>Je recommence donc ici, avec une approche différente : je vais essayer de travailler de manière similaire à celle que j'aurais avec un développeur junior intelligent. L'accent sera mis sur une approche progressive, accompagnée d'une documentation appropriée : descriptions de la tâche à accomplir, description des changements d'architecture, des options qui ont été examinées / envisagées et ce qui a été choisi et pourquoi...</p>
 <p><a href="https://chatgpt.com/share/68371708-8a44-8009-b424-059b920feec9" rel="noopener noreferrer" target="_blank">J'ai travaillé avec mon ami IA ChatGPT</a>, et je prévois de commencer avec une structure comme décrite ci-dessous.</p>
 <div class="highlight"><pre><span></span><code>README.md                        # Vue d'ensemble du projet et instructions de configuration
 docs/                     # Tout ce qui n'est *pas* du code source se trouve ici
@@ -130,20 +130,20 @@ docs/                     # Tout ce qui n'est *pas* du code source se trouve ici
 │   │   ├── 01-intent.md          # “User story” ou énoncé du problème
 │   │   ├── 02-ui-flow.md         # Wire-flow, captures d'écran, diagrammes → conserver PNG/Drawio *dans le même dossier*
 │   │   ├── 03-design.md          # Conception technique &amp; pseudo-code
-│   │   ├── 04-test-plan.md       # Liste d'acceptation &amp; cas limites
-│   │   └── dark-mode.drawio.png  # Le diagramme se trouve à côté du texte qui y fait référence
+│   │   ├── 04-test-plan.md       # Liste d'acceptation &amp; de cas limites
+│   │   └── dark-mode.drawio.png  # Le diagramme se trouve à côté du texte qui le référence
 │   ├── profile-refactor/
 │   │   └── …
-│   └── _TEMPLATE/               # Modèle vide à copier lors de l'ajout d'une fonctionnalité
-├── data-structure/            # Structures d'entité ou ERD inter-fonctionnalités, notes de migration
+│   └── _TEMPLATE/               # Squelette vide à copier lors de l'ajout d'une fonctionnalité
+├── data-structure/            # Structures d'entités ou ERD trans-fonctionnelles, notes de migration
 │   ├── schema-overview.mmd
 │   └── schema.md
 ├── adr/                  # Architecture Decision Records
 │   ├── ADR-001-use-themex.md
 │   └── ADR-002-db-index.md
-└── changelog.md          # Historique de style “Keep a Changelog”
+└── changelog.md          # Historique au style “Keep a Changelog”
 </code></pre></div>
-<p>2025-05-28 : Je prends cela comme point de départ, je travaille et je vois ce qui manque. Et j'ajoute les éléments manquants en cours de route.</p>
+<p>2025-05-28 : Je prends cela comme point de départ, travaille, et vois ce qui manque. Et j'ajoute les éléments manquants en cours de route.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"
