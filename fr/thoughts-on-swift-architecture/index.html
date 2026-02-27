@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>Réflexions sur l'Architecture&nbsp;Swift - grtnr.com</title>
+  <title>Thoughts On Swift Architecture - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -35,20 +35,20 @@
   </script>
 
 
-    <meta name="description" content="J'ai entendu un podcast intéressant sur la façon de structurer différents types de modèles en Swift : les modèles de domaine qui sont ma représentation interne, les modèles de données (ou DTO) qui sont la représentation externe, et les modèles de vue qui sont la représentation pour l'interface utilisateur. Mais de nombreux aspects restent encore flous pour moi." />
+    <meta name="description" content="I heard an interesting podcast on how to structure different model types in Swift: Domain models that are my internal representation, Data Models (or DTOs) that are the external representation, and View Models that are the representation for the UI. But many aspects are still unclear to me." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Réflexions sur l'Architecture&nbsp;Swift" />
+  <meta property="og:title" content="Thoughts On Swift Architecture" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/thoughts-on-swift-architecture/" />
-  <meta property="og:description" content="J'ai entendu un podcast intéressant sur la façon de structurer différents types de modèles en Swift : les modèles de domaine qui sont ma représentation interne, les modèles de données (ou DTO) qui sont la représentation externe, et les modèles de vue qui sont la représentation pour l'interface utilisateur. Mais de nombreux aspects restent encore flous pour moi." />
+  <meta property="og:description" content="I heard an interesting podcast on how to structure different model types in Swift: Domain models that are my internal representation, Data Models (or DTOs) that are the external representation, and View Models that are the representation for the UI. But many aspects are still unclear to me." />
   <meta property="og:image" content="https://grtnr.com/fr/thoughts-on-swift-architecture/developer_podcast.jpg" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Réflexions sur l'Architecture&nbsp;Swift" />
-  <meta name="twitter:description" content="J'ai entendu un podcast intéressant sur la façon de structurer différents types de modèles en Swift : les modèles de domaine qui sont ma représentation interne, les modèles de données (ou DTO) qui sont la représentation externe, et les modèles de vue qui sont la représentation pour l'interface utilisateur. Mais de nombreux aspects restent encore flous pour moi." />
+  <meta name="twitter:title" content="Thoughts On Swift Architecture" />
+  <meta name="twitter:description" content="I heard an interesting podcast on how to structure different model types in Swift: Domain models that are my internal representation, Data Models (or DTOs) that are the external representation, and View Models that are the representation for the UI. But many aspects are still unclear to me." />
   <meta name="twitter:image" content="https://grtnr.com/fr/thoughts-on-swift-architecture/developer_podcast.jpg" />
 
   <!-- JSON-LD Structured Data -->
@@ -56,9 +56,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "R\u00e9flexions sur l\u0027Architecture\u0026nbsp;Swift",
+    "headline": "Thoughts On Swift Architecture",
     "url": "https://grtnr.com/fr/thoughts-on-swift-architecture/",
-"description": "J\u0027ai entendu un podcast int\u00e9ressant sur la fa\u00e7on de structurer diff\u00e9rents types de mod\u00e8les en Swift : les mod\u00e8les de domaine qui sont ma repr\u00e9sentation interne, les mod\u00e8les de donn\u00e9es (ou DTO) qui sont la repr\u00e9sentation externe, et les mod\u00e8les de vue qui sont la repr\u00e9sentation pour l\u0027interface utilisateur. Mais de nombreux aspects restent encore flous pour moi.","image": "https://grtnr.com/fr/thoughts-on-swift-architecture/developer_podcast.jpg","datePublished": "2025-03-24T00:00:00",    "author": {
+"description": "I heard an interesting podcast on how to structure different model types in Swift: Domain models that are my internal representation, Data Models (or DTOs) that are the external representation, and View Models that are the representation for the UI. But many aspects are still unclear to me.","image": "https://grtnr.com/fr/thoughts-on-swift-architecture/developer_podcast.jpg","datePublished": "2025-03-24T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -92,7 +92,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:23:57.
+      Last built 27.02.2026 10:25:38.
   </div>
 </div>
   <div class="wrap">
@@ -126,35 +126,31 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Réflexions sur l'Architecture&nbsp;Swift
+      Thoughts On Swift Architecture
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 24 mars 2025</span>
       
     </div>
 
-    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o-2024-08-06
-      | <a href="/thoughts-on-swift-architecture/" style="color: #0066cc;">Original version</a>
-    </div>
 
     <div class="toc">
 <ul>
 <li><a href="#question">Question</a><ul>
-<li><a href="#modeles-de-domaine-modeles-de-donnees-et-mappers">Modèles de Domaine, Modèles de Données et&nbsp;Mappers</a></li>
-<li><a href="#referentiel">Référentiel</a></li>
+<li><a href="#domain-models-data-models-and-mappers">Domain Models, Data Models, and&nbsp;Mappers</a></li>
+<li><a href="#repository">Repository</a></li>
 </ul>
 </li>
-<li><a href="#reponse">Réponse</a></li>
+<li><a href="#answer">Answer</a></li>
 </ul>
 </div>
-<p>J&#8217;ai entendu ce très bon podcast hier sur la façon de structurer différents types de modèles en Swift : les modèles de domaine qui sont ma représentation interne, les modèles de données (ou <span class="caps">DTO</span>) qui sont la représentation externe, et les modèles de vue qui sont la représentation pour mon interface utilisateur&nbsp;:</p>
-<p><a href="https://podcasts.apple.com/de/podcast/developer-podcast/id1467065787?i=1000698509743" rel="noopener noreferrer" target="_blank"><img alt="Podcast Développeur" src="/thoughts-on-swift-architecture/developer_podcast.jpg"/></a></p>
-<p>Ce post est essentiellement une question que j&#8217;ai ajoutée au <a href="https://discord.com/invite/j57uchzUa9" rel="noopener noreferrer" target="_blank">Discord associé au Podcast</a>.</p>
+<p>I heard this really nice podcast yesterday on how to structure different model types in Swift: Domain models that are my internal representation, Data Models (or DTOs) that are the external representation, and View Models that are the representation for my <span class="caps">UI</span>:</p>
+<p><a href="https://podcasts.apple.com/de/podcast/developer-podcast/id1467065787?i=1000698509743" rel="noopener noreferrer" target="_blank"><img alt="Developer Podcast" src="/thoughts-on-swift-architecture/developer_podcast.jpg"/></a></p>
+<p>This post basically is a question that I added to the <a href="https://discord.com/invite/j57uchzUa9" rel="noopener noreferrer" target="_blank">Discord that goes with the Podcast</a>.</p>
 <h1 id="question">Question</h1>
-<p>Je suis un débutant en Swift, et de nombreux aspects restent encore flous pour moi. Basé sur l&#8217;exemple que vous avez utilisé dans le podcast, je vais essayer de combler les lacunes de ma&nbsp;compréhension.</p>
-<h2 id="modeles-de-domaine-modeles-de-donnees-et-mappers">Modèles de Domaine, Modèles de Données et&nbsp;Mappers</h2>
-<p>L&#8217;exemple est une application de tâches et donc l&#8217;entité principale est la <strong>Tâche</strong>. J&#8217;aurais donc un modèle de&nbsp;domaine <code>Task</code> qui ressemble à ceci&nbsp;:</p>
+<p>I&#8217;m a Swift Rookie, and many aspects are still unclear to me. Based on the example you guys used in the podcast, I will try to fill out the gaps in my&nbsp;understanding.</p>
+<h2 id="domain-models-data-models-and-mappers">Domain Models, Data Models, and&nbsp;Mappers</h2>
+<p>The example is a ToDo app and so the main entity is the <strong>Task</strong>. So I would have a Domain&nbsp;model <code>Task</code> that looks like&nbsp;this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">struct</span> <span class="nc">Task</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">id</span><span class="p">:</span> <span class="n">UUID</span>
     <span class="kd">let</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
@@ -163,7 +159,7 @@ Deutsch
     <span class="kd">let</span> <span class="nv">isCompleted</span><span class="p">:</span> <span class="nb">Bool</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Comme je veux stocker mes tâches dans CloudKit, j&#8217;ai besoin d&#8217;un modèle de données compatible avec CloudKit. J&#8217;ai donc besoin&nbsp;d&#8217;objets <code>CKRecord</code> qui représentent les tâches. Selon ma compréhension, ils sont construits comme ceci&nbsp;:</p>
+<p>As I want to store my tasks in CloudKit, I need a Data Model that is compatible with CloudKit. So I&nbsp;need <code>CKRecord</code> objects that represent tasks. According to my understanding, they are built like&nbsp;this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">mapTaskToCKRecord</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="n">Task</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">CKRecord</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">record</span> <span class="p">=</span> <span class="bp">CKRecord</span><span class="p">(</span><span class="n">recordType</span><span class="p">:</span> <span class="s">"task"</span><span class="p">)</span>
     <span class="n">record</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">id</span> <span class="k">as</span> <span class="bp">CKRecordValue</span>
@@ -174,7 +170,7 @@ Deutsch
     <span class="k">return</span> <span class="n">record</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Et j&#8217;aurais la fonction correspondante pour mapper&nbsp;un <code>CKRecord</code> de retour à&nbsp;une <code>Task</code> :</p>
+<p>And I would have the corresponding function to map&nbsp;a <code>CKRecord</code> back to&nbsp;a <code>Task</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">mapCKRecordToTask</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="bp">CKRecord</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Task</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">id</span> <span class="p">=</span> <span class="n">record</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span> <span class="k">as</span><span class="p">!</span> <span class="n">UUID</span>
     <span class="kd">let</span> <span class="nv">title</span> <span class="p">=</span> <span class="n">record</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span> <span class="k">as</span><span class="p">!</span> <span class="nb">String</span>
@@ -184,13 +180,13 @@ Deutsch
     <span class="k">return</span> <span class="n">Task</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="n">id</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span> <span class="n">dueDate</span><span class="p">:</span> <span class="n">dueDate</span><span class="p">,</span> <span class="n">isCompleted</span><span class="p">:</span> <span class="n">isCompleted</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Questions&nbsp;:</p>
+<p>Questions:</p>
 <ul>
-<li><strong>Où</strong> dois-je placer les fonctions de mappage ? Font-elles partie du modèle de domaine ou du modèle de données ? Je suppose qu&#8217;elles appartiennent plutôt au modèle de&nbsp;données.</li>
-<li><strong>Erreurs</strong> : Comment gérer les erreurs ? Par exemple, si&nbsp;le <code>CKRecord</code> ne contient pas de valeur&nbsp;pour <code>id</code>, cela provoquerait un crash. Devrais-je utiliser des optionnels ou lancer une erreur&nbsp;?</li>
+<li><strong>Where</strong> do I put the mapping functions? Are they part on the Domain Model or the Data Model? I guess they rather belong to the the Data&nbsp;Model.</li>
+<li><strong>Errors</strong>: How to deal with errors? For example, if&nbsp;the <code>CKRecord</code> does not contain a value&nbsp;for <code>id</code>, I would get a crash. Should I use optionals or throw an&nbsp;error?</li>
 </ul>
-<h2 id="referentiel">Référentiel</h2>
-<p>Ensuite, vous mentionnez le référentiel. Basé sur la discussion précédente sur Discord, je supposerais que le référentiel ne traite que des modèles de domaine. Il pourrait donc ressembler à ceci&nbsp;:</p>
+<h2 id="repository">Repository</h2>
+<p>Then you mention the repository. Based on the earlier discussion on Discord, I would assume the repository only deals with Domain models. So it might look like&nbsp;this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">TaskRepository</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">getAllTasks</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="p">[</span><span class="n">Task</span><span class="p">]</span>
     <span class="kd">func</span> <span class="nf">getTaskById</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="n">UUID</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Task</span><span class="p">?</span>
@@ -200,18 +196,18 @@ Deutsch
     <span class="kd">func</span> <span class="nf">deleteTask</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="n">UUID</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Et basé sur ce protocole, je pourrais implémenter&nbsp;un <code>TaskRepositoryCloudKit</code> qui utilise les fonctions de mappage pour convertir entre les modèles de domaine et de données et reflète toutes les opérations <span class="caps">CRUD</span> effectuées sur le référentiel de tâches (en mémoire) à la base de données&nbsp;CloudKit.</p>
-<p>Prochaine question&nbsp;:</p>
+<p>And based on this protocol I could implement&nbsp;a <code>TaskRepositoryCloudKit</code> that uses the mapping functions to convert between Domain and Data Models and reflects all the <span class="caps">CRUD</span> operations that are made to the (in memory) TaskRepostory to the CloudKit&nbsp;database.</p>
+<p>Next&nbsp;question:</p>
 <ul>
-<li><strong>Fonctions du référentiel</strong> : Typiquement, je construirais des fonctions à partir d&#8217;un référentiel qui vont au-delà du <span class="caps">CRUD</span>. Par exemple,&nbsp;un <code>getTasksDateRange</code> qui retourne la date d&#8217;échéance la plus ancienne et la plus récente. Où devrais-je construire cela ? Je ne veux pas le mettre&nbsp;dans <code>TaskRepositoryCloudKit</code> car ce serait la même logique en utilisant un autre stockage (c&#8217;est-à-dire charger toutes les tâches en mémoire, les trier et retourner la première et la dernière). Comme je ne peux pas avoir de fonctions dans un protocole, où dois-je le mettre&nbsp;?</li>
-<li><strong>Nommage</strong> : Le nommage que j&#8217;ai suggéré est-il raisonnable ? Est-ce ainsi que vous le feriez en Swift ? J&#8217;ai&nbsp;choisi <code>TaskRepositoryCloudKit</code> pour qu&#8217;il soit listé à côté&nbsp;du <code>TaskRepository</code> dans le navigateur de fichiers Xcode. Si j&#8217;avais besoin d&#8217;autres modèles de données pour interfacer un système Xyz, je les&nbsp;appellerais <code>TaskRawXyz</code> - est-ce raisonnable&nbsp;?</li>
+<li><strong>Repository functions</strong>: Typically I would build functions from a repository that are beyond <span class="caps">CRUD</span>. For example&nbsp;a <code>getTasksDateRange</code> that returns the oldest and most recent due date. Where would I build this? I don&#8217;t want to put it&nbsp;in <code>TaskRepositoryCloudKit</code> as it would be the same logic when using a different storage (i.e. load all the tasks in memory, sort them, and return the first and last). As I can&#8217;t have functions in a protocol, wher do I put&nbsp;it?</li>
+<li><strong>Naming</strong>: Is the naming I suggested reasonable? Is it how you would do it in Swift? I&nbsp;chose <code>TaskRepositoryCloudKit</code> so it is listed next to&nbsp;the <code>TaskRepository</code> in the Xcode file browser. If I would need other Data Models to interface a system Xyz I would call&nbsp;them <code>TaskRawXyz</code> - is that&nbsp;reasonable?</li>
 </ul>
-<h1 id="reponse">Réponse</h1>
-<p>J&#8217;ai reçu une excellente <a href="https://discord.com/channels/1028834407374655518/1028846930182291526/1353860001411760228" rel="noopener noreferrer" target="_blank">réponse</a> de <a href="https://pado.name" rel="noopener noreferrer" target="_blank">Cocoatype</a> sur Discord. Et je suis très reconnaissant qu&#8217;il ait pris le temps de lire et de taper la&nbsp;réponse.</p>
-<p>Voici la réponse de Cocoatype pour référence&nbsp;:</p>
+<h1 id="answer">Answer</h1>
+<p>I got a great <a href="https://discord.com/channels/1028834407374655518/1028846930182291526/1353860001411760228" rel="noopener noreferrer" target="_blank">answer</a> from <a href="https://pado.name" rel="noopener noreferrer" target="_blank">Cocoatype</a> on discord. And I am very grateful that he took the time to read and type the&nbsp;answer.</p>
+<p>Here is Cocoatype&#8217;s answer for&nbsp;reference:</p>
 <blockquote>
-<p><strong>Où</strong> dois-je placer les fonctions de mappage ? Font-elles partie du modèle de domaine ou du modèle de données ? Je suppose qu&#8217;elles appartiennent plutôt au modèle de données.
-Je mettrais celles-ci dans le référentiel ou dans un type d&#8217;assistant pour le référentiel. Par exemple, dans mon application Barc, j&#8217;ai un&nbsp;protocole <code>BarcodeRepository</code>, et&nbsp;un <code>FileBarcodeRepository</code> qui utilise SwiftData. Voici un petit aperçu de ce à quoi cela ressemble&nbsp;:</p>
+<p><strong>Where</strong> do I put the mapping functions? Are they part on the Domain Model or the Data Model? I guess they rather belong to the the Data Model.
+I would put these in the repository or in a helper type for the repository. For instance, in my app Barc, I have&nbsp;a <code>BarcodeRepository</code> protocol, and&nbsp;a <code>FileBarcodeRepository</code> that uses SwiftData. Here&#8217;s a small overview of what that looks&nbsp;like:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="nc">BarcodeRepository</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nv">codes</span><span class="p">:</span> <span class="p">[</span><span class="n">Code</span><span class="p">]</span> <span class="p">{</span> <span class="kr">get</span> <span class="kr">throws</span> <span class="p">}</span>
@@ -244,7 +240,7 @@ Je mettrais celles-ci dans le référentiel ou dans un type d&#8217;assistant po
 <span class="kd">struct</span> <span class="nc">BarcodeModelMapper</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">code</span><span class="p">(</span><span class="n">from</span> <span class="n">model</span><span class="p">:</span> <span class="n">BarcodeModel</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="n">Code</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nv">value</span> <span class="p">=</span> <span class="k">switch</span> <span class="n">model</span><span class="p">.</span><span class="n">type</span> <span class="p">{</span>
-            <span class="c1">// omis pour la longueur ; juste un tas de cas</span>
+            <span class="c1">// elided for length; just a bunch of cases</span>
         <span class="p">}</span>
 
         <span class="k">guard</span> <span class="kd">let</span> <span class="nv">modelName</span> <span class="p">=</span> <span class="n">model</span><span class="p">.</span><span class="n">name</span> <span class="k">else</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">BarcodeModelMapperError</span><span class="p">.</span><span class="n">noNameSet</span> <span class="p">}</span>
@@ -260,13 +256,13 @@ Je mettrais celles-ci dans le référentiel ou dans un type d&#8217;assistant po
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
-<p><strong>Erreurs</strong> : Comment gérer les erreurs ? Par exemple, si le CKRecord ne contient pas de valeur pour id, cela provoquerait un crash. Devrais-je utiliser des optionnels ou lancer une erreur&nbsp;?</p>
+<p><strong>Errors</strong>: How to deal with errors? For example, if the CKRecord does not contain a value for id, I would get a crash. Should I use optionals or throw an&nbsp;error?</p>
 </blockquote>
-<p>Personnellement, je lance des erreurs et je les gère au niveau où il est raisonnable de les gérer. Les optionnels sont bien si quelque chose est réellement optionnel, mais rappelez-vous que ce que vous essayez de faire ici est d&#8217;éviter d&#8217;avoir à gérer les contraintes de l&#8217;<span class="caps">API</span> dans votre code de vue. Donc, je ne rendrais pas quelque chose optionnel juste pour éviter les&nbsp;erreurs.</p>
+<p>I personally throw errors and deal with them at the level it&#8217;s reasonable to deal with them in. Optionals are fine if something is actually optional, but remember that what you&#8217;re trying to do here is avoid having to deal with <span class="caps">API</span> constraints in your view code. So I wouldn&#8217;t make something optional just to avoid&nbsp;errors.</p>
 <blockquote>
-<p><strong>Fonctions du référentiel</strong> : Typiquement, je construirais des fonctions à partir d&#8217;un référentiel qui vont au-delà du <span class="caps">CRUD</span>. Par exemple, un getTasksDateRange qui retourne la date d&#8217;échéance la plus ancienne et la plus récente. Où devrais-je construire cela ? Je ne veux pas le mettre dans TaskRepositoryCloudKit car ce serait la même logique en utilisant un autre stockage (c&#8217;est-à-dire charger toutes les tâches en mémoire, les trier et retourner la première et la dernière). Comme je ne peux pas avoir de fonctions dans un protocole, où dois-je le mettre&nbsp;?</p>
+<p><strong>Repository functions</strong>: Typically I would build functions from a repository that are beyond <span class="caps">CRUD</span>. For example a getTasksDateRange that returns the oldest and most recent due date. Where would I build this? I don&#8217;t want to put it in TaskRepositoryCloudKit as it would be the same logic when using a different storage (i.e. load all the tasks in memory, sort them, and return the first and last). As I can&#8217;t have functions in a protocol, wher do I put&nbsp;it?</p>
 </blockquote>
-<p>Si vous voulez avoir quelque chose à travers plusieurs implémentations, utilisez une extension de protocole. Par exemple&nbsp;:</p>
+<p>If you want to have something across multiple implementations, use a protocol extension. For&nbsp;instance:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">extension</span> <span class="nc">TaskRepository</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">getTasks</span><span class="p">(</span><span class="n">dateRange</span><span class="p">:</span> <span class="nb">Range</span><span class="p">&lt;</span><span class="n">Date</span><span class="p">&gt;)</span> <span class="p">-&gt;</span> <span class="p">[</span><span class="n">Task</span><span class="p">]</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">getAllTasks</span><span class="p">().</span><span class="bp">filter</span> <span class="p">{</span> <span class="n">task</span> <span class="k">in</span>
@@ -275,11 +271,11 @@ Je mettrais celles-ci dans le référentiel ou dans un type d&#8217;assistant po
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Parce que vous savez que toutes les implémentations de TaskRepository ont&nbsp;un <code>getAllTasks()</code>, vous pouvez l&#8217;utiliser dans l&#8217;extension comme&nbsp;ça.</p>
+<p>Because you know all TaskRepository implementations have&nbsp;a <code>getAllTasks()</code>, you can use it in the extension like&nbsp;that.</p>
 <blockquote>
-<p><strong>Nommage</strong> : Le nommage que j&#8217;ai suggéré est-il raisonnable ? Est-ce ainsi que vous le feriez en Swift ? J&#8217;ai choisi TaskRepositoryCloudKit pour qu&#8217;il soit listé à côté du TaskRepository dans le navigateur de fichiers Xcode. Si j&#8217;avais besoin d&#8217;autres modèles de données pour interfacer un système Xyz, je les appellerais TaskRawXyz - est-ce&nbsp;raisonnable</p>
+<p><strong>Naming</strong>: Is the naming I suggested reasonable? Is it how you would do it in Swift? I chose TaskRepositoryCloudKit so it is listed next to the TaskRepository in the Xcode file browser. If I would need other Data Models to interface a system Xyz I would call them TaskRawXyz - is that&nbsp;reasonable</p>
 </blockquote>
-<p>Personnellement, je mets la partie la plus spécifique en premier (BarcodeRepository devient FileBarcodeRepository et PreviewBarcodeRepository et StubBarcodeRepository), mais à la fin, c&#8217;est bien aussi. Rien d&#8217;étrange de toute&nbsp;façon.</p>
+<p>I personally put the most specific part first (BarcodeRepository becomes FileBarcodeRepository and PreviewBarcodeRepository and StubBarcodeRepository), but at the end is fine, too. Nothing strange about it either&nbsp;way.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

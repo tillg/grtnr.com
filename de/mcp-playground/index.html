@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>MCP-Spielwiese - grtnr.com</title>
+  <title>MCP Playground - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="Notizen zu Erkenntnissen und _Verständnissen_ rund um das [Model Context Protocol alias _MCP](https://modelcontextprotocol.io/introduction)." />
+    <meta name="description" content="Notes about findings and _understandings_ around [Model Context Protocol aka _MCP](https://modelcontextprotocol.io/introduction)." />
     <meta name="tags" content="tech, ai" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="MCP-Spielwiese" />
+  <meta property="og:title" content="MCP Playground" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/de/mcp-playground/" />
-  <meta property="og:description" content="Notizen zu Erkenntnissen und _Verständnissen_ rund um das [Model Context Protocol alias _MCP](https://modelcontextprotocol.io/introduction)." />
+  <meta property="og:description" content="Notes about findings and _understandings_ around [Model Context Protocol aka _MCP](https://modelcontextprotocol.io/introduction)." />
   <meta property="og:image" content="https://grtnr.com/de/mcp-playground/mcp.png" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MCP-Spielwiese" />
-  <meta name="twitter:description" content="Notizen zu Erkenntnissen und _Verständnissen_ rund um das [Model Context Protocol alias _MCP](https://modelcontextprotocol.io/introduction)." />
+  <meta name="twitter:title" content="MCP Playground" />
+  <meta name="twitter:description" content="Notes about findings and _understandings_ around [Model Context Protocol aka _MCP](https://modelcontextprotocol.io/introduction)." />
   <meta name="twitter:image" content="https://grtnr.com/de/mcp-playground/mcp.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -57,9 +57,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "MCP-Spielwiese",
+    "headline": "MCP Playground",
     "url": "https://grtnr.com/de/mcp-playground/",
-"description": "Notizen zu Erkenntnissen und _Verst\u00e4ndnissen_ rund um das [Model Context Protocol alias _MCP](https://modelcontextprotocol.io/introduction).","image": "https://grtnr.com/de/mcp-playground/mcp.png","datePublished": "2025-05-18T00:00:00",    "author": {
+"description": "Notes about findings and _understandings_ around [Model Context Protocol aka _MCP](https://modelcontextprotocol.io/introduction).","image": "https://grtnr.com/de/mcp-playground/mcp.png","datePublished": "2025-05-18T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:23:57.
+      Last built 27.02.2026 10:25:38.
   </div>
 </div>
   <div class="wrap">
@@ -127,7 +127,7 @@ Français
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      MCP-Spielwiese
+      MCP Playground
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">So 18. Mai 2025</span>
@@ -143,44 +143,40 @@ Français
 
     </div>
 
-    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
-      Translated by: gpt-4o-2024-08-06
-      | <a href="/mcp-playground/" style="color: #0066cc;">Original version</a>
-    </div>
 
-    <p>Notizen zu Erkenntnissen und <em>Verständnissen</em> rund um das <a href="https://modelcontextprotocol.io/introduction" rel="noopener noreferrer" target="_blank">Model Context Protocol alias _MCP</a>.</p>
+    <p>Notes about findings and <em>understandings</em> around <a href="https://modelcontextprotocol.io/introduction" rel="noopener noreferrer" target="_blank">Model Context Protocol aka _MCP</a>.</p>
 <div class="toc">
 <ul>
-<li><a href="#fragen">Fragen</a></li>
-<li><a href="#zugriff-auf-einen-mcp-server">Zugriff auf einen <span class="caps">MCP</span>-Server</a></li>
-<li><a href="#mcp-server"><span class="caps">MCP</span>-Server</a><ul>
+<li><a href="#questions">Questions</a></li>
+<li><a href="#accessing-a-mcp-server">Accessing a <span class="caps">MCP</span>&nbsp;server</a></li>
+<li><a href="#mcp-servers"><span class="caps">MCP</span> Servers</a><ul>
 <li><a href="#filesystem-mcp-server">Filesystem <span class="caps">MCP</span>&nbsp;Server</a></li>
 </ul>
 </li>
-<li><a href="#mcp-server_1"><span class="caps">MCP</span>-Server</a><ul>
-<li><a href="#dateisystemzugriff">Dateisystemzugriff</a></li>
+<li><a href="#mcp-servers_1"><span class="caps">MCP</span> Servers</a><ul>
+<li><a href="#filesystem-access">FileSystem&nbsp;Access</a></li>
 <li><a href="#xcode-build">Xcode&nbsp;Build</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="fragen">Fragen</h2>
-<p>Offene Fragen, die ich&nbsp;habe.</p>
+<h2 id="questions">Questions</h2>
+<p>Open questions that I&nbsp;have.</p>
 <ul>
-<li>Kann ich Claude mit verschiedenen <span class="caps">MCP</span>-Server-Konfigurationen ausführen? D.h. ich habe eine Konfiguration pro Projekt, zum Beispiel eine für mein Python-Projekt (einschließlich Zugriff nur auf mein Python-Projektverzeichnis), eine für mein Swift/Xcode-Projekt (mit einem anderen Verzeichnis und anderen&nbsp;Tools).</li>
-<li>Test: Mit dem <span class="caps">MCP</span> Inspector und <a href="https://github.com/cameroncooke/XcodeBuildMCP" rel="noopener noreferrer" target="_blank">Xcode Build <span class="caps">MCP</span> Server</a>&nbsp;experimentieren.</li>
+<li>Can I run Claude with different <span class="caps">MCP</span> Server configurations? I.e. I have one configuration per project, say one for my Python project (including access only to my Python project directory), one for my Swift/Xcode project (with a different dir and different&nbsp;tools).</li>
+<li>Test: Play around with <span class="caps">MCP</span> Inspector and <a href="https://github.com/cameroncooke/XcodeBuildMCP" rel="noopener noreferrer" target="_blank">Xcode Build <span class="caps">MCP</span> Server</a>.</li>
 </ul>
-<h2 id="zugriff-auf-einen-mcp-server">Zugriff auf einen <span class="caps">MCP</span>-Server</h2>
-<p>Wenn ich nach einem <span class="caps">MCP</span>-Server für meinen Anwendungsfall suche und schließlich einen finde, finde ich es hilfreich, mit ihnen zu experimentieren, um zu <em>verstehen</em>, welche Werkzeuge das <span class="caps">LLM</span> erhält. Der einfachste Weg, dies zu tun, ist mit dem <a href="https://github.com/modelcontextprotocol/inspector" rel="noopener noreferrer" target="_blank"><span class="caps">MCP</span> Inspector</a>.</p>
-<p>Loslegen:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Stellen Sie sicher, dass Sie eine aktuelle Version von nodeJs installiert haben (in meinem Fall mit nvm)</span>
+<h2 id="accessing-a-mcp-server">Accessing a <span class="caps">MCP</span>&nbsp;server</h2>
+<p>When searching and eventually finding an <span class="caps">MCP</span> server for my use case, I find it helpful to play around with them, in order to <em>understand</em> what tooling the <span class="caps">LLM</span> gets. The easiest way to do this is with the <a href="https://github.com/modelcontextprotocol/inspector" rel="noopener noreferrer" target="_blank"><span class="caps">MCP</span> Inspector</a>.</p>
+<p>Get&nbsp;going:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Make sure you have installed a recent version of nodeJs (in my case with nvm)</span>
 nvm<span class="w"> </span>use<span class="w"> </span><span class="m">24</span>
 npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>node<span class="w"> </span>build/index.js
 
-<span class="c1"># Es lädt &amp; startet den MCP UI Client und stellt ihn lokal bereit.</span>
+<span class="c1"># It downloads &amp; starts the MCP UI Client and serves it locally.</span>
 </code></pre></div>
-<p><strong>Konfiguration</strong></p>
-<p>Der Inspector speichert alles, was Sie in der Seitenleiste eingeben, in localStorage, aber für wiederholbare Setups können Sie eine kleine <span class="caps">JSON</span>-Datei speichern und die <span class="caps">CLI</span> darauf&nbsp;verweisen:</p>
+<p><strong>Configuration</strong></p>
+<p>The Inspector keeps whatever you type in the sidebar in localStorage, but for repeatable setups you can save a tiny <span class="caps">JSON</span> file and point the <span class="caps">CLI</span> to&nbsp;it:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// mcp.json</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -189,23 +185,23 @@ npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </spa
 <span class="w">      </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"-y"</span><span class="p">,</span>
 <span class="w">        </span><span class="s2">"@modelcontextprotocol/server-filesystem"</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">"/Users/yourname/Projects"</span><span class="p">,</span><span class="w"> </span><span class="c1">// lesen/schreiben</span>
-<span class="w">        </span><span class="s2">"/Users/yourname/Notes"</span><span class="p">,</span><span class="w"> </span><span class="c1">// lesen/schreiben</span>
-<span class="w">        </span><span class="s2">"/Users/yourname/Code"</span><span class="w"> </span><span class="c1">// nur lesen? fügen Sie ',ro' hinzu, wenn Sie Docker verwenden</span>
+<span class="w">        </span><span class="s2">"/Users/yourname/Projects"</span><span class="p">,</span><span class="w"> </span><span class="c1">// read/write</span>
+<span class="w">        </span><span class="s2">"/Users/yourname/Notes"</span><span class="p">,</span><span class="w"> </span><span class="c1">// read/write</span>
+<span class="w">        </span><span class="s2">"/Users/yourname/Code"</span><span class="w"> </span><span class="c1">// read-only? add ',ro' if you use Docker</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Dann führen&nbsp;Sie <code>npx @modelcontextprotocol/inspector --config ./mcp.json --server filesystem</code> aus.</p>
-<h2 id="mcp-server"><span class="caps">MCP</span>-Server</h2>
-<p><span class="caps">MCP</span>-Server, die ich verwendet oder betrachtet&nbsp;habe:</p>
+<p>Then&nbsp;run <code>npx @modelcontextprotocol/inspector --config ./mcp.json --server filesystem</code></p>
+<h2 id="mcp-servers"><span class="caps">MCP</span>&nbsp;Servers</h2>
+<p><span class="caps">MCP</span> Servers I used or looked&nbsp;at:</p>
 <h3 id="filesystem-mcp-server">Filesystem <span class="caps">MCP</span>&nbsp;Server</h3>
 <ul>
 <li><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem" rel="noopener noreferrer" target="_blank">Filesystem <span class="caps">MCP</span>&nbsp;Server</a></li>
-<li>Einer der <a href="https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-reference-servers" rel="noopener noreferrer" target="_blank">Referenzserver</a></li>
+<li>One of the <a href="https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-reference-servers" rel="noopener noreferrer" target="_blank">Reference&nbsp;Servers</a></li>
 </ul>
-<p>Hauptkonfiguration:</p>
+<p>Main&nbsp;config:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"filesystem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -220,13 +216,13 @@ npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </spa
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="mcp-server_1"><span class="caps">MCP</span>-Server</h2>
-<p><span class="caps">MCP</span>-Server, die ich getestet habe oder testen&nbsp;möchte.</p>
-<h3 id="dateisystemzugriff">Dateisystemzugriff</h3>
+<h2 id="mcp-servers_1"><span class="caps">MCP</span>&nbsp;Servers</h2>
+<p><span class="caps">MCP</span> Servers I tested or plan to&nbsp;test.</p>
+<h3 id="filesystem-access">FileSystem&nbsp;Access</h3>
 <h3 id="xcode-build">Xcode&nbsp;Build</h3>
 <p><img alt="Xcode Build" src="/mcp-playground/xcode_build.png"/></p>
 <ul>
-<li>Ermöglicht&nbsp;Xcode-Build-Aktionen.</li>
+<li>Enables Xcode build&nbsp;actions.</li>
 <li>https://github.com/cameroncooke/XcodeBuildMCP</li>
 </ul>
     <div id="giscus">
