@@ -298,4 +298,8 @@
     <loc>https://grtnr.com/impressum/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://grtnr.com/todo/</loc>
+    <priority>1.0</priority>
+  </url>
 </urlset>
