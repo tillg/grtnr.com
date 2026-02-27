@@ -52,7 +52,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 11:37:32.
+      Last built 27.02.2026 13:25:02.
   </div>
 </div>
   <div class="wrap">
@@ -63,26 +63,35 @@ styles, `#sidebar-checkbox` for behavior. -->
             grtnr.com
           </a>         </h3>
         
-        <!-- Language Switcher -->
-        <div class="language-switcher-top">
-          <button class="language-globe-btn" onclick="toggleLanguageMenu()">
-            <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        <div class="masthead-icons">
+          <a href="/fr/search/" class="search-icon-btn" aria-label="Search">
+            <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-          </button>
-          <div class="language-menu" id="languageMenu">
-                <a href="#" class="language-option" data-lang="en" onclick="switchLanguage('en')">
+          </a>
+          <div class="language-switcher-top">
+            <button class="language-globe-btn" onclick="toggleLanguageMenu()">
+              <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </button>
+            <div class="language-menu" id="languageMenu">
+                  <a href="#" class="language-option" data-lang="en" onclick="switchLanguage('en')">
 English
-                </a>
-                <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
+                  </a>
+                  <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
 Deutsch
-                </a>
+                  </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container content">
+    <div class="container content" >
 <h1 class="tag-heading">
     Articles about <span class="tag-inline"><div class="tag-pills">
   <a href="/tag/tech/"
@@ -91,32 +100,905 @@ Deutsch
 </div>
 </span>
 </h1>
-<ul>
-    <li><a href="/fr/diskspacetracker/">DiskSpaceTracker</a> - vendredi 27 février 2026</li>
-    <li><a href="/fr/peoplez/">Peoplez</a> - jeudi 26 février 2026</li>
-    <li><a href="/fr/swiftdata-on-icloud/">SwiftData sur iCloud</a> - dimanche 2 novembre 2025</li>
-    <li><a href="/fr/embeddings-in-swift-on-apple-silicon/">Intégrations en Swift sur Apple Silicon</a> - mardi 30 septembre 2025</li>
-    <li><a href="/fr/swiftui-cheatsheet/">SwiftUI Cheatsheet</a> - dimanche 3 août 2025</li>
-    <li><a href="/fr/beyond-vibe-coding-redesigning-filmz/">Au-delà du _vibe coding_ - Repenser Filmz</a> - mercredi 21 mai 2025</li>
-    <li><a href="/fr/mcp-playground/">MCP Playground</a> - dimanche 18 mai 2025</li>
-    <li><a href="/fr/autocompleting-my-blog/">Autocomplétion de mon Blog</a> - dimanche 4 mai 2025</li>
-    <li><a href="/fr/setting-up-jupyter-lab-on-mac/">Setting Up Jupyter Lab On Mac</a> - lundi 8 avril 2024</li>
-    <li><a href="/fr/named-volumes-with-docker-compose/">Volumes nommés avec docker-compose</a> - samedi 4 septembre 2021</li>
-    <li><a href="/fr/setting-up-my-terminal/">Configuration de mon terminal</a> - jeudi 6 février 2020</li>
-    <li><a href="/fr/svg-programming/">Programmation SVG</a> - lundi 15 avril 2019</li>
-    <li><a href="/fr/image-encoding-in-node-js/">Encodage d'image dans Node JS</a> - jeudi 11 avril 2019</li>
-    <li><a href="/fr/my-static-website/">Mon site web statique</a> - lundi 8 août 2016</li>
-    <li><a href="/fr/playing-around-with-d3/">Expérimenter avec D3</a> - samedi 13 février 2016</li>
-    <li><a href="/fr/ping-visualization-and-analysis/">Visualisation et Analyse du Ping</a> - vendredi 8 janvier 2016</li>
-    <li><a href="/fr/visited-countries/">Pays visités</a> - lundi 4 janvier 2016</li>
-    <li><a href="/fr/siteweightwatcher-keeps-your-website-slim/">SiteWeightWatcher - garde votre site web léger</a> - dimanche 27 décembre 2015</li>
-    <li><a href="/fr/playing-with-highcharts/">Jouer avec Highcharts</a> - mercredi 16 décembre 2015</li>
-    <li><a href="/fr/zipf-mystery/">Zipf Mystery</a> - mercredi 9 décembre 2015</li>
-    <li><a href="/fr/playing-with-javascript/">Jouer avec JavaScript</a> - dimanche 6 décembre 2015</li>
-    <li><a href="/fr/how-i-moved-to-github-jbake/">Comment j'ai migré vers GitHub & JBake</a> - lundi 30 novembre 2015</li>
-    <li><a href="/fr/ipad-hologram/">Hologramme iPad</a> - jeudi 31 mars 2011</li>
-    <li><a href="/fr/crowdsourcing-zahle-100-eur-fur-wappen/">Crowdsourcing ! Payez 100 € pour un blason</a> - jeudi 1 avril 2010</li>
-</ul>
+<div class="posts">
+
+<div class="post">
+    <a href="/fr/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">DiskSpaceTracker</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">vendredi 27 février 2026</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/diskspacetracker//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque se remplit, vous sachiez réellement pourquoi.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/diskspacetracker/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Peoplez</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">jeudi 26 février 2026</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/peoplez//address-book.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            L'application de contacts que je souhaite vraiment — un système unique pour toutes mes relations sur iPhone, Mac et iPad, avec des listes au lieu de comptes, une capture intelligente, et le réseautage intégré pour les conférences.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/peoplez/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData sur iCloud"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SwiftData sur iCloud</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData sur iCloud"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">dimanche 2 novembre 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData sur iCloud"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/swiftdata-on-icloud//swiftdata.jpeg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData sur iCloud"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Un guide étape par étape pour ajouter la synchronisation iCloud à une application SwiftData en utilisant CloudKit, incluant la configuration, le débogage et les pièges courants.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/swiftdata-on-icloud/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Intégrations en Swift sur Apple Silicon"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Intégrations en Swift sur Apple Silicon</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Intégrations en Swift sur Apple Silicon"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mardi 30 septembre 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Intégrations en Swift sur Apple Silicon"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/embeddings-in-swift-on-apple-silicon//embedding.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Intégrations en Swift sur Apple Silicon"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Apple a introduit de nouveaux modèles d'intégration que je souhaite utiliser pour mesurer la proximité des textes. Voici mon parcours sur comment les créer et les rendre efficaces.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/embeddings-in-swift-on-apple-silicon/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SwiftUI Cheatsheet</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">dimanche 3 août 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/swiftui-cheatsheet//swiftui.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Mon aide-mémoire, construit en suivant [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui/).
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/swiftui-cheatsheet/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Au-delà du _vibe coding_ - Repenser Filmz"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Au-delà du _vibe coding_ - Repenser Filmz</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Au-delà du _vibe coding_ - Repenser Filmz"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mercredi 21 mai 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/ai/"
+  class="tag-pill ">ai</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Au-delà du _vibe coding_ - Repenser Filmz"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/beyond-vibe-coding-redesigning-filmz//filmz.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Au-delà du _vibe coding_ - Repenser Filmz"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Il y a quelque temps, j'ai construit une petite application iOS appelée Filmz avec le _vibe coding_. Il s'avère que c'est agréable jusqu'à ce que vous finissiez par faire du _vibe debugging_. Je prends donc une nouvelle approche, en commençant de manière plus structurée.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/beyond-vibe-coding-redesigning-filmz/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">MCP Playground</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">dimanche 18 mai 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/ai/"
+  class="tag-pill ">ai</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/mcp-playground//mcp.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Notes sur les découvertes et _compréhensions_ autour de [Model Context Protocol alias _MCP](https://modelcontextprotocol.io/introduction).
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/mcp-playground/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocomplétion de mon Blog"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Autocomplétion de mon Blog</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocomplétion de mon Blog"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">dimanche 4 mai 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/blog/"
+  class="tag-pill ">blog</a>
+
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocomplétion de mon Blog"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/autocompleting-my-blog//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocomplétion de mon Blog"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            J'ai maintenant un blog basé sur Pelican et je veux ajouter ou corriger automatiquement le contenu : balises d'image, résumés d'articles, traductions... Enfin un moyen d'utiliser l'IA 🤖
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/autocompleting-my-blog/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Setting Up Jupyter Lab On Mac</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 8 avril 2024</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/setting-up-jupyter-lab-on-mac//python_on_mac.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Configurer Python sur un Mac peut être délicat. Le nombre d'options est grand, et elles peuvent interagir de manière étrange. De plus, vous devez vous rappeler quelle méthode d'installation vous avez utilisée lorsque vous souhaitez changer de version ou mettre à jour. Ce post devrait me rappeler comment je l'ai fait 😉
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/setting-up-jupyter-lab-on-mac/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Volumes nommés avec docker-compose"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Volumes nommés avec docker-compose</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Volumes nommés avec docker-compose"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">samedi 4 septembre 2021</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Volumes nommés avec docker-compose"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/named-volumes-with-docker-compose//types-of-mounts-volume.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Volumes nommés avec docker-compose"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Comment créer un volume avec docker-compose, utilisé par de nombreux conteneurs et à un emplacement spécifique sur l'hôte.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/named-volumes-with-docker-compose/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/setting-up-my-terminal/" rel="bookmark" title="Permalink to Configuration de mon terminal"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Configuration de mon terminal</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/setting-up-my-terminal/" rel="bookmark" title="Permalink to Configuration de mon terminal"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">jeudi 6 février 2020</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/setting-up-my-terminal/" rel="bookmark" title="Permalink to Configuration de mon terminal"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/setting-up-my-terminal//terminal.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/setting-up-my-terminal/" rel="bookmark" title="Permalink to Configuration de mon terminal"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Un guide pour configurer un terminal macOS avec zsh, Oh My Zsh, et powerlevel10k, en se concentrant sur l'intégration des éléments plutôt que sur une simple installation pas à pas.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/setting-up-my-terminal/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/svg-programming/" rel="bookmark" title="Permalink to Programmation SVG"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Programmation SVG</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/svg-programming/" rel="bookmark" title="Permalink to Programmation SVG"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 15 avril 2019</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/svg-programming/" rel="bookmark" title="Permalink to Programmation SVG"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/svg-programming//spotz.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/svg-programming/" rel="bookmark" title="Permalink to Programmation SVG"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Pour un projet personnel, je souhaite avoir un joli logo SVG animé. En cherchant des tutoriels, j'en ai trouvé quelques-uns qui pourraient être utiles.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/svg-programming/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Encodage d'image dans Node JS"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Encodage d'image dans Node JS</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Encodage d'image dans Node JS"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">jeudi 11 avril 2019</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Encodage d'image dans Node JS"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/image-encoding-in-node-js//base64.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Encodage d'image dans Node JS"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            En traitant des images dans une application node, j'ai dû apprendre à lire et potentiellement décoder les données d'image.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/image-encoding-in-node-js/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/my-static-website/" rel="bookmark" title="Permalink to Mon site web statique"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Mon site web statique</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/my-static-website/" rel="bookmark" title="Permalink to Mon site web statique"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 8 août 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/my-static-website/" rel="bookmark" title="Permalink to Mon site web statique"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/my-static-website//static_site.jpg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/my-static-website/" rel="bookmark" title="Permalink to Mon site web statique"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Les sites web statiques deviennent la norme de nos jours. J'ai donc également examiné cela et comparé certains générateurs de sites web.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/my-static-website/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/playing-around-with-d3/" rel="bookmark" title="Permalink to Expérimenter avec D3"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Expérimenter avec D3</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/playing-around-with-d3/" rel="bookmark" title="Permalink to Expérimenter avec D3"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">samedi 13 février 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/javascript/"
+  class="tag-pill ">javascript</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/playing-around-with-d3/" rel="bookmark" title="Permalink to Expérimenter avec D3"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/playing-around-with-d3//d3.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/playing-around-with-d3/" rel="bookmark" title="Permalink to Expérimenter avec D3"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Une très petite expérience avec D3.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/playing-around-with-d3/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Visualisation et Analyse du Ping"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Visualisation et Analyse du Ping</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Visualisation et Analyse du Ping"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">vendredi 8 janvier 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Visualisation et Analyse du Ping"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/ping-visualization-and-analysis//ping.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Visualisation et Analyse du Ping"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Un outil simple en deux composants pour la journalisation et la visualisation à long terme du ping qui répond enfin à la question de savoir si c'est le WIFI, l'accès Internet ou l'application qui est lente.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/ping-visualization-and-analysis/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/visited-countries/" rel="bookmark" title="Permalink to Pays visités"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Pays visités</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/visited-countries/" rel="bookmark" title="Permalink to Pays visités"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 4 janvier 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/visited-countries/" rel="bookmark" title="Permalink to Pays visités"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/visited-countries//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/visited-countries/" rel="bookmark" title="Permalink to Pays visités"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Une carte interactive amusante montrant tous les pays que j'ai visités, construite avec un petit outil JavaScript astucieux.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/visited-countries/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - garde votre site web léger"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SiteWeightWatcher - garde votre site web léger</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - garde votre site web léger"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">dimanche 27 décembre 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - garde votre site web léger"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/siteweightwatcher-keeps-your-website-slim//kickz_dashboard.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - garde votre site web léger"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Une idée d'outil de surveillance qui teste en continu les sites web en production pour détecter toute dégradation des performances, en suivant le poids des pages et les temps de chargement au fil du temps.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/siteweightwatcher-keeps-your-website-slim/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/playing-with-highcharts/" rel="bookmark" title="Permalink to Jouer avec Highcharts"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Jouer avec Highcharts</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/playing-with-highcharts/" rel="bookmark" title="Permalink to Jouer avec Highcharts"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mercredi 16 décembre 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/playing-with-highcharts/" rel="bookmark" title="Permalink to Jouer avec Highcharts"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/playing-with-highcharts//highcharts_chart.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/playing-with-highcharts/" rel="bookmark" title="Permalink to Jouer avec Highcharts"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Un aperçu rapide de Highcharts, un outil qui vous permet de créer et publier des graphiques en ligne en moins de cinq minutes.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/playing-with-highcharts/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Zipf Mystery</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">mercredi 9 décembre 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/zipf-mystery//hero.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Une vidéo fascinante de Vsauce sur la loi de Zipf qui a gagné une place permanente sur ma liste de visionnage.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/zipf-mystery/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/playing-with-javascript/" rel="bookmark" title="Permalink to Jouer avec JavaScript"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Jouer avec JavaScript</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/playing-with-javascript/" rel="bookmark" title="Permalink to Jouer avec JavaScript"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">dimanche 6 décembre 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/playing-with-javascript/" rel="bookmark" title="Permalink to Jouer avec JavaScript"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/playing-with-javascript//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/playing-with-javascript/" rel="bookmark" title="Permalink to Jouer avec JavaScript"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Expérimenter avec le canvas HTML et JavaScript pour créer des motifs géométriques animés de spirographe.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/playing-with-javascript/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to Comment j'ai migré vers GitHub & JBake"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Comment j'ai migré vers GitHub & JBake</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to Comment j'ai migré vers GitHub & JBake"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 30 novembre 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/website/"
+  class="tag-pill ">website</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to Comment j'ai migré vers GitHub & JBake"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/how-i-moved-to-github-jbake//github.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to Comment j'ai migré vers GitHub & JBake"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Comment j'ai configuré mon blog en utilisant JBake comme générateur de site statique et GitHub Pages pour l'hébergement.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/how-i-moved-to-github-jbake/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/ipad-hologram/" rel="bookmark" title="Permalink to Hologramme iPad"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Hologramme iPad</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/ipad-hologram/" rel="bookmark" title="Permalink to Hologramme iPad"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">jeudi 31 mars 2011</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/ipad-hologram/" rel="bookmark" title="Permalink to Hologramme iPad"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/ipad-hologram//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/ipad-hologram/" rel="bookmark" title="Permalink to Hologramme iPad"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Fonctionnalités cachées de l'iPad 😜
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/ipad-hologram/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/fr/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing ! Payez 100 € pour un blason"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Crowdsourcing ! Payez 100 € pour un blason</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/fr/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing ! Payez 100 € pour un blason"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">jeudi 1 avril 2010</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/fr/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing ! Payez 100 € pour un blason"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/fr/crowdsourcing-zahle-100-eur-fur-wappen//gartner_wappen.jpg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/fr/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing ! Payez 100 € pour un blason"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Un appel au crowdsourcing avec une récompense de 100 euros pour un design modernisé du blason historique de la famille Gartner de 1699.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="fr/crowdsourcing-zahle-100-eur-fur-wappen/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

@@ -52,7 +52,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 11:37:32.
+      Last built 27.02.2026 13:25:02.
   </div>
 </div>
   <div class="wrap">
@@ -63,26 +63,35 @@ styles, `#sidebar-checkbox` for behavior. -->
             grtnr.com
           </a>         </h3>
         
-        <!-- Language Switcher -->
-        <div class="language-switcher-top">
-          <button class="language-globe-btn" onclick="toggleLanguageMenu()">
-            <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        <div class="masthead-icons">
+          <a href="/en/search/" class="search-icon-btn" aria-label="Search">
+            <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-          </button>
-          <div class="language-menu" id="languageMenu">
-                <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
+          </a>
+          <div class="language-switcher-top">
+            <button class="language-globe-btn" onclick="toggleLanguageMenu()">
+              <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </button>
+            <div class="language-menu" id="languageMenu">
+                  <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
 Deutsch
-                </a>
-                <a href="#" class="language-option" data-lang="fr" onclick="switchLanguage('fr')">
+                  </a>
+                  <a href="#" class="language-option" data-lang="fr" onclick="switchLanguage('fr')">
 Français
-                </a>
+                  </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container content">
+    <div class="container content" >
 <h1 class="tag-heading">
     Articles about <span class="tag-inline"><div class="tag-pills">
   <a href="/tag/code/"
@@ -91,9 +100,44 @@ Français
 </div>
 </span>
 </h1>
-<ul>
-    <li><a href="/how-i-code-with-claude/">How I Code With Claude</a> - February 14, 2026</li>
-</ul>
+<div class="posts">
+
+<div class="post">
+    <a href="/how-i-code-with-claude/" rel="bookmark" title="Permalink to How I Code With Claude"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">How I Code With Claude</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/how-i-code-with-claude/" rel="bookmark" title="Permalink to How I Code With Claude"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">February 14, 2026</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/code/"
+  class="tag-pill ">code</a>
+
+</div>
+
+        </div>    
+    <a href="/how-i-code-with-claude/" rel="bookmark" title="Permalink to How I Code With Claude"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/how-i-code-with-claude//claude.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/how-i-code-with-claude/" rel="bookmark" title="Permalink to How I Code With Claude"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            An overview of how I code with claude code (as of today, mid-Feb 2026). Expect it to be outdated as of March '26 😉
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="how-i-code-with-claude/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

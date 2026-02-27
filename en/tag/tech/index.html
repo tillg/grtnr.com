@@ -52,7 +52,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 11:37:32.
+      Last built 27.02.2026 13:25:02.
   </div>
 </div>
   <div class="wrap">
@@ -63,26 +63,35 @@ styles, `#sidebar-checkbox` for behavior. -->
             grtnr.com
           </a>         </h3>
         
-        <!-- Language Switcher -->
-        <div class="language-switcher-top">
-          <button class="language-globe-btn" onclick="toggleLanguageMenu()">
-            <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        <div class="masthead-icons">
+          <a href="/en/search/" class="search-icon-btn" aria-label="Search">
+            <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-          </button>
-          <div class="language-menu" id="languageMenu">
-                <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
+          </a>
+          <div class="language-switcher-top">
+            <button class="language-globe-btn" onclick="toggleLanguageMenu()">
+              <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </button>
+            <div class="language-menu" id="languageMenu">
+                  <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
 Deutsch
-                </a>
-                <a href="#" class="language-option" data-lang="fr" onclick="switchLanguage('fr')">
+                  </a>
+                  <a href="#" class="language-option" data-lang="fr" onclick="switchLanguage('fr')">
 Français
-                </a>
+                  </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container content">
+    <div class="container content" >
 <h1 class="tag-heading">
     Articles about <span class="tag-inline"><div class="tag-pills">
   <a href="/tag/tech/"
@@ -91,32 +100,905 @@ Français
 </div>
 </span>
 </h1>
-<ul>
-    <li><a href="/en/diskspacetracker/">DiskSpaceTracker</a> - February 27, 2026</li>
-    <li><a href="/en/peoplez/">Peoplez</a> - February 26, 2026</li>
-    <li><a href="/en/swiftdata-on-icloud/">SwiftData on iCloud</a> - November 2, 2025</li>
-    <li><a href="/en/embeddings-in-swift-on-apple-silicon/">Embeddings in Swift on Apple Silicon</a> - September 30, 2025</li>
-    <li><a href="/en/swiftui-cheatsheet/">SwiftUI Cheatsheet</a> - August 3, 2025</li>
-    <li><a href="/en/beyond-vibe-coding-redesigning-filmz/">Beyond Vibe coding - Redesigning Filmz</a> - May 21, 2025</li>
-    <li><a href="/en/mcp-playground/">MCP Playground</a> - May 18, 2025</li>
-    <li><a href="/en/autocompleting-my-blog/">Autocompleting my Blog</a> - May 4, 2025</li>
-    <li><a href="/en/setting-up-jupyter-lab-on-mac/">Setting Up Jupyter Lab On Mac</a> - April 8, 2024</li>
-    <li><a href="/en/named-volumes-with-docker-compose/">Named volumes with docker-compose</a> - September 4, 2021</li>
-    <li><a href="/en/setting-up-my-terminal/">Setting up my terminal</a> - February 6, 2020</li>
-    <li><a href="/en/svg-programming/">SVG programming</a> - April 15, 2019</li>
-    <li><a href="/en/image-encoding-in-node-js/">Image encoding in Node JS</a> - April 11, 2019</li>
-    <li><a href="/en/my-static-website/">My static website</a> - August 8, 2016</li>
-    <li><a href="/en/playing-around-with-d3/">Playing around with D3</a> - February 13, 2016</li>
-    <li><a href="/en/ping-visualization-and-analysis/">Ping Visualization and Analysis</a> - January 8, 2016</li>
-    <li><a href="/en/visited-countries/">Visited countries</a> - January 4, 2016</li>
-    <li><a href="/en/siteweightwatcher-keeps-your-website-slim/">SiteWeightWatcher - keeps your website slim</a> - December 27, 2015</li>
-    <li><a href="/en/playing-with-highcharts/">Playing with Highcharts</a> - December 16, 2015</li>
-    <li><a href="/en/zipf-mystery/">Zipf Mystery</a> - December 9, 2015</li>
-    <li><a href="/en/playing-with-javascript/">Playing with JavaScript</a> - December 6, 2015</li>
-    <li><a href="/en/how-i-moved-to-github-jbake/">How I moved to GitHub & JBake</a> - November 30, 2015</li>
-    <li><a href="/en/ipad-hologram/">iPad Hologram</a> - March 31, 2011</li>
-    <li><a href="/en/crowdsourcing-zahle-100-eur-fur-wappen/">Crowdsourcing! Pay 100,- € for a Coat of Arms</a> - April 1, 2010</li>
-</ul>
+<div class="posts">
+
+<div class="post">
+    <a href="/en/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">DiskSpaceTracker</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">February 27, 2026</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+        </div>    
+    <a href="/en/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/diskspacetracker//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/diskspacetracker/" rel="bookmark" title="Permalink to DiskSpaceTracker"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Where did my disk space go? A quiet background process that watches your Mac's directories over time, so when your disk fills up you actually know why.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/diskspacetracker/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Peoplez</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">February 26, 2026</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+</div>
+
+        </div>    
+    <a href="/en/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/peoplez//address-book.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/peoplez/" rel="bookmark" title="Permalink to Peoplez"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            The contact app I actually want — one system for all my people across iPhone, Mac, and iPad, with lists instead of accounts, smart capture, and conference networking built in.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/peoplez/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData on iCloud"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SwiftData on iCloud</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData on iCloud"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">November 2, 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData on iCloud"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/swiftdata-on-icloud//swiftdata.jpeg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/swiftdata-on-icloud/" rel="bookmark" title="Permalink to SwiftData on iCloud"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A step-by-step guide to adding iCloud sync to a SwiftData app using CloudKit, including setup, debugging, and common pitfalls.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/swiftdata-on-icloud/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Embeddings in Swift on Apple Silicon"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Embeddings in Swift on Apple Silicon</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Embeddings in Swift on Apple Silicon"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">September 30, 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Embeddings in Swift on Apple Silicon"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/embeddings-in-swift-on-apple-silicon//embedding.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/embeddings-in-swift-on-apple-silicon/" rel="bookmark" title="Permalink to Embeddings in Swift on Apple Silicon"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Apple introduced new Embedding Models that I want to use to measure proximity of texts. This is my journey on how to make them and how to make them efficiently.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/embeddings-in-swift-on-apple-silicon/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SwiftUI Cheatsheet</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">August 3, 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/swiftui-cheatsheet//swiftui.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/swiftui-cheatsheet/" rel="bookmark" title="Permalink to SwiftUI Cheatsheet"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            My Cheatsheet, built while following [100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui/).
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/swiftui-cheatsheet/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Beyond Vibe coding - Redesigning Filmz"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Beyond Vibe coding - Redesigning Filmz</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Beyond Vibe coding - Redesigning Filmz"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">May 21, 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/ai/"
+  class="tag-pill ">ai</a>
+
+</div>
+
+        </div>    
+    <a href="/en/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Beyond Vibe coding - Redesigning Filmz"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/beyond-vibe-coding-redesigning-filmz//filmz.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/beyond-vibe-coding-redesigning-filmz/" rel="bookmark" title="Permalink to Beyond Vibe coding - Redesigning Filmz"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Some time ago I built a little iOS App called Filmz with _vibe_coding_. Turns out that's nice until you end up _vibe debugging_. So now I take a new attempt, starting in a more structured way.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/beyond-vibe-coding-redesigning-filmz/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">MCP Playground</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">May 18, 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/ai/"
+  class="tag-pill ">ai</a>
+
+</div>
+
+        </div>    
+    <a href="/en/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/mcp-playground//mcp.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/mcp-playground/" rel="bookmark" title="Permalink to MCP Playground"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Notes about findings and _understandings_ around [Model Context Protocol aka _MCP](https://modelcontextprotocol.io/introduction).
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/mcp-playground/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocompleting my Blog"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Autocompleting my Blog</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocompleting my Blog"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">May 4, 2025</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/blog/"
+  class="tag-pill ">blog</a>
+
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+</div>
+
+        </div>    
+    <a href="/en/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocompleting my Blog"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/autocompleting-my-blog//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/autocompleting-my-blog/" rel="bookmark" title="Permalink to Autocompleting my Blog"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            I now have a Pelican based blog and want to automagically add or fix content: Picture tags, article summaries, translations... Finally a wa to use AI 🤖
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/autocompleting-my-blog/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Setting Up Jupyter Lab On Mac</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">April 8, 2024</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+        </div>    
+    <a href="/en/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/setting-up-jupyter-lab-on-mac//python_on_mac.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/setting-up-jupyter-lab-on-mac/" rel="bookmark" title="Permalink to Setting Up Jupyter Lab On Mac"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Setting up Python on a Mac can by tricky. The number of options is big, and they might interact strangely. Also you have to remember which installation method you used once you want to change version or upgrade. This post should remind me how I did it 😉
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/setting-up-jupyter-lab-on-mac/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Named volumes with docker-compose"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Named volumes with docker-compose</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Named volumes with docker-compose"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">September 4, 2021</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Named volumes with docker-compose"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/named-volumes-with-docker-compose//types-of-mounts-volume.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/named-volumes-with-docker-compose/" rel="bookmark" title="Permalink to Named volumes with docker-compose"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            How to create a volume within docker-compose, used by many containers and within a specific location on the host.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/named-volumes-with-docker-compose/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/setting-up-my-terminal/" rel="bookmark" title="Permalink to Setting up my terminal"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Setting up my terminal</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/setting-up-my-terminal/" rel="bookmark" title="Permalink to Setting up my terminal"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">February 6, 2020</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+        </div>    
+    <a href="/en/setting-up-my-terminal/" rel="bookmark" title="Permalink to Setting up my terminal"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/setting-up-my-terminal//terminal.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/setting-up-my-terminal/" rel="bookmark" title="Permalink to Setting up my terminal"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A guide to setting up a macOS terminal with zsh, Oh My Zsh, and powerlevel10k, focusing on how the pieces fit together rather than just step-by-step installation.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/setting-up-my-terminal/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/svg-programming/" rel="bookmark" title="Permalink to SVG programming"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SVG programming</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/svg-programming/" rel="bookmark" title="Permalink to SVG programming"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">April 15, 2019</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/svg-programming/" rel="bookmark" title="Permalink to SVG programming"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/svg-programming//spotz.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/svg-programming/" rel="bookmark" title="Permalink to SVG programming"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            For a side project I would like to have a nice, moving SVG Logo. While searching for tutorials, I found a couple that might be helpful.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/svg-programming/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Image encoding in Node JS"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Image encoding in Node JS</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Image encoding in Node JS"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">April 11, 2019</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Image encoding in Node JS"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/image-encoding-in-node-js//base64.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/image-encoding-in-node-js/" rel="bookmark" title="Permalink to Image encoding in Node JS"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            When dealing with images in a node application I had to learn on how to read and potentially decode image data.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/image-encoding-in-node-js/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/my-static-website/" rel="bookmark" title="Permalink to My static website"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">My static website</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/my-static-website/" rel="bookmark" title="Permalink to My static website"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">August 8, 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/my-static-website/" rel="bookmark" title="Permalink to My static website"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/my-static-website//static_site.jpg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/my-static-website/" rel="bookmark" title="Permalink to My static website"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Static websites are getting the standard these days. So I also had a look at it and compared some website generators.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/my-static-website/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/playing-around-with-d3/" rel="bookmark" title="Permalink to Playing around with D3"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Playing around with D3</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/playing-around-with-d3/" rel="bookmark" title="Permalink to Playing around with D3"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">February 13, 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/javascript/"
+  class="tag-pill ">javascript</a>
+
+</div>
+
+        </div>    
+    <a href="/en/playing-around-with-d3/" rel="bookmark" title="Permalink to Playing around with D3"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/playing-around-with-d3//d3.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/playing-around-with-d3/" rel="bookmark" title="Permalink to Playing around with D3"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A very small D3 experiment.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/playing-around-with-d3/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Ping Visualization and Analysis"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Ping Visualization and Analysis</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Ping Visualization and Analysis"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">January 8, 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Ping Visualization and Analysis"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/ping-visualization-and-analysis//ping.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/ping-visualization-and-analysis/" rel="bookmark" title="Permalink to Ping Visualization and Analysis"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A simple two-component tool for long-term ping logging and visualization that finally answers whether it's the WIFI, the internet access, or the application that's slow.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/ping-visualization-and-analysis/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/visited-countries/" rel="bookmark" title="Permalink to Visited countries"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Visited countries</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/visited-countries/" rel="bookmark" title="Permalink to Visited countries"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">January 4, 2016</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/visited-countries/" rel="bookmark" title="Permalink to Visited countries"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/visited-countries//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/visited-countries/" rel="bookmark" title="Permalink to Visited countries"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A fun interactive map showing all the countries I've visited, built with a neat little JavaScript tool.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/visited-countries/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - keeps your website slim"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">SiteWeightWatcher - keeps your website slim</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - keeps your website slim"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">December 27, 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - keeps your website slim"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/siteweightwatcher-keeps-your-website-slim//kickz_dashboard.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/siteweightwatcher-keeps-your-website-slim/" rel="bookmark" title="Permalink to SiteWeightWatcher - keeps your website slim"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            An idea for a monitoring tool that continuously tests production websites for performance degradation, tracking page weight and load times over time.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/siteweightwatcher-keeps-your-website-slim/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/playing-with-highcharts/" rel="bookmark" title="Permalink to Playing with Highcharts"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Playing with Highcharts</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/playing-with-highcharts/" rel="bookmark" title="Permalink to Playing with Highcharts"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">December 16, 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/playing-with-highcharts/" rel="bookmark" title="Permalink to Playing with Highcharts"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/playing-with-highcharts//highcharts_chart.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/playing-with-highcharts/" rel="bookmark" title="Permalink to Playing with Highcharts"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A quick look at Highcharts, a tool that lets you create and publish charts online in under five minutes.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/playing-with-highcharts/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Zipf Mystery</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">December 9, 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/zipf-mystery//hero.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/zipf-mystery/" rel="bookmark" title="Permalink to Zipf Mystery"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A fascinating Vsauce video about Zipf's law that earned a permanent spot on my watch list.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/zipf-mystery/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/playing-with-javascript/" rel="bookmark" title="Permalink to Playing with JavaScript"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Playing with JavaScript</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/playing-with-javascript/" rel="bookmark" title="Permalink to Playing with JavaScript"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">December 6, 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/playing-with-javascript/" rel="bookmark" title="Permalink to Playing with JavaScript"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/playing-with-javascript//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/playing-with-javascript/" rel="bookmark" title="Permalink to Playing with JavaScript"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Experimenting with HTML canvas and JavaScript to create animated geometric spirograph patterns.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/playing-with-javascript/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to How I moved to GitHub & JBake"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">How I moved to GitHub & JBake</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to How I moved to GitHub & JBake"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">November 30, 2015</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/website/"
+  class="tag-pill ">website</a>
+
+</div>
+
+        </div>    
+    <a href="/en/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to How I moved to GitHub & JBake"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/how-i-moved-to-github-jbake//github.png"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/how-i-moved-to-github-jbake/" rel="bookmark" title="Permalink to How I moved to GitHub & JBake"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            How I set up my blog using JBake as a static site generator and GitHub Pages for hosting.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/how-i-moved-to-github-jbake/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/ipad-hologram/" rel="bookmark" title="Permalink to iPad Hologram"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">iPad Hologram</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/ipad-hologram/" rel="bookmark" title="Permalink to iPad Hologram"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">March 31, 2011</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/ipad-hologram/" rel="bookmark" title="Permalink to iPad Hologram"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/ipad-hologram//hero.svg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/ipad-hologram/" rel="bookmark" title="Permalink to iPad Hologram"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            Hidden features of the iPad 😜
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/ipad-hologram/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div>
+<div class="post">
+    <a href="/en/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing! Pay 100,- € for a Coat of Arms"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <h1 class="post-title" style="color: black !important;">Crowdsourcing! Pay 100,- € for a Coat of Arms</h1>
+    </a>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <a href="/en/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing! Pay 100,- € for a Coat of Arms"
+                style="color: black !important; text-decoration-color: black !important; margin-right: 5px;">
+                <span class="post-date" style="margin-bottom: 0; margin-top: 0;">April 1, 2010</span>
+            </a>
+
+            <!-- Render tags as pills if the article has tags -->
+            <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+</div>
+
+        </div>    
+    <a href="/en/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing! Pay 100,- € for a Coat of Arms"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+        <img src="/en/crowdsourcing-zahle-100-eur-fur-wappen//gartner_wappen.jpg"
+            style="height: 100px; float: left; margin-right: 15px; margin-bottom: 10px;">
+    </a>
+    <a href="/en/crowdsourcing-zahle-100-eur-fur-wappen/" rel="bookmark" title="Permalink to Crowdsourcing! Pay 100,- € for a Coat of Arms"
+        style="color: black !important; display: block; text-decoration-color: black !important;">
+
+        <div style="color: black !important; margin-top: 5px;">
+            A crowdsourcing call with a 100 Euro reward for a modernized design of the historical Gartner family coat of arms from 1699.
+        </div>
+    </a>
+    <span class="comment-count" data-giscus-comments="en/crowdsourcing-zahle-100-eur-fur-wappen/">
+        <span class="comment-num">Counting comments...</span>
+    </span>
+    <div style="clear: both;"></div>
+</div></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
