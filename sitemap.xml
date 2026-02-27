@@ -1,301 +1,296 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>/peoplez/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/peoplez/</loc>
+<lastmod>2026-02-26</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/how-i-code-with-claude/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/how-i-code-with-claude/</loc>
+<lastmod>2026-02-14</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/learning-sketchup/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/learning-sketchup/</loc>
+<lastmod>2026-02-09</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/interior-architectural-design-resources/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/interior-architectural-design-resources/</loc>
+<lastmod>2026-02-04</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/swiftdata-on-icloud/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/swiftdata-on-icloud/</loc>
+<lastmod>2025-11-02</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/embeddings-in-swift-on-apple-silicon/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/embeddings-in-swift-on-apple-silicon/</loc>
+<lastmod>2025-09-30</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/swiftui-cheatsheet/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/swiftui-cheatsheet/</loc>
+<lastmod>2025-08-03</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/beyond-vibe-coding-redesigning-filmz/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/beyond-vibe-coding-redesigning-filmz/</loc>
+<lastmod>2025-05-21</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/mcp-playground/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/mcp-playground/</loc>
+<lastmod>2025-05-18</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/setting-up-a-mac/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/setting-up-a-mac/</loc>
+<lastmod>2025-05-06</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/autocompleting-my-blog/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/autocompleting-my-blog/</loc>
+<lastmod>2025-05-04</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/digital-garden/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/digital-garden/</loc>
+<lastmod>2025-04-18</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/thoughts-on-swift-architecture/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/thoughts-on-swift-architecture/</loc>
+<lastmod>2025-03-24</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/optimal-swimming-slot/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/optimal-swimming-slot/</loc>
+<lastmod>2025-03-14</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/solid-comments-in-static-website/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/solid-comments-in-static-website/</loc>
+<lastmod>2025-02-11</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/cursor-magic/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/cursor-magic/</loc>
+<lastmod>2025-02-05</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/development-environment-on-mac/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/development-environment-on-mac/</loc>
+<lastmod>2025-01-15</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/sivananda-prayers/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/sivananda-prayers/</loc>
+<lastmod>2024-12-02</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/selecting-a-jekyll-theme/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/selecting-a-jekyll-theme/</loc>
+<lastmod>2024-11-29</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/setting-up-jupyter-lab-on-mac/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/setting-up-jupyter-lab-on-mac/</loc>
+<lastmod>2024-04-08</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/double-ai-chat/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/double-ai-chat/</loc>
+<lastmod>2023-05-07</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/noch-ein-guter-von-cecile/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/noch-ein-guter-von-cecile/</loc>
+<lastmod>2022-09-12</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/ceciles-bester-witz/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/ceciles-bester-witz/</loc>
+<lastmod>2022-09-03</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/life-is-good-cycling-to-work/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/life-is-good-cycling-to-work/</loc>
+<lastmod>2021-12-03</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/named-volumes-with-docker-compose/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/named-volumes-with-docker-compose/</loc>
+<lastmod>2021-09-04</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/testing-dried-mango/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/testing-dried-mango/</loc>
+<lastmod>2021-01-24</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/my-notes-from-rc3-2020/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/my-notes-from-rc3-2020/</loc>
+<lastmod>2020-12-28</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/mac-recording-screen-sound/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/mac-recording-screen-sound/</loc>
+<lastmod>2020-06-11</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/setting-up-my-terminal/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/setting-up-my-terminal/</loc>
+<lastmod>2020-02-06</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/tips-for-travelling-vietnam/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/tips-for-travelling-vietnam/</loc>
+<lastmod>2019-11-17</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/markdown-editors/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/markdown-editors/</loc>
+<lastmod>2019-11-08</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/svg-programming/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/svg-programming/</loc>
+<lastmod>2019-04-15</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/image-encoding-in-node-js/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/image-encoding-in-node-js/</loc>
+<lastmod>2019-04-11</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/my-static-website/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/my-static-website/</loc>
+<lastmod>2016-08-08</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/playing-around-with-d3/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/playing-around-with-d3/</loc>
+<lastmod>2016-02-13</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/ping-visualization-and-analysis/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/ping-visualization-and-analysis/</loc>
+<lastmod>2016-01-08</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/the-art-of-command-line/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/the-art-of-command-line/</loc>
+<lastmod>2016-01-06</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/sociolog-your-trail-across-social-media/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/sociolog-your-trail-across-social-media/</loc>
+<lastmod>2016-01-04</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/visited-countries/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/visited-countries/</loc>
+<lastmod>2016-01-04</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/siteweightwatcher-keeps-your-website-slim/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/siteweightwatcher-keeps-your-website-slim/</loc>
+<lastmod>2015-12-27</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/beautiful-websites/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/beautiful-websites/</loc>
+<lastmod>2015-12-26</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/adding-search-to-a-static-site/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/adding-search-to-a-static-site/</loc>
+<lastmod>2015-12-19</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/playing-with-highcharts/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/playing-with-highcharts/</loc>
+<lastmod>2015-12-16</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/zipf-mystery/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/zipf-mystery/</loc>
+<lastmod>2015-12-09</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/playing-with-javascript/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/playing-with-javascript/</loc>
+<lastmod>2015-12-06</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/how-i-moved-to-github-jbake/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/how-i-moved-to-github-jbake/</loc>
+<lastmod>2015-11-30</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/rex-hotel-in-saigon/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/rex-hotel-in-saigon/</loc>
+<lastmod>2015-06-05</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/absacker-aka-nightcap/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/absacker-aka-nightcap/</loc>
+<lastmod>2015-06-01</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/sugar-cane-drink/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/sugar-cane-drink/</loc>
+<lastmod>2015-06-01</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/vietnamese-fast-food/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/vietnamese-fast-food/</loc>
+<lastmod>2015-06-01</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/friday-night-in-da-nang/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/friday-night-in-da-nang/</loc>
+<lastmod>2015-05-29</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/welche-ist-die-schonste-bibliothek-munchens/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/welche-ist-die-schonste-bibliothek-munchens/</loc>
+<lastmod>2013-06-14</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/indien-tag-2/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/indien-tag-2/</loc>
+<lastmod>2012-04-11</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/indien-tag-1/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/indien-tag-1/</loc>
+<lastmod>2012-04-10</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/ipad-hologram/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/ipad-hologram/</loc>
+<lastmod>2011-03-31</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/a-proxy-for-offline-surfing/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/a-proxy-for-offline-surfing/</loc>
+<lastmod>2010-07-29</lastmod>
+<priority>0.8</priority>
   </url>
-
   <url>
-    <loc>/crowdsourcing-zahle-100-eur-fur-wappen/</loc>
-    <priority>0.8</priority>
+    <loc>https://grtnr.com/crowdsourcing-zahle-100-eur-fur-wappen/</loc>
+<lastmod>2010-04-01</lastmod>
+<priority>0.8</priority>
   </url>
-
-
   <url>
-    <loc>/about/</loc>
+    <loc>https://grtnr.com/about/</loc>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>/impressum/</loc>
+    <loc>https://grtnr.com/impressum/</loc>
     <priority>1.0</priority>
   </url>
-
-
 </urlset>
