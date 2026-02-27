@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="Setting up Python on a Mac can by tricky. The number of options is big, and they might interact strangely. Also you have to remember which installation method you used once you want to change version or upgrade. This post should remind me how I did it 😉" />
+    <meta name="description" content="Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist groß, und sie können seltsam interagieren. Außerdem müssen Sie sich merken, welche Installationsmethode Sie verwendet haben, wenn Sie die Version ändern oder ein Upgrade durchführen möchten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe 😉" />
     <meta name="tags" content="tech, mac" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Setting Up Jupyter Lab On Mac" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/de/setting-up-jupyter-lab-on-mac/" />
-  <meta property="og:description" content="Setting up Python on a Mac can by tricky. The number of options is big, and they might interact strangely. Also you have to remember which installation method you used once you want to change version or upgrade. This post should remind me how I did it 😉" />
+  <meta property="og:description" content="Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist groß, und sie können seltsam interagieren. Außerdem müssen Sie sich merken, welche Installationsmethode Sie verwendet haben, wenn Sie die Version ändern oder ein Upgrade durchführen möchten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe 😉" />
   <meta property="og:image" content="https://grtnr.com/de/setting-up-jupyter-lab-on-mac/python_on_mac.png" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Setting Up Jupyter Lab On Mac" />
-  <meta name="twitter:description" content="Setting up Python on a Mac can by tricky. The number of options is big, and they might interact strangely. Also you have to remember which installation method you used once you want to change version or upgrade. This post should remind me how I did it 😉" />
+  <meta name="twitter:description" content="Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist groß, und sie können seltsam interagieren. Außerdem müssen Sie sich merken, welche Installationsmethode Sie verwendet haben, wenn Sie die Version ändern oder ein Upgrade durchführen möchten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe 😉" />
   <meta name="twitter:image" content="https://grtnr.com/de/setting-up-jupyter-lab-on-mac/python_on_mac.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -59,7 +59,7 @@
     "@type": "Article",
     "headline": "Setting Up Jupyter Lab On Mac",
     "url": "https://grtnr.com/de/setting-up-jupyter-lab-on-mac/",
-"description": "Setting up Python on a Mac can by tricky. The number of options is big, and they might interact strangely. Also you have to remember which installation method you used once you want to change version or upgrade. This post should remind me how I did it \ud83d\ude09","image": "https://grtnr.com/de/setting-up-jupyter-lab-on-mac/python_on_mac.png","datePublished": "2024-04-08T00:00:00",    "author": {
+"description": "Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist gro\u00df, und sie k\u00f6nnen seltsam interagieren. Au\u00dferdem m\u00fcssen Sie sich merken, welche Installationsmethode Sie verwendet haben, wenn Sie die Version \u00e4ndern oder ein Upgrade durchf\u00fchren m\u00f6chten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe \ud83d\ude09","image": "https://grtnr.com/de/setting-up-jupyter-lab-on-mac/python_on_mac.png","datePublished": "2024-04-08T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:25:38.
+      Last built 27.02.2026 11:22:03.
   </div>
 </div>
   <div class="wrap">
@@ -143,62 +143,66 @@ Français
 
     </div>
 
+    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
+      Translated by: gpt-4o-2024-08-06
+      | <a href="/setting-up-jupyter-lab-on-mac/" style="color: #0066cc;">Original version</a>
+    </div>
 
-    <p>Setting up Python on a Mac can by tricky. The number of options is big, and they might interact strangely. Also you have to remember which installation method you used once you want to change version or upgrade. This post should remind me how I did it&nbsp;😉</p>
-<h2 id="installing-python">Installing&nbsp;Python</h2>
-<p>There are many ways to install Python on Mac and to manage it&#8217;s&nbsp;versions:</p>
+    <p>Die Einrichtung von Python auf einem Mac kann knifflig sein. Die Anzahl der Optionen ist groß, und sie können seltsam interagieren. Außerdem müssen Sie sich merken, welche Installationsmethode Sie verwendet haben, wenn Sie die Version ändern oder ein Upgrade durchführen möchten. Dieser Beitrag soll mich daran erinnern, wie ich es gemacht habe&nbsp;😉</p>
+<h2 id="installation-von-python">Installation von&nbsp;Python</h2>
+<p>Es gibt viele Möglichkeiten, Python auf einem Mac zu installieren und seine Versionen zu&nbsp;verwalten:</p>
 <ul>
-<li>The Python installed on&nbsp;MacOS</li>
+<li>Das auf MacOS installierte&nbsp;Python</li>
 <li><code>brew</code></li>
 <li>Anaconda</li>
 <li><code>pyenv</code></li>
 <li>&#8230;</li>
 </ul>
-<p>What worked best for me is <strong>pyenv</strong>:</p>
+<p>Was für mich am besten funktioniert hat, ist <strong>pyenv</strong>:</p>
 <ul>
-<li>Install&nbsp;it: <code>brew install pyenv</code>. I assume you have <a href="https://brew.sh" rel="noopener noreferrer" target="_blank">Homebrew</a>&nbsp;installed&#8230;</li>
-<li>See the options and commands&nbsp;offered: <code>pyenv</code></li>
-<li>List all Python versions available to&nbsp;pyenv: <code>pyenv versions</code></li>
-<li>Install a&nbsp;version: <code>pyenv install 3.12</code> (That&#8217;s the Python version I currently&nbsp;use)</li>
-<li>Set the version that is globally&nbsp;used: <code>pyenv global 3.12</code></li>
-<li>Check what version is globally&nbsp;set: <code>pyenv global</code> or <code>python --version</code></li>
+<li>Installieren Sie&nbsp;es: <code>brew install pyenv</code>. Ich gehe davon aus, dass Sie <a href="https://brew.sh" rel="noopener noreferrer" target="_blank">Homebrew</a> installiert&nbsp;haben&#8230;</li>
+<li>Sehen Sie sich die angebotenen Optionen und Befehle&nbsp;an: <code>pyenv</code></li>
+<li>Listen Sie alle Python-Versionen auf, die pyenv zur Verfügung&nbsp;stehen: <code>pyenv versions</code></li>
+<li>Installieren Sie eine&nbsp;Version: <code>pyenv install 3.12</code> (Das ist die Python-Version, die ich derzeit&nbsp;verwende)</li>
+<li>Setzen Sie die Version, die global verwendet&nbsp;wird: <code>pyenv global 3.12</code></li>
+<li>Überprüfen Sie, welche Version global gesetzt&nbsp;ist: <code>pyenv global</code> oder <code>python --version</code></li>
 </ul>
-<h2 id="create-working-directory">Create working&nbsp;directory</h2>
-<p>Create the directory in which you want to work in the context of your project. I keep all my coding projects&nbsp;under <code>~/git</code>. This way I know that all the projects&nbsp;under <code>~/git</code> don&#8217;t need to be backed up as they are in a git&nbsp;repo.</p>
-<p>Example:</p>
+<h2 id="arbeitsverzeichnis-erstellen">Arbeitsverzeichnis&nbsp;erstellen</h2>
+<p>Erstellen Sie das Verzeichnis, in dem Sie im Kontext Ihres Projekts arbeiten möchten. Ich halte alle meine Coding-Projekte&nbsp;unter <code>~/git</code>. Auf diese Weise weiß ich, dass alle Projekte&nbsp;unter <code>~/git</code> nicht gesichert werden müssen, da sie in einem Git-Repo&nbsp;sind.</p>
+<p>Beispiel:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git
 mkdir<span class="w"> </span>my_python_project
 <span class="nb">cd</span><span class="w"> </span>my_python_project
 </code></pre></div>
-<h2 id="create-a-local-env">Create a local&nbsp;env</h2>
-<p>In order to provide my project it&#8217;s own python environment I use <a href="https://docs.python.org/3/library/venv.html" rel="noopener noreferrer" target="_blank">Python&#8217;s Virtual Environments</a>:</p>
+<h2 id="lokale-umgebung-erstellen">Lokale Umgebung&nbsp;erstellen</h2>
+<p>Um meinem Projekt eine eigene Python-Umgebung bereitzustellen, verwende ich <a href="https://docs.python.org/3/library/venv.html" rel="noopener noreferrer" target="_blank">Pythons Virtual Environments</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/git/my_python_project
 python3.12<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </code></pre></div>
-<p>This way I have created an environement inside&nbsp;the <code>.env</code> sub-dir. To activate it&nbsp;use <code>source .venv/bin/activate</code>.</p>
-<p><strong>Note</strong>: As&nbsp;my <code>.env</code> sub-directory should not be in the git repo, it needs to be listed in&nbsp;the <code>.gitignore</code> file.</p>
-<h2 id="install-jupyter-lab">Install Jupyter&nbsp;Lab</h2>
-<p>Now that I have the Python environment I can install Jupyter. Make sure I am in the right directory and the Python environment is&nbsp;activated:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Go in my project dir and activate it's Python environment</span>
+<p>Auf diese Weise habe ich eine Umgebung im&nbsp;Unterverzeichnis <code>.env</code> erstellt. Um sie zu aktivieren, verwenden&nbsp;Sie <code>source .venv/bin/activate</code>.</p>
+<p><strong>Hinweis</strong>: Da&nbsp;mein <code>.env</code>-Unterverzeichnis nicht im Git-Repo sein sollte, muss es in&nbsp;der <code>.gitignore</code>-Datei aufgeführt&nbsp;werden.</p>
+<h2 id="jupyter-lab-installieren">Jupyter Lab&nbsp;installieren</h2>
+<p>Jetzt, da ich die Python-Umgebung habe, kann ich Jupyter installieren. Stellen Sie sicher, dass ich im richtigen Verzeichnis bin und die Python-Umgebung aktiviert&nbsp;ist:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Gehen Sie in mein Projektverzeichnis und aktivieren Sie dessen Python-Umgebung</span>
 <span class="nb">cd</span><span class="w"> </span>~/git/my_python_project
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 
-<span class="c1"># Install Jupyter Lab in this environment</span>
+<span class="c1"># Installieren Sie Jupyter Lab in dieser Umgebung</span>
 pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
 
-<span class="c1"># Very often it asks me to upgrade pip itself</span>
+<span class="c1"># Sehr oft wird mir empfohlen, pip selbst zu aktualisieren</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 
-<span class="c1"># Start Jupyter Lab</span>
+<span class="c1"># Starten Sie Jupyter Lab</span>
 jupyter<span class="w"> </span>lab
-<span class="c1"># Now wait a bit and your browser should open on http://localhost:8888/lab</span>
+<span class="c1"># Warten Sie nun ein wenig und Ihr Browser sollte sich auf http://localhost:8888/lab öffnen</span>
 </code></pre></div>
-<h2 id="create-a-new-notebook">Create a new&nbsp;notebook</h2>
-<p>Your browser should be open in a fresh Jupyter Lab environment:
-<img alt="An empty Lab environment" src="/setting-up-jupyter-lab-on-mac/jupyter_overview.png"/></p>
-<p>Click on <em>Notebook &gt; Python 3</em> and your first Notebook should be up <span class="amp">&amp;</span>&nbsp;running:</p>
-<p><img alt="A fresh nbotebook" src="/setting-up-jupyter-lab-on-mac/jupyter_detail.png"/></p>
-<p>To get going within Jupyter Lab, follow their <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html" rel="noopener noreferrer" target="_blank">User Guide</a>.</p>
+<h2 id="ein-neues-notebook-erstellen">Ein neues Notebook&nbsp;erstellen</h2>
+<p>Ihr Browser sollte in einer frischen Jupyter Lab-Umgebung geöffnet sein:
+<img alt="Eine leere Lab-Umgebung" src="/setting-up-jupyter-lab-on-mac/jupyter_overview.png"/></p>
+<p>Klicken Sie auf <em>Notebook &gt; Python 3</em> und Ihr erstes Notebook sollte startklar&nbsp;sein:</p>
+<p><img alt="Ein frisches Notebook" src="/setting-up-jupyter-lab-on-mac/jupyter_detail.png"/></p>
+<p>Um mit Jupyter Lab loszulegen, folgen Sie deren <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html" rel="noopener noreferrer" target="_blank">Benutzerhandbuch</a>.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

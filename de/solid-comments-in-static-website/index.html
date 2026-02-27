@@ -35,20 +35,20 @@
   </script>
 
 
-    <meta name="description" content="I added comments to my static website. Here's how I did it." />
+    <meta name="description" content="Ich habe Kommentare zu meiner statischen Website hinzugefügt. Hier erfahren Sie, wie ich es gemacht habe." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Solid Comments In Static Website" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/de/solid-comments-in-static-website/" />
-  <meta property="og:description" content="I added comments to my static website. Here's how I did it." />
+  <meta property="og:description" content="Ich habe Kommentare zu meiner statischen Website hinzugefügt. Hier erfahren Sie, wie ich es gemacht habe." />
   <meta property="og:image" content="https://grtnr.com/de/solid-comments-in-static-website/screenshot_comment.jpg" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Solid Comments In Static Website" />
-  <meta name="twitter:description" content="I added comments to my static website. Here's how I did it." />
+  <meta name="twitter:description" content="Ich habe Kommentare zu meiner statischen Website hinzugefügt. Hier erfahren Sie, wie ich es gemacht habe." />
   <meta name="twitter:image" content="https://grtnr.com/de/solid-comments-in-static-website/screenshot_comment.jpg" />
 
   <!-- JSON-LD Structured Data -->
@@ -58,7 +58,7 @@
     "@type": "Article",
     "headline": "Solid Comments In Static Website",
     "url": "https://grtnr.com/de/solid-comments-in-static-website/",
-"description": "I added comments to my static website. Here\u0027s how I did it.","image": "https://grtnr.com/de/solid-comments-in-static-website/screenshot_comment.jpg","datePublished": "2025-02-11T00:00:00",    "author": {
+"description": "Ich habe Kommentare zu meiner statischen Website hinzugef\u00fcgt. Hier erfahren Sie, wie ich es gemacht habe.","image": "https://grtnr.com/de/solid-comments-in-static-website/screenshot_comment.jpg","datePublished": "2025-02-11T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -92,7 +92,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:25:38.
+      Last built 27.02.2026 11:22:03.
   </div>
 </div>
   <div class="wrap">
@@ -133,20 +133,24 @@ Français
       
     </div>
 
+    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
+      Translated by: gpt-4o-2024-08-06
+      | <a href="/solid-comments-in-static-website/" style="color: #0066cc;">Original version</a>
+    </div>
 
-    <p><strong><span class="caps">TL</span>;<span class="caps">DR</span>:</strong> I added comments to my static website. Here&#8217;s how I did it - including some technical details. I researched amongst different possible solutions for the most solid one, integrated it for all posts and added a counter of the number of comments in the post overview&nbsp;page.</p>
-<p><strong>2025-05-23 Update</strong> Since I moved from Jekyll to <a href="https://getpelican.com" rel="noopener noreferrer" target="_blank">Pelican</a>, I updated some&nbsp;details.</p>
-<h2 id="selecting-a-solution">Selecting a&nbsp;solution</h2>
-<p>As i planned to play around with the new <a href="https://openai.com/index/introducing-deep-research/" rel="noopener noreferrer" target="_blank">Deep Research Model from OpenAI</a> I gave it a spin with this topic: <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">feel free to read here</a>. Overall the research was helpful and I ended up using <a href="https://giscus.app/" rel="noopener noreferrer" target="_blank">Giscus</a> for the comments. Partly because it felt the most robust and reliable, partly because I had really bad expoerience with disqus some years&nbsp;ago.</p>
-<p>The choice was based on the set of criteria I gave to the model. Here are the most important&nbsp;ones:</p>
+    <p><strong>Kurzfassung:</strong> Ich habe Kommentare zu meiner statischen Website hinzugefügt. Hier erfahren Sie, wie ich es gemacht habe – einschließlich einiger technischer Details. Ich habe verschiedene mögliche Lösungen recherchiert, um die solideste zu finden, sie für alle Beiträge integriert und einen Zähler für die Anzahl der Kommentare auf der Beitragsübersichtsseite&nbsp;hinzugefügt.</p>
+<p><strong>2025-05-23 Update</strong> Seitdem ich von Jekyll zu <a href="https://getpelican.com" rel="noopener noreferrer" target="_blank">Pelican</a> gewechselt bin, habe ich einige Details&nbsp;aktualisiert.</p>
+<h2 id="auswahl-einer-losung">Auswahl einer&nbsp;Lösung</h2>
+<p>Da ich vorhatte, mit dem neuen <a href="https://openai.com/index/introducing-deep-research/" rel="noopener noreferrer" target="_blank">Deep Research Model von OpenAI</a> zu experimentieren, habe ich es bei diesem Thema ausprobiert: <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">lesen Sie gerne hier</a>. Insgesamt war die Recherche hilfreich und ich habe mich letztendlich für <a href="https://giscus.app/" rel="noopener noreferrer" target="_blank">Giscus</a> für die Kommentare entschieden. Teilweise, weil es am robustesten und zuverlässigsten erschien, teilweise, weil ich vor einigen Jahren wirklich schlechte Erfahrungen mit Disqus gemacht&nbsp;habe.</p>
+<p>Die Wahl basierte auf den Kriterien, die ich dem Modell gegeben habe. Hier sind die&nbsp;wichtigsten:</p>
 <ul>
-<li>No self-hosted server – I don&#8217;t want to manage (and pay 😉) a&nbsp;server.</li>
-<li>Data portability – the comments can&nbsp;exported.</li>
-<li>Privacy-friendly – no extra trackers or ads beyond what I already use (e.g. Google&nbsp;Analytics).</li>
-<li>Markdown support – allow rich formatting (code blocks, etc.) suited for technical&nbsp;discussions.</li>
-<li>Spam protection – has measures to reduce spam, especially if allowing anonymous or unauthenticated&nbsp;comments.</li>
+<li>Kein selbst gehosteter Server – Ich möchte keinen Server verwalten (und bezahlen&nbsp;😉).</li>
+<li>Datenportabilität – Die Kommentare können exportiert&nbsp;werden.</li>
+<li>Datenschutzfreundlich – keine zusätzlichen Tracker oder Werbung über das hinaus, was ich bereits verwende (z. B. Google&nbsp;Analytics).</li>
+<li>Markdown-Unterstützung – ermöglicht reichhaltige Formatierung (Codeblöcke usw.), geeignet für technische&nbsp;Diskussionen.</li>
+<li>Spamschutz – verfügt über Maßnahmen zur Reduzierung von Spam, insbesondere wenn anonyme oder nicht authentifizierte Kommentare erlaubt&nbsp;sind.</li>
 </ul>
-<p>The tools that Deep Research <em>analyzed</em>&nbsp;were</p>
+<p>Die Werkzeuge, die Deep Research <em>analysiert</em> hat,&nbsp;waren:</p>
 <ul>
 <li>Giscus</li>
 <li>Utterances</li>
@@ -154,56 +158,57 @@ Français
 <li>Commento</li>
 <li>Hyvor&nbsp;Talk</li>
 <li>Disqus</li>
-<li>Some <em>self made</em>&nbsp;solutions</li>
+<li>Einige <em>selbstgemachte</em>&nbsp;Lösungen</li>
 </ul>
-<h2 id="integrating-giscus">Integrating&nbsp;Giscus</h2>
-<p>In the follow up to it&#8217;s research I asked the model to give me a step by step guide on how to integrate the solution. This was far less reliable than the first research, but still&nbsp;helpful.</p>
-<p>Here is the executive summary (the details are in the <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">chat I had with the <span class="caps">AI</span></a>):</p>
+<h2 id="integration-von-giscus">Integration von&nbsp;Giscus</h2>
+<p>Im Anschluss an die Recherche habe ich das Modell gebeten, mir eine Schritt-für-Schritt-Anleitung zur Integration der Lösung zu geben. Dies war weitaus weniger zuverlässig als die erste Recherche, aber dennoch&nbsp;hilfreich.</p>
+<p>Hier ist die Zusammenfassung (die Details finden Sie im <a href="https://chatgpt.com/share/67a8aea4-9bc8-8009-917b-8855ebdd4776" rel="noopener noreferrer" target="_blank">Chat, den ich mit der <span class="caps">KI</span> hatte</a>):</p>
 <ul>
-<li>Step 1: Enable GitHub Discussions for Your Repository. That means the repo into which the static site is generated (which sometimes is not the same as the&nbsp;source).</li>
-<li>Go to your GitHub&nbsp;repository</li>
-<li>Navigate to Settings &gt;&nbsp;General.</li>
-<li>Scroll down to the Discussions section and enable&nbsp;it.</li>
-<li>Step in between, that the <span class="caps">AI</span> missed to mention: Install giscus for all or some of your repos. <a href="https://github.com/apps/giscus/installations/select_target" rel="noopener noreferrer" target="_blank">Here</a>
+<li>Schritt 1: Aktivieren Sie GitHub Discussions für Ihr Repository. Das bedeutet das Repo, in das die statische Seite generiert wird (was manchmal nicht dasselbe wie die Quelle&nbsp;ist).</li>
+<li>Gehen Sie zu Ihrem&nbsp;GitHub-Repository</li>
+<li>Navigieren Sie zu Einstellungen &gt;&nbsp;Allgemein.</li>
+<li>Scrollen Sie nach unten zum Abschnitt Discussions und aktivieren Sie&nbsp;ihn.</li>
+<li>Zwischenschritt, den die <span class="caps">KI</span> nicht erwähnt hat: Installieren Sie Giscus für alle oder einige Ihrer Repos. <a href="https://github.com/apps/giscus/installations/select_target" rel="noopener noreferrer" target="_blank">Hier</a>
 <img alt="alt text" src="/solid-comments-in-static-website/image.png"/></li>
-<li>Step 2: Install Giscus and Configure&nbsp;It</li>
-<li>Visit the Giscus setup page:&nbsp;https://giscus.app/.</li>
-<li>Under &#8220;Repository&#8221;, enter your repo name. You now should see the green check mark that your repo meets all the criteria for using&nbsp;giscus.</li>
-<li>The “Page discussion mapping” option dictates a relationship between your pages, e.g an article, and a GitHub discussion. I selected, the&nbsp;pathname</li>
-<li>For the discussions category I selected “general”.
-    Set the Theme to &#8220;Match <span class="caps">OS</span>&#8221; or manually define light and dark mode.
-    Click &#8220;Copy Code&#8221; once you’ve generated the <script> tag.</li>
+<li>Schritt 2: Installieren und Konfigurieren Sie&nbsp;Giscus</li>
+<li>Besuchen Sie die Giscus-Einrichtungsseite:&nbsp;https://giscus.app/.</li>
+<li>Unter &#8220;Repository&#8221; geben Sie Ihren Reponamen ein. Sie sollten jetzt das grüne Häkchen sehen, dass Ihr Repo alle Kriterien für die Verwendung von Giscus&nbsp;erfüllt.</li>
+<li>Die Option „Page discussion mapping“ bestimmt eine Beziehung zwischen Ihren Seiten, z. B. einem Artikel, und einer GitHub-Diskussion. Ich habe den Pfadnamen&nbsp;ausgewählt.</li>
+<li>Für die Diskussionskategorie habe ich „general“ ausgewählt.
+    Setzen Sie das Theme auf &#8220;Match <span class="caps">OS</span>&#8221; oder definieren Sie manuell den hellen und dunklen Modus.
+    Klicken Sie auf &#8220;Code kopieren&#8221;, sobald Sie das <script>-Tag generiert&nbsp;haben.</li>
 </ul>
 <p><img alt="Giscus Features" src="/solid-comments-in-static-website/giscus-features.png"></p>
 <ul>
-<li>Step 3: Add Giscus to Your Jekyll Post Template (or Pelican 😀). - - Step 4: Style Giscus to Match Lanyon Theme. I skipped this one, as the styling looked pretty good <em>naked</em> to&nbsp;me.</li>
-<li>Step 5: Display Comment Count in Post Summaries (see&nbsp;below)</li>
-<li>Step 6: Commit and Push Changes -&nbsp;Duh...</li>
-<li>Step 7: Test Your&nbsp;Setup</li>
+<li>Schritt 3: Fügen Sie Giscus zu Ihrer Jekyll-Beitragsvorlage hinzu (oder Pelican&nbsp;😀). </li>
+<li>Schritt 4: Stylen Sie Giscus, um zum Lanyon-Theme zu passen. Diesen Schritt habe ich übersprungen, da das Styling für mich <em>nackt</em> ziemlich gut&nbsp;aussah.</li>
+<li>Schritt 5: Zeigen Sie die Kommentaranzahl in den Beitragszusammenfassungen an (siehe&nbsp;unten)</li>
+<li>Schritt 6: Änderungen committen und pushen -&nbsp;Klar...</li>
+<li>Schritt 7: Testen Sie Ihr&nbsp;Setup</li>
 </ul>
-<h2 id="adding-the-comment-counter">Adding the comment&nbsp;counter</h2>
-<p>After fiddling around a bit and smoothing the edges everything worked fine. But there was one feature I miussed: I wanted to see the number of comments a blog post has in the post overview&nbsp;page.</p>
-<p><img alt="Comment counter" src="/solid-comments-in-static-website/screenshot_comment_counter.jpg" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></p>
-<p>So I spun up ChatGPT again and got another <a href="https://chatgpt.com/share/67ab5f69-4ddc-8009-8471-a35e00cb6a43">research result</a>. The rough steps&nbsp;are:</p>
+<h2 id="hinzufugen-des-kommentarzahlers">Hinzufügen des&nbsp;Kommentarzählers</h2>
+<p>Nachdem ich ein wenig herumprobiert und die Kanten geglättet hatte, funktionierte alles einwandfrei. Aber es gab ein Feature, das ich vermisste: Ich wollte die Anzahl der Kommentare zu einem Blogbeitrag auf der Beitragsübersichtsseite&nbsp;sehen.</p>
+<p><img alt="Kommentarzähler" src="/solid-comments-in-static-website/screenshot_comment_counter.jpg" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></p>
+<p>Also habe ich ChatGPT erneut gestartet und ein weiteres <a href="https://chatgpt.com/share/67ab5f69-4ddc-8009-8471-a35e00cb6a43">Rechercheergebnis</a> erhalten. Die groben Schritte&nbsp;sind:</p>
 <ul>
-<li>Step 1: Add a Placeholder for Comment Count. In my <a href="https://github.com/tillg/grtnr.com_2024/blob/main/_includes/post_preview.html"><code>post_preview.html</code></a> I added&nbsp;a <code>&lt;span&gt;</code> that actually needed to be a bit different from what the <span class="caps">AI</span>&nbsp;suggested:</li>
+<li>Schritt 1: Fügen Sie einen Platzhalter für die Kommentaranzahl hinzu. In meinem <a href="https://github.com/tillg/grtnr.com_2024/blob/main/_includes/post_preview.html"><code>post_preview.html</code></a> habe ich&nbsp;ein <code>&lt;span&gt;</code> hinzugefügt, das tatsächlich etwas anders sein musste als das, was die <span class="caps">KI</span> vorgeschlagen&nbsp;hat:</li>
 </ul>
 <p><code>html
   &lt;span class="comment-count" data-giscus-comments="{{ post.url }}"&gt;
-    &lt;span class="comment-num"&gt;Counting comments...&lt;/span&gt;
+    &lt;span class="comment-num"&gt;Kommentare zählen...&lt;/span&gt;
   &lt;/span&gt;</code></p>
 <ul>
-<li>Step 2: Add JavaScript to Fetch the Comment Count. I added a script that fetches the comment count from the GitHub Discussions <span class="caps">API</span> and updates the comment count. The script suggested needed some fixes and ended up in this <a href="https://github.com/tillg/grtnr.com_2024/blob/main/assets/js/giscus-comments.js">Event Listener</a>. Don&#8217;t be surprised by the two lines with dashes (&#8212;-) at the top, I&#8217;ll explain them below&#8230; Noteworthy here&nbsp;are</li>
-<li>Dealing with&nbsp;the <code>accessToken</code> (explained&nbsp;below)</li>
-<li>This argument of the grahQL&nbsp;query: <code>categoryId: "DIC_kwDONYRp_c4Cm0cH"</code>. This is the <span class="caps">ID</span> of the category that contains the discussions of the&nbsp;repository.</li>
-<li>Note: What helped me for debugging <span class="amp">&amp;</span> fixing this function is the <a href="https://docs.github.com/en/graphql/overview/explorer">Github GraphQL Explorer</a>.</li>
-<li>Step 3: Include the JavaScript in Your Jekyll Site. In my case I added this script reference at the bottom of the <a href="https://github.com/tillg/grtnr.com_2024/blob/main/_layouts/default.html"><code>default.html</code> layout file</a>.</li>
-<li>Step 4: Test the Comment Count. After some testing and fixing, it worked eventually&nbsp;locally.</li>
+<li>Schritt 2: Fügen Sie JavaScript hinzu, um die Kommentaranzahl abzurufen. Ich habe ein Skript hinzugefügt, das die Kommentaranzahl von der GitHub Discussions <span class="caps">API</span> abruft und die Kommentaranzahl aktualisiert. Das vorgeschlagene Skript benötigte einige Korrekturen und endete in diesem <a href="https://github.com/tillg/grtnr.com_2024/blob/main/assets/js/giscus-comments.js">Event Listener</a>. Lassen Sie sich nicht von den beiden Zeilen mit Strichen (&#8212;-) oben überraschen, ich werde sie unten erklären&#8230; Bemerkenswert hier&nbsp;sind:</li>
+<li>Umgang mit&nbsp;dem <code>accessToken</code> (unten&nbsp;erklärt)</li>
+<li>Dieses Argument der&nbsp;grahQL-Abfrage: <code>categoryId: "DIC_kwDONYRp_c4Cm0cH"</code>. Dies ist die <span class="caps">ID</span> der Kategorie, die die Diskussionen des Repositories&nbsp;enthält.</li>
+<li>Hinweis: Was mir beim Debuggen und Beheben dieser Funktion geholfen hat, ist der <a href="https://docs.github.com/en/graphql/overview/explorer">Github GraphQL Explorer</a>.</li>
+<li>Schritt 3: Integrieren Sie das JavaScript in Ihre Jekyll-Site. In meinem Fall habe ich diesen Skriptverweis am Ende der <a href="https://github.com/tillg/grtnr.com_2024/blob/main/_layouts/default.html"><code>default.html</code> Layout-Datei</a>&nbsp;hinzugefügt.</li>
+<li>Schritt 4: Testen Sie die Kommentaranzahl. Nach einigen Tests und Korrekturen funktionierte es schließlich&nbsp;lokal.</li>
 </ul>
-<p>The following aspects kept me busy an hour or&nbsp;two:</p>
+<p>Die folgenden Aspekte haben mich ein oder zwei Stunden&nbsp;beschäftigt:</p>
 <ul>
-<li>The <code>accessToken</code>, where and how to get&nbsp;it</li>
-<li>How to get the access token published to Github w/o the token-scanner and protector kicking&nbsp;in</li>
+<li>Das <code>accessToken</code>, wo und wie man es&nbsp;bekommt</li>
+<li>Wie man das Zugriffstoken auf Github veröffentlicht, ohne dass der Token-Scanner und -Schutz aktiviert&nbsp;wird</li>
 </ul></script></li></ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

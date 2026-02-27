@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>Named volumes with docker-compose - grtnr.com</title>
+  <title>Volumes nommés avec docker-compose - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="How to create a volume within docker-compose, used by many containers and within a specific location on the host." />
+    <meta name="description" content="Comment créer un volume avec docker-compose, utilisé par de nombreux conteneurs et à un emplacement spécifique sur l'hôte." />
     <meta name="tags" content="tech" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Named volumes with docker-compose" />
+  <meta property="og:title" content="Volumes nommés avec docker-compose" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/named-volumes-with-docker-compose/" />
-  <meta property="og:description" content="How to create a volume within docker-compose, used by many containers and within a specific location on the host." />
+  <meta property="og:description" content="Comment créer un volume avec docker-compose, utilisé par de nombreux conteneurs et à un emplacement spécifique sur l'hôte." />
   <meta property="og:image" content="https://grtnr.com/fr/named-volumes-with-docker-compose/types-of-mounts-volume.png" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Named volumes with docker-compose" />
-  <meta name="twitter:description" content="How to create a volume within docker-compose, used by many containers and within a specific location on the host." />
+  <meta name="twitter:title" content="Volumes nommés avec docker-compose" />
+  <meta name="twitter:description" content="Comment créer un volume avec docker-compose, utilisé par de nombreux conteneurs et à un emplacement spécifique sur l'hôte." />
   <meta name="twitter:image" content="https://grtnr.com/fr/named-volumes-with-docker-compose/types-of-mounts-volume.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -57,9 +57,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Named volumes with docker-compose",
+    "headline": "Volumes nomm\u00e9s avec docker-compose",
     "url": "https://grtnr.com/fr/named-volumes-with-docker-compose/",
-"description": "How to create a volume within docker-compose, used by many containers and within a specific location on the host.","image": "https://grtnr.com/fr/named-volumes-with-docker-compose/types-of-mounts-volume.png","datePublished": "2021-09-04T00:00:00",    "author": {
+"description": "Comment cr\u00e9er un volume avec docker-compose, utilis\u00e9 par de nombreux conteneurs et \u00e0 un emplacement sp\u00e9cifique sur l\u0027h\u00f4te.","image": "https://grtnr.com/fr/named-volumes-with-docker-compose/types-of-mounts-volume.png","datePublished": "2021-09-04T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:25:38.
+      Last built 27.02.2026 11:22:03.
   </div>
 </div>
   <div class="wrap">
@@ -127,7 +127,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Named volumes with docker-compose
+      Volumes nommés avec docker-compose
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">samedi 4 septembre 2021</span>
@@ -140,15 +140,19 @@ Deutsch
 
     </div>
 
+    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
+      Translated by: gpt-4o-2024-08-06
+      | <a href="/named-volumes-with-docker-compose/" style="color: #0066cc;">Original version</a>
+    </div>
 
-    <p>While working on a side project that uses <strong>docker-compose</strong>, I stumbled over a problem. One that I had encountered before but had never properly investigated or&nbsp;solved.</p>
-<p>Here is what I want to&nbsp;do:</p>
+    <p>En travaillant sur un projet parallèle utilisant <strong>docker-compose</strong>, j&#8217;ai rencontré un problème. Un problème que j&#8217;avais déjà rencontré auparavant mais que je n&#8217;avais jamais correctement étudié ou&nbsp;résolu.</p>
+<p>Voici ce que je veux faire&nbsp;:</p>
 <ul>
-<li>Have a bunch of services running within a docker-compose&nbsp;setup</li>
-<li>Have those services use mounted shares - one share, used by more than one&nbsp;container.</li>
-<li>The problematic thing: I want <strong>multiple containers</strong> to use the <strong>same volume</strong>!</li>
+<li>Avoir un ensemble de services fonctionnant dans une configuration&nbsp;docker-compose</li>
+<li>Faire en sorte que ces services utilisent des partages montés - un partage utilisé par plus d&#8217;un&nbsp;conteneur.</li>
+<li>Le problème : je veux que <strong>plusieurs conteneurs</strong> utilisent le <strong>même volume</strong>&nbsp;!</li>
 </ul>
-<p>Make a long story short, here is how it works&nbsp;smoothly:</p>
+<p>Pour faire court, voici comment cela fonctionne sans problème&nbsp;:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">version</span><span class="p">:</span><span class="w"> </span><span class="sc">'3'</span>
 <span class="nx">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nx">service1</span><span class="p">:</span>
@@ -174,17 +178,17 @@ Deutsch
 <span class="w">           </span><span class="nx">device</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="nx">data</span><span class="o">/</span><span class="nx">content</span>
 <span class="w">           </span><span class="nx">o</span><span class="p">:</span><span class="w"> </span><span class="nx">bind</span>
 </code></pre></div>
-<p>That&#8217;s what&#8217;s going&nbsp;on:</p>
+<p>Voici ce qui se passe&nbsp;:</p>
 <ul>
-<li>We have 2 services of the same type: plain nginx containers for demo&nbsp;purposes.</li>
-<li>They both expose their (internal) port 80 to port 81 resp. 82 to the outside&nbsp;world.</li>
-<li>They both use a volume called <strong>content</strong> that is defined in the volumes&nbsp;section.</li>
+<li>Nous avons 2 services du même type : des conteneurs nginx simples à des fins de&nbsp;démonstration.</li>
+<li>Ils exposent tous deux leur port (interne) 80 sur le port 81 respectivement 82 vers&nbsp;l&#8217;extérieur.</li>
+<li>Ils utilisent tous deux un volume appelé <strong>content</strong> qui est défini dans la section&nbsp;volumes.</li>
 </ul>
-<p>The detail that I missed for so long was the <strong>volumes</strong> section with the <strong>driver_opts</strong>. And while I ran a couple of tests and everything behaved exactly the way I hoped, I couldn&#8217;t find any proper documentation. Here&#8217;s what the <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#driver_opts" rel="noopener noreferrer" target="_blank">docker documentation</a> says about <strong>driver_opts</strong>:</p>
+<p>Le détail que j&#8217;ai manqué pendant si longtemps était la section <strong>volumes</strong> avec les <strong>driver_opts</strong>. Et bien que j&#8217;aie effectué quelques tests et que tout se soit comporté exactement comme je l&#8217;espérais, je n&#8217;ai pas pu trouver de documentation appropriée. Voici ce que dit la <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#driver_opts" rel="noopener noreferrer" target="_blank">documentation docker</a> à propos des <strong>driver_opts</strong>&nbsp;:</p>
 <blockquote>
-<p>Specify a list of options as key-value pairs to pass to the driver for this volume. Those options are driver-dependent - consult the driver’s documentation for more&nbsp;information.</p>
+<p>Spécifiez une liste d&#8217;options sous forme de paires clé-valeur à transmettre au pilote pour ce volume. Ces options dépendent du pilote - consultez la documentation du pilote pour plus&nbsp;d&#8217;informations.</p>
 </blockquote>
-<p>When investigating how things are working, docker&#8217;s inspect tools give some insights: This is the <strong>Mounts</strong> part of <strong>docker inspect&nbsp;service1</strong></p>
+<p>En examinant comment les choses fonctionnent, les outils d&#8217;inspection de docker donnent quelques aperçus : Voici la partie <strong>Mounts</strong> de <strong>docker inspect&nbsp;service1</strong></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="s2">"Mounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="s2">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">,</span>
@@ -198,25 +202,25 @@ Deutsch
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 </code></pre></div>
-<p>At first I was sceptic because of this&nbsp;line:</p>
+<p>Au début, j&#8217;étais sceptique à cause de cette ligne&nbsp;:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">"Source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/var/lib/docker/volumes/docker-playground_content/_data"</span>
 </code></pre></div>
-<p>But it turns out my data is <strong>not</strong> in this docker-managed directory, but where I wanted it. In my case that&#8217;s in <strong>./data/content</strong>. Also the relative path works&nbsp;fine.</p>
+<p>Mais il s&#8217;avère que mes données ne sont <strong>pas</strong> dans ce répertoire géré par docker, mais là où je le voulais. Dans mon cas, c&#8217;est dans <strong>./data/content</strong>. De plus, le chemin relatif fonctionne&nbsp;bien.</p>
 <h3 id="sources">Sources</h3>
-<p>Here are the original sources that helped me&nbsp;most</p>
+<p>Voici les sources originales qui m&#8217;ont le plus&nbsp;aidé</p>
 <ul>
-<li>Docker documentation - strange enough, it dodn&#8217;t help at&nbsp;all&#8230;</li>
-<li>This was the most helpful <a href="https://stackoverflow.com/questions/35841241/docker-compose-named-mounted-volume" rel="noopener noreferrer" target="_blank">Stackoverflow article</a>.</li>
+<li>Documentation Docker - assez étrange, elle ne m&#8217;a pas du tout&nbsp;aidé&#8230;</li>
+<li>Voici l&#8217;article le plus utile de <a href="https://stackoverflow.com/questions/35841241/docker-compose-named-mounted-volume" rel="noopener noreferrer" target="_blank">Stackoverflow</a>.</li>
 </ul>
 <h3 id="versions">Versions</h3>
-<p>Since these kind of setups might be version sensitive, here is my&nbsp;setup:</p>
+<p>Étant donné que ces types de configurations peuvent être sensibles à la version, voici ma configuration&nbsp;:</p>
 <div class="highlight"><pre><span></span><code>docker-compose version 1.29.2, build 5becea4c
 docker-py version: 5.0.0
 CPython version: 3.9.0
 OpenSSL version: OpenSSL 1.1.1h  22 Sep 2020
 </code></pre></div>
-<p>And it runs on my Mac with Big Sur Version 11.5.2 (wit h Intel <span class="caps">CPU</span>&nbsp;😜).</p>
-<p>The code can be found <a href="https://github.com/tillg/docker-compose-volumes-playground/" rel="noopener noreferrer" target="_blank">on Github</a>.</p>
+<p>Et cela fonctionne sur mon Mac avec Big Sur Version 11.5.2 (avec un processeur Intel&nbsp;😜).</p>
+<p>Le code peut être trouvé <a href="https://github.com/tillg/docker-compose-volumes-playground/" rel="noopener noreferrer" target="_blank">sur Github</a>.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

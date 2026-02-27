@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="An overview of how I code with claude code (as of today, mid-Feb 2026). Expect it to be outdated as of March '26 😉" />
+    <meta name="description" content="Un aperçu de ma méthode de codage avec claude code (à ce jour, mi-février 2026). Attendez-vous à ce qu'elle soit obsolète dès mars '26 😉" />
     <meta name="tags" content="code" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="How I Code With Claude" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/how-i-code-with-claude/" />
-  <meta property="og:description" content="An overview of how I code with claude code (as of today, mid-Feb 2026). Expect it to be outdated as of March '26 😉" />
+  <meta property="og:description" content="Un aperçu de ma méthode de codage avec claude code (à ce jour, mi-février 2026). Attendez-vous à ce qu'elle soit obsolète dès mars '26 😉" />
   <meta property="og:image" content="https://grtnr.com/fr/how-i-code-with-claude/claude.png" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How I Code With Claude" />
-  <meta name="twitter:description" content="An overview of how I code with claude code (as of today, mid-Feb 2026). Expect it to be outdated as of March '26 😉" />
+  <meta name="twitter:description" content="Un aperçu de ma méthode de codage avec claude code (à ce jour, mi-février 2026). Attendez-vous à ce qu'elle soit obsolète dès mars '26 😉" />
   <meta name="twitter:image" content="https://grtnr.com/fr/how-i-code-with-claude/claude.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -59,7 +59,7 @@
     "@type": "Article",
     "headline": "How I Code With Claude",
     "url": "https://grtnr.com/fr/how-i-code-with-claude/",
-"description": "An overview of how I code with claude code (as of today, mid-Feb 2026). Expect it to be outdated as of March \u002726 \ud83d\ude09","image": "https://grtnr.com/fr/how-i-code-with-claude/claude.png","datePublished": "2026-02-14T00:00:00",    "author": {
+"description": "Un aper\u00e7u de ma m\u00e9thode de codage avec claude code (\u00e0 ce jour, mi-f\u00e9vrier 2026). Attendez-vous \u00e0 ce qu\u0027elle soit obsol\u00e8te d\u00e8s mars \u002726 \ud83d\ude09","image": "https://grtnr.com/fr/how-i-code-with-claude/claude.png","datePublished": "2026-02-14T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:25:38.
+      Last built 27.02.2026 11:22:03.
   </div>
 </div>
   <div class="wrap">
@@ -140,38 +140,42 @@ Deutsch
 
     </div>
 
+    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
+      Translated by: gpt-4o-2024-08-06
+      | <a href="/how-i-code-with-claude/" style="color: #0066cc;">Original version</a>
+    </div>
 
-    <p>Since I presented it a couple of times, and since I got asked even more often, here is a short overview of how I work when coding with Claude Code. It&#8217;s a simple workflow, nothing fancy. It focusses on the spec first, iterating them before launching the actual&nbsp;coding.</p>
-<p>Here is how it&nbsp;works:</p>
+    <p>Comme je l&#8217;ai présenté à plusieurs reprises, et qu&#8217;on me l&#8217;a demandé encore plus souvent, voici un bref aperçu de ma façon de travailler lorsque je code avec Claude Code. C&#8217;est un flux de travail simple, rien de sophistiqué. Il se concentre d&#8217;abord sur la spécification, en l&#8217;itérant avant de lancer le codage proprement&nbsp;dit.</p>
+<p>Voici comment cela fonctionne&nbsp;:</p>
 <ul>
-<li>I start by jotting down a brief spec (e.g.&nbsp;in <code>spec.md</code>). Often just a single line of text, followed by a bullet list with my thoughts. All as a markdown&nbsp;file.</li>
-<li>Then I run&nbsp;my <code>/spec-build-out</code> command: <code>/spec-build-out spec.md</code> (Note: I often work in the integrated terminal in VScode, and there you can drag-and-drop the md file into the terminal and it will paste in the entire file&nbsp;name).</li>
-<li>This expands and refines&nbsp;my <code>spec.md</code>. I read it, revise it, and annotate it. I mark my notes&nbsp;with <code>-&gt;</code>.</li>
-<li>Then I run&nbsp;the <code>/spec-iterate</code> command: This incorporates my annotations and cleans&nbsp;up <code>spec.md</code> again.</li>
-<li>Then I annotate again,&nbsp;run <code>/spec-iterate</code> again, and so&nbsp;on.</li>
-<li>When I feel like everything looks right, I start&nbsp;a <code>/new</code> conversation and&nbsp;run <code>/spec-ready-or-not spec.md</code>.</li>
-<li>This appends any open issues it found to the end&nbsp;of <code>spec.md</code>.</li>
-<li>Same game:&nbsp;annotate <code>spec.md</code>,&nbsp;then <code>/spec-iterate</code>.</li>
-<li>At some point I&#8217;m satisfied. Then I commit the specs and let Claude implement them. Sometimes I start with&nbsp;a <code>/new</code> first, to begin with a clean, fresh&nbsp;context.</li>
+<li>Je commence par noter une brève spécification (par exemple&nbsp;dans <code>spec.md</code>). Souvent juste une ligne de texte, suivie d&#8217;une liste à puces avec mes réflexions. Tout cela sous forme de fichier&nbsp;markdown.</li>
+<li>Ensuite, je lance ma&nbsp;commande <code>/spec-build-out</code> : <code>/spec-build-out spec.md</code> (Remarque : je travaille souvent dans le terminal intégré de VScode, et là, vous pouvez glisser-déposer le fichier md dans le terminal et il collera le nom complet du&nbsp;fichier).</li>
+<li>Cela développe et affine&nbsp;mon <code>spec.md</code>. Je le lis, le révise et l&#8217;annote. Je marque mes notes&nbsp;avec <code>-&gt;</code>.</li>
+<li>Ensuite, je lance la&nbsp;commande <code>/spec-iterate</code> : Cela intègre mes annotations et nettoie à&nbsp;nouveau <code>spec.md</code>.</li>
+<li>Puis j&#8217;annote à nouveau, je&nbsp;relance <code>/spec-iterate</code>, et ainsi de&nbsp;suite.</li>
+<li>Quand je sens que tout est en ordre, je démarre une&nbsp;conversation <code>/new</code> et&nbsp;lance <code>/spec-ready-or-not spec.md</code>.</li>
+<li>Cela ajoute toutes les questions ouvertes qu&#8217;il a trouvées à la fin&nbsp;de <code>spec.md</code>.</li>
+<li>Même jeu :&nbsp;annoter <code>spec.md</code>,&nbsp;puis <code>/spec-iterate</code>.</li>
+<li>À un moment donné, je suis satisfait. Ensuite, je valide les spécifications et laisse Claude les implémenter. Parfois, je commence par&nbsp;un <code>/new</code> d&#8217;abord, pour commencer avec un contexte propre et&nbsp;frais.</li>
 </ul>
-<p>My <code>/</code>-commands:</p>
+<p>Mes&nbsp;commandes <code>/</code> :</p>
 <ul>
 <li><a href="/fr/how-i-code-with-claude/spec-build-out.md">/spec-build-out</a></li>
 <li><a href="/fr/how-i-code-with-claude/spec-iterate.md">/spec-iterate</a></li>
 <li><a href="/fr/how-i-code-with-claude/spec-ready-or-not.md">/spec-ready-or-not</a></li>
 <li><a href="/fr/how-i-code-with-claude/spec-finish.md">/spec-finish</a></li>
 </ul>
-<h3 id="comments-notes-and-thoughts">Comments, notes and&nbsp;thoughts</h3>
-<p>When I ran the&nbsp;Claude <code>/insights</code> I got complimented for the <strong>Disciplined Spec-Driven Development Cycle</strong>&nbsp;😉</p>
-<p>I played around a bit with the explanation to Claude about how long&nbsp;the <code>spec.md</code> should be. Without any guidance it became huge, contained almost all the code it planned to insert in the code base. Once I added&nbsp;a <code>Please keep the document short! Add code snippets only if they are REALLY key!!</code> it became shorter - sometimes too&nbsp;short.</p>
-<p><code>/insights</code> also suggested the following addition to&nbsp;my <code>claude.md</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="gu">## Spec Workflow</span>
+<h3 id="commentaires-notes-et-reflexions">Commentaires, notes et&nbsp;réflexions</h3>
+<p>Lorsque j&#8217;ai exécuté le&nbsp;Claude <code>/insights</code>, j&#8217;ai été complimenté pour le <strong>Cycle de Développement Discipliné Axé sur la Spécification</strong>&nbsp;😉</p>
+<p>J&#8217;ai un peu joué avec l&#8217;explication à Claude sur la longueur que devrait avoir&nbsp;le <code>spec.md</code>. Sans aucune directive, il devenait énorme, contenant presque tout le code qu&#8217;il prévoyait d&#8217;insérer dans la base de code. Une fois que j&#8217;ai ajouté&nbsp;un <code>Veuillez garder le document court ! Ajoutez des extraits de code uniquement s'ils sont VRAIMENT essentiels !!</code>, il est devenu plus court - parfois trop&nbsp;court.</p>
+<p><code>/insights</code> a également suggéré l&#8217;ajout suivant à&nbsp;mon <code>claude.md</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Flux de Travail des Spécifications</span>
 
-When iterating on spec documents:
+Lors de l&#39;itération sur les documents de spécification :
 
-<span class="k">1.</span> Always look for user annotations (e.g., &#39;-&gt;&#39; arrows, tags like [ACCEPTED], [REJECTED]) on the FIRST pass — do not require re-prompting.
-<span class="k">2.</span> When consolidating a spec, remove rejected options entirely and keep the document concise.
-<span class="k">3.</span> After spec finalization, confirm all open questions are resolved before moving to implementation.
+<span class="k">1.</span> Recherchez toujours les annotations utilisateur (par exemple, flèches &#39;-&gt;&#39;, balises comme [ACCEPTED], [REJECTED]) dès le PREMIER passage — ne nécessitez pas de relance.
+<span class="k">2.</span> Lors de la consolidation d&#39;une spécification, supprimez entièrement les options rejetées et gardez le document concis.
+<span class="k">3.</span> Après la finalisation de la spécification, confirmez que toutes les questions ouvertes sont résolues avant de passer à l&#39;implémentation.
 </code></pre></div>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <title>DiskSpaceTracker - grtnr.com</title>
+
+  <meta charset="utf-8" />
+
+  <!-- Multilingual SEO tags -->
+    <link rel="alternate" hreflang="en" href="https://grtnr.com/diskspacetracker/" />
+    <link rel="alternate" hreflang="de" href="https://grtnr.com/de/diskspacetracker/" />
+    <link rel="alternate" hreflang="fr" href="https://grtnr.com/fr/diskspacetracker/" />
+    <link rel="alternate" hreflang="x-default" href="https://grtnr.com/fr/diskspacetracker/" />
+    <link rel="canonical" href="https://grtnr.com/fr/diskspacetracker/" />
+  <link rel="stylesheet" href="/theme/css/poole.css" />
+  <link rel="stylesheet" href="/theme/css/syntax.css" />
+  <link rel="stylesheet" href="/theme/css/lanyon.css" />
+  <link rel="stylesheet" href="/theme/css/tag_pills.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/theme/css/styles.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8M7YDCSD4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H8M7YDCSD4');
+  </script>
+
+
+    <meta name="description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez réellement pourquoi." />
+    <meta name="tags" content="tech, softwareweneed, mac" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DiskSpaceTracker" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://grtnr.com/fr/diskspacetracker/" />
+  <meta property="og:description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez réellement pourquoi." />
+  <meta property="og:image" content="https://grtnr.com/fr/diskspacetracker/hero.svg" />
+  <meta property="og:site_name" content="grtnr.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DiskSpaceTracker" />
+  <meta name="twitter:description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez réellement pourquoi." />
+  <meta name="twitter:image" content="https://grtnr.com/fr/diskspacetracker/hero.svg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DiskSpaceTracker",
+    "url": "https://grtnr.com/fr/diskspacetracker/",
+"description": "O\u00f9 est pass\u00e9 mon espace disque ? Un processus en arri\u00e8re-plan discret qui surveille les r\u00e9pertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez r\u00e9ellement pourquoi.","image": "https://grtnr.com/fr/diskspacetracker/hero.svg","datePublished": "2026-02-27T00:00:00",    "author": {
+      "@type": "Person",
+      "name": "Till Gartner"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Till Gartner"
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  
+    <div class="sidebar-item">Stuff that keeps me busy, like family, coding, math, mountains and more.</div>
+
+  <nav class="sidebar-nav">
+
+  <a class="sidebar-nav-item" href="/fr/">Home</a>
+
+  <a class="sidebar-nav-item" href="/fr/tags">Sujets</a>
+  <a class="sidebar-nav-item" href="/recipes">Recettes</a>
+  <a class="sidebar-nav-item" href="/fr/about">À propos</a>
+  <a class="sidebar-nav-item" href="/fr/impressum">Mentions légales</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+      Last built 27.02.2026 11:22:03.
+  </div>
+</div>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a href="/fr/" title="Home">
+            grtnr.com
+          </a>         </h3>
+        
+        <!-- Language Switcher -->
+        <div class="language-switcher-top">
+          <button class="language-globe-btn" onclick="toggleLanguageMenu()">
+            <svg class="globe-icon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+          </button>
+          <div class="language-menu" id="languageMenu">
+                <a href="#" class="language-option" data-lang="en" onclick="switchLanguage('en')">
+English
+                </a>
+                <a href="#" class="language-option" data-lang="de" onclick="switchLanguage('de')">
+Deutsch
+                </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container content">
+<div class="posts">
+<div class="post">
+    <h1 class="post-title">
+      DiskSpaceTracker
+    </h1>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
+      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">vendredi 27 février 2026</span>
+      
+      <div class="tag-pills">
+  <a href="/tag/tech/"
+  class="tag-pill ">tech</a>
+
+  <a href="/tag/softwareweneed/"
+  class="tag-pill ">softwareweneed</a>
+
+  <a href="/tag/mac/"
+  class="tag-pill ">mac</a>
+
+</div>
+
+    </div>
+
+    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
+      Translated by: gpt-4o-2024-08-06
+      | <a href="/diskspacetracker/" style="color: #0066cc;">Original version</a>
+    </div>
+
+    <p>Le disque de mon MacBook se remplit avec le temps. C&#8217;est toujours le cas. Et chaque fois que je reçois cette notification &#8220;Votre disque est presque plein&#8221;, je n&#8217;ai aucune idée de ce qui s&#8217;est passé. Ai-je téléchargé quelque chose de volumineux ? Un cache a-t-il gonflé ? Une application a-t-elle silencieusement déversé des gigaoctets dans Library ? J&#8217;ouvre Utilitaire de disque, fixe une barre colorée et commence à&nbsp;deviner.</p>
+<p>Ce n&#8217;est pas ainsi que cela devrait fonctionner. Je veux un processus qui suit discrètement mon utilisation du disque au fil du temps — répertoire par répertoire — afin que lorsque les choses se compliquent, je puisse consulter une chronologie et voir : <em>voici ce qui a grossi, voici quand cela s&#8217;est produit, voici où&nbsp;chercher.</em></p>
+<h2 id="ce-que-diskspacetracker-ferait">Ce que DiskSpaceTracker&nbsp;ferait</h2>
+<p>Un démon léger en arrière-plan qui ne fonctionne que lorsque deux conditions sont remplies&nbsp;:</p>
+<ol>
+<li><strong>Le Mac est inactif</strong> — aucune entrée utilisateur active pendant N&nbsp;minutes</li>
+<li><strong>Le Mac est sur secteur</strong> — pas de décharge de la batterie pour la&nbsp;comptabilité</li>
+</ol>
+<p>Lorsque les deux conditions sont vraies, il se réveille et prend un&nbsp;instantané.</p>
+<h2 id="linstantane">L&#8217;instantané</h2>
+<p>Un instantané parcourt l&#8217;arborescence des répertoires de haut en bas et enregistre, pour chaque répertoire&nbsp;:</p>
+<ul>
+<li><strong>Chemin</strong> — le&nbsp;répertoire</li>
+<li><strong>Taille</strong> — taille totale incluant les&nbsp;sous-répertoires</li>
+<li><strong>Hachage de contenu</strong> — un hachage de la&nbsp;sortie <code>ls</code> (noms de fichiers, tailles, dates de&nbsp;modification)</li>
+<li><strong>Horodatage</strong> — quand l&#8217;instantané a été&nbsp;pris</li>
+</ul>
+<p>Le hachage de contenu est l&#8217;idée clé. Si le hachage d&#8217;un répertoire n&#8217;a pas changé depuis le dernier instantané, rien à l&#8217;intérieur n&#8217;a changé — passez les sous-répertoires. Cela rend le scan rapide même sur de grands disques. Vous ne creusez plus profondément que là où quelque chose a réellement&nbsp;bougé.</p>
+<div class="highlight"><pre><span></span><code>/Users/till           2026-02-27T03:12  148.2 GB  a3f8c1...
+/Users/till/Downloads 2026-02-27T03:12   23.1 GB  9e2b44...  ← changé
+/Users/till/Library   2026-02-27T03:12   41.7 GB  7d1f09...  ← changé
+/Users/till/Documents 2026-02-27T03:12   62.3 GB  a3f8c1...  ← inchangé, ignorer les enfants
+</code></pre></div>
+
+<h2 id="format-de-stockage">Format de&nbsp;stockage</h2>
+<p>Une base de données locale simple (SQLite conviendrait) avec une table&nbsp;:</p>
+<table>
+<thead>
+<tr>
+<th>dir</th>
+<th>date</th>
+<th>size_bytes</th>
+<th>content_hash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/Users/till/Downloads</td>
+<td>2026-02-27</td>
+<td>24851390464</td>
+<td>9e2b44&#8230;</td>
+</tr>
+<tr>
+<td>/Users/till/Downloads</td>
+<td>2026-02-20</td>
+<td>19327352832</td>
+<td>f1a3c7&#8230;</td>
+</tr>
+<tr>
+<td>/Users/till/Library/Caches</td>
+<td>2026-02-27</td>
+<td>8741281792</td>
+<td>3bf812&#8230;</td>
+</tr>
+</tbody>
+</table>
+<p>Chaque ligne est un instantané d&#8217;un répertoire à un moment donné. Interrogez-le comme vous le souhaitez — croissance par semaine, plus gros changements, répertoires apparus de nulle&nbsp;part.</p>
+<p>Important : la base de données doit également enregistrer lorsqu&#8217;un répertoire a été <em>confirmé inchangé</em>. Si je&nbsp;scanne <code>/Users/till/Documents</code> et que le hachage est le même que la semaine dernière, c&#8217;est un point de données — &#8220;vérifié, pas de changement.&#8221; C&#8217;est fondamentalement différent d&#8217;un répertoire que je n&#8217;ai simplement pas regardé depuis des mois. Sans cette distinction, vous ne pouvez pas différencier &#8220;stable&#8221; de&nbsp;&#8220;inconnu.&#8221;</p>
+<h2 id="ce-que-je-voudrais-voir">Ce que je voudrais&nbsp;voir</h2>
+<p>Une interface <span class="caps">CLI</span> simple ou une vue dans la barre de menu qui répond&nbsp;:</p>
+<ul>
+<li><strong>Ce qui a le plus grossi</strong> la semaine / le mois dernier&nbsp;?</li>
+<li><strong>Quoi de neuf</strong> — répertoires ou fichiers qui n&#8217;existaient pas auparavant&nbsp;?</li>
+<li><strong>Chronologie</strong> —&nbsp;comment <code>/Users/till/Library/Caches</code> a-t-il changé au cours des 6 derniers mois&nbsp;?</li>
+<li><strong>Alertes</strong> — avertissez-moi lorsqu&#8217;un répertoire unique augmente de plus de X <span class="caps">GB</span> en une&nbsp;semaine</li>
+</ul>
+<p>Rien de sophistiqué. Quelques tableaux triés et peut-être un graphique en courbes. Les données sont le produit — l&#8217;interface utilisateur est juste un moyen de poser des&nbsp;questions.</p>
+<h2 id="pourquoi-cela-nexiste-pas-ou-pourquoi-les-outils-existants-passent-a-cote">Pourquoi cela n&#8217;existe pas (ou pourquoi les outils existants passent à&nbsp;côté)</h2>
+<p>Il existe des analyseurs d&#8217;espace disque — DaisyDisk, GrandPerspective, ncdu. Ils vous montrent ce qui est grand <em>en ce moment</em>. C&#8217;est utile pour un nettoyage ponctuel, mais cela ne vous dit pas ce qui a changé.&nbsp;Si <code>/Library/Developer/CoreSimulator</code> fait 30 <span class="caps">GB</span>, a-t-il toujours fait 30 <span class="caps">GB</span> ? Ou faisait-il 5 <span class="caps">GB</span> le mois dernier ? Sans historique, vous ne pouvez pas le&nbsp;dire.</p>
+<p>Il existe également des outils de surveillance, mais ils suivent l&#8217;espace libre <em>total</em> comme un seul chiffre. &#8220;Votre disque est passé de 40 <span class="caps">GB</span> libres à 12 <span class="caps">GB</span> libres en trois semaines.&#8221; Super — mais <em>où</em>&nbsp;?</p>
+<p>DiskSpaceTracker se situe entre les deux : il suit l&#8217;espace par répertoire au fil du temps. C&#8217;est la pièce&nbsp;manquante.</p>
+<h2 id="reflexions-techniques">Réflexions&nbsp;techniques</h2>
+<ul>
+<li><strong>natif macOS</strong> —&nbsp;utilise <code>NSProcessInfo</code> pour la détection d&#8217;inactivité, IOKit pour l&#8217;état de&nbsp;l&#8217;alimentation</li>
+<li><strong>Fonctionne comme un LaunchDaemon</strong> — méthode standard macOS pour planifier le travail en&nbsp;arrière-plan</li>
+<li><strong>Stockage SQLite</strong> — fichier unique, pas de serveur, facile à interroger, facile à&nbsp;sauvegarder</li>
+<li><strong>Liste d&#8217;exclusion</strong> —&nbsp;ignorer <code>/System</code>, les instantanés Time Machine, et d&#8217;autres chemins non&nbsp;exploitables</li>
+<li><strong>Empreinte minimale</strong> — le saut basé sur le hachage signifie que la plupart de l&#8217;arborescence n&#8217;est jamais touchée les jours&nbsp;calmes</li>
+<li><strong>Priorité de scan intelligente</strong> — le scanner ne peut pas tout vérifier à chaque fois, il doit donc décider de ce qu&#8217;il faut regarder ensuite. Un algorithme simple qui pèse trois facteurs : les plus grands répertoires d&#8217;abord (c&#8217;est là que se trouve l&#8217;espace), les répertoires les moins récemment scannés ensuite (ne laissez pas de zones aveugles), et les répertoires dont le hachage parent a changé (quelque chose a bougé). De cette façon, les instantanés les plus précieux sont pris en premier, et au fil du temps, la couverture reste&nbsp;homogène.</li>
+</ul>
+<p>Le tout pourrait être un seul binaire Swift sans dépendances. Ou un script Python avec des&nbsp;hooks <code>osascript</code>. Peu importe — l&#8217;idée est assez simple pour que l&#8217;implémentation soit presque triviale. Ce qui compte, c&#8217;est qu&#8217;il fonctionne de manière cohérente et accumule&nbsp;l&#8217;historique.</p>
+<p>C&#8217;est le logiciel que je veux. Pas un autre outil &#8220;ce qui est grand en ce moment&#8221; — un observateur discret qui construit une chronologie de l&#8217;endroit où va mon espace disque, afin que lorsque les choses se compliquent, la réponse soit déjà&nbsp;là.</p>
+    <div id="giscus">
+      <script src="https://giscus.app/client.js"
+        data-repo="tillg/grtnr.com"
+        data-repo-id="R_kgDOOjwMSg"
+        data-category="General"
+        data-category-id="DIC_kwDOOjwMSs4CqfLX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+</div>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function (document) {
+        var i = 0;
+        // snip empty header rows since markdown can't
+        var rows = document.querySelectorAll('tr');
+        for (i = 0; i < rows.length; i++) {
+          var ths = rows[i].querySelectorAll('th');
+          var rowlen = rows[i].children.length;
+          if (ths.length > 0 && ths.length === rowlen) {
+            rows[i].remove();
+          }
+        }
+      })(document);
+
+      // Language switcher functionality
+      function toggleLanguageMenu() {
+        var menu = document.getElementById('languageMenu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      }
+
+      // Close language menu when clicking outside
+      document.addEventListener('click', function(e) {
+        var menu = document.getElementById('languageMenu');
+        var button = document.querySelector('.language-globe-btn');
+        
+        if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+          menu.style.display = 'none';
+        }
+      });
+
+      // Language persistence: Store selected language in localStorage
+      function setLanguage(lang) {
+        localStorage.setItem('selectedLanguage', lang);
+      }
+
+      // Get stored language preference
+      function getStoredLanguage() {
+        return localStorage.getItem('selectedLanguage') || 'en';
+      }
+
+      // Switch language function
+      function switchLanguage(targetLang) {
+        setLanguage(targetLang);
+        var currentPath = window.location.pathname;
+        var newPath = translatePath(currentPath, targetLang);
+        window.location.href = newPath;
+      }
+
+      // Translate current path to target language
+      function translatePath(currentPath, targetLang) {
+        // Remove leading and trailing slashes
+        var cleanPath = currentPath.replace(/^\/|\/$/g, '');
+        var pathParts = cleanPath.split('/');
+        
+        // Check if first part is a language code
+        var supportedLangs = ['en', 'de', 'fr'];
+        var currentLang = 'en'; // default
+        var contentPath = cleanPath;
+        
+        if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
+          currentLang = pathParts[0];
+          contentPath = pathParts.slice(1).join('/');
+        }
+        
+        // Build new path — all languages get a prefix
+        var newPath = '/' + targetLang + '/';
+        if (contentPath) {
+          newPath += contentPath;
+          if (!newPath.endsWith('/')) {
+            newPath += '/';
+          }
+        }
+        
+        return newPath;
+      }
+
+      // Initialize language on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        var storedLang = getStoredLanguage();
+        var currentPath = window.location.pathname;
+        
+        // Redirect root page to stored language (all languages have a prefix)
+        if (currentPath === '/') {
+          window.location.href = '/' + storedLang + '/';
+        }
+      });
+    </script>
+
+    <script>
+      /* Lanyon & Poole are Copyright (c) 2014 Mark Otto. Adapted to Pelican 20141223 and extended a bit by @thomaswilley */
+      (function (document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+        document.addEventListener('click', function (e) {
+          var target = e.target;
+          if (!checkbox.checked ||
+            sidebar.contains(target) ||
+            (target === checkbox || target === toggle)) return;
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    <script src="/theme/js/giscus-comments.js"></script>
+
+  </div>
+</body>
+
+</html>

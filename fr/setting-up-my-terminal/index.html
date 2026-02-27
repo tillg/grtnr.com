@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>Setting up my terminal - grtnr.com</title>
+  <title>Configuration de mon terminal - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="A guide to setting up a macOS terminal with zsh, Oh My Zsh, and powerlevel10k, focusing on how the pieces fit together rather than just step-by-step installation." />
+    <meta name="description" content="Un guide pour configurer un terminal macOS avec zsh, Oh My Zsh, et powerlevel10k, en se concentrant sur l'intégration des éléments plutôt que sur une simple installation pas à pas." />
     <meta name="tags" content="tech, mac" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Setting up my terminal" />
+  <meta property="og:title" content="Configuration de mon terminal" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/setting-up-my-terminal/" />
-  <meta property="og:description" content="A guide to setting up a macOS terminal with zsh, Oh My Zsh, and powerlevel10k, focusing on how the pieces fit together rather than just step-by-step installation." />
+  <meta property="og:description" content="Un guide pour configurer un terminal macOS avec zsh, Oh My Zsh, et powerlevel10k, en se concentrant sur l'intégration des éléments plutôt que sur une simple installation pas à pas." />
   <meta property="og:image" content="https://grtnr.com/fr/setting-up-my-terminal/terminal.png" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Setting up my terminal" />
-  <meta name="twitter:description" content="A guide to setting up a macOS terminal with zsh, Oh My Zsh, and powerlevel10k, focusing on how the pieces fit together rather than just step-by-step installation." />
+  <meta name="twitter:title" content="Configuration de mon terminal" />
+  <meta name="twitter:description" content="Un guide pour configurer un terminal macOS avec zsh, Oh My Zsh, et powerlevel10k, en se concentrant sur l'intégration des éléments plutôt que sur une simple installation pas à pas." />
   <meta name="twitter:image" content="https://grtnr.com/fr/setting-up-my-terminal/terminal.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -57,9 +57,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Setting up my terminal",
+    "headline": "Configuration de mon terminal",
     "url": "https://grtnr.com/fr/setting-up-my-terminal/",
-"description": "A guide to setting up a macOS terminal with zsh, Oh My Zsh, and powerlevel10k, focusing on how the pieces fit together rather than just step-by-step installation.","image": "https://grtnr.com/fr/setting-up-my-terminal/terminal.png","datePublished": "2020-02-06T00:00:00",    "author": {
+"description": "Un guide pour configurer un terminal macOS avec zsh, Oh My Zsh, et powerlevel10k, en se concentrant sur l\u0027int\u00e9gration des \u00e9l\u00e9ments plut\u00f4t que sur une simple installation pas \u00e0 pas.","image": "https://grtnr.com/fr/setting-up-my-terminal/terminal.png","datePublished": "2020-02-06T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 10:25:38.
+      Last built 27.02.2026 11:22:03.
   </div>
 </div>
   <div class="wrap">
@@ -127,7 +127,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Setting up my terminal
+      Configuration de mon terminal
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">jeudi 6 février 2020</span>
@@ -143,29 +143,33 @@ Deutsch
 
     </div>
 
+    <div style="margin-bottom: 1rem; font-size: 0.9em; color: #666;">
+      Translated by: gpt-4o-2024-08-06
+      | <a href="/setting-up-my-terminal/" style="color: #0066cc;">Original version</a>
+    </div>
 
-    <p>I know, there are lots of articles and explanations out there on how to configure and set up your terminal. Yet, it took me more than 2 hours to get things working the way I wanted. Reason was, lots of the articles and explanations provide step by step guide on installing things, but to little background information on how things relate and work together in the background. And that&#8217;s what was missing to&nbsp;me&#8230;</p>
-<p>So here I go with yet another article. Or rather a collection of snippets of the information that I found&nbsp;valuable.</p>
-<h2 id="setting-the-scene">Setting the&nbsp;scene</h2>
-<p>My target setup <span class="amp">&amp;</span> requirements are&nbsp;simple:</p>
+    <p>Je sais, il existe de nombreux articles et explications sur la façon de configurer et de paramétrer votre terminal. Pourtant, il m&#8217;a fallu plus de 2 heures pour que tout fonctionne comme je le souhaitais. La raison en était que beaucoup d&#8217;articles et d&#8217;explications fournissent un guide étape par étape pour installer les éléments, mais peu d&#8217;informations de fond sur la manière dont les éléments sont liés et fonctionnent ensemble en arrière-plan. Et c&#8217;est ce qui me&nbsp;manquait&#8230;</p>
+<p>Alors, voici un autre article. Ou plutôt une collection de fragments d&#8217;informations que j&#8217;ai trouvées&nbsp;précieuses.</p>
+<h2 id="mise-en-contexte">Mise en&nbsp;contexte</h2>
+<p>Mon installation cible et mes exigences sont simples&nbsp;:</p>
 <ul>
-<li>macOS (Catalina 10.15.2 at the time of&nbsp;writing)</li>
-<li>iTerm2 (Build&nbsp;3.3.8)</li>
-<li>zsh (as provided by Apple since a couple of macOS&nbsp;versions)</li>
-<li>I want proper&nbsp;coloring</li>
-<li>I want to see what Git branch I am in - if the current directory is within a git&nbsp;repo</li>
+<li>macOS (Catalina 10.15.2 au moment de&nbsp;l&#8217;écriture)</li>
+<li>iTerm2 (Version&nbsp;3.3.8)</li>
+<li>zsh (fourni par Apple depuis quelques versions de&nbsp;macOS)</li>
+<li>Je veux une coloration&nbsp;correcte</li>
+<li>Je veux voir sur quelle branche Git je me trouve - si le répertoire courant est dans un dépôt&nbsp;git</li>
 </ul>
-<h2 id="the-moving-parts">The moving&nbsp;parts</h2>
-<p>What made me get lost, was missing overview. Therefore, here are the different bits and pices that are involved in my&nbsp;setup:</p>
+<h2 id="les-elements-en-mouvement">Les éléments en&nbsp;mouvement</h2>
+<p>Ce qui m&#8217;a fait perdre le fil, c&#8217;était l&#8217;absence de vue d&#8217;ensemble. Par conséquent, voici les différents éléments impliqués dans mon installation&nbsp;:</p>
 <ul>
-<li><strong>zsh</strong>: The&nbsp;shell</li>
-<li><strong>Oh My Zsh</strong>: A framework that enhances the zsh shell with functions and&nbsp;design.</li>
-<li><strong>powerlevel9k</strong>: A theme for Oh My&nbsp;Zsh</li>
-<li><strong>Fonts</strong> required by powerlevel9k to display it&#8217;s text and&nbsp;icons</li>
+<li><strong>zsh</strong> : Le&nbsp;shell</li>
+<li><strong>Oh My Zsh</strong> : Un framework qui améliore le shell zsh avec des fonctions et un&nbsp;design.</li>
+<li><strong>powerlevel9k</strong> : Un thème pour Oh My&nbsp;Zsh</li>
+<li><strong>Polices</strong> requises par powerlevel9k pour afficher son texte et ses&nbsp;icônes</li>
 </ul>
-<p>The dependencies in this list are from top to bottom, i.e. the fonts are required by powerlevel9k that runs on top of Oh My Zsh that uses&nbsp;zsh.</p>
-<h2 id="directory-structure">Directory&nbsp;structure</h2>
-<p>Before going thru the different components one by one, this is the directory structure we will have after installing all the bits <span class="amp">&amp;</span>&nbsp;pices:</p>
+<p>Les dépendances dans cette liste vont de haut en bas, c&#8217;est-à-dire que les polices sont requises par powerlevel9k qui fonctionne au-dessus de Oh My Zsh qui utilise&nbsp;zsh.</p>
+<h2 id="structure-du-repertoire">Structure du&nbsp;répertoire</h2>
+<p>Avant de passer en revue les différents composants un par un, voici la structure du répertoire que nous aurons après avoir installé tous les éléments&nbsp;:</p>
 <div class="highlight"><pre><span></span><code>├── $HOME
 │   └── .oh-my-zsh/
 │   │   └── custom/
@@ -176,26 +180,26 @@ Deutsch
 ├── .zshrc
 </code></pre></div>
 <h2 id="zsh">zsh</h2>
-<p>I used bash in the past and I was happy with it. I simply started my Mac Terminal, and there it was. And later I used iTerm2, and it also fired up with bash. So why move over to&nbsp;zsh?</p>
-<p>This article explains it nicely and extensively. In&nbsp;short:</p>
+<p>J&#8217;utilisais bash dans le passé et j&#8217;en étais satisfait. Je lançais simplement mon Terminal Mac, et il était là. Plus tard, j&#8217;ai utilisé iTerm2, et il se lançait également avec bash. Alors pourquoi passer à zsh&nbsp;?</p>
+<p>Cet article l&#8217;explique bien et en détail. En résumé&nbsp;:</p>
 <ul>
-<li>Apple used bash in the past as it was the de-facto&nbsp;standard</li>
-<li>In 2007 bash switched to <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" rel="noopener noreferrer" target="_blank"><span class="caps">GNU</span> Public License 3.0</a>, which Apple didn&#8217;t like for some reasons. So they stayed with the pre-2007 release of bash. And that&#8217;s old - including <a href="https://www.wikiwand.com/en/Shellshock_(software_bug)" rel="noopener noreferrer" target="_blank">a vulnerabilty</a> that forced Apple to update bash for&nbsp;Macs.</li>
-<li>zsh over time became the emerging de-facto standard, so Apple&nbsp;moved.</li>
+<li>Apple utilisait bash dans le passé car c&#8217;était le standard de&nbsp;facto</li>
+<li>En 2007, bash est passé à la <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" rel="noopener noreferrer" target="_blank">Licence Publique Générale <span class="caps">GNU</span> 3.0</a>, ce qu&#8217;Apple n&#8217;a pas apprécié pour certaines raisons. Ils sont donc restés avec la version de bash d&#8217;avant 2007. Et c&#8217;est ancien - y compris <a href="https://www.wikiwand.com/en/Shellshock_(software_bug)" rel="noopener noreferrer" target="_blank">une vulnérabilité</a> qui a forcé Apple à mettre à jour bash pour les&nbsp;Macs.</li>
+<li>zsh est progressivement devenu le nouveau standard de facto, donc Apple a suivi le&nbsp;mouvement.</li>
 </ul>
-<p>And of course, <a href="https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/" rel="noopener noreferrer" target="_blank">zsh offers more modern, cool features</a>.</p>
-<p>So anyways, it&#8217;s trhe new standard, it looks good - let&#8217;s use it. As it&#8217;s the new mac standard shell, you don&#8217;t need to install it. In case you got a new mac that came with Catalina pre-installed, you are using zsh already. In case you upgraded your Mac from Mojave, you need to set zsh as your terminal shell like&nbsp;so:</p>
+<p>Et bien sûr, <a href="https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/" rel="noopener noreferrer" target="_blank">zsh offre des fonctionnalités modernes et intéressantes</a>.</p>
+<p>Donc, c&#8217;est le nouveau standard, il est esthétique - utilisons-le. Étant donné que c&#8217;est le nouveau shell standard de macOS, vous n&#8217;avez pas besoin de l&#8217;installer. Si vous avez un nouveau Mac livré avec Catalina pré-installé, vous utilisez déjà zsh. Si vous avez mis à jour votre Mac depuis Mojave, vous devez définir zsh comme shell de votre terminal ainsi&nbsp;:</p>
 <div class="highlight"><pre><span></span><code>chsh<span class="w"> </span>-s<span class="w"> </span>/bin/zsh
 </code></pre></div>
-<p>This sets zsh as the default&nbsp;Shell.</p>
+<p>Cela définit zsh comme le Shell par&nbsp;défaut.</p>
 <h3 id="configuration">Configuration</h3>
-<p>Configuring the zsh shell is done via entries&nbsp;in <code>.zshrc</code>, which is located in&nbsp;your <code>$HOME</code> directory. As described above, there are a couple of components that interact. Some of them offer configuration options, and can be configured in different locations. In order to keep an overview, I opted for installing the components in their respective default location, and trying to have all the configuration option in&nbsp;the <code>.zshrc</code> file.</p>
+<p>La configuration du shell zsh se fait via des entrées&nbsp;dans <code>.zshrc</code>, qui se trouve dans votre&nbsp;répertoire <code>$HOME</code>. Comme décrit ci-dessus, il y a plusieurs composants qui interagissent. Certains d&#8217;entre eux offrent des options de configuration et peuvent être configurés à différents endroits. Pour garder une vue d&#8217;ensemble, j&#8217;ai opté pour l&#8217;installation des composants dans leur emplacement par défaut respectif, et j&#8217;ai essayé d&#8217;avoir toutes les options de configuration dans le&nbsp;fichier <code>.zshrc</code>.</p>
 <h2 id="oh-my-zsh">Oh My&nbsp;Zsh</h2>
 <blockquote>
-<p>Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
-&#8212; <cite><a href="https://ohmyz.sh/" rel="noopener noreferrer" target="_blank">Oh My Zsh website</a></cite></p>
+<p>Oh My Zsh est un framework open source, piloté par la communauté, pour gérer votre configuration zsh.
+&#8212; <cite><a href="https://ohmyz.sh/" rel="noopener noreferrer" target="_blank">Site web Oh My Zsh</a></cite></p>
 </blockquote>
-<p>Bascically Oh My Zsh makes your terminal look very nice (via <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" rel="noopener noreferrer" target="_blank">themes</a>) and offers lots of helpful plugins. An example list from their <a href="https://github.com/ohmyzsh/ohmyzsh" rel="noopener noreferrer" target="_blank">github page</a>:</p>
+<p>Fondamentalement, Oh My Zsh rend votre terminal très esthétique (via <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" rel="noopener noreferrer" target="_blank">les thèmes</a>) et propose de nombreux plugins utiles. Voici une liste d&#8217;exemples de leur <a href="https://github.com/ohmyzsh/ohmyzsh" rel="noopener noreferrer" target="_blank">page GitHub</a>&nbsp;:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">plugins</span><span class="o">=(</span>
 <span class="w">  </span>git
 <span class="w">  </span>bundler
@@ -206,28 +210,28 @@ Deutsch
 <span class="w">  </span>ruby
 <span class="o">)</span>
 </code></pre></div>
-<p>I currently use the git plugin, which offers shortcuts for often used git&nbsp;commands.</p>
-<h3 id="configuring-oh-my-zsh">Configuring Oh My&nbsp;Zsh</h3>
-<p>As mentioned, I have all the configurations integrated in&nbsp;my <code>$HOME/.zshrc</code> file. The relevant snippets from&nbsp;my <code>.zshrc</code>file:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Path to your oh-my-zsh installation.</span>
+<p>J&#8217;utilise actuellement le plugin git, qui offre des raccourcis pour les commandes git fréquemment&nbsp;utilisées.</p>
+<h3 id="configuration-de-oh-my-zsh">Configuration de Oh My&nbsp;Zsh</h3>
+<p>Comme mentionné, j&#8217;ai intégré toutes les configurations dans mon&nbsp;fichier <code>$HOME/.zshrc</code>. Les extraits pertinents de mon&nbsp;fichier <code>.zshrc</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Chemin vers votre installation oh-my-zsh.</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ZSH</span><span class="o">=</span><span class="s2">"/Users/tgartner/.oh-my-zsh"</span>
 
-<span class="c1"># Set name of the theme to load.</span>
-<span class="c1"># See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</span>
+<span class="c1"># Définir le nom du thème à charger.</span>
+<span class="c1"># Voir https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</span>
 <span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">"powerlevel9k/powerlevel9k"</span>
 
 <span class="o">(</span>...<span class="o">)</span>
 
-<span class="c1"># Which plugins would you like to load?</span>
-<span class="c1"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span>
-<span class="c1"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span>
-<span class="c1"># Example format: plugins=(rails git textmate ruby lighthouse)</span>
-<span class="c1"># Add wisely, as too many plugins slow down shell startup.</span>
+<span class="c1"># Quels plugins souhaitez-vous charger ?</span>
+<span class="c1"># Les plugins standards se trouvent dans ~/.oh-my-zsh/plugins/*</span>
+<span class="c1"># Des plugins personnalisés peuvent être ajoutés à ~/.oh-my-zsh/custom/plugins/</span>
+<span class="c1"># Format d'exemple : plugins=(rails git textmate ruby lighthouse)</span>
+<span class="c1"># Ajoutez judicieusement, car trop de plugins ralentissent le démarrage du shell.</span>
 <span class="nv">plugins</span><span class="o">=(</span>git<span class="w"> </span>python<span class="o">)</span>
 </code></pre></div>
 <h2 id="powerlevel10k">powerlevel10k</h2>
-<p>Note: I used to use <a href="https://github.com/Powerlevel9k/powerlevel9k" rel="noopener noreferrer" target="_blank">powerlevel9k</a>, but when installing my Mac in May 2025, 9k was outdated and pointed to <a href="https://github.com/romkatv/powerlevel10k" rel="noopener noreferrer" target="_blank">powerlevel10k</a>.</p>
-<p>Install powerlevel10k following their <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh" rel="noopener noreferrer" target="_blank">installation guide for zsh</a>.</p>
+<p>Note : J&#8217;utilisais <a href="https://github.com/Powerlevel9k/powerlevel9k" rel="noopener noreferrer" target="_blank">powerlevel9k</a>, mais lors de l&#8217;installation de mon Mac en mai 2025, 9k était obsolète et pointait vers <a href="https://github.com/romkatv/powerlevel10k" rel="noopener noreferrer" target="_blank">powerlevel10k</a>.</p>
+<p>Installez powerlevel10k en suivant leur <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh" rel="noopener noreferrer" target="_blank">guide d&#8217;installation pour zsh</a>.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"
