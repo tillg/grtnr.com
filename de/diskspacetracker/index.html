@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="Wohin ist mein Speicherplatz verschwunden? Ein leiser Hintergrundprozess, der im Laufe der Zeit die Verzeichnisse Ihres Macs überwacht, damit Sie wissen, warum Ihr Speicher voll ist." />
+    <meta name="description" content="Wohin ist mein Speicherplatz verschwunden? Ein stiller Hintergrundprozess, der die Verzeichnisse deines Macs im Laufe der Zeit überwacht, damit du weißt, warum dein Speicher voll ist." />
     <meta name="tags" content="tech, softwareweneed, mac" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="DiskSpaceTracker" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/de/diskspacetracker/" />
-  <meta property="og:description" content="Wohin ist mein Speicherplatz verschwunden? Ein leiser Hintergrundprozess, der im Laufe der Zeit die Verzeichnisse Ihres Macs überwacht, damit Sie wissen, warum Ihr Speicher voll ist." />
+  <meta property="og:description" content="Wohin ist mein Speicherplatz verschwunden? Ein stiller Hintergrundprozess, der die Verzeichnisse deines Macs im Laufe der Zeit überwacht, damit du weißt, warum dein Speicher voll ist." />
   <meta property="og:image" content="https://grtnr.com/de/diskspacetracker/hero.svg" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DiskSpaceTracker" />
-  <meta name="twitter:description" content="Wohin ist mein Speicherplatz verschwunden? Ein leiser Hintergrundprozess, der im Laufe der Zeit die Verzeichnisse Ihres Macs überwacht, damit Sie wissen, warum Ihr Speicher voll ist." />
+  <meta name="twitter:description" content="Wohin ist mein Speicherplatz verschwunden? Ein stiller Hintergrundprozess, der die Verzeichnisse deines Macs im Laufe der Zeit überwacht, damit du weißt, warum dein Speicher voll ist." />
   <meta name="twitter:image" content="https://grtnr.com/de/diskspacetracker/hero.svg" />
 
   <!-- JSON-LD Structured Data -->
@@ -59,7 +59,7 @@
     "@type": "Article",
     "headline": "DiskSpaceTracker",
     "url": "https://grtnr.com/de/diskspacetracker/",
-"description": "Wohin ist mein Speicherplatz verschwunden? Ein leiser Hintergrundprozess, der im Laufe der Zeit die Verzeichnisse Ihres Macs \u00fcberwacht, damit Sie wissen, warum Ihr Speicher voll ist.","image": "https://grtnr.com/de/diskspacetracker/hero.svg","datePublished": "2026-02-27T00:00:00",    "author": {
+"description": "Wohin ist mein Speicherplatz verschwunden? Ein stiller Hintergrundprozess, der die Verzeichnisse deines Macs im Laufe der Zeit \u00fcberwacht, damit du wei\u00dft, warum dein Speicher voll ist.","image": "https://grtnr.com/de/diskspacetracker/hero.svg","datePublished": "2026-02-27T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 11:24:46.
+      Last built 27.02.2026 11:30:15.
   </div>
 </div>
   <div class="wrap">
@@ -151,24 +151,24 @@ Français
       | <a href="/diskspacetracker/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Die Festplatte meines MacBooks füllt sich im Laufe der Zeit. Das passiert immer. Und jedes Mal, wenn ich die Benachrichtigung &#8220;Ihr Speicher ist fast voll&#8221; erhalte, habe ich keine Ahnung, was passiert ist. Habe ich etwas Großes heruntergeladen? Ist ein Cache explodiert? Hat eine App stillschweigend Gigabytes in die Library geworfen? Ich öffne das Festplattendienstprogramm, starre auf einen farbigen Balken und beginne zu&nbsp;raten.</p>
-<p>So sollte es nicht funktionieren. Ich möchte einen Prozess, der meine Speichernutzung im Laufe der Zeit leise verfolgt — Verzeichnis für Verzeichnis — damit ich, wenn es eng wird, eine Zeitleiste betrachten kann und sehe: <em>Das ist gewachsen, das ist passiert, hier sollte ich&nbsp;nachsehen.</em></p>
+    <p>Die Festplatte meines MacBooks füllt sich im Laufe der Zeit. Das passiert immer. Und jedes Mal, wenn ich die Benachrichtigung &#8220;Dein Speicher ist fast voll&#8221; erhalte, habe ich keine Ahnung, was passiert ist. Habe ich etwas Großes heruntergeladen? Ist ein Cache explodiert? Hat eine App heimlich Gigabytes in die Library geschaufelt? Ich öffne das Festplattendienstprogramm, starre auf einen farbigen Balken und beginne zu&nbsp;raten.</p>
+<p>So sollte es nicht laufen. Ich möchte einen Prozess, der meinen Speicherplatzverbrauch im Laufe der Zeit leise verfolgt — Verzeichnis für Verzeichnis — damit ich, wenn es eng wird, eine Zeitleiste ansehen kann und sehe: <em>Das ist gewachsen, das ist passiert, hier musst du&nbsp;nachsehen.</em></p>
 <h2 id="was-diskspacetracker-tun-wurde">Was DiskSpaceTracker tun&nbsp;würde</h2>
-<p>Ein leichter Hintergrund-Daemon, der nur dann läuft, wenn zwei Bedingungen erfüllt&nbsp;sind:</p>
+<p>Ein leichter Hintergrund-Daemon, der nur läuft, wenn zwei Bedingungen erfüllt&nbsp;sind:</p>
 <ol>
 <li><strong>Der Mac ist im Leerlauf</strong> — keine aktive Benutzereingabe für N&nbsp;Minuten</li>
-<li><strong>Der Mac ist am Stromnetz</strong> — keine Batterieentladung für&nbsp;Buchhaltung</li>
+<li><strong>Der Mac ist am Strom</strong> — keine Batterieentladung für&nbsp;Buchhaltung</li>
 </ol>
-<p>Wenn beide Bedingungen zutreffen, wacht er auf und erstellt einen&nbsp;Schnappschuss.</p>
+<p>Wenn beide Bedingungen zutreffen, wacht er auf und macht einen&nbsp;Schnappschuss.</p>
 <h2 id="der-schnappschuss">Der&nbsp;Schnappschuss</h2>
-<p>Ein Schnappschuss durchläuft den Verzeichnisbaum von oben nach unten und erfasst für jedes&nbsp;Verzeichnis:</p>
+<p>Ein Schnappschuss durchläuft den Verzeichnisbaum von oben nach unten und zeichnet für jedes Verzeichnis&nbsp;auf:</p>
 <ul>
 <li><strong>Pfad</strong> — das&nbsp;Verzeichnis</li>
-<li><strong>Größe</strong> — Gesamtgröße einschließlich&nbsp;Unterverzeichnisse</li>
-<li><strong>Inhalt-Hash</strong> — ein Hash&nbsp;der <code>ls</code>-Ausgabe (Dateinamen, Größen,&nbsp;Änderungsdaten)</li>
-<li><strong>Zeitstempel</strong> — wann der Schnappschuss erstellt&nbsp;wurde</li>
+<li><strong>Größe</strong> — Gesamtgröße einschließlich&nbsp;Unterverzeichnissen</li>
+<li><strong>Inhalts-Hash</strong> — ein Hash&nbsp;der <code>ls</code>-Ausgabe (Dateinamen, Größen,&nbsp;Änderungsdaten)</li>
+<li><strong>Zeitstempel</strong> — wann der Schnappschuss gemacht&nbsp;wurde</li>
 </ul>
-<p>Der Inhalt-Hash ist die Schlüsselidee. Wenn sich der Hash eines Verzeichnisses seit dem letzten Schnappschuss nicht geändert hat, hat sich darin nichts geändert — die Unterverzeichnisse werden übersprungen. Dies macht den Scan auch auf großen Festplatten schnell. Sie gehen nur tiefer, wo sich tatsächlich etwas bewegt&nbsp;hat.</p>
+<p>Der Inhalts-Hash ist die Schlüsselidee. Wenn sich der Hash eines Verzeichnisses seit dem letzten Schnappschuss nicht geändert hat, hat sich darin nichts geändert — die Unterverzeichnisse werden übersprungen. Das macht den Scan auch auf großen Festplatten schnell. Du gehst nur tiefer, wo sich tatsächlich etwas bewegt&nbsp;hat.</p>
 <div class="highlight"><pre><span></span><code>/Users/till           2026-02-27T03:12  148.2 GB  a3f8c1...
 /Users/till/Downloads 2026-02-27T03:12   23.1 GB  9e2b44...  ← geändert
 /Users/till/Library   2026-02-27T03:12   41.7 GB  7d1f09...  ← geändert
@@ -176,7 +176,7 @@ Français
 </code></pre></div>
 
 <h2 id="speicherformat">Speicherformat</h2>
-<p>Eine einfache lokale Datenbank (SQLite wäre ausreichend) mit einer&nbsp;Tabelle:</p>
+<p>Eine einfache lokale Datenbank (SQLite wäre in Ordnung) mit einer&nbsp;Tabelle:</p>
 <table>
 <thead>
 <tr>
@@ -207,32 +207,32 @@ Français
 </tr>
 </tbody>
 </table>
-<p>Jede Zeile ist ein Schnappschuss eines Verzeichnisses zu einem bestimmten Zeitpunkt. Abfragen Sie es, wie Sie möchten — Wachstum pro Woche, größte Veränderungen, Verzeichnisse, die aus dem Nichts aufgetaucht&nbsp;sind.</p>
-<p>Wichtig: Die Datenbank sollte auch aufzeichnen, wann ein Verzeichnis <em>als unverändert bestätigt</em> wurde. Wenn&nbsp;ich <code>/Users/till/Documents</code> scanne und der Hash derselbe ist wie letzte Woche, ist das ein Datenpunkt — &#8220;bestätigt, keine Änderung.&#8221; Das ist grundlegend anders als ein Verzeichnis, das ich einfach seit Monaten nicht angesehen habe. Ohne diese Unterscheidung können Sie &#8220;stabil&#8221; nicht von &#8220;unbekannt&#8221;&nbsp;unterscheiden.</p>
+<p>Jede Zeile ist ein Schnappschuss eines Verzeichnisses zu einem bestimmten Zeitpunkt. Abfragen kannst du, wie du willst — Wachstum pro Woche, größte Veränderungen, Verzeichnisse, die aus dem Nichts aufgetaucht&nbsp;sind.</p>
+<p>Wichtig: Die Datenbank sollte auch aufzeichnen, wann ein Verzeichnis <em>als unverändert bestätigt</em> wurde. Wenn&nbsp;ich <code>/Users/till/Documents</code> scanne und der Hash derselbe ist wie letzte Woche, ist das ein Datenpunkt — &#8220;bestätigt, keine Änderung.&#8221; Das ist grundlegend anders als ein Verzeichnis, das ich einfach seit Monaten nicht angesehen habe. Ohne diese Unterscheidung kannst du nicht zwischen &#8220;stabil&#8221; und &#8220;unbekannt&#8221;&nbsp;unterscheiden.</p>
 <h2 id="was-ich-sehen-mochte">Was ich sehen&nbsp;möchte</h2>
 <p>Eine einfache <span class="caps">CLI</span> oder Menüleistenansicht, die&nbsp;beantwortet:</p>
 <ul>
 <li><strong>Was ist am meisten gewachsen</strong> in der letzten Woche /&nbsp;Monat?</li>
 <li><strong>Was ist neu</strong> — Verzeichnisse oder Dateien, die vorher nicht&nbsp;existierten?</li>
 <li><strong>Zeitleiste</strong> — wie hat&nbsp;sich <code>/Users/till/Library/Caches</code> in den letzten 6 Monaten&nbsp;verändert?</li>
-<li><strong>Benachrichtigungen</strong> — benachrichtigen Sie mich, wenn ein einzelnes Verzeichnis in einer Woche um mehr als X <span class="caps">GB</span>&nbsp;wächst</li>
+<li><strong>Benachrichtigungen</strong> — benachrichtige mich, wenn ein einzelnes Verzeichnis in einer Woche um mehr als X <span class="caps">GB</span>&nbsp;wächst</li>
 </ul>
 <p>Nichts Ausgefallenes. Ein paar sortierte Tabellen und vielleicht ein Sparklinediagramm. Die Daten sind das Produkt — die Benutzeroberfläche ist nur eine Möglichkeit, Fragen zu&nbsp;stellen.</p>
 <h2 id="warum-das-nicht-existiert-oder-warum-bestehende-tools-den-punkt-verfehlen">Warum das nicht existiert (oder warum bestehende Tools den Punkt&nbsp;verfehlen)</h2>
-<p>Es gibt Speicherplatzanalysatoren — DaisyDisk, GrandPerspective, ncdu. Sie zeigen Ihnen, was <em>jetzt</em> groß ist. Das ist nützlich für eine einmalige Bereinigung, aber es sagt Ihnen nicht, was sich geändert hat.&nbsp;Wenn <code>/Library/Developer/CoreSimulator</code> 30 <span class="caps">GB</span> ist, war es immer 30 <span class="caps">GB</span>? Oder waren es letzten Monat 5 <span class="caps">GB</span>? Ohne Verlauf können Sie das nicht&nbsp;sagen.</p>
-<p>Es gibt auch Überwachungstools, aber sie verfolgen den <em>gesamten</em> freien Speicherplatz als eine Zahl. &#8220;Ihr Speicherplatz ging von 40 <span class="caps">GB</span> frei auf 12 <span class="caps">GB</span> frei in drei Wochen.&#8221; Großartig — aber <em>wo</em>?</p>
+<p>Es gibt Speicherplatzanalysatoren — DaisyDisk, GrandPerspective, ncdu. Sie zeigen dir, was <em>jetzt</em> groß ist. Das ist nützlich für eine einmalige Bereinigung, aber es sagt dir nicht, was sich verändert hat.&nbsp;Wenn <code>/Library/Developer/CoreSimulator</code> 30 <span class="caps">GB</span> ist, war es immer 30 <span class="caps">GB</span>? Oder war es letzten Monat 5 <span class="caps">GB</span>? Ohne Verlauf kannst du das nicht&nbsp;sagen.</p>
+<p>Es gibt auch Überwachungstools, aber sie verfolgen den <em>gesamten</em> freien Speicherplatz als eine Zahl. &#8220;Dein Speicher ging von 40 <span class="caps">GB</span> frei auf 12 <span class="caps">GB</span> frei in drei Wochen.&#8221; Großartig — aber <em>wo</em>?</p>
 <p>DiskSpaceTracker sitzt dazwischen: Es verfolgt den Speicherplatz pro Verzeichnis im Laufe der Zeit. Das ist das fehlende&nbsp;Stück.</p>
-<h2 id="technische-uberlegungen">Technische&nbsp;Überlegungen</h2>
+<h2 id="technische-gedanken">Technische&nbsp;Gedanken</h2>
 <ul>
 <li><strong>macOS-nativ</strong> —&nbsp;verwendet <code>NSProcessInfo</code> für Leerlauferkennung, IOKit für den&nbsp;Stromzustand</li>
-<li><strong>Läuft als LaunchDaemon</strong> — standardmäßige macOS-Methode zur Planung von&nbsp;Hintergrundarbeiten</li>
-<li><strong>SQLite-Speicherung</strong> — einzelne Datei, kein Server, einfach abzufragen, einfach zu&nbsp;sichern</li>
-<li><strong>Ausschlussliste</strong> — überspringen&nbsp;Sie <code>/System</code>, Time Machine-Schnappschüsse und andere nicht handlungsfähige&nbsp;Pfade</li>
-<li><strong>Minimaler Fußabdruck</strong> — der hash-basierte Skip bedeutet, dass der größte Teil des Baums an ruhigen Tagen nie berührt&nbsp;wird</li>
-<li><strong>Intelligente Scan-Priorität</strong> — der Scanner kann nicht jedes Mal alles überprüfen, daher muss er entscheiden, was als nächstes angesehen wird. Ein einfacher Algorithmus, der drei Faktoren abwägt: zuerst die größten Verzeichnisse (dort ist der Speicherplatz), dann die am wenigsten kürzlich gescannten Verzeichnisse (keine blinden Flecken lassen) und Verzeichnisse, deren übergeordneter Hash sich geändert hat (etwas hat sich bewegt). Auf diese Weise werden die wertvollsten Schnappschüsse zuerst gemacht, und im Laufe der Zeit bleibt die Abdeckung&nbsp;gleichmäßig.</li>
+<li><strong>Läuft als LaunchDaemon</strong> — der Standardweg auf macOS, um Hintergrundarbeiten zu&nbsp;planen</li>
+<li><strong>SQLite-Speicherung</strong> — einzelne Datei, kein Server, leicht abzufragen, leicht zu&nbsp;sichern</li>
+<li><strong>Ausschlussliste</strong> —&nbsp;überspringe <code>/System</code>, Time Machine-Schnappschüsse und andere Pfade, die nicht relevant&nbsp;sind</li>
+<li><strong>Minimaler Fußabdruck</strong> — das hash-basierte Überspringen bedeutet, dass der Großteil des Baums an ruhigen Tagen nie berührt&nbsp;wird</li>
+<li><strong>Intelligente Scan-Priorität</strong> — der Scanner kann nicht jedes Mal alles überprüfen, also muss er entscheiden, was er als nächstes ansieht. Ein einfacher Algorithmus, der drei Faktoren abwägt: zuerst die größten Verzeichnisse (dort ist der Speicherplatz), dann die am wenigsten kürzlich gescannten Verzeichnisse (keine blinden Flecken lassen) und Verzeichnisse, deren übergeordneter Hash sich geändert hat (etwas hat sich bewegt). Auf diese Weise werden die wertvollsten Schnappschüsse zuerst gemacht und im Laufe der Zeit bleibt die Abdeckung&nbsp;gleichmäßig.</li>
 </ul>
-<p>Das Ganze könnte eine einzelne Swift-Binärdatei ohne Abhängigkeiten sein. Oder ein Python-Skript&nbsp;mit <code>osascript</code>-Hooks. Das spielt keine Rolle — die Idee ist einfach genug, dass die Implementierung fast trivial ist. Wichtig ist, dass es konsistent läuft und eine Historie&nbsp;aufbaut.</p>
-<p>Das ist die Software, die ich möchte. Kein weiteres &#8220;was ist jetzt groß&#8221; Tool — ein stiller Beobachter, der eine Zeitleiste erstellt, wohin mein Speicherplatz geht, damit, wenn es eng wird, die Antwort bereits da&nbsp;ist.</p>
+<p>Das Ganze könnte ein einzelnes Swift-Binary ohne Abhängigkeiten sein. Oder ein Python-Skript&nbsp;mit <code>osascript</code>-Hooks. Das spielt keine Rolle — die Idee ist einfach genug, dass die Implementierung fast trivial ist. Was zählt, ist, dass es konsistent läuft und Geschichte&nbsp;aufbaut.</p>
+<p>Das ist die Software, die ich möchte. Kein weiteres &#8220;was ist jetzt groß&#8221;-Tool — ein stiller Beobachter, der eine Zeitleiste erstellt, wohin mein Speicherplatz geht, damit die Antwort schon da ist, wenn es eng&nbsp;wird.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"

@@ -35,21 +35,21 @@
   </script>
 
 
-    <meta name="description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez réellement pourquoi." />
+    <meta name="description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque se remplit, vous sachiez réellement pourquoi." />
     <meta name="tags" content="tech, softwareweneed, mac" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="DiskSpaceTracker" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/diskspacetracker/" />
-  <meta property="og:description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez réellement pourquoi." />
+  <meta property="og:description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque se remplit, vous sachiez réellement pourquoi." />
   <meta property="og:image" content="https://grtnr.com/fr/diskspacetracker/hero.svg" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DiskSpaceTracker" />
-  <meta name="twitter:description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez réellement pourquoi." />
+  <meta name="twitter:description" content="Où est passé mon espace disque ? Un processus en arrière-plan discret qui surveille les répertoires de votre Mac au fil du temps, afin que lorsque votre disque se remplit, vous sachiez réellement pourquoi." />
   <meta name="twitter:image" content="https://grtnr.com/fr/diskspacetracker/hero.svg" />
 
   <!-- JSON-LD Structured Data -->
@@ -59,7 +59,7 @@
     "@type": "Article",
     "headline": "DiskSpaceTracker",
     "url": "https://grtnr.com/fr/diskspacetracker/",
-"description": "O\u00f9 est pass\u00e9 mon espace disque ? Un processus en arri\u00e8re-plan discret qui surveille les r\u00e9pertoires de votre Mac au fil du temps, afin que lorsque votre disque est plein, vous sachiez r\u00e9ellement pourquoi.","image": "https://grtnr.com/fr/diskspacetracker/hero.svg","datePublished": "2026-02-27T00:00:00",    "author": {
+"description": "O\u00f9 est pass\u00e9 mon espace disque ? Un processus en arri\u00e8re-plan discret qui surveille les r\u00e9pertoires de votre Mac au fil du temps, afin que lorsque votre disque se remplit, vous sachiez r\u00e9ellement pourquoi.","image": "https://grtnr.com/fr/diskspacetracker/hero.svg","datePublished": "2026-02-27T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 11:24:46.
+      Last built 27.02.2026 11:30:15.
   </div>
 </div>
   <div class="wrap">
@@ -151,10 +151,10 @@ Deutsch
       | <a href="/diskspacetracker/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>Le disque de mon MacBook se remplit avec le temps. C&#8217;est toujours le cas. Et chaque fois que je reçois cette notification &#8220;Votre disque est presque plein&#8221;, je n&#8217;ai aucune idée de ce qui s&#8217;est passé. Ai-je téléchargé quelque chose de volumineux ? Un cache a-t-il gonflé ? Une application a-t-elle silencieusement déversé des gigaoctets dans Library ? J&#8217;ouvre Utilitaire de disque, fixe une barre colorée et commence à&nbsp;deviner.</p>
-<p>Ce n&#8217;est pas ainsi que cela devrait fonctionner. Je veux un processus qui suit discrètement mon utilisation du disque au fil du temps — répertoire par répertoire — afin que lorsque les choses se compliquent, je puisse consulter une chronologie et voir : <em>voici ce qui a grossi, voici quand cela s&#8217;est produit, voici où&nbsp;chercher.</em></p>
+    <p>Le disque de mon MacBook se remplit avec le temps. C&#8217;est toujours le cas. Et chaque fois que je reçois cette notification &#8220;Votre disque est presque plein&#8221;, je n&#8217;ai aucune idée de ce qui s&#8217;est passé. Ai-je téléchargé quelque chose de volumineux ? Un cache a-t-il gonflé ? Une application a-t-elle silencieusement déversé des gigaoctets dans Library ? J&#8217;ouvre Utilitaire de disque, je fixe une barre colorée et je commence à&nbsp;deviner.</p>
+<p>Ce n&#8217;est pas ainsi que cela devrait fonctionner. Je veux un processus qui suit discrètement l&#8217;utilisation de mon disque au fil du temps — répertoire par répertoire — afin que lorsque les choses se resserrent, je puisse consulter une chronologie et voir : <em>voici ce qui a augmenté, voici quand cela s&#8217;est produit, voici où&nbsp;chercher.</em></p>
 <h2 id="ce-que-diskspacetracker-ferait">Ce que DiskSpaceTracker&nbsp;ferait</h2>
-<p>Un démon léger en arrière-plan qui ne fonctionne que lorsque deux conditions sont remplies&nbsp;:</p>
+<p>Un démon léger en arrière-plan qui ne s&#8217;exécute que lorsque deux conditions sont remplies&nbsp;:</p>
 <ol>
 <li><strong>Le Mac est inactif</strong> — aucune entrée utilisateur active pendant N&nbsp;minutes</li>
 <li><strong>Le Mac est sur secteur</strong> — pas de décharge de la batterie pour la&nbsp;comptabilité</li>
@@ -165,14 +165,14 @@ Deutsch
 <ul>
 <li><strong>Chemin</strong> — le&nbsp;répertoire</li>
 <li><strong>Taille</strong> — taille totale incluant les&nbsp;sous-répertoires</li>
-<li><strong>Hachage de contenu</strong> — un hachage de la&nbsp;sortie <code>ls</code> (noms de fichiers, tailles, dates de&nbsp;modification)</li>
+<li><strong>Hash du contenu</strong> — un hash de la&nbsp;sortie <code>ls</code> (noms de fichiers, tailles, dates de&nbsp;modification)</li>
 <li><strong>Horodatage</strong> — quand l&#8217;instantané a été&nbsp;pris</li>
 </ul>
-<p>Le hachage de contenu est l&#8217;idée clé. Si le hachage d&#8217;un répertoire n&#8217;a pas changé depuis le dernier instantané, rien à l&#8217;intérieur n&#8217;a changé — passez les sous-répertoires. Cela rend le scan rapide même sur de grands disques. Vous ne creusez plus profondément que là où quelque chose a réellement&nbsp;bougé.</p>
+<p>Le hash du contenu est l&#8217;idée clé. Si le hash d&#8217;un répertoire n&#8217;a pas changé depuis le dernier instantané, rien à l&#8217;intérieur n&#8217;a changé — passez les sous-répertoires. Cela rend le scan rapide même sur de grands disques. Vous ne creusez plus profondément que là où quelque chose a réellement&nbsp;bougé.</p>
 <div class="highlight"><pre><span></span><code>/Users/till           2026-02-27T03:12  148.2 GB  a3f8c1...
 /Users/till/Downloads 2026-02-27T03:12   23.1 GB  9e2b44...  ← changé
 /Users/till/Library   2026-02-27T03:12   41.7 GB  7d1f09...  ← changé
-/Users/till/Documents 2026-02-27T03:12   62.3 GB  a3f8c1...  ← inchangé, ignorer les enfants
+/Users/till/Documents 2026-02-27T03:12   62.3 GB  a3f8c1...  ← inchangé, passez les enfants
 </code></pre></div>
 
 <h2 id="format-de-stockage">Format de&nbsp;stockage</h2>
@@ -207,32 +207,32 @@ Deutsch
 </tr>
 </tbody>
 </table>
-<p>Chaque ligne est un instantané d&#8217;un répertoire à un moment donné. Interrogez-le comme vous le souhaitez — croissance par semaine, plus gros changements, répertoires apparus de nulle&nbsp;part.</p>
-<p>Important : la base de données doit également enregistrer lorsqu&#8217;un répertoire a été <em>confirmé inchangé</em>. Si je&nbsp;scanne <code>/Users/till/Documents</code> et que le hachage est le même que la semaine dernière, c&#8217;est un point de données — &#8220;vérifié, pas de changement.&#8221; C&#8217;est fondamentalement différent d&#8217;un répertoire que je n&#8217;ai simplement pas regardé depuis des mois. Sans cette distinction, vous ne pouvez pas différencier &#8220;stable&#8221; de&nbsp;&#8220;inconnu.&#8221;</p>
+<p>Chaque ligne est un instantané d&#8217;un répertoire à un moment donné. Interrogez-le comme vous le souhaitez — croissance par semaine, plus grands changements, répertoires apparus de nulle&nbsp;part.</p>
+<p>Important : la base de données doit également enregistrer quand un répertoire a été <em>confirmé inchangé</em>. Si je&nbsp;scanne <code>/Users/till/Documents</code> et que le hash est le même que la semaine dernière, c&#8217;est un point de données — &#8220;vérifié, pas de changement.&#8221; C&#8217;est fondamentalement différent d&#8217;un répertoire que je n&#8217;ai tout simplement pas regardé depuis des mois. Sans cette distinction, vous ne pouvez pas distinguer &#8220;stable&#8221; de&nbsp;&#8220;inconnu.&#8221;</p>
 <h2 id="ce-que-je-voudrais-voir">Ce que je voudrais&nbsp;voir</h2>
-<p>Une interface <span class="caps">CLI</span> simple ou une vue dans la barre de menu qui répond&nbsp;:</p>
+<p>Une simple interface en ligne de commande ou dans la barre de menus qui répond&nbsp;:</p>
 <ul>
-<li><strong>Ce qui a le plus grossi</strong> la semaine / le mois dernier&nbsp;?</li>
+<li><strong>Ce qui a le plus augmenté</strong> la semaine / le mois dernier&nbsp;?</li>
 <li><strong>Quoi de neuf</strong> — répertoires ou fichiers qui n&#8217;existaient pas auparavant&nbsp;?</li>
 <li><strong>Chronologie</strong> —&nbsp;comment <code>/Users/till/Library/Caches</code> a-t-il changé au cours des 6 derniers mois&nbsp;?</li>
 <li><strong>Alertes</strong> — avertissez-moi lorsqu&#8217;un répertoire unique augmente de plus de X <span class="caps">GB</span> en une&nbsp;semaine</li>
 </ul>
-<p>Rien de sophistiqué. Quelques tableaux triés et peut-être un graphique en courbes. Les données sont le produit — l&#8217;interface utilisateur est juste un moyen de poser des&nbsp;questions.</p>
-<h2 id="pourquoi-cela-nexiste-pas-ou-pourquoi-les-outils-existants-passent-a-cote">Pourquoi cela n&#8217;existe pas (ou pourquoi les outils existants passent à&nbsp;côté)</h2>
-<p>Il existe des analyseurs d&#8217;espace disque — DaisyDisk, GrandPerspective, ncdu. Ils vous montrent ce qui est grand <em>en ce moment</em>. C&#8217;est utile pour un nettoyage ponctuel, mais cela ne vous dit pas ce qui a changé.&nbsp;Si <code>/Library/Developer/CoreSimulator</code> fait 30 <span class="caps">GB</span>, a-t-il toujours fait 30 <span class="caps">GB</span> ? Ou faisait-il 5 <span class="caps">GB</span> le mois dernier ? Sans historique, vous ne pouvez pas le&nbsp;dire.</p>
+<p>Rien de sophistiqué. Quelques tableaux triés et peut-être un sparkline. Les données sont le produit — l&#8217;interface utilisateur est juste un moyen de poser des&nbsp;questions.</p>
+<h2 id="pourquoi-cela-nexiste-pas-ou-pourquoi-les-outils-existants-manquent-le-point">Pourquoi cela n&#8217;existe pas (ou pourquoi les outils existants manquent le&nbsp;point)</h2>
+<p>Il existe des analyseurs d&#8217;espace disque — DaisyDisk, GrandPerspective, ncdu. Ils vous montrent ce qui est grand <em>en ce moment</em>. C&#8217;est utile pour un nettoyage ponctuel, mais cela ne vous dit pas ce qui a changé.&nbsp;Si <code>/Library/Developer/CoreSimulator</code> fait 30 <span class="caps">GB</span>, a-t-il toujours fait 30 <span class="caps">GB</span> ? Ou faisait-il 5 <span class="caps">GB</span> le mois dernier ? Sans historique, vous ne pouvez pas&nbsp;savoir.</p>
 <p>Il existe également des outils de surveillance, mais ils suivent l&#8217;espace libre <em>total</em> comme un seul chiffre. &#8220;Votre disque est passé de 40 <span class="caps">GB</span> libres à 12 <span class="caps">GB</span> libres en trois semaines.&#8221; Super — mais <em>où</em>&nbsp;?</p>
 <p>DiskSpaceTracker se situe entre les deux : il suit l&#8217;espace par répertoire au fil du temps. C&#8217;est la pièce&nbsp;manquante.</p>
 <h2 id="reflexions-techniques">Réflexions&nbsp;techniques</h2>
 <ul>
-<li><strong>natif macOS</strong> —&nbsp;utilise <code>NSProcessInfo</code> pour la détection d&#8217;inactivité, IOKit pour l&#8217;état de&nbsp;l&#8217;alimentation</li>
+<li><strong>macOS-native</strong> —&nbsp;utilise <code>NSProcessInfo</code> pour la détection d&#8217;inactivité, IOKit pour l&#8217;état de&nbsp;l&#8217;alimentation</li>
 <li><strong>Fonctionne comme un LaunchDaemon</strong> — méthode standard macOS pour planifier le travail en&nbsp;arrière-plan</li>
 <li><strong>Stockage SQLite</strong> — fichier unique, pas de serveur, facile à interroger, facile à&nbsp;sauvegarder</li>
-<li><strong>Liste d&#8217;exclusion</strong> —&nbsp;ignorer <code>/System</code>, les instantanés Time Machine, et d&#8217;autres chemins non&nbsp;exploitables</li>
-<li><strong>Empreinte minimale</strong> — le saut basé sur le hachage signifie que la plupart de l&#8217;arborescence n&#8217;est jamais touchée les jours&nbsp;calmes</li>
-<li><strong>Priorité de scan intelligente</strong> — le scanner ne peut pas tout vérifier à chaque fois, il doit donc décider de ce qu&#8217;il faut regarder ensuite. Un algorithme simple qui pèse trois facteurs : les plus grands répertoires d&#8217;abord (c&#8217;est là que se trouve l&#8217;espace), les répertoires les moins récemment scannés ensuite (ne laissez pas de zones aveugles), et les répertoires dont le hachage parent a changé (quelque chose a bougé). De cette façon, les instantanés les plus précieux sont pris en premier, et au fil du temps, la couverture reste&nbsp;homogène.</li>
+<li><strong>Liste d&#8217;exclusion</strong> —&nbsp;ignorez <code>/System</code>, les instantanés Time Machine et d&#8217;autres chemins non&nbsp;exploitables</li>
+<li><strong>Empreinte minimale</strong> — le saut basé sur le hash signifie que la plupart de l&#8217;arborescence n&#8217;est jamais touchée les jours&nbsp;calmes</li>
+<li><strong>Priorité de scan intelligente</strong> — le scanner ne peut pas tout vérifier à chaque fois, il doit donc décider quoi regarder ensuite. Un algorithme simple qui pèse trois facteurs : les plus grands répertoires d&#8217;abord (c&#8217;est là que se trouve l&#8217;espace), les répertoires les moins récemment scannés ensuite (ne laissez pas de zones d&#8217;ombre), et les répertoires dont le hash parent a changé (quelque chose a bougé). De cette façon, les instantanés les plus précieux sont pris en premier, et au fil du temps, la couverture reste&nbsp;homogène.</li>
 </ul>
-<p>Le tout pourrait être un seul binaire Swift sans dépendances. Ou un script Python avec des&nbsp;hooks <code>osascript</code>. Peu importe — l&#8217;idée est assez simple pour que l&#8217;implémentation soit presque triviale. Ce qui compte, c&#8217;est qu&#8217;il fonctionne de manière cohérente et accumule&nbsp;l&#8217;historique.</p>
-<p>C&#8217;est le logiciel que je veux. Pas un autre outil &#8220;ce qui est grand en ce moment&#8221; — un observateur discret qui construit une chronologie de l&#8217;endroit où va mon espace disque, afin que lorsque les choses se compliquent, la réponse soit déjà&nbsp;là.</p>
+<p>Le tout pourrait être un seul binaire Swift sans dépendances. Ou un script Python avec des&nbsp;hooks <code>osascript</code>. Peu importe — l&#8217;idée est suffisamment simple pour que l&#8217;implémentation soit presque triviale. Ce qui importe, c&#8217;est qu&#8217;il fonctionne de manière cohérente et construise un&nbsp;historique.</p>
+<p>C&#8217;est le logiciel que je veux. Pas un autre outil &#8220;ce qui est grand en ce moment&#8221; — un observateur discret qui construit une chronologie de l&#8217;endroit où va mon espace disque, afin que lorsque les choses se resserrent, la réponse soit déjà&nbsp;là.</p>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
         data-repo="tillg/grtnr.com"
