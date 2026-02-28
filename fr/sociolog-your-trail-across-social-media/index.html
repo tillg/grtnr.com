@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>sociolog - Votre trace à travers les réseaux sociaux - grtnr.com</title>
+  <title>sociolog - Votre parcours à travers les réseaux sociaux - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -39,7 +39,7 @@
     <meta name="tags" content="softwareweneed" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="sociolog - Votre trace à travers les réseaux sociaux" />
+  <meta property="og:title" content="sociolog - Votre parcours à travers les réseaux sociaux" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/sociolog-your-trail-across-social-media/" />
   <meta property="og:description" content="Un outil qui suit mes activités sur toutes les plateformes de réseaux sociaux." />
@@ -48,7 +48,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="sociolog - Votre trace à travers les réseaux sociaux" />
+  <meta name="twitter:title" content="sociolog - Votre parcours à travers les réseaux sociaux" />
   <meta name="twitter:description" content="Un outil qui suit mes activités sur toutes les plateformes de réseaux sociaux." />
   <meta name="twitter:image" content="https://grtnr.com/fr/sociolog-your-trail-across-social-media/sociolog.png" />
 
@@ -57,7 +57,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "sociolog - Votre trace \u00e0 travers les r\u00e9seaux sociaux",
+    "headline": "sociolog - Votre parcours \u00e0 travers les r\u00e9seaux sociaux",
     "url": "https://grtnr.com/fr/sociolog-your-trail-across-social-media/",
 "description": "Un outil qui suit mes activit\u00e9s sur toutes les plateformes de r\u00e9seaux sociaux.","image": "https://grtnr.com/fr/sociolog-your-trail-across-social-media/sociolog.png","datePublished": "2016-01-04T00:00:00",    "author": {
       "@type": "Person",
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 28.02.2026 12:48:38.
+      Last built 28.02.2026 15:26:11.
   </div>
 </div>
   <div class="wrap">
@@ -136,7 +136,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      sociolog - Votre trace à travers les réseaux sociaux
+      sociolog - Votre parcours à travers les réseaux sociaux
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">lundi 4 janvier 2016</span>
@@ -159,9 +159,9 @@ Deutsch
 <li>Twitter</li>
 <li>Facebook</li>
 <li>Un blog privé avec accès restreint (car il contient des photos de&nbsp;famille)</li>
-<li>Ce <a href="http://tillgartner.com" rel="noopener noreferrer" target="_blank">blog</a></li>
+<li>Ce <a href="http://tillgartner.com" rel="noopener noreferrer" target="_blank">blog</a> [site n&#8217;existant&nbsp;plus]</li>
 </ul>
-<p>De temps en temps, je trouve agréable de parcourir mon passé. Je le fais le plus souvent sur notre blog familial, car il contient le contenu le plus intéressant et parce qu&#8217;il est facile à parcourir. J&#8217;aimerais pouvoir faire défiler tout mon passé à travers tous les&nbsp;médias.</p>
+<p>De temps en temps, j&#8217;aime bien faire défiler mon passé. Je le fais le plus souvent sur notre blog familial, car il contient le contenu le plus intéressant et parce qu&#8217;il est facile à parcourir. J&#8217;aimerais pouvoir faire défiler tout mon passé à travers tous les&nbsp;médias.</p>
 <p>Voici donc ce que mon logiciel devrait faire&nbsp;:</p>
 <ul>
 <li>Collecter toutes les entrées que j&#8217;ai écrites sur les réseaux sociaux&nbsp;:</li>
@@ -170,8 +170,8 @@ Deutsch
 <li>Wordpress</li>
 <li>Créer un document par entrée dans un dépôt&nbsp;Github</li>
 <li>Gérer correctement le contenu dupliqué : Depuis quelques années, mon compte Twitter est <em>lié</em> à mon compte Facebook de sorte que les entrées Twitter sont répliquées sur Facebook. C&#8217;est parce que j&#8217;ai des personnes que je considère comme <em>public</em> sur les deux&nbsp;médias.</li>
-<li>Collecter également les retours sur mes&nbsp;publications</li>
-<li>Les afficher joliment de manière statique, y compris les pages de vue&nbsp;d&#8217;ensemble</li>
+<li>Recueillir également les retours sur mes&nbsp;publications</li>
+<li>Les afficher joliment de manière statique, y compris des pages&nbsp;d&#8217;aperçu</li>
 </ul>
 <p>Quelques réflexions techniques&nbsp;:</p>
 <ul>
@@ -182,7 +182,7 @@ Deutsch
 <li>Il les déduplique (c&#8217;est-à-dire fusionne celles qui sont identiques ou répliquées sur différents&nbsp;canaux)</li>
 <li>Il crée un document / fichier par entrée de réseau social et les écrit dans un répertoire de&nbsp;sortie</li>
 <li>Ce répertoire est ensuite répliqué / ajouté à un compte&nbsp;github</li>
-<li>Les documents d&#8217;entrée de réseaux sociaux seraient nommés&nbsp;comme <code>2015-12-03-Le_titre_de_ce_que_j_ai_écrit-TWITTER.json</code></li>
+<li>Les documents d&#8217;entrée de réseau social seraient nommés&nbsp;comme <code>2015-12-03-Le_titre_de_ce_que_j'ai_écrit-TWITTER.json</code></li>
 <li>Il y aurait un <em>fichier d&#8217;en-tête</em> avec un nom fixe,&nbsp;c&#8217;est-à-dire <code>sociologs.json</code>. Ce fichier contiendrait les 20 premiers journaux et pointerait vers un fichier avec les journaux&nbsp;suivants.</li>
 <li>Le&nbsp;domaine <code>sociolog.io</code> serait <a href="https://www.godaddy.com/domains/searchresults.aspx?&amp;checkAvail=1&amp;domainToCheck=sociolog.io" rel="noopener noreferrer" target="_blank">disponible</a> - à ce jour, le 4 janvier&nbsp;2016.</li>
 <li>Le <code>index.html</code> généré chargerait les données via des requêtes <span class="caps">JS</span>/<span class="caps">AJAX</span> et continuerait à charger pendant que l&#8217;utilisateur fait défiler vers le&nbsp;bas</li>

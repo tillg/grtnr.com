@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>Ajouter une recherche à un site statique - grtnr.com</title>
+  <title>Ajouter une fonction de recherche à un site statique - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -38,7 +38,7 @@
     <meta name="description" content="Comment ajouter une fonctionnalité de recherche à un site statique en utilisant Google Custom Search Engine et une barre de navigation Bootstrap." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Ajouter une recherche à un site statique" />
+  <meta property="og:title" content="Ajouter une fonction de recherche à un site statique" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/fr/adding-search-to-a-static-site/" />
   <meta property="og:description" content="Comment ajouter une fonctionnalité de recherche à un site statique en utilisant Google Custom Search Engine et une barre de navigation Bootstrap." />
@@ -47,7 +47,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ajouter une recherche à un site statique" />
+  <meta name="twitter:title" content="Ajouter une fonction de recherche à un site statique" />
   <meta name="twitter:description" content="Comment ajouter une fonctionnalité de recherche à un site statique en utilisant Google Custom Search Engine et une barre de navigation Bootstrap." />
   <meta name="twitter:image" content="https://grtnr.com/fr/adding-search-to-a-static-site/search.jpg" />
 
@@ -56,7 +56,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Ajouter une recherche \u00e0 un site statique",
+    "headline": "Ajouter une fonction de recherche \u00e0 un site statique",
     "url": "https://grtnr.com/fr/adding-search-to-a-static-site/",
 "description": "Comment ajouter une fonctionnalit\u00e9 de recherche \u00e0 un site statique en utilisant Google Custom Search Engine et une barre de navigation Bootstrap.","image": "https://grtnr.com/fr/adding-search-to-a-static-site/search.jpg","datePublished": "2015-12-19T00:00:00",    "author": {
       "@type": "Person",
@@ -92,7 +92,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 28.02.2026 12:48:38.
+      Last built 28.02.2026 15:26:11.
   </div>
 </div>
   <div class="wrap">
@@ -135,7 +135,7 @@ Deutsch
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Ajouter une recherche à un site statique
+      Ajouter une fonction de recherche à un site statique
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">samedi 19 décembre 2015</span>
@@ -147,14 +147,14 @@ Deutsch
       | <a href="/adding-search-to-a-static-site/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p>J&#8217;ai maintenant un site statique généré par jBake. Jusqu&#8217;ici tout va bien. Mais qu&#8217;est-ce qu&#8217;un site sans recherche ? La recherche est indispensable. Alors, comment ajouter une fonctionnalité de recherche à un site statique ? Facile : Nous utilisons la fonctionnalité Custom Search des géants de la recherche&nbsp;;)</p>
+    <p>J&#8217;ai maintenant un site statique généré par jBake. Jusqu&#8217;ici tout va bien. Mais qu&#8217;est-ce qu&#8217;un site sans recherche ? La recherche est indispensable. Alors, comment ajouter une fonctionnalité de recherche à un site statique ? Facile : Nous utilisons la fonctionnalité de recherche personnalisée des géants de la recherche&nbsp;;)</p>
 <p>Voici les étapes que j&#8217;ai suivies pour y parvenir&nbsp;:</p>
 <h2 id="creer-le-moteur-de-recherche-personnalise">Créer le moteur de recherche&nbsp;personnalisé</h2>
-<p>Rien de plus simple : Il suffit d&#8217;aller sur la <a href="http://www.google.com/cse" rel="noopener noreferrer" target="_blank">page Google <span class="caps">CSE</span></a> et de le créer. Le processus est explicite : Vous avez besoin d&#8217;un nom pour votre moteur de recherche, vous indiquez quel contenu doit être rendu disponible. Dans mon cas, ce serait tout le contenu de <a href="https://tillgartner.com" rel="noopener noreferrer" target="_blank">tillgartner.com</a> et c&#8217;est à peu près tout. Nous reviendrons à la fin sur ce site afin d&#8217;affiner l&#8217;apparence des&nbsp;résultats.</p>
-<p><img alt="Administration Google CSE" src="/adding-search-to-a-static-site/Custom_Search_-_Basic.jpg"/></p>
+<p>Rien de plus simple : Il suffit d&#8217;aller sur la <a href="http://www.google.com/cse" rel="noopener noreferrer" target="_blank">page Google <span class="caps">CSE</span></a> et de le créer. Le processus est explicite : Vous avez besoin d&#8217;un nom pour votre moteur de recherche, vous indiquez quel contenu doit être rendu disponible. Dans mon cas, cela inclurait tout le contenu de <a href="https://tillgartner.com" rel="noopener noreferrer" target="_blank">tillgartner.com</a> [site n&#8217;existant plus] et c&#8217;est à peu près tout. Nous reviendrons à la fin sur ce site pour affiner l&#8217;apparence des&nbsp;résultats.</p>
+<p><img alt="Administration de Google CSE" src="/adding-search-to-a-static-site/Custom_Search_-_Basic.jpg"/></p>
 <p>La seule chose dont nous avons besoin ici est le code pour intégrer la recherche. Vous obtenez ce code en cliquant sur le bouton &#8220;<strong>Get Code</strong>&#8220;.</p>
 <h2 id="ajouter-le-champ-de-recherche">Ajouter le champ de&nbsp;recherche</h2>
-<p>Ensuite, nous avons besoin d&#8217;une boîte de recherche sur nos pages. Je veux une boîte de recherche en haut à droite de chaque page de l&#8217;ensemble du site. Je l&#8217;ajoute donc au modèle Freemarker qui crée le&nbsp;menu.</p>
+<p>Ensuite, nous avons besoin d&#8217;une boîte de recherche sur nos pages. Je veux une boîte de recherche en haut à droite de chaque page de l&#8217;ensemble du site. Je l&#8217;ajoute donc au modèle freemarker qui crée le&nbsp;menu.</p>
 <p>Dans mon cas,&nbsp;le <code>menu.ftl</code> ressemble à ceci&nbsp;:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">Barre</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">navigation</span><span class="w"> </span><span class="nx">fixe</span><span class="w"> </span><span class="o">--&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">nav</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"navbar navbar-default navbar-fixed-top"</span><span class="w"> </span><span class="nx">role</span><span class="o">=</span><span class="s2">"navigation"</span><span class="o">&gt;</span>
@@ -190,18 +190,18 @@ Deutsch
 <span class="w">    </span><span class="o">&lt;</span><span class="err">/nav&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"container"</span><span class="o">&gt;</span>
 </code></pre></div>
-<p><em>Remarque :</em> J&#8217;ai corrigé le code sur mon site et dans le code ci-dessus le 29.12.2015. Le code pour le bouton qui apparaît lorsque la largeur de l&#8217;écran fait s&#8217;effondrer le menu manquait. Juste au cas où vous auriez lu ceci plus tôt et vous vous demanderiez pourquoi c&#8217;est différent&nbsp;maintenant&#8230;</p>
+<p><em>Remarque :</em> J&#8217;ai corrigé le code sur mon site et dans le code ci-dessus le 29.12.2015. Le code pour le bouton qui apparaît lorsque la largeur de l&#8217;écran fait s&#8217;effondrer le menu, manquait. Juste au cas où vous auriez lu ceci plus tôt et vous vous demandez pourquoi c&#8217;est différent&nbsp;maintenant&#8230;</p>
 <p>J&#8217;ai trouvé que la partie du menu et comment elle s&#8217;effondre n&#8217;était pas triviale. La meilleure explication que j&#8217;ai trouvée était <a href="https://bootstrapbay.com/blog/bootstrap-tutorial-navbar/" rel="noopener noreferrer" target="_blank">cette vidéo</a>.</p>
-<p>C&#8217;est le menu standard de Bootstrap. Ce qui est spécial dans notre cas, c&#8217;est&nbsp;l&#8217;attribut <code>action</code> dans le formulaire qui lie à la page de résultats de recherche&nbsp;(appelée <code>search.html</code> dans mon&nbsp;cas).</p>
+<p>C&#8217;est un menu standard de Bootstrap. Ce qui est spécial dans notre cas, c&#8217;est&nbsp;l&#8217;attribut <code>action</code> dans le formulaire qui renvoie à la page de résultats de recherche&nbsp;(appelée <code>search.html</code> dans mon&nbsp;cas).</p>
 <p>Le résultat est une petite boîte de recherche en haut à droite&nbsp;:</p>
 <p><img alt="Boîte de recherche" src="/adding-search-to-a-static-site/search_box.jpg"/></p>
 <h2 id="page-de-resultats-de-recherche">Page de résultats de&nbsp;recherche</h2>
 <p>Enfin, nous avons besoin de la page de résultats de recherche. Cette page sera appelée (c&#8217;est-à-dire liée) à partir du formulaire de recherche que nous venons de créer. Son <span class="caps">URL</span> sera quelque chose&nbsp;comme</p>
 <div class="highlight"><pre><span></span><code>http://tillgartner.com/search.html?q=huhu
 </code></pre></div>
-<p>Dans mon cas, la page de résultats de recherche ne contiendra <strong>que</strong> le résultat de la recherche. Si l&#8217;utilisateur souhaite modifier sa recherche, il a toujours la boîte de recherche omniprésente en haut à droite.
+<p>Dans mon cas, la page de résultats de recherche contiendra <strong>uniquement</strong> le résultat de la recherche. Si l&#8217;utilisateur souhaite modifier sa recherche, il a toujours la boîte de recherche omniprésente en haut à droite.
 La page de résultats de recherche contiendra le code que nous avons copié lors de la configuration du moteur de recherche personnalisé. Dans mon cas, l&#8217;ensemble du fichier Markdown ressemble à ceci&nbsp;:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">title</span><span class="o">=</span><span class="nx">Search</span>
+<div class="highlight"><pre><span></span><code><span class="nx">title</span><span class="o">=</span><span class="nx">Recherche</span>
 <span class="nx">type</span><span class="o">=</span><span class="nx">page</span>
 <span class="nx">date</span><span class="o">=</span><span class="mf">2015</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">17</span>
 <span class="nx">status</span><span class="o">=</span><span class="nx">published</span>
@@ -221,12 +221,12 @@ La page de résultats de recherche contiendra le code que nous avons copié lors
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
 <span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">markdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0"</span><span class="o">&gt;&lt;</span><span class="nx">gcse</span><span class="o">:</span><span class="nx">searchresults</span><span class="o">-</span><span class="nx">only</span><span class="o">&gt;</span><span class="nx">Résultats</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">recherche</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/gcse:searchresults-only&gt;&lt;/div&gt;</span>
 </code></pre></div>
-<p>Il m&#8217;a fallu un certain temps pour comprendre comment dire à markdown que c&#8217;est du pur <span class="caps">HTML</span> et qu&#8217;il doit le prendre tel quel sans le transformer ni le citer. La solution était la&nbsp;balise <code>&lt;div markdown="0"&gt;</code>.</p>
+<p>Il m&#8217;a fallu un certain temps pour comprendre comment indiquer à markdown que c&#8217;est du pur <span class="caps">HTML</span> et qu&#8217;il doit le prendre tel quel sans le transformer ou le citer. La solution était la&nbsp;balise <code>&lt;div markdown="0"&gt;</code>.</p>
 <h2 id="ressources">Ressources</h2>
 <p>Quelques lectures qui m&#8217;ont aidé à trouver mon chemin&nbsp;:</p>
 <ul>
 <li><a href="http://www.google.com/cse" rel="noopener noreferrer" target="_blank">Créez votre propre moteur de&nbsp;recherche</a></li>
-<li><a href="http://www.cambiaresearch.com/articles/84/how-to-integrate-a-google-custom-search-popup-in-a-bootstrap-navbar" rel="noopener noreferrer" target="_blank">Comment intégrer une fenêtre contextuelle de recherche personnalisée Google dans une barre de navigation&nbsp;Bootstrap</a></li>
+<li><a href="http://www.cambiaresearch.com/articles/84/how-to-integrate-a-google-custom-search-popup-in-a-bootstrap-navbar" rel="noopener noreferrer" target="_blank">Comment intégrer une fenêtre de recherche Google personnalisée dans une barre de navigation&nbsp;Bootstrap</a></li>
 <li><a href="https://developers.google.com/custom-search/docs/tutorial/implementingsearchbox" rel="noopener noreferrer" target="_blank">Implémentation de la boîte de recherche, par&nbsp;Google</a></li>
 </ul>
     <div id="giscus">
