@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>Mac: Bildschirm und Ton aufnehmen - grtnr.com</title>
+  <title>Mac: Bildschirm & Ton aufnehmen - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -35,20 +35,20 @@
   </script>
 
 
-    <meta name="description" content="Wie Sie den Bildschirm Ihres Macs zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnehmen können." />
+    <meta name="description" content="Wie du deinen Mac-Bildschirm zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnimmst." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Mac: Bildschirm und Ton aufnehmen" />
+  <meta property="og:title" content="Mac: Bildschirm & Ton aufnehmen" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/de/mac-recording-screen-sound/" />
-  <meta property="og:description" content="Wie Sie den Bildschirm Ihres Macs zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnehmen können." />
+  <meta property="og:description" content="Wie du deinen Mac-Bildschirm zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnimmst." />
   <meta property="og:image" content="https://grtnr.com/de/mac-recording-screen-sound/MacSoundFlower.png" />
   <meta property="og:site_name" content="grtnr.com" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mac: Bildschirm und Ton aufnehmen" />
-  <meta name="twitter:description" content="Wie Sie den Bildschirm Ihres Macs zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnehmen können." />
+  <meta name="twitter:title" content="Mac: Bildschirm & Ton aufnehmen" />
+  <meta name="twitter:description" content="Wie du deinen Mac-Bildschirm zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnimmst." />
   <meta name="twitter:image" content="https://grtnr.com/de/mac-recording-screen-sound/MacSoundFlower.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -56,9 +56,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Mac: Bildschirm und Ton aufnehmen",
+    "headline": "Mac: Bildschirm \u0026 Ton aufnehmen",
     "url": "https://grtnr.com/de/mac-recording-screen-sound/",
-"description": "Wie Sie den Bildschirm Ihres Macs zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnehmen k\u00f6nnen.","image": "https://grtnr.com/de/mac-recording-screen-sound/MacSoundFlower.png","datePublished": "2020-06-11T00:00:00",    "author": {
+"description": "Wie du deinen Mac-Bildschirm zusammen mit dem Systemton mit Soundflower und QuickTime Player aufnimmst.","image": "https://grtnr.com/de/mac-recording-screen-sound/MacSoundFlower.png","datePublished": "2020-06-11T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -92,7 +92,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 17:03:07.
+      Last built 28.02.2026 10:28:37.
   </div>
 </div>
   <div class="wrap">
@@ -135,7 +135,7 @@ Français
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Mac: Bildschirm und Ton aufnehmen
+      Mac: Bildschirm & Ton aufnehmen
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
       <span class="post-date" style="margin-bottom: 0; margin-top: 0;">Do 11. Jun 2020</span>
@@ -147,32 +147,32 @@ Français
       | <a href="/mac-recording-screen-sound/" style="color: #0066cc;">Original version</a>
     </div>
 
-    <p><strong>Kurz gesagt</strong> Um den Bildschirm Ihres Macs zusammen mit dem Ton (z.B. eine Zoom-Sitzung) aufzunehmen, können Sie Soundflower&nbsp;verwenden.</p>
-<p>Hier ist, was ich erreichen wollte: Eine (Video-)Aufnahme dessen, was auf dem Bildschirm meines Macs passiert, <strong>einschließlich des Tons</strong>. All das, während ich gleichzeitig hören kann, was passiert. In meinem Fall wollte ich eine Zoom-Klasse aufnehmen, aber ich denke, diese Einrichtung könnte in vielen Situationen nützlich&nbsp;sein.</p>
-<p>macOS verfügt über ein großartiges integriertes Bildschirmaufnahme-Tool: <a href="https://support.apple.com/en-us/HT208721" rel="noopener noreferrer" target="_blank">QuickTime Player</a> (ja, es nimmt auf, obwohl der Name <em>Player</em> sagt&nbsp;😀).</p>
-<p>Das einzige Problem beim Verwenden von QuickTime Player ist der Ton: Die Auswahlmöglichkeiten sind <em>Internes Mikrofon</em> oder <em>Keiner</em>. Das passt gut, wenn Sie ein Tutorial aufnehmen möchten, bei dem der Ton das ist, was Sie über das Mikrofon erklären, aber es passt nicht zu meiner&nbsp;Situation.</p>
-<p>Hier kommt <a href="https://github.com/mattingalls/Soundflower" rel="noopener noreferrer" target="_blank">SoundFlower</a> ins Spiel. Es ist Open Source, ausgereift und zuverlässig (getestet von mir und weit erfahreneren Kollegen - und hat immer sehr gute Bewertungen erhalten). SoundFlower, so wie es heute ist (das ist Sommer 2020), ist kein Programm mit einer Benutzeroberfläche, sondern nur eine macOS-Systemerweiterung. Das ist etwas, das Sie als Benutzer nicht sehen, aber das im Hintergrund sehr hilfreich&nbsp;ist.</p>
-<p>Was es in unserem Fall tut: Es erstellt einen neuen, virtuellen Tonkanal, der den Tonstrom in zwei andere Ströme aufteilt. In meinem Fall bedeutet das, dass ich in meiner Zoom-Sitzung einen virtuellen Ausgang anstelle des Lautsprechers meines Macs auswähle. Ich nannte diesen Ausgang <em>MacSpkr_SndFlwr</em>. Und dieser virtuelle Stream teilt den Ausgang auf den Lautsprecher des Macs und den (logischen) SoundFlower-Kanal auf. Dann wähle ich den SoundFlower-Kanal als Eingang für meine QuickTime Player-Aufnahme aus und das&nbsp;war&#8217;s.</p>
-<p><img alt="Fluss" src="/mac-recording-screen-sound/MacSoundFlower.svg"/>Die&nbsp;Tonströme</p>
+    <p><strong>Kurzfassung</strong> Um den Bildschirm deines Macs zusammen mit dem Ton (z.B. eine Zoom-Sitzung) aufzunehmen, kannst du Soundflower&nbsp;verwenden.</p>
+<p>Hier ist, was ich erreichen wollte: Eine (Video-)Aufnahme dessen, was auf dem Bildschirm meines Macs passiert, <strong>einschließlich des Tons</strong>. Und das alles, während ich gleichzeitig hören kann, was passiert. In meinem Fall wollte ich eine Zoom-Klasse aufnehmen, aber ich denke, diese Einrichtung könnte in vielen Situationen nützlich&nbsp;sein.</p>
+<p>macOS kommt mit einem großartigen eingebauten Bildschirmaufnahme-Tool: <a href="https://support.apple.com/en-us/HT208721" rel="noopener noreferrer" target="_blank">QuickTime Player</a> (ja, es nimmt auf, auch wenn der Name <em>Player</em> sagt&nbsp;😀).</p>
+<p>Das einzige Problem bei der Verwendung von QuickTime Player ist der Ton: Die Auswahlmöglichkeiten sind <em>Internes Mikrofon</em> oder <em>Keiner</em>. Das passt gut, wenn du ein Tutorial aufnehmen möchtest, bei dem der Ton das ist, was du über das Mikrofon erklärst, aber es passt nicht zu meiner&nbsp;Situation.</p>
+<p>Hier kommt <a href="https://github.com/mattingalls/Soundflower" rel="noopener noreferrer" target="_blank">SoundFlower</a> ins Spiel. Es ist Open Source, ausgereift und zuverlässig (getestet von mir und weit erfahreneren Kollegen - und hat immer sehr gute Bewertungen erhalten). SoundFlower ist, wie es heute ist (das ist Sommer 2020), kein Programm mit einer Benutzeroberfläche, sondern nur eine macOS-Systemerweiterung. Das ist etwas, das du als Benutzer nicht siehst, aber das im Hintergrund sehr hilfreich&nbsp;ist.</p>
+<p>Was es in unserem Fall macht: Es erstellt einen neuen, virtuellen Tonkanal, der den Tonstrom in 2 andere Ströme aufteilt. In meinem Fall bedeutet das, dass ich in meiner Zoom-Sitzung einen virtuellen Ausgang anstelle des Lautsprechers meines Macs auswähle. Ich nannte diesen Ausgang <em>MacSpkr_SndFlwr</em>. Und dieser virtuelle Strom teilt den Ausgang auf den Lautsprecher des Macs und den (logischen) SoundFlower-Kanal auf. Dann wähle ich den SoundFlower-Kanal als Eingang für meine QuickTime Player-Aufnahme aus und das&nbsp;war&#8217;s.</p>
+<p><img alt="Flow" src="/mac-recording-screen-sound/MacSoundFlower.svg"/>Die&nbsp;Tonströme</p>
 <h2 id="alles-einrichten">Alles&nbsp;einrichten</h2>
-<p><strong>Soundflower installieren</strong> ist gut auf der <a href="https://github.com/mattingalls/Soundflower/releases/tag/2.0b2" rel="noopener noreferrer" target="_blank">Download-Seite auf Github</a> beschrieben. Der Prozess mag etwas umständlich erscheinen, funktioniert jedoch gut, wenn Sie ihn Schritt für Schritt befolgen. Beachten Sie, dass es eine Weile gedauert hat, bis ich herausgefunden habe, was sie mit &#8220;<em>Sobald Sie dort sind, sollte es eine Schaltfläche &#8220;Zulassen&#8221; (**) geben, die Sie anklicken müssen, um die Erlaubnis zur Verwendung von Soundflower (Entwickler: <span class="caps">MATT</span> <span class="caps">INGALLS</span>) zu erteilen.</em>&#8221; meinten. Ich erwartete ein Popup-Dialogfeld mit der Zulassen-Schaltfläche, aber es ist einfach eine Schaltfläche im&nbsp;Fenster.</p>
-<p>Beachten Sie auch, dass Sie Ihren Mac nach der Installation von Soundflower neu starten&nbsp;müssen.</p>
-<p>Sobald Sie Soundflower installiert haben, können Sie ein logisches Audiogerät erstellen, das den Tonstrom aufteilt. Öffnen Sie dazu <em>Audio-<span class="caps">MIDI</span>-Setup</em>. Es ist ein macOS-Dienstprogramm, das sich in /Applications/Utilities befindet. Sie können es auch über Spotlight starten (drücken Sie Cmd + Leertaste) und geben Sie &#8220;<em>Audio Midi</em>&#8221;&nbsp;ein.</p>
-<p><img alt="Midi-App starten" src="/mac-recording-screen-sound/Screenshot-2020-06-11-at-11.47.25.png"/></p>
-<p><em>Starten des Audio-<span class="caps">MIDI</span>-Setups über&nbsp;Spotlight</em></p>
-<p>Sobald Sie sich im Audio-<span class="caps">MIDI</span>-Setup-Programm befinden, erstellen Sie ein neues (logisches) Audiogerät: Klicken Sie auf die &#8220;<strong>+</strong>&#8220;-Schaltfläche in der unteren linken Ecke und wählen Sie &#8220;<em>Multi-Output-Gerät erstellen</em>&#8220;. Im rechten Bereich, der erscheint, wählen Sie &#8220;<em>MacBook-Lautsprecher</em>&#8221; <span class="caps">UND</span> &#8220;<em>Soundflower (2ch)</em>&#8220;.</p>
-<p><img alt="Einstellungen" src="/mac-recording-screen-sound/Screenshot-2020-06-11-at-11.14.46.png"/></p>
+<p><strong>Soundflower installieren</strong> ist gut auf der <a href="https://github.com/mattingalls/Soundflower/releases/tag/2.0b2" rel="noopener noreferrer" target="_blank">Download-Seite auf Github</a> beschrieben. Der Prozess mag etwas umständlich erscheinen, funktioniert aber gut, wenn du ihn Schritt für Schritt befolgst. Beachte, dass es eine Weile gedauert hat, bis ich herausgefunden habe, was sie mit &#8220;<em>Sobald du dort bist, sollte es einen &#8220;Erlauben&#8221;-Button (**) geben, den du anklicken musst, um die Erlaubnis zur Nutzung von Soundflower (Entwickler: <span class="caps">MATT</span> <span class="caps">INGALLS</span>) zu geben.</em>&#8221; meinten. Ich erwartete ein Popup-Dialogfeld mit dem Erlauben-Button, aber es ist einfach ein Button im&nbsp;Fenster.</p>
+<p>Beachte auch, dass du deinen Mac nach der Installation von Soundflower neu starten&nbsp;musst.</p>
+<p>Sobald du Soundflower installiert hast, kannst du ein logisches Audiogerät erstellen, das den Tonstrom aufteilt. Öffne dazu <em>Audio-<span class="caps">MIDI</span>-Setup</em>. Es ist ein macOS-Dienstprogramm, das sich in /Programme/Dienstprogramme befindet. Du kannst es auch über Spotlight starten (drücke Cmd + Leertaste) und gib &#8220;<em>Audio Midi</em>&#8221;&nbsp;ein.</p>
+<p><img alt="Midi app launch" src="/mac-recording-screen-sound/Screenshot-2020-06-11-at-11.47.25.png"/></p>
+<p><em>Audio-<span class="caps">MIDI</span>-Setup über Spotlight&nbsp;starten</em></p>
+<p>Sobald du im Audio-<span class="caps">MIDI</span>-Setup-Programm bist, erstelle ein neues (logisches) Audiogerät: Klicke auf den &#8220;<strong>+</strong>&#8220;-Button in der unteren linken Ecke und wähle &#8220;<em>Multi-Output-Gerät erstellen</em>&#8220;. Wähle im rechten Bereich, der erscheint, &#8220;<em>MacBook-Lautsprecher</em>&#8221; <span class="caps">UND</span> &#8220;<em>Soundflower (2ch)</em>&#8221;&nbsp;aus.</p>
+<p><img alt="Settings" src="/mac-recording-screen-sound/Screenshot-2020-06-11-at-11.14.46.png"/></p>
 <p><em>Das neu erstellte&nbsp;Multi-Output-Gerät</em></p>
-<p>Starten Sie dann Ihren QuickTime Player (dieser ist auf Ihrem Mac vorinstalliert) und erstellen Sie eine neue Bildschirmaufnahme: Menü <em>Ablage ➡ Neue Bildschirmaufnahme</em>. Im unteren Teil des Bildschirms erscheint ein schwebendes&nbsp;Menü:</p>
-<p><img alt="Gesamter Bildschirm" src="/mac-recording-screen-sound/macos-catalina-screenshot-menu-record.jpg"/></p>
-<p><em>Das schwebende Menü beim Aufnehmen mit QuickTime&nbsp;Player</em></p>
-<p>Öffnen Sie die Optionsliste und wählen Sie &#8220;Soundflower (2ch)&#8221; als Eingang für die Aufnahme. Klicken Sie auf &#8220;Aufnehmen&#8221; und los geht&#8217;s: Starten Sie jetzt Ihre Zoom-Sitzung, maximieren Sie das Fenster und Ihre gesamte Zoom-Sitzung wird in einer .mov-Datei&nbsp;aufgenommen.</p>
-<p>Ich hoffe, diese Anleitungen waren hilfreich; zögern Sie nicht, Fragen zu stellen, wenn Sie welche&nbsp;haben.</p>
+<p>Starte dann deinen QuickTime Player (dieser ist auf deinem Mac vorinstalliert) und erstelle eine neue Bildschirmaufnahme: Menü <em>Ablage ➡ Neue Bildschirmaufnahme</em>. Im unteren Teil des Bildschirms erscheint ein schwebendes&nbsp;Menü:</p>
+<p><img alt="Entire screen" src="/mac-recording-screen-sound/macos-catalina-screenshot-menu-record.jpg"/></p>
+<p><em>Das schwebende Menü bei der Aufnahme mit QuickTime&nbsp;Player</em></p>
+<p>Öffne die Optionsliste und wähle &#8220;Soundflower (2ch)&#8221; als Eingang für die Aufnahme. Klicke auf &#8220;Aufnehmen&#8221; und los geht&#8217;s: Starte jetzt deine Zoom-Sitzung, maximiere das Fenster und deine gesamte Zoom-Sitzung wird in einer .mov-Datei&nbsp;aufgenommen.</p>
+<p>Ich hoffe, diese Anleitungen waren hilfreich; zögere nicht, Fragen zu stellen, wenn du welche&nbsp;hast.</p>
 <h3 id="referenzen">Referenzen</h3>
 <ul>
-<li><em>Wie man den Bildschirm auf Ihrem Mac aufnimmt</em> von <a href="https://support.apple.com/en-us/HT208721" rel="noopener noreferrer" target="_blank">Apple&nbsp;Support</a></li>
+<li><em>Wie man den Bildschirm auf deinem Mac aufnimmt</em> von <a href="https://support.apple.com/en-us/HT208721" rel="noopener noreferrer" target="_blank">Apple&nbsp;Support</a></li>
 <li><a href="https://github.com/mattingalls/Soundflower/releases/tag/2.0b2" rel="noopener noreferrer" target="_blank">Soundflower-Erklärungen</a></li>
-<li><em>Nehmen Sie den Bildschirm Ihres Computers mit Ton auf einem Mac auf</em> von <a href="https://www.cnet.com/how-to/record-your-computers-screen-with-audio-on-a-mac/" rel="noopener noreferrer" target="_blank">c|net</a></li>
+<li><em>Nimm den Bildschirm deines Computers mit Ton auf einem Mac auf</em> von <a href="https://www.cnet.com/how-to/record-your-computers-screen-with-audio-on-a-mac/" rel="noopener noreferrer" target="_blank">c|net</a></li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"

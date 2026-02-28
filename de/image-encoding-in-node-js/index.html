@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-  <title>Bildkodierung in Node JS - grtnr.com</title>
+  <title>Bildcodierung in Node JS - grtnr.com</title>
 
   <meta charset="utf-8" />
 
@@ -39,7 +39,7 @@
     <meta name="tags" content="tech" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bildkodierung in Node JS" />
+  <meta property="og:title" content="Bildcodierung in Node JS" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://grtnr.com/de/image-encoding-in-node-js/" />
   <meta property="og:description" content="Beim Umgang mit Bildern in einer Node-Anwendung musste ich lernen, wie man Bilddaten liest und möglicherweise dekodiert." />
@@ -48,7 +48,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bildkodierung in Node JS" />
+  <meta name="twitter:title" content="Bildcodierung in Node JS" />
   <meta name="twitter:description" content="Beim Umgang mit Bildern in einer Node-Anwendung musste ich lernen, wie man Bilddaten liest und möglicherweise dekodiert." />
   <meta name="twitter:image" content="https://grtnr.com/de/image-encoding-in-node-js/base64.png" />
 
@@ -57,9 +57,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Bildkodierung in Node JS",
+    "headline": "Bildcodierung in Node JS",
     "url": "https://grtnr.com/de/image-encoding-in-node-js/",
-"description": "Beim Umgang mit Bildern in einer Node-Anwendung musste ich lernen, wie man Bilddaten liest und m\u00f6glicherweise dekodiert.","image": "https://grtnr.com/de/image-encoding-in-node-js/base64.png","datePublished": "2019-04-11T00:00:00",    "author": {
+"description": "Beim Umgang mit Bildern in einer Node-Anwendung musste ich lernen, wie man Bilddaten liest und m\u00f6glicherweise dekodiert.","image": "https://grtnr.com/de/image-encoding-in-node-js/base64.png","datePublished": "2019-04-15T00:00:00",    "author": {
       "@type": "Person",
       "name": "Till Gartner"
     },
@@ -93,7 +93,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   </nav>
 
   <div class="sidebar-item">
-      Last built 27.02.2026 17:03:07.
+      Last built 28.02.2026 10:28:37.
   </div>
 </div>
   <div class="wrap">
@@ -136,10 +136,10 @@ Français
 <div class="posts">
 <div class="post">
     <h1 class="post-title">
-      Bildkodierung in Node JS
+      Bildcodierung in Node JS
     </h1>
     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem;">
-      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">Do 11. Apr 2019</span>
+      <span class="post-date" style="margin-bottom: 0; margin-top: 0;">Mo 15. Apr 2019</span>
       
       <div class="tag-pills">
   <a href="/tag/tech/"
@@ -161,24 +161,24 @@ Français
 <li>Ein Benutzer lädt ein Bild&nbsp;hoch</li>
 <li>Ich lese ein Bild von einer Datei, sei es im <span class="caps">JPEG</span>- oder <span class="caps">PNG</span>-Format</li>
 <li>Ich sende ein Bild an <span class="caps">AWS</span></li>
-<li>Ich speichere ein Bild in meiner&nbsp;PouchDB</li>
+<li>Ich speichere ein Bild in meiner&nbsp;pouchDB</li>
 </ul>
-<p>Beim Durchsuchen der verschiedenen Quellen stieß ich auf verschiedene Formate, wie Bilder in Node behandelt werden&nbsp;können:</p>
+<p>Beim Durchstöbern der verschiedenen Quellen stieß ich auf verschiedene Formate, wie Bilder in Node gehandhabt werden&nbsp;können:</p>
 <ul>
 <li>Als Buffer, der Binärdaten&nbsp;enthält</li>
-<li>Als String, der Base64-kodierte Daten enthält, beginnend mit etwas&nbsp;wie <code>data:image/jpeg;base64,</code> (oder&nbsp;mit <code>png</code>)</li>
-<li>Als String, der Base64-kodierte Daten ohne den speziellen Anfang&nbsp;enthält</li>
+<li>Als String, der Base64-codierte Daten enthält, beginnend mit etwas&nbsp;wie <code>data:image/jpeg;base64,</code> (oder&nbsp;mit <code>png</code>)</li>
+<li>Als String, der base64-codierte Daten ohne den speziellen Anfang&nbsp;enthält</li>
 </ul>
 <p>Dies sind die verschiedenen Operationen, die ich durchführe, und was sie als Ausgabe&nbsp;liefern:</p>
-<h2 id="-lesen-einer-datei-von-der-festplatte-mit-fs-ruckgabe-eines-buffer-mit-binardaten">- Lesen einer Datei von der Festplatte&nbsp;mit <code>fs</code>: Rückgabe&nbsp;eines <code>Buffer</code> mit&nbsp;Binärdaten</h2>
+<h2 id="-eine-datei-von-der-festplatte-mit-fs-lesen-gibt-einen-buffer-mit-binardaten-zuruck">- Eine Datei von der Festplatte&nbsp;mit <code>fs</code> lesen: gibt&nbsp;einen <code>Buffer</code> mit Binärdaten&nbsp;zurück</h2>
 <p>Dies sind die Quellen und Ziele, in/von denen Bilddaten in meinem Beispiel übertragen werden:
 <img alt="Bildquellen und -ziele" src="https://docs.google.com/drawings/d/e/2PACX-1vTaOoDUdKWZ9q05WH1LX1Yz_JbismNFdrYMoFYYsbU410xf23mi4GxRv_ZvhIQipnLDXunKU5eCh-Ju/pub?w=960&amp;h=720"/></p>
 <h2 id="lesen">Lesen</h2>
-<p>Nützliche Informationen, die ich zu den Themen gefunden&nbsp;habe:</p>
+<p>Nützliche Sachen, die ich zu den Themen gefunden&nbsp;habe:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/24523532/how-do-i-convert-an-image-to-a-base64-encoded-data-url-in-sails-js-or-generally" rel="noopener noreferrer" target="_blank">Wie konvertiere ich ein Bild in eine base64-kodierte Daten-<span class="caps">URL</span> in sails.js oder allgemein in serverseitigem JavaScript?&nbsp;StackOverflow</a></li>
-<li><a href="https://stackoverflow.com/questions/8110294/nodejs-base64-image-encoding-decoding-not-quite-working" rel="noopener noreferrer" target="_blank">NodeJS base64 Bildkodierung/Dekodierung funktioniert nicht ganz,&nbsp;StackOverflow</a></li>
-<li><a href="https://github.com/gchudnov/inkjet/blob/master/README.md" rel="noopener noreferrer" target="_blank">Inkjet, <span class="caps">JPEG</span>-Bilddekodierung, Kodierung <span class="amp">&amp;</span> <span class="caps">EXIF</span>-Lesebibliothek für Browser und node.js,&nbsp;Github</a></li>
+<li><a href="https://stackoverflow.com/questions/24523532/how-do-i-convert-an-image-to-a-base64-encoded-data-url-in-sails-js-or-generally" rel="noopener noreferrer" target="_blank">Wie konvertiere ich ein Bild in eine base64-codierte Daten-<span class="caps">URL</span> in sails.js oder generell in serverseitigem JavaScript?&nbsp;StackOverflow</a></li>
+<li><a href="https://stackoverflow.com/questions/8110294/nodejs-base64-image-encoding-decoding-not-quite-working" rel="noopener noreferrer" target="_blank">NodeJS base64 Bildcodierung/Decodierung funktioniert nicht ganz,&nbsp;StackOverflow</a></li>
+<li><a href="https://github.com/gchudnov/inkjet/blob/master/README.md" rel="noopener noreferrer" target="_blank">Inkjet, <span class="caps">JPEG</span>-Bilddecodierung, Codierung <span class="amp">&amp;</span> <span class="caps">EXIF</span>-Lesebibliothek für Browser und node.js,&nbsp;Github</a></li>
 </ul>
     <div id="giscus">
       <script src="https://giscus.app/client.js"
